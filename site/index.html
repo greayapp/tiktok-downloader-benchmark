@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok Downloader Benchmark</title>
+<meta name="description" content="An open, measured comparison of TikTok downloader websites: reliability, honest labels, speed, ads, privacy and mobile experience. Method, code, data and evidence are public. First edition: Q4 2026.">
+<link rel="canonical" href="https://greayapp.github.io/tiktok-downloader-benchmark/">
+<meta property="og:title" content="TikTok Downloader Benchmark">
+<meta property="og:description" content="An open, measured comparison of TikTok downloader websites. First edition: Q4 2026.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://greayapp.github.io/tiktok-downloader-benchmark/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Crect x='7' y='16' width='4' height='9' rx='1' fill='%2325F4EE'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1' fill='%23ffffff'/%3E%3Crect x='21' y='6' width='4' height='19' rx='1' fill='%23FE2C55'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff; --surface: #f6f7f9; --text: #111827; --muted: #4b5563; --line: #e5e7eb;
+    --accent: #c4183c; --accent-soft: #fdecef; --ok: #0f766e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1117; --surface: #161b22; --text: #e6edf3; --muted: #9da7b3; --line: #2a313b;
+      --accent: #ff6b86; --accent-soft: #2a1519; --ok: #5eead4;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1117; --surface: #161b22; --text: #e6edf3; --muted: #9da7b3; --line: #2a313b;
+    --accent: #ff6b86; --accent-soft: #2a1519; --ok: #5eead4;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 48px 0 24px; }
+  .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+  h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .lede { font-size: 18px; color: var(--muted); margin: 0; max-width: 680px; }
+  .disclosure {
+    margin: 24px 0 0; padding: 14px 16px; border-radius: 10px;
+    background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  .status { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 28px 0 8px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .stat b { display: block; font-size: 20px; }
+  .stat span { color: var(--muted); font-size: 14px; }
+  section { padding: 28px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 22px; margin: 0 0 14px; letter-spacing: -0.01em; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  td.w { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+  ul.rules { padding-left: 20px; margin: 0; }
+  ul.rules li { margin: 6px 0; }
+  .tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; list-style: none; padding: 0; margin: 0; }
+  .tools li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+  .tools li small { display: block; color: var(--muted); }
+  .note { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .btn {
+    display: inline-block; padding: 10px 14px; border-radius: 8px; text-decoration: none; font-weight: 600;
+    border: 1px solid var(--line); background: var(--surface); color: var(--text);
+  }
+  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  footer { padding: 28px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+  @media (max-width: 520px) {
+    th:nth-child(3), td:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Open benchmark · first edition Q4 2026</p>
+    <h1>TikTok Downloader Benchmark</h1>
+    <p class="lede">Most "best TikTok downloader" lists are opinions or paid placements. This one is measured:
+      every tool gets the same public TikTok links, on desktop and on a phone, and every result comes with
+      the data and evidence behind it.</p>
+    <p class="disclosure"><strong>Disclosure:</strong> this benchmark is run by
+      <a href="https://gettikvideo.com">GetTikVideo</a>, one of the tools it tests. That's why the method,
+      the code, the raw data and the evidence are all public — so you can check the results, or run the
+      tests yourself.</p>
+    <div class="status" role="list">
+      <div class="stat" role="listitem"><b>Q4 2026</b><span>First edition (December)</span></div>
+      <div class="stat" role="listitem"><b>14 tools</b><span>In the first edition</span></div>
+      <div class="stat" role="listitem"><b>38 links</b><span>Per tool, desktop and mobile, twice</span></div>
+      <div class="stat" role="listitem"><b>Quarterly</b><span>Updated every March, June, September, December</span></div>
+    </div>
+    <p class="note">Status: the method is in draft (v0.2) and the test harness is being built. Results will appear here.</p>
+  </header>
+
+  <section aria-labelledby="measured">
+    <h2 id="measured">What is measured</h2>
+    <table>
+      <thead><tr><th>Category</th><th>Weight</th><th>In short</th></tr></thead>
+      <tbody>
+        <tr><td>Reliability</td><td class="w">30</td><td>The file downloads, plays and matches the post; bad links get a clear error; daily uptime</td></tr>
+        <tr><td>Ads and intrusiveness</td><td class="w">20</td><td>Pop-ups, redirects, Better Ads Standards violations, notification prompts, deceptive ads, forced waits, extra clicks. Showing ads is not penalised.</td></tr>
+        <tr><td>Quality and honesty</td><td class="w">15</td><td>Resolution against the best available; "HD", "No watermark" and "MP3" labels that are true</td></tr>
+        <tr><td>Speed</td><td class="w">15</td><td>Median time from submitting the link to a finished file</td></tr>
+        <tr><td>Privacy and safety</td><td class="w">10</td><td>Trackers, cookies before any click, app-install pushes; tools flagged unsafe are not ranked</td></tr>
+        <tr><td>Mobile, accessibility, friction</td><td class="w">10</td><td>Accessibility score, mobile usability, Core Web Vitals, logins, captchas, limits</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Scores use fixed thresholds, so a tool's score doesn't depend on how the others did. Full definitions are in the specification.</p>
+  </section>
+
+  <section aria-labelledby="fair">
+    <h2 id="fair">How it stays fair</h2>
+    <ul class="rules">
+      <li>The method, weights, tool list and test code are frozen before each edition's first run, and never changed after seeing its results.</li>
+      <li>GetTikVideo goes through exactly the same process as every other tool, and its results are published however they come out.</li>
+      <li>No payment, affiliate link or sponsorship decides inclusion, order or score.</li>
+      <li>Every penalty is backed by a dated screenshot or log.</li>
+      <li>Anyone can dispute a result; it is re-tested within 14 days and corrections are logged in public.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="tools">
+    <h2 id="tools">Tools in the Q4 2026 edition</h2>
+    <ul class="tools">
+      <li>SnapTik<small>snaptik.app</small></li>
+      <li>SSSTik<small>ssstik.io</small></li>
+      <li>MusicalDown<small>musicaldown.com</small></li>
+      <li>TikMate<small>tikmate.app</small></li>
+      <li>SaveTik<small>savetik.co</small></li>
+      <li>TTDownloader<small>ttdownloader.com</small></li>
+      <li>TikWM<small>tikwm.com</small></li>
+      <li>LoveTik<small>lovetik.com</small></li>
+      <li>TikTokio<small>tiktokio.com</small></li>
+      <li>TikDown<small>tikdown.org</small></li>
+      <li>TikCD<small>tikcd.com</small></li>
+      <li>inDown<small>indown.io</small></li>
+      <li>TTSave<small>ttsave.net</small></li>
+      <li>GetTikVideo<small>gettikvideo.com · operator</small></li>
+    </ul>
+    <p class="note">Missing a tool? Suggest it for a future edition.</p>
+  </section>
+
+  <section aria-labelledby="involved">
+    <h2 id="involved">Check our work</h2>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/greayapp/tiktok-downloader-benchmark/blob/main/SPEC.md">Read the method</a>
+      <a class="btn" href="https://github.com/greayapp/tiktok-downloader-benchmark">Code and data on GitHub</a>
+      <a class="btn" href="https://github.com/greayapp/tiktok-downloader-benchmark/issues/new?template=dispute.yml">Dispute a result</a>
+      <a class="btn" href="https://github.com/greayapp/tiktok-downloader-benchmark/issues/new?template=tool-suggestion.yml">Suggest a tool</a>
+    </div>
+    <p class="note">Prefer email? <a href="mailto:greyapp@protonmail.com">greyapp@protonmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>TikTok Downloader Benchmark by GreyApp. Code under the MIT licence; method and data under CC BY 4.0.
+      Download only content you have the right to save.</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+name: Dispute a result
+description: Tell us a published result is wrong, with evidence. We re-test within 14 days.
+title: "[Dispute] <tool> — <edition> — <what is wrong>"
+labels: ["dispute"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for checking our work. Disputes are handled in public and logged in CHANGELOG.md.
+        If you'd rather not post publicly, email greyapp@protonmail.com instead.
+  - type: input
+    id: tool
+    attributes:
+      label: Tool (domain)
+      placeholder: example.com
+    validations:
+      required: true
+  - type: input
+    id: edition
+    attributes:
+      label: Edition
+      placeholder: 2026q4
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Item(s) or metric
+      placeholder: "e.g. V7 on mobile, or 'Ads: redirect'"
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What is wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, a screen recording, timestamps (with time zone), the exact link and the steps to reproduce.
+    validations:
+      required: true
+  - type: dropdown
+    id: affiliation
+    attributes:
+      label: Your relationship to the tool
+      options:
+        - No affiliation
+        - I run or work for this tool
+        - I run or work for another tool in the benchmark
+    validations:
+      required: true

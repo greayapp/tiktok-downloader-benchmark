@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this benchmark's data or method, please cite it as below."
+title: "TikTok Downloader Benchmark"
+type: dataset
+authors:
+  - name: "GreyApp"
+    email: "greyapp@protonmail.com"
+repository-code: "https://github.com/greayapp/tiktok-downloader-benchmark"
+url: "https://greayapp.github.io/tiktok-downloader-benchmark/"
+license: CC-BY-4.0
+version: "0.2"
+date-released: "2026-10-19"
+keywords:
+  - tiktok
+  - downloader
+  - benchmark
+  - web-performance
+  - online-advertising
+  - privacy
+  - accessibility

@@ -1,0 +1,41 @@
+# OS and editors
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Node
+node_modules/
+npm-debug.log*
+.npm/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Test runs: downloaded media and raw captures never leave the test machine
+downloads/
+tmp/
+.cache/
+runs-local/
+*.mp4
+*.mp3
+*.m4a
+*.aac
+*.webm
+*.mov
+*.heic
+*.har
+
+# Browser profiles used by the harness
+.chrome-profile*/
+
+# Built site
+_site/
