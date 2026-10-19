@@ -64,6 +64,11 @@
     border: 1px solid var(--line); background: var(--surface); color: var(--text);
   }
   .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .scroll table { min-width: 560px; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
+  .overall { font-weight: 800; font-size: 17px; }
   footer { padding: 28px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
   @media (max-width: 520px) {
     th:nth-child(3), td:nth-child(3) { display: none; }
@@ -90,6 +95,26 @@
     </div>
     <p class="note">Status: the method is in draft (v0.2) and the test harness is being built. Results will appear here.</p>
   </header>
+
+  <section id="results" aria-labelledby="results-h" hidden>
+    <h2 id="results-h">Results</h2>
+    <p class="note" id="results-meta"></p>
+    <div class="scroll"><table>
+      <thead><tr><th>#</th><th>Tool</th><th class="n">Overall</th><th class="n">Reliability</th><th class="n">Ads</th><th class="n">Quality</th><th class="n">Speed</th><th class="n">Privacy</th><th class="n">Mobile</th></tr></thead>
+      <tbody id="results-body"></tbody>
+    </table></div>
+    <p class="note">Scores out of 100. Evidence and raw data for every number are in the repository.</p>
+  </section>
+
+  <section id="uptime" aria-labelledby="uptime-h" hidden>
+    <h2 id="uptime-h">Daily uptime this quarter</h2>
+    <p class="note" id="uptime-meta"></p>
+    <div class="scroll"><table>
+      <thead><tr><th>Tool</th><th class="n">Uptime</th><th class="n">Checks</th><th class="n">Blocked</th><th class="n">Days</th></tr></thead>
+      <tbody id="uptime-body"></tbody>
+    </table></div>
+    <p class="note">One video and one photo post per tool, every day the test machine is on. "Blocked" = the tool's bot protection stopped the test browser; those checks are left out of uptime.</p>
+  </section>
 
   <section aria-labelledby="measured">
     <h2 id="measured">What is measured</h2>
@@ -155,5 +180,44 @@
       Download only content you have the right to save.</p>
   </footer>
 </div>
+<script>
+(async () => {
+  const get = (u) => fetch(u, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const [latest, up] = await Promise.all([get("results/latest.json"), get("results/monitor/uptime.json")]);
+  const td = (text, cls) => { const el = document.createElement("td"); el.textContent = text; if (cls) el.className = cls; return el; };
+  const fmt = (x) => (x === null || x === undefined ? "–" : String(Math.round(x)));
+  if (latest && Array.isArray(latest.tools)) {
+    const body = document.getElementById("results-body");
+    for (const t of latest.tools) {
+      const tr = document.createElement("tr");
+      tr.append(td(t.rank ?? "–"));
+      const name = td(t.name);
+      if (t.operator) { const s = document.createElement("span"); s.className = "tag"; s.textContent = "operator"; name.append(s); }
+      if (t.unsafe || t.note) { const s = document.createElement("span"); s.className = "tag"; s.textContent = t.unsafe ? "unsafe — not ranked" : "not ranked"; s.title = t.note || ""; name.append(s); }
+      tr.append(name, td(fmt(t.result?.overall), "n overall"));
+      for (const c of ["reliability", "ads", "quality", "speed", "privacy", "mobile"]) tr.append(td(fmt(t.result?.categories?.[c]?.score), "n"));
+      body.append(tr);
+    }
+    document.getElementById("results-meta").textContent = `Edition ${latest.edition} · generated ${String(latest.generated).slice(0, 10)}`;
+    document.getElementById("results").hidden = false;
+  }
+  if (up) {
+    const quarters = Object.keys(up).filter((k) => /^\d{4}q\d$/.test(k)).sort();
+    const q = quarters[quarters.length - 1];
+    if (q) {
+      const rows = Object.entries(up[q]).map(([tool, v]) => ({ tool, ...v, pct: v.checks ? (100 * v.successes) / v.checks : null }))
+        .sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
+      const body = document.getElementById("uptime-body");
+      for (const r of rows) {
+        const tr = document.createElement("tr");
+        tr.append(td(r.tool), td(r.pct === null ? "–" : `${r.pct.toFixed(0)}%`, "n"), td(String(r.checks), "n"), td(String(r.blocked), "n"), td(String(r.days), "n"));
+        body.append(tr);
+      }
+      document.getElementById("uptime-meta").textContent = `Quarter ${q} · updated ${String(up.updated).slice(0, 16).replace("T", " ")} UTC`;
+      document.getElementById("uptime").hidden = false;
+    }
+  }
+})();
+</script>
 </body>
 </html>

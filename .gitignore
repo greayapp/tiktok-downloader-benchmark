@@ -39,3 +39,12 @@ runs-local/
 
 # Built site
 _site/
+
+# Generated iOS project (from harness/ios/project.yml) and its build
+harness/ios/TDBiPhone.xcodeproj/
+harness/.cache/
+harness/runs-local/
+harness/node_modules/
+
+# Development runs (never published)
+results/dev/

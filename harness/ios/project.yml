@@ -1,0 +1,38 @@
+# iPhone check (SPEC.md §5.1): XCUITest drives Safari on an iOS Simulator with
+# real taps. Generate the Xcode project with `xcodegen generate` (it is not
+# committed); src/iphone.mjs builds and runs it.
+name: TDBiPhone
+options:
+  bundleIdPrefix: com.greyapp.tdb
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  TDBHost:
+    type: application
+    platform: iOS
+    sources: [Host]
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_REQUIRED: NO
+  TDBSafariTests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [SafariTests]
+    dependencies:
+      - target: TDBHost
+    settings:
+      base:
+        TEST_TARGET_NAME: TDBHost
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_REQUIRED: NO
+schemes:
+  TDBSafariTests:
+    build:
+      targets:
+        TDBSafariTests: [test]
+    test:
+      targets: [TDBSafariTests]
