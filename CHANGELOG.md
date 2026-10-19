@@ -3,6 +3,10 @@
 All changes to the specification, the tool list, the samples, and every correction to published
 results are recorded here.
 
+### Planned for spec v1.1 (next edition)
+- §2 Governance: the operator doesn't deploy changes to its own tool during an edition's run
+  windows. Already followed from the Q4 2026 edition on (see `results/2026q4/NOTES.md`).
+
 ### 2026-10-19 — Schedule: Q4 2026 edition tested in late October
 - The first edition (Q4 2026) is tested in late October instead of December. No method change: the
   spec stays v1.0 (tag `spec-v1.0`); only §10's first-edition date changed. Results carry their real
