@@ -63,19 +63,27 @@ it waits for a later hour when the Mac is off the residential connection (a VPN 
 when its own commit is the one thing not yet on GitHub. `schedule/uninstall.sh` removes it.
 Logs: `~/Library/Logs/tiktok-downloader-benchmark-monitor.log`.
 
-## Known limitations (adapter work before the Q4 2026 runs)
+## Known limitations and site behaviour (checked 2026-10-19)
 
-Found in the test passes of 2026-10-19; adapters can change until the edition is tagged (SPEC.md §12).
+Adapters can change until the edition is tagged (SPEC.md §12). Fixed in the flow on 2026-10-19:
+photo posts whose image buttons hide while a file downloads (TTSave), files credited to the wrong
+image (TikTokio 7 of 8), the iPhone check mistaking a redirect or a file opened in Safari's player
+for an ad.
 
-- **TTSave photo posts:** only the first image's button is visible at a time (a slider); the flow
-  saves one image. Needs an adapter that moves through the slider.
-- **TikTokio photo posts:** one image's button occasionally gives no file (7 of 8). Its server also
-  dropped the 716 MB original of a 229-second video part-way (smaller files arrive).
-- **SaveTik and TTSave, long videos:** on the 246-second V6 the result showed an MP3 option but no
-  video option the flow recognised; to check whether that is the site or its labels.
-- **iPhone check:** a full-screen Google ad on TTSave isn't always closed before the link box is
-  tapped; TikWM's download prompt isn't recognised yet. Failed iPhone checks count only once a
-  person confirms them (SPEC.md §6.F), so these show as "not measured" until fixed.
+What the test passes showed to be the sites' own behaviour, not the harness's (kept as measured):
+
+- **TTSave:** on long videos (229 s, 246 s) its server keeps "preparing" the file past the 60 s
+  limit; on the iPhone, Safari is redirected away repeatedly (e.g. to a betting site and a fake
+  "lucky draw") before a result appears.
+- **TikTokio:** its server drops the 716 MB original of a 229-second video part-way; smaller files
+  arrive.
+- **TikWM (iPhone):** the download control opens the video in Safari's player, which offers no way
+  to save it.
+- **SSSTik:** its video options are behind a rewarded video ad (an ad wall, never waited out); MP3
+  and photos work.
+- **TikMate:** Google's offerwall ("view a short ad") covers the site on every visit.
+- **TikCD (phone):** each tap in the photo step opens an ad tab instead of the photo.
+- **LoveTik:** answers valid links with "Error: Could not get Video ID."
 - **Bot protection:** SaveTik, TikWM and inDown show a challenge to the automated desktop/Android
-  browser (never solved); they are "not measurable" there unless that changes. inDown and TikWM
-  load normally in iOS Safari on the simulator.
+  browser (never solved), so they are often "not measurable" there; inDown and TikWM load normally
+  in iOS Safari on the simulator.

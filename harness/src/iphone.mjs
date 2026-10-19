@@ -95,6 +95,9 @@ async function main() {
         }
         if (process.env.TDB_DEBUG) for (const l of out.split("\n").filter((l) => /TDB_(CONTROL|RESULT)/.test(l))) console.log(l.trim().slice(0, 240));
         const kv = Object.fromEntries([...out.matchAll(/TDB_RESULT: (\w+)=(.*)/g)].map((m) => [m[1], m[2].trim()]));
+        // Every site Safari was sent to (redirects) or an ad tap opened, in order — evidence.
+        const all = (k) => [...out.matchAll(new RegExp(`TDB_RESULT: ${k}=(.*)`, "g"))].map((m) => m[1].replace(/\u200e/g, "").trim());
+        const redirects = all("redirected"), adPages = all("left_site");
         // What the screen showed at the end (kept locally, like every screenshot: runs-local/).
         const shotDir = join(ROOT, "runs-local", edition, "iphone");
         mkdirSync(shotDir, { recursive: true });
@@ -125,7 +128,9 @@ async function main() {
             evidence = `evidence/${tool.domain}/iphone-${item.id}.png`;
         }
         if (kv.outcome === "ad-wall") reason = kv.reason;
-        results[tool.domain] = { saved, adWall: kv.outcome === "ad-wall" || undefined, reason, control: kv.control ?? null, prompt: kv.prompt ?? null, taps: kv.taps ? Number(kv.taps) : null, closedOverlay: kv.closed_overlay ?? null, leftSite: kv.left_site ?? null, finalPage: kv.final_page ?? null, file, item: item.id, device: `${sim.name} (iOS Simulator)`, at: new Date().toISOString(), screenshot: existsSync(screenshot) ? screenshot.slice(ROOT.length + 1) : null, evidence };
+        if (!saved && kv.opened_in_player) reason = "the tap opened the video in Safari's player instead of downloading it (it doesn't save)";
+        if (!saved && redirects.length >= 2) reason = `Safari was redirected away from the site ${redirects.length} times (${[...new Set(redirects)].slice(0, 4).join(", ")}…); ${reason}`;
+        results[tool.domain] = { saved, adWall: kv.outcome === "ad-wall" || undefined, reason, control: kv.control ?? null, prompt: kv.prompt ?? null, taps: kv.taps ? Number(kv.taps) : null, closedOverlay: kv.closed_overlay ?? null, leftSite: kv.left_site ?? null, redirected: redirects.length ? redirects : null, adPages: adPages.length ? adPages : null, openedInPlayer: kv.opened_in_player ?? null, finalPage: kv.final_page ?? null, file, item: item.id, device: `${sim.name} (iOS Simulator)`, at: new Date().toISOString(), screenshot: existsSync(screenshot) ? screenshot.slice(ROOT.length + 1) : null, evidence };
         console.log(`${tool.domain.padEnd(18)} ${saved ? "saved" : "NOT saved"}${reason ? ` (${reason})` : ""}`);
         writeFileSync(outFile, JSON.stringify(results, null, 2) + "\n");
     }

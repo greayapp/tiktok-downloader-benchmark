@@ -2,6 +2,7 @@
 // open the home page, paste the link, submit, wait for the result, choose the
 // control that matches the task, wait for the file, then verify it.
 import { mkdirSync, statSync } from "node:fs";
+import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { controlHandle, evaluateStable, findLinkInput, findSubmit, listControls, TASK_LABELS } from "./generic.mjs";
 import { verifyAudio, verifyImages, verifyVideo, watermarkCheck } from "./verify.mjs";
@@ -163,6 +164,33 @@ function pickControl(adapter, task, fresh) {
     return null;
 }
 
+/**
+ * Collects every file that arrives (downloads in this tab or tabs it opens, and tabs that show the
+ * file itself) until stop(); waitFor(n, ms) resolves true once n have arrived.
+ */
+function collectFiles(context, page) {
+    const got = [];
+    const onDownload = (d) => got.push({ kind: "download", download: d });
+    const pages = new Set();
+    const onPage = (p) => {
+        p.on("download", onDownload);
+        p.waitForLoadState("domcontentloaded").then(async () => {
+            const ct = await p.evaluate(() => document.contentType).catch(() => "");
+            if (/^(video|audio|image)\//.test(ct) && !pages.has(p)) { pages.add(p); got.push({ kind: "media-tab", url: p.url(), page: p, response: null }); }
+        }).catch(() => {});
+    };
+    page.on("download", onDownload);
+    context.on("page", onPage);
+    return {
+        got,
+        async waitFor(n, ms) {
+            for (const until = Date.now() + ms; got.length < n && Date.now() < until; ) await sleep(250);
+            return got.length >= n;
+        },
+        stop() { page.off("download", onDownload); context.off("page", onPage); },
+    };
+}
+
 /** Wait for a download (this tab or any tab it opens) or a tab showing the media itself. */
 function waitForFile(context, page, ms) {
     return new Promise((resolve) => {
@@ -208,7 +236,7 @@ async function saveFile(got, context, file) {
     }
     // A tab showing the media: take the body Chrome received (its own DNS and
     // connection), else fetch the same URL with the context's cookies.
-    const { writeFile } = await import("node:fs/promises");
+
     const cap = new Promise((resolve) => setTimeout(() => resolve(null), LIMITS.fileMs).unref());
     const body = await Promise.race([got.response?.body().catch(() => null), cap]);
     if (body && body.length > 0) {
@@ -361,6 +389,7 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
 
     // 4. Wait for the result.
     let chosen = null;
+    let resultControls = [];
     const resultEnd = t0 + LIMITS.resultMs;
     while (Date.now() < resultEnd) {
         await sleep(250);
@@ -372,10 +401,12 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         if (adapter.ready && !(await adapter.ready(page, task))) continue;
         const fresh = (await listControls(page)).filter((c) => !before.has(key(c)));
         chosen = adapter.pick ? await adapter.pick(page, task, fresh) : pickControl(adapter, task, fresh);
+        resultControls = fresh;
         if (chosen) break;
     }
     if (!chosen) {
         await shot("no-result");
+        if (process.env.TDB_DUMP) await page.content().then((html) => writeFile(join(dir, `${item.id}-${viewport}-no-result.html`), html)).catch(() => {});
         if (await challenged(page)) return { ...rec, outcome: "blocked", failure: "bot-protection challenge after submit" };
         // A result with options for other tasks but none for this one: the tool
         // doesn't offer it (SPEC.md §6.A1 "not offered").
@@ -398,6 +429,8 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         if (gated.length) rec.adGatedOptions = gated.map((c) => c.text);
     }
     await shot("result");
+    // Adapter work: TDB_DUMP=1 keeps the result page's HTML next to its screenshots (runs-local/, never published).
+    if (process.env.TDB_DUMP) await page.content().then((html) => writeFile(join(dir, `${item.id}-${viewport}-result.html`), html)).catch(() => {});
     if (measureMobile) rec.mobile = await mobileChecks(page, null, chosen);
 
     // 5. Click it and wait for the file. A click swallowed by an ad tab or an
@@ -494,27 +527,39 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
 
     // Photo posts: collect the remaining images when each has its own control.
     if (task === "photos" && ref?.imageCount > 1 && !/all|zip/i.test(chosen.text)) {
-        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)) && key(c) !== key(chosen));
-        const more = fresh.filter((c) => (adapter.controls?.photos ?? TASK_LABELS.photos).some((re) => re.test(c.text)));
+        // The image controls as the result showed them, plus any shown since: some sites hide them
+        // while a file downloads and show them again afterwards.
+        const seen = new Map();
+        for (const c of [...resultControls, ...(await listControls(page))]) if (!before.has(key(c)) && key(c) !== key(chosen)) seen.set(key(c), c);
+        const more = [...seen.values()].filter((c) => (adapter.controls?.photos ?? TASK_LABELS.photos).some((re) => re.test(c.text)));
         let misses = 0;
         rec.perImage = { offered: more.length + 1, labels: [chosen.text, ...more.map((c) => c.text)].slice(0, 12) };
-        for (const c of more.slice(0, ref.imageCount - 1)) {
-            // Found again by its label and link at click time, never by position.
-            const handle = await controlHandle(page, c);
+        // Every file that arrives during this step is kept, whichever click it answers: a late file
+        // must not be credited to the next image, nor lost after the last click.
+        const col = collectFiles(context, page);
+        const targets = more.slice(0, ref.imageCount - 1);
+        for (const c of targets) {
+            // Found again by its label and link at click time, never by position; a visitor waits for
+            // it to come back if the page hid it while the previous file downloaded.
+            let handle = null;
+            for (const until = Date.now() + 20_000; !handle && Date.now() < until; ) { handle = await controlHandle(page, c); if (!handle) await sleep(500); }
             if (!handle) { if (++misses >= 2) break; continue; }
-            const waiting = waitForFile(context, page, 20_000);
+            const had = col.got.length;
             await clickLikeUser(page, handle, mobile);
-            let g = await waiting;
+            let arrived = await col.waitFor(had + 1, 20_000);
             // An ad layer may have taken the click: close it and click this image again, like a visitor.
-            if (!g && (await closeOverlays(page, mobile))) {
+            if (!arrived && (await closeOverlays(page, mobile))) {
                 rec.clicks++;
                 const again = await controlHandle(page, c);
-                const w2 = waitForFile(context, page, 20_000);
                 if (again) { await clickLikeUser(page, again, mobile); rec.clicks++; }
-                g = await w2;
+                arrived = await col.waitFor(had + 1, 20_000);
             }
-            if (!g) { if (++misses >= 2) break; continue; }
+            if (!arrived) { if (++misses >= 2) break; continue; }
             misses = 0;
+        }
+        await col.waitFor(targets.length, 10_000); // stragglers
+        col.stop();
+        for (const g of col.got) {
             const f = join(dir, `${item.id}-${viewport}-${files.length + 1}.bin`);
             await saveFile(g, context, f).then(() => files.push(f)).catch(() => {});
         }

@@ -54,9 +54,12 @@ final class SafariDownloadTests: XCTestCase {
     /// excluded, and is new since `before`: its label is carried by more controls than before (pages
     /// shift after submitting, so a new position alone doesn't make a control new), and it isn't at a
     /// place a control with that label already had. Among several, the lowest on the page.
-    private func newControl(_ safari: XCUIApplication, labels: [String], timeout: TimeInterval, before: Before) -> Control? {
+    private func newControl(_ safari: XCUIApplication, labels: [String], timeout: TimeInterval, before: Before, toolHost: String) -> Control? {
         let end = Date().addingTimeInterval(timeout)
         repeat {
+            dismissAlerts(safari)
+            // The site sent the tab elsewhere (a redirect): recorded as evidence; the visitor goes back.
+            if let shown = shownHost(safari), !shown.contains(toolHost) { report("redirected", shown); goBack(safari) }
             let now = controls(safari)
             var counts: [String: Int] = [:]
             for c in now { counts[c.label, default: 0] += 1 }
@@ -75,7 +78,7 @@ final class SafariDownloadTests: XCTestCase {
     /// Scrolls the page (dragging in the upper half, above any bottom-anchored ad) until `el` sits in
     /// the upper middle of the screen, where a person would bring it before tapping; then taps that
     /// point on screen, so whatever covers it gets the tap — as in the desktop flow (clickLikeUser).
-    private func tapLikeUser(_ el: XCUIElement, _ safari: XCUIApplication) {
+    private func tapLikeUser(_ el: XCUIElement, _ safari: XCUIApplication, x: CGFloat = 0.5) {
         let web = safari.webViews.firstMatch
         if web.exists {
             let wf = web.frame
@@ -88,7 +91,13 @@ final class SafariDownloadTests: XCTestCase {
                 Thread.sleep(forTimeInterval: 0.8)
             }
         }
-        el.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        el.coordinate(withNormalizedOffset: CGVector(dx: x, dy: 0.5)).tap()
+    }
+
+    /// The page's link box: its first text field, search field or text area.
+    private func findField(_ safari: XCUIApplication) -> XCUIElement? {
+        let fields = safari.webViews.textFields.allElementsBoundByIndex + safari.webViews.searchFields.allElementsBoundByIndex + safari.webViews.textViews.allElementsBoundByIndex
+        return fields.first(where: { $0.exists && $0.isHittable }) ?? fields.first(where: { $0.exists && $0.frame.width > 40 })
     }
 
     /// Back, like a visitor: the toolbar's Back button, or (toolbar collapsed) Safari's edge swipe.
@@ -97,6 +106,19 @@ final class SafariDownloadTests: XCTestCase {
         if back.exists && back.isHittable && back.isEnabled { back.tap() }
         else { safari.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.5)).press(forDuration: 0.05, thenDragTo: safari.coordinate(withNormalizedOffset: CGVector(dx: 0.75, dy: 0.5))) }
         sleep(3)
+    }
+
+    /// Safari's own alerts (an ad trying to open an app or an invalid address) are dismissed like a
+    /// visitor would — Cancel rather than Open, never accepting an app or App Store jump.
+    private func dismissAlerts(_ safari: XCUIApplication) {
+        let alert = safari.alerts.firstMatch
+        guard alert.exists else { return }
+        report("dismissed_alert", alert.label)
+        let buttons = alert.buttons.allElementsBoundByIndex
+        let order = ["cancel", "not now", "close", "ok"]
+        let pick = order.lazy.compactMap { want in buttons.first(where: { $0.label.lowercased() == want }) }.first
+        (pick ?? buttons.first)?.tap()
+        sleep(1)
     }
 
     /// The host Safari shows, if it shows one.
@@ -149,18 +171,20 @@ final class SafariDownloadTests: XCTestCase {
         let fieldEnd = Date().addingTimeInterval(30)
         sleep(4)
         while found == nil && Date() < fieldEnd {
-            let fields = safari.webViews.textFields.allElementsBoundByIndex + safari.webViews.searchFields.allElementsBoundByIndex + safari.webViews.textViews.allElementsBoundByIndex
-            found = fields.first(where: { $0.exists && $0.isHittable }) ?? fields.first(where: { $0.exists && $0.frame.width > 40 })
+            found = findField(safari)
             if found == nil { sleep(1) }
         }
-        guard let field = found else { report("outcome", "failure"); report("reason", "no link box within 30 s"); return }
+        guard var field = found else { report("outcome", "failure"); report("reason", "no link box within 30 s"); return }
         sleep(2)
 
         // Tap into the box; if an ad layer took the tap, close it and tap the box again (as on desktop).
         let toolHost = URL(string: tool)?.host?.replacingOccurrences(of: "www.", with: "") ?? tool
         var focused = false
-        for _ in 0..<3 {
-            if field.exists { tapLikeUser(field, safari) }
+        // Up to four taps, aimed at different parts of the box (a person aims at the part they can see).
+        for x in [0.5, 0.25, 0.75, 0.5] as [CGFloat] {
+            dismissAlerts(safari)
+            if !field.exists, let again = findField(safari) { field = again } // the page reloaded (after Back)
+            if field.exists { tapLikeUser(field, safari, x: x) }
             sleep(1)
             if safari.keyboards.firstMatch.exists || (field.exists && (field.value(forKey: "hasKeyboardFocus") as? Bool) == true) { focused = true; break }
             // An ad took the tap: back to the tool, or close the layer, then tap the box again.
@@ -195,8 +219,8 @@ final class SafariDownloadTests: XCTestCase {
         // nothing else is taken, so an ad's own "Download" button that loads before the result isn't
         // mistaken for it.
         let specific = Array(controlLabels.dropLast())
-        guard let chosen = (specific.isEmpty ? nil : newControl(safari, labels: specific, timeout: 20, before: before))
-                ?? newControl(safari, labels: controlLabels, timeout: 40, before: before) else { report("outcome", "failure"); report("reason", "no download control within 60 s"); return }
+        guard let chosen = (specific.isEmpty ? nil : newControl(safari, labels: specific, timeout: 20, before: before, toolHost: toolHost))
+                ?? newControl(safari, labels: controlLabels, timeout: 40, before: before, toolHost: toolHost) else { report("outcome", "failure"); report("reason", "no download control within 60 s"); return }
         report("control", chosen.label)
         let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
 
@@ -207,8 +231,15 @@ final class SafariDownloadTests: XCTestCase {
         var taps = 0
         for attempt in 1...4 {
             if attempt > 1 {
+                dismissAlerts(safari)
                 // An ad took the tap and Safari left the tool's site: go back, like a visitor.
                 if let shown = shownHost(safari), !shown.contains(toolHost) {
+                    // The tap opened the video file itself in Safari's player: it doesn't save (Safari
+                    // offers no download there). Recorded for the reviewer; not an ad, so no Back.
+                    if shown.range(of: "tiktokcdn|tiktokv|byteoversea|muscdn|\\.mp4", options: [.regularExpression, .caseInsensitive]) != nil {
+                        report("opened_in_player", shown)
+                        break
+                    }
                     report("left_site", shown)
                     goBack(safari)
                     taps += 1
