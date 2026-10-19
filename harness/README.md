@@ -69,7 +69,10 @@ Found in the test passes of 2026-10-19; adapters can change until the edition is
 
 - **TTSave photo posts:** only the first image's button is visible at a time (a slider); the flow
   saves one image. Needs an adapter that moves through the slider.
-- **TikTokio photo posts:** one image's button occasionally gives no file (7 of 8).
+- **TikTokio photo posts:** one image's button occasionally gives no file (7 of 8). Its server also
+  dropped the 716 MB original of a 229-second video part-way (smaller files arrive).
+- **SaveTik and TTSave, long videos:** on the 246-second V6 the result showed an MP3 option but no
+  video option the flow recognised; to check whether that is the site or its labels.
 - **iPhone check:** a full-screen Google ad on TTSave isn't always closed before the link box is
   tapped; TikWM's download prompt isn't recognised yet. Failed iPhone checks count only once a
   person confirms them (SPEC.md §6.F), so these show as "not measured" until fixed.
