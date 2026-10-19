@@ -3,6 +3,17 @@
 All changes to the specification, the tool list, the samples, and every correction to published
 results are recorded here.
 
+### 2026-10-19 — Schedule: Q4 2026 edition tested in late October
+- The first edition (Q4 2026) is tested in late October instead of December. No method change: the
+  spec stays v1.0 (tag `spec-v1.0`); only §10's first-edition date changed. Results carry their real
+  test dates. Next edition: Q1 2027 (March); the December annual edition starts in 2027.
+
+### 2026-10-19 — Adapter and harness fixes before the first edition
+- Photo posts: image buttons a site hides while a file downloads are waited for; every file that
+  arrives during the photo step is kept (no late file credited to the next image).
+- iPhone check: redirects are recorded and left with Back; a file opened in Safari's player is
+  recorded as not saved; Safari's own alerts are dismissed (never an App Store jump).
+
 ### 2026-10-19 — Spec v1.0 (frozen; from building the harness and two test passes)
 - Clicks and taps land at the element's position on screen; a click an ad takes is repeated, a
   Google vignette or modal is closed with its own close control — each an extra click.

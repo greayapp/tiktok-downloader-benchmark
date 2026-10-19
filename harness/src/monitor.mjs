@@ -17,6 +17,7 @@ import { loadEngines } from "./lists.mjs";
 import { observe, siteOf } from "./observe.mjs";
 import { loadAdapter, TOOLS } from "./tools.mjs";
 import { checkVantage } from "./vantage.mjs";
+import { heldBy, take } from "./lock.mjs";
 
 const git = promisify(execFile);
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -79,6 +80,10 @@ async function main() {
     const picks = [videos[day % videos.length], photos[day % photos.length]].filter(Boolean);
     const only = arg("tools", null)?.split(",");
     const engines = await loadEngines();
+    // An edition run is using the line: not today's check yet; the LaunchAgent tries again next hour.
+    const run = heldBy("edition-run");
+    if (run) { console.log(`${new Date().toISOString()} not run: edition ${run.edition} run ${run.run} in progress`); return; }
+    take("monitor");
     // Off the residential line (a VPN on), skip today's check without logging anything: the
     // LaunchAgent tries again next hour (SPEC.md §5.4).
     try {

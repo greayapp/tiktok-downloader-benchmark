@@ -14,7 +14,7 @@ what the button says, how fast is it, and do the site's ads get in the way or mi
 | | |
 |---|---|
 | Specification | [v1.0](SPEC.md) — frozen (tag `spec-v1.0`) |
-| First edition | **Q4 2026** (December) |
+| First edition | **Q4 2026** — tested in late October 2026 |
 | Cadence | Quarterly (March, June, September, December); December is the annual edition |
 | Tools in the first edition | 14 — see [Appendix A of the spec](SPEC.md#appendix-a--candidate-tools-for-q4-2026) |
 | Daily uptime check | Two links per tool every day; [monthly logs](results/monitor/) |

@@ -63,6 +63,24 @@ it waits for a later hour when the Mac is off the residential connection (a VPN 
 when its own commit is the one thing not yet on GitHub. `schedule/uninstall.sh` removes it.
 Logs: `~/Library/Logs/tiktok-downloader-benchmark-monitor.log`.
 
+## Running an edition (checklist)
+
+1. **Samples live** — VPN on, `npm run reference -- --check`, VPN off. Replace and log any dead core
+   item (CHANGELOG.md).
+2. **Freeze the inputs** — commit, then `git tag -a edition-<id> -m "…"` (e.g. `edition-2026q4`)
+   and push the tag. From here adapters don't change for this edition.
+3. **Run 1** — `caffeinate -dimsu npm run run -- --edition <id> --run r1` (one test at a time,
+   about 8 hours; keep the Mac on power and online; the daily monitor waits while it runs).
+4. **Run 2** — at least 48 hours after run 1, at a different time of day: `… --run r2`. A tool that
+   failed at least 80% of a run's items is re-run once 24 hours later (`--tools <domain> --run r1b`).
+5. **iPhone and pages** — `npm run iphone -- --edition <id>`, `npm run pagespeed -- --edition <id>`.
+6. **Score and review** — `npm run score -- --edition <id>` writes `results/<id>/review-todo.json`:
+   watermark flags, new-tab and ad screenshots (Better Ads, deceptive ads, forced waits), failed
+   iPhone checks. A person records each decision in `results/<id>/review.json`; score again.
+7. **Publish** — `npm run score -- --edition <id> --publish`, then make the rotating samples public:
+   move `samples/local-rotating.json` to `samples/<id>-rotating.json` and `git add -f
+   samples/reference/R*.json`. Commit and push; the site shows the edition.
+
 ## Known limitations and site behaviour (checked 2026-10-19)
 
 Adapters can change until the edition is tagged (SPEC.md §12). Fixed in the flow on 2026-10-19:

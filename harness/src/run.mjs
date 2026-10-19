@@ -15,6 +15,7 @@ import { loadEngines } from "./lists.mjs";
 import { observe, siteOf, snapshot, thirdPartyCookies } from "./observe.mjs";
 import { loadAdapter, TOOLS } from "./tools.mjs";
 import { checkVantage } from "./vantage.mjs";
+import { heldBy, take } from "./lock.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = join(HERE, "..", "..");
@@ -76,6 +77,9 @@ const rnd = seeded(`${edition}/${runId}`);
 const engines = await loadEngines();
 const outBase = join(REPO, "results", edition, "runs", runId);
 const localBase = join(HERE, "..", "runs-local", edition, runId);
+// One test at a time on the line (SPEC.md §5.1): wait for a daily monitor check that is running.
+for (let m; (m = heldBy("monitor")); ) { console.log(`waiting: the daily monitor is running (since ${m.started})`); await sleep(60_000); }
+take("edition-run", { edition, run: runId });
 // Location and bandwidth first (SPEC.md §5.1); refuses to run off the residential line.
 const vantage = await checkVantage({ allowAny: flag("any-vantage") }).catch((e) => { console.error(e.message); process.exit(2); });
 const refFile = join(REPO, "samples", "reference", "capture.json");

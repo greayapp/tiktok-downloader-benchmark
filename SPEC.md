@@ -1,6 +1,6 @@
 # TikTok Downloader Benchmark — Specification
 
-**Version:** 1.0 (frozen, git tag `spec-v1.0`) · **Date:** 2026-10-19 · **First edition:** Q4 2026 (December)
+**Version:** 1.0 (frozen, git tag `spec-v1.0`) · **Date:** 2026-10-19 · **First edition:** Q4 2026 (tested late October 2026)
 **Operated by:** GetTikVideo (gettikvideo.com), which is also one of the tools tested — see §2.
 **Contact:** greyapp@protonmail.com · **Live results:** https://greayapp.github.io/tiktok-downloader-benchmark/
 
@@ -332,7 +332,10 @@ or tokens.
 - **Quarterly editions:** March, June, September, December. The **December** edition is the annual
   edition, where the spec may change (major version), the tool list is re-selected, and the core
   samples are refreshed if needed.
-- **First edition:** Q4 2026 (December), with whatever uptime data the monitor has collected by then.
+- **First edition:** Q4 2026, tested in late October 2026 (brought forward from December; the method
+  is unchanged), with the uptime data the monitor has collected since 19 October. Every edition's
+  results carry their real test dates (`run.json`). The next edition is Q1 2027 (March); the
+  December annual edition starts in 2027.
 - **Spec versions:** `1.x` within a year; changes take effect from the next edition only.
 
 ## 11. Publication
