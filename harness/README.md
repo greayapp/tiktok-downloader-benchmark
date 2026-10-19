@@ -15,7 +15,7 @@ visitor would and records what happens; the method it implements is [SPEC.md](..
 
 | Command | What it does |
 |---|---|
-| `npm test` | Unit tests for the scoring formulas (SPEC.md §7) |
+| `npm test` | Unit tests for the scoring formulas (SPEC.md §7) and browser tests for finding controls (needs Chrome) |
 | `npm run reference` | Reference data for every sample from TikTok's own page data + yt-dlp (needs access to tiktok.com) |
 | `npm run reference -- --check` | Before each run: every sample still live and unchanged (needs access to tiktok.com) |
 | `npm run run -- --edition 2026q4 --run r1` | One full run: every tool × every sample × desktop and mobile |
@@ -62,3 +62,17 @@ stay in `runs-local/` and `.cache/` (git-ignored); evidence screenshots for pena
 it waits for a later hour when the Mac is off the residential connection (a VPN on). It pushes only
 when its own commit is the one thing not yet on GitHub. `schedule/uninstall.sh` removes it.
 Logs: `~/Library/Logs/tiktok-downloader-benchmark-monitor.log`.
+
+## Known limitations (adapter work before the Q4 2026 runs)
+
+Found in the test passes of 2026-10-19; adapters can change until the edition is tagged (SPEC.md §12).
+
+- **TTSave photo posts:** only the first image's button is visible at a time (a slider); the flow
+  saves one image. Needs an adapter that moves through the slider.
+- **TikTokio photo posts:** one image's button occasionally gives no file (7 of 8).
+- **iPhone check:** a full-screen Google ad on TTSave isn't always closed before the link box is
+  tapped; TikWM's download prompt isn't recognised yet. Failed iPhone checks count only once a
+  person confirms them (SPEC.md §6.F), so these show as "not measured" until fixed.
+- **Bot protection:** SaveTik, TikWM and inDown show a challenge to the automated desktop/Android
+  browser (never solved); they are "not measurable" there unless that changes. inDown and TikWM
+  load normally in iOS Safari on the simulator.

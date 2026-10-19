@@ -69,21 +69,38 @@ export async function findSubmit(page, input) {
  * Visible download-like controls on the page, in document order, with their
  * label and link. Used to pick the control for a task (adapters may override).
  */
-export async function listControls(page) {
-    return page.evaluate(() => {
-        const vis = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.visibility !== "hidden" && s.display !== "none" && s.opacity !== "0"; };
-        return [...document.querySelectorAll("a, button, [role=button], input[type=button], input[type=submit]")]
-            .map((el, index) => ({ el, index }))
-            .filter(({ el }) => vis(el))
-            .map(({ el, index }) => ({
-                index,
-                // What a visitor (or a screen reader) is told the control does.
-                text: [...new Set([el.innerText, el.value, el.getAttribute("aria-label"), el.title].map((x) => (x || "").replace(/\s+/g, " ").trim()).filter(Boolean))].join(" · ").slice(0, 100),
-                href: el.href || null,
-                download: el.hasAttribute("download"),
-            }))
-            .filter((c) => c.text || c.href);
+/** page.evaluate that survives the page navigating meanwhile (some sites reload after loading). */
+export async function evaluateStable(page, fn, arg) {
+    for (let i = 0; ; i++) {
+        try {
+            return await page.evaluate(fn, arg);
+        } catch (e) {
+            if (i >= 3 || !/context was destroyed|Cannot find context|navigat/i.test(e.message)) throw e;
+            await page.waitForLoadState("domcontentloaded").catch(() => {});
+            await new Promise((r) => setTimeout(r, 500));
+        }
+    }
+}
+
+// The page's controls: links and buttons, plus small clickable elements (pointer cursor, no link or
+// button inside) whose text names a download — some sites build their buttons from plain divs.
+// The same function runs in listControls() and controlHandle(), so both see the same controls.
+const CONTROLS_IN_PAGE = `() => {
+    const vis = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.visibility !== "hidden" && s.display !== "none" && s.opacity !== "0"; };
+    const label = (el) => [...new Set([el.innerText, el.value, el.getAttribute("aria-label"), el.title].map((x) => (x || "").replace(/\\s+/g, " ").trim()).filter(Boolean))].join(" · ").slice(0, 100);
+    const real = [...document.querySelectorAll("a, button, [role=button], input[type=button], input[type=submit]")];
+    const inReal = (el) => real.some((r) => r.contains(el) || el.contains(r));
+    const divs = [...document.querySelectorAll("div, span, li")].filter((el) => {
+        const t = (el.innerText || "").trim();
+        return t.length > 0 && t.length <= 40 && /download|save|mp3|mp4|\\bhd\\b|photo|image|audio/i.test(t)
+            && getComputedStyle(el).cursor === "pointer" && (!el.parentElement || getComputedStyle(el.parentElement).cursor !== "pointer") && !inReal(el);
     });
+    return [...real, ...divs].filter(vis).map((el) => ({ el, text: label(el), href: el.href || null }));
+}`;
+
+// Evaluated as an expression (not eval inside the page), so a site's Content Security Policy can't block it.
+export async function listControls(page) {
+    return evaluateStable(page, `(${CONTROLS_IN_PAGE})().map(({ el, text, href }, index) => ({ index, text, href, download: el.hasAttribute ? el.hasAttribute("download") : false })).filter((c) => c.text || c.href)`);
 }
 
 /**
@@ -93,12 +110,7 @@ export async function listControls(page) {
  * Returns null when no visible element matches.
  */
 export async function controlHandle(page, c) {
-    const h = await page.evaluateHandle(({ text, href }) => {
-        const vis = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.visibility !== "hidden" && s.display !== "none" && s.opacity !== "0"; };
-        const label = (el) => [...new Set([el.innerText, el.value, el.getAttribute("aria-label"), el.title].map((x) => (x || "").replace(/\s+/g, " ").trim()).filter(Boolean))].join(" · ").slice(0, 100);
-        return [...document.querySelectorAll("a, button, [role=button], input[type=button], input[type=submit]")]
-            .find((el) => vis(el) && label(el) === text && (el.href || null) === href) ?? null;
-    }, { text: c.text, href: c.href ?? null }).catch(() => null);
+    const h = await page.evaluateHandle(`(${CONTROLS_IN_PAGE})().find((x) => x.text === ${JSON.stringify(c.text)} && x.href === ${JSON.stringify(c.href ?? null)})?.el ?? null`).catch(() => null);
     const el = h?.asElement() ?? null;
     if (!el) await h?.dispose().catch(() => {});
     return el;

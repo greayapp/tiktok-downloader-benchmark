@@ -34,6 +34,9 @@ results are recorded here.
 - A failure where the site showed an error quotes it ("the site said: …").
 - N2 is TikTok's Explore page instead of a sound page: two tools rightly offer a sound's audio, so a
   sound page isn't a should-fail case.
+- A tab that shows the requested file itself is the delivery, not a pop-up.
+- Rewarded ads (a video ad that must play out to "earn" the file) are ad walls, detected inside ad
+  frames and never waited out; when only the chosen option has one, the next option is used.
 - Photo posts: when "Download all" gives no file, the photos are saved one by one (as a visitor
   would); controls are found again by label at click time (ads inserted on the page shift positions).
 

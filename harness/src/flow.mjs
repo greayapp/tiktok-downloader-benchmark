@@ -3,7 +3,7 @@
 // control that matches the task, wait for the file, then verify it.
 import { mkdirSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { controlHandle, findLinkInput, findSubmit, listControls, TASK_LABELS } from "./generic.mjs";
+import { controlHandle, evaluateStable, findLinkInput, findSubmit, listControls, TASK_LABELS } from "./generic.mjs";
 import { verifyAudio, verifyImages, verifyVideo, watermarkCheck } from "./verify.mjs";
 
 // SPEC.md §5.2: the result within 60 s; the file must start downloading within 60 s of the click
@@ -88,10 +88,19 @@ export async function closeOverlays(page, mobile) {
 }
 
 /** An ad wall: the site requires watching an ad (or similar) to continue (SPEC.md §6.D). */
+// Walls: Google's offerwall ("view a short ad"), and rewarded ads (watch a video ad to earn the
+// download), which show inside ad frames ("you will lose your reward", "reward in 15 s").
+const WALL_TEXT = /unlock more content|view a short ad|watch (a|an|the|this) (short )?(ad|video) to (continue|unlock|get|earn)|take action to continue accessing|lose your reward|reward granted|reward in \d+ ?s(ec(ond)?s?)?\b/i;
 export async function adWall(page) {
     const text = await page.evaluate(() => document.body.innerText.slice(0, 20000)).catch(() => "");
-    if (/unlock more content|view a short ad|watch (a|an) (short )?ad to (continue|unlock)|take action to continue accessing/i.test(text)) return true;
-    return page.evaluate(() => !!document.querySelector(".fc-dialog-container, .fc-monetization-dialog, [class*='offerwall']")).catch(() => false);
+    if (WALL_TEXT.test(text)) return true;
+    if (await page.evaluate(() => !!document.querySelector(".fc-dialog-container, .fc-monetization-dialog, [class*='offerwall']")).catch(() => false)) return true;
+    for (const f of page.frames()) {
+        if (f === page.mainFrame()) continue;
+        const t = await f.evaluate(() => (document.body?.innerText ?? "").slice(0, 5000)).catch(() => "");
+        if (WALL_TEXT.test(t)) { page._tdbWallText = (t.match(WALL_TEXT) ?? [""])[0]; return true; }
+    }
+    return false;
 }
 
 /** Is the test machine itself online? (A failure while it isn't is not the tool's.) */
@@ -110,7 +119,7 @@ async function challenged(page) {
     if (/just a moment|attention required|verify you are human|security check/i.test(title)) return true;
     // Only challenges a person would have to deal with: a visible widget. The
     // invisible reCAPTCHA badge many sites carry is not a challenge.
-    return page.evaluate(() => {
+    return evaluateStable(page, () => {
         const visible = (el) => { const r = el.getBoundingClientRect(); return r.width > 60 && r.height > 60 && getComputedStyle(el).visibility !== "hidden"; };
         const widgets = [...document.querySelectorAll('#challenge-form, iframe[src*="challenges.cloudflare.com"], iframe[src*="hcaptcha.com"], iframe[src*="recaptcha/api2/anchor"]:not([src*="size=invisible"]), iframe[src*="recaptcha/api2/bframe"], iframe[src*="recaptcha/enterprise/anchor"]:not([src*="size=invisible"])')];
         return widgets.some(visible);
@@ -136,7 +145,17 @@ function pickControl(adapter, task, fresh) {
     const usable = fresh.filter((c) => !exclude.test(c.text) && !AD_GATED.test(c.text));
     // A link's own path can tell its file type (…/video.mp4); never its query
     // string, which often repeats the TikTok link (…?url=…/photo/…).
-    const path = (href) => { try { const u = new URL(href); return /^https?:$/.test(u.protocol) ? u.pathname : ""; } catch { return ""; } };
+    // A link to the tool's own pages (…/photo/download#) says nothing about a file unless its path
+    // ends in a file extension; a link elsewhere (a CDN) may name its file type in its path.
+    const toolHost = (() => { try { return new URL(adapter.url).hostname.replace(/^www\./, ""); } catch { return ""; } })();
+    const path = (href) => {
+        try {
+            const u = new URL(href);
+            if (!/^https?:$/.test(u.protocol)) return "";
+            const own = toolHost && u.hostname.replace(/^www\./, "").endsWith(toolHost);
+            return own && !/\.(jpe?g|png|webp|heic|mp4|mp3|m4a|zip)$/i.test(u.pathname) ? "" : u.pathname;
+        } catch { return ""; }
+    };
     for (const re of patterns) {
         const hit = usable.find((c) => re.test(c.text) || (c.href && re.test(path(c.href))));
         if (hit) return hit;
@@ -156,6 +175,11 @@ function waitForFile(context, page, ms) {
                 const ct = res.headers()["content-type"] ?? "";
                 if (res.request().isNavigationRequest() && /^(video|audio|image)\//.test(ct)) finish({ kind: "media-tab", url: res.url(), page: p, response: res });
             });
+            // A tab opened already showing the file reports no response: ask the tab what it shows.
+            p.waitForLoadState("domcontentloaded").then(async () => {
+                const ct = await p.evaluate(() => document.contentType).catch(() => "");
+                if (/^(video|audio|image)\//.test(ct)) finish({ kind: "media-tab", url: p.url(), page: p, response: null });
+            }).catch(() => {});
         };
         const onMainResponse = (res) => {
             const ct = res.headers()["content-type"] ?? "";
@@ -191,6 +215,9 @@ async function saveFile(got, context, file) {
         await writeFile(file, body);
         return { delivery: "media-tab", name: null };
     }
+    // The tab is still streaming the file; some servers allow one connection per link, so stop it
+    // first, as "Save video as…" in a visitor's browser would fetch it again on its own.
+    if (got.page && got.page !== context.pages()[0]) await got.page.close().catch(() => {});
     const res = await context.request.get(got.url, { timeout: LIMITS.fileMs });
     if (!res.ok()) throw new Error(`media tab returned ${res.status()}`);
     await writeFile(file, await res.body());
@@ -253,6 +280,8 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         if (!(await online())) return { ...rec, outcome: "skipped", failure: "the test machine was offline" };
         return { ...rec, outcome: "failure", failure: `home page did not load: ${e.message.split("\n")[0]}` };
     }
+    // Let the page finish loading (some reload themselves once loaded); not timed: timings start at submit.
+    await page.waitForLoadState("load", { timeout: 15_000 }).catch(() => {});
     await sleep(2500);
     log.expectNavigation(false);
     if (await challenged(page)) {
@@ -311,6 +340,11 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         let message = null;
         while (Date.now() < end) {
             await sleep(1500);
+            // An ad wall in the way is not the tool's answer to the link: recorded as such, not graded.
+            if (await adWall(page)) {
+                await shot("ad-wall");
+                return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
+            }
             const fresh = (await listControls(page)).filter((c) => !before.has(key(c)));
             if (pickControl(adapter, "video", fresh) || pickControl(adapter, "mp3", fresh)) { grade = "bad"; message = "offered a download"; break; }
             // Only text that appeared after submitting, and not questions (FAQ
@@ -382,14 +416,27 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
             const waiting = waitForFile(context, page, attempt === 0 ? 15_000 : 20_000);
             await clickLikeUser(page, handle, mobile);
             rec.clicks++;
-            let g = await waiting;
+            // A Google vignette that took the click is closed as soon as it shows, as a visitor would;
+            // the file then gets 5 s before the control is clicked again (no harness patience in the timings).
+            let settled = false, g = null, polls = 0;
+            waiting.then((v) => { g = v; settled = true; });
+            while (!settled) {
+                await sleep(500);
+                // An ad that must be watched to get the file is never waited out (SPEC.md §5.2).
+                if (!settled && ++polls % 4 === 0 && (await adWall(page))) return "ad-wall";
+                if (!settled && page.url().includes("#google_vignette")) {
+                    if (await closeOverlays(page, mobile)) rec.clicks++;
+                    g = await Promise.race([waiting, sleep(5_000).then(() => null)]);
+                    settled = true;
+                }
+            }
             if (g) return g;
             // No file yet: an ad may be covering the page (a vignette or a modal) —
             // close it like a visitor; the download often continues by itself.
             if (await adWall(page)) return "ad-wall";
             if (await closeOverlays(page, mobile)) {
                 rec.clicks++;
-                g = await waitForFile(context, page, 15_000);
+                g = await waitForFile(context, page, 5_000);
                 if (g) return g;
             }
             // Otherwise the page may have moved to an intermediate step.
@@ -412,9 +459,21 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
             got = await attemptDownload(single);
         }
     }
-    if (got === "ad-wall") {
+    // The chosen option needs an ad watched (e.g. a rewarded ad on HD): it is an option behind an ad.
+    // Close the ad (never watched) and take the next option for the task; only if every option needs
+    // the ad is it an ad wall (SPEC.md §6.D).
+    while (got === "ad-wall") {
         await shot("ad-wall");
-        return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
+        rec.adGatedOptions = [...(rec.adGatedOptions ?? []), chosen.text];
+        if (page._tdbWallText) rec.adWallText = page._tdbWallText;
+        if (await closeOverlays(page, mobile)) rec.clicks++;
+        await closeOverlays(page, mobile);
+        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)) && !rec.adGatedOptions.includes(c.text));
+        const next = adapter.pick ? await adapter.pick(page, task, fresh) : pickControl(adapter, task, fresh);
+        if (!next) return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
+        chosen = next;
+        rec.control_label = next.text;
+        got = await attemptDownload(next);
     }
     if (got) rec.timings_ms.to_download = Date.now() - t0;
     if (!got) {
@@ -445,7 +504,15 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
             if (!handle) { if (++misses >= 2) break; continue; }
             const waiting = waitForFile(context, page, 20_000);
             await clickLikeUser(page, handle, mobile);
-            const g = await waiting;
+            let g = await waiting;
+            // An ad layer may have taken the click: close it and click this image again, like a visitor.
+            if (!g && (await closeOverlays(page, mobile))) {
+                rec.clicks++;
+                const again = await controlHandle(page, c);
+                const w2 = waitForFile(context, page, 20_000);
+                if (again) { await clickLikeUser(page, again, mobile); rec.clicks++; }
+                g = await w2;
+            }
             if (!g) { if (++misses >= 2) break; continue; }
             misses = 0;
             const f = join(dir, `${item.id}-${viewport}-${files.length + 1}.bin`);

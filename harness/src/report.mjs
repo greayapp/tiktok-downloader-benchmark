@@ -69,7 +69,8 @@ export function publishEvidence(byTool, editionDir) {
 export function adsInputs(v, review = {}) {
     const success = v.records.filter((r) => r.outcome === "success" && r.kind !== "negative" && Number.isFinite(r.clicks));
     return {
-        popups: v.behaviour.reduce((s, b) => s + (b.newPages?.length ?? 0), 0),
+        // A tab showing the file itself is the delivery, not a pop-up (SPEC.md §6.D).
+        popups: v.behaviour.reduce((s, b) => s + (b.newPages ?? []).filter((p) => !p.media).length, 0),
         offsiteRedirects: v.behaviour.reduce((s, b) => s + (b.offsiteNavigations?.length ?? 0), 0),
         notificationPrompt: v.behaviour.some((b) => (b.permissions ?? []).some((p) => /notification|push/.test(p.kind))),
         adWall: v.records.some((r) => r.outcome === "ad-wall"),
@@ -117,7 +118,7 @@ function main() {
                     if (!confirmed && !(r.watermarkRejected ?? []).includes(`${rec.run}/${rec.item}/${v}`)) todo.push({ tool: tool.domain, check: "watermark", key: `${rec.run}/${rec.item}/${v}` });
                 }
             }
-            if (data[v].behaviour.some((b) => b.newPages?.length)) todo.push({ tool: tool.domain, check: "review new tabs (pop-ups) evidence", viewport: v });
+            if (data[v].behaviour.some((b) => b.newPages?.some((p) => !p.media))) todo.push({ tool: tool.domain, check: "review new tabs (pop-ups) evidence", viewport: v });
         }
         todo.push({ tool: tool.domain, check: "review ad screenshots: Better Ads violations, deceptive ads, forced waits" });
         if (iphone[tool.domain] && !iphone[tool.domain].saved && r.iphoneConfirmed === undefined) {

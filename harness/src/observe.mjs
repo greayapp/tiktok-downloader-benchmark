@@ -87,10 +87,19 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
             return;
         }
         // A tab or window the site opened.
-        const entry = { t: Date.now(), phase: log.phase, url: p.url(), finalUrl: null, evidence: null };
+        const entry = { t: Date.now(), phase: log.phase, url: p.url(), finalUrl: null, evidence: null, media: false };
         log.newPages.push(entry);
         p.on("dialog", (d) => d.dismiss().catch(() => {}));
+        // A tab showing the file itself (a video, audio or image) is how the site delivers it: not a
+        // pop-up, and left open while the flow saves it.
+        p.on("response", (res) => {
+            try {
+                if (res.request().isNavigationRequest() && /^(video|audio|image)\//.test(res.headers()["content-type"] ?? "")) entry.media = true;
+            } catch { /* ignore */ }
+        });
         setTimeout(async () => {
+            if (!entry.media) entry.media = /^(video|audio|image)\//.test(await p.evaluate(() => document.contentType).catch(() => ""));
+            if (entry.media) { entry.finalUrl = p.url(); return; }
             try {
                 entry.finalUrl = p.url();
                 if (evidenceDir) {
@@ -129,7 +138,7 @@ export async function thirdPartyCookies(context, toolSite) {
 /** The log as plain JSON for a result record. */
 export function snapshot(log) {
     return {
-        newPages: log.newPages.map(({ t, phase, url, finalUrl, evidence }) => ({ t, phase, url, finalUrl, evidence })),
+        newPages: log.newPages.map(({ t, phase, url, finalUrl, evidence, media }) => ({ t, phase, url, finalUrl, evidence, media })),
         offsiteNavigations: log.offsiteNavigations,
         permissions: log.permissions,
         dialogs: log.dialogs,

@@ -142,8 +142,10 @@ clicks again; if a Google vignette or a modal covers the page, the visitor close
 close control ("Close", "×", "Skip"). Each of those is an extra click (§6.D). The ad itself is never
 clicked or watched.
 
-- An **ad wall** (the site requires watching an ad, or similar, to continue) ends the item with the
-  outcome `ad-wall` (§6.A, §6.D).
+- An **ad wall** (the site requires watching an ad, or similar, to continue — including a rewarded ad,
+  a video ad that must play out to "earn" the file) is never watched or waited out. If only the
+  chosen option needs it, that option is an option behind an ad (§6.D) and the next option for the
+  task is used; if every option needs it, the item ends with the outcome `ad-wall` (§6.A, §6.D).
 - A **bot-protection challenge** that needs interaction is never solved; the item's outcome is
   `blocked`.
 
@@ -184,7 +186,7 @@ Bot-protection challenges are recorded as **blocked** and excluded, because real
 - **A2 Error handling** (should-fail cases): 100 = a clear, correct message; 50 = a generic error;
   0 = no message within 30 s, a fake "success" (a download control appears), or a redirect instead of
   an error. Only text or dialogs that appear after submitting count (not FAQ text already on the
-  page).
+  page). A should-fail item stopped by an ad wall or a bot-protection challenge is left out.
 - **A3 Uptime** = successful monitor checks / counted checks. Not counted: days the test machine was
   offline (no data), `blocked` and `ad-wall` checks, and checks of a task the tool never offered in
   that quarter (as in A1).
@@ -220,13 +222,13 @@ evidence:
 
 | Behaviour | Definition |
 |---|---|
-| Pop-up / pop-under / new tab | A window or tab the user didn't explicitly ask for, including one opened on the first click anywhere on the page |
+| Pop-up / pop-under / new tab | A window or tab the user didn't explicitly ask for, including one opened on the first click anywhere on the page. A tab that shows the requested file itself (the video, audio or image) is the delivery, not a pop-up. |
 | Redirect | The tool's tab is sent to another site without the user choosing a link |
 | Better Ads Standards violation | Any experience listed in the Coalition for Better Ads standards (pop-up, prestitial or poststitial with countdown, full-screen scroll-over, auto-playing video with sound, flashing animation, large sticky ad, mobile ad density over 30%) |
 | Notification prompt | The site asks for permission to send notifications |
 | Deceptive ad | An ad that imitates the tool's own download button, a system / browser / phone message, or a video player — flagged automatically, confirmed by a person, screenshot published |
-| Ad wall | The site requires watching an ad (or similar) before it works |
-| Option behind an ad | The best option for the task (e.g. HD) is locked behind watching an ad; the harness uses the best unlocked option instead |
+| Ad wall | The site requires watching an ad (or similar) before it works, on every option for the task — including a rewarded ad that must play out to "earn" the file |
+| Option behind an ad | An option for the task (e.g. HD) is locked behind watching an ad — labelled ("Watch ad") or found on clicking (a rewarded ad); the harness uses the best unlocked option instead |
 | Forced wait | A countdown or delay before the file that isn't needed to produce it |
 | Extra clicks | Each click beyond the minimum (submit + one download click) needed to get the file |
 
