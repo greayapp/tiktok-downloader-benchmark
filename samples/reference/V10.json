@@ -1,0 +1,22 @@
+{
+  "sample": "V10",
+  "url": "https://www.tiktok.com/@redbull/video/7182621876865240325",
+  "captured": "2026-10-19T08:59:45.988Z",
+  "id": "7182621876865240325",
+  "author": "redbull",
+  "created": "2022-12-29T17:21:19.000Z",
+  "isPhoto": false,
+  "duration": 147,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7182621947191167749",
+  "musicDuration": 147,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 147,
+    "maxHeight": 1920
+  },
+  "watermarkReference": true
+}

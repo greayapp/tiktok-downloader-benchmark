@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "note": "Core samples (SPEC.md \u00a74.1). Public posts from official and brand accounts.",
+  "items": [
+    {
+      "id": "V1",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@chipotle/video/7693311227086359821",
+      "author": "chipotle"
+    },
+    {
+      "id": "V2",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@duolingo/video/7695132961343147278",
+      "author": "duolingo"
+    },
+    {
+      "id": "V3",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@espn/video/7698172900251127071",
+      "author": "espn"
+    },
+    {
+      "id": "V4",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@googlepixel/video/7673278617379441950",
+      "author": "googlepixel"
+    },
+    {
+      "id": "V5",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@netflix/video/7697770463392435469",
+      "author": "netflix"
+    },
+    {
+      "id": "V6",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@redbull/video/7674929181045656834",
+      "author": "redbull"
+    },
+    {
+      "id": "V7",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@gymshark/video/7696616410914606358",
+      "author": "gymshark"
+    },
+    {
+      "id": "V8",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@mlb/video/7697106109504720158",
+      "author": "mlb"
+    },
+    {
+      "id": "V9",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@nasa/video/7691727731800673549",
+      "author": "nasa"
+    },
+    {
+      "id": "V10",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@redbull/video/7182621876865240325",
+      "author": "redbull"
+    },
+    {
+      "id": "P1",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@ryanair/video/7623473254719720727",
+      "author": "ryanair"
+    },
+    {
+      "id": "P2",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@nfl/video/7503709776313011502",
+      "author": "nfl"
+    },
+    {
+      "id": "P3",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@gymshark/video/7696586104627023126",
+      "author": "gymshark"
+    },
+    {
+      "id": "P4",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@nba/video/7498412815087095071",
+      "author": "nba"
+    },
+    {
+      "id": "P5",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@ryanair/video/7693215955647778070",
+      "author": "ryanair"
+    },
+    {
+      "id": "P6",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@scrubdaddy/video/7697329376928550175",
+      "author": "scrubdaddy"
+    },
+    {
+      "id": "P7",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@espn/video/7501435433528708382",
+      "author": "espn"
+    },
+    {
+      "id": "P8",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@scrubdaddy/video/7553294415301840158",
+      "author": "scrubdaddy"
+    },
+    {
+      "id": "P9",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@chipotle/video/7696221629566749966",
+      "author": "chipotle"
+    },
+    {
+      "id": "P10",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@gymshark/video/7551502249827126531",
+      "author": "gymshark"
+    },
+    {
+      "id": "M1",
+      "kind": "mp3",
+      "url": "https://www.tiktok.com/@chipotle/video/7693311227086359821",
+      "refId": "V1",
+      "note": "MP3 of V1"
+    },
+    {
+      "id": "M2",
+      "kind": "mp3",
+      "url": "https://www.tiktok.com/@nasa/video/7691727731800673549",
+      "refId": "V9",
+      "note": "MP3 of V9 (original sound)"
+    },
+    {
+      "id": "L1",
+      "kind": "variant",
+      "variantOf": "V1",
+      "refId": "V1",
+      "url": "https://tiktok.com/@chipotle/video/7693311227086359821",
+      "note": "V1 without www"
+    },
+    {
+      "id": "L2",
+      "kind": "variant",
+      "variantOf": "V2",
+      "refId": "V2",
+      "url": "https://www.tiktok.com/@duolingo/video/7695132961343147278?is_from_webapp=1&sender_device=pc",
+      "note": "V2 with tracking parameters"
+    },
+    {
+      "id": "L3",
+      "kind": "variant",
+      "variantOf": "P4",
+      "refId": "P4",
+      "url": "https://www.tiktok.com/@nba/photo/7498412815087095071",
+      "note": "P4 shared with the /photo/ path"
+    },
+    {
+      "id": "N1",
+      "kind": "negative",
+      "url": "https://www.tiktok.com/@tiktok/video/7000000000000000001",
+      "note": "a post that doesn't exist on an official account"
+    },
+    {
+      "id": "N2",
+      "kind": "negative",
+      "url": "https://www.tiktok.com/explore",
+      "note": "TikTok's Explore page: a TikTok link with nothing to download"
+    },
+    {
+      "id": "N3",
+      "kind": "negative",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "note": "a non-TikTok link"
+    }
+  ]
+}

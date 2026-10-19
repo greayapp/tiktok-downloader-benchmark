@@ -1,0 +1,8 @@
+{
+  "captured": "2026-10-19",
+  "via": "VPN (exit: Tokyo, Japan; datacentre network) — tiktok.com is blocked at the residential vantage point in India (SPEC.md §4.3)",
+  "method": "TikTok's page data (#__UNIVERSAL_DATA_FOR_REHYDRATION__) read in Google Chrome 155.0.8059.82, cross-checked with yt-dlp 2026.08.19",
+  "watermarkReferences": "TikTok's own unwatermarked and watermarked files, kept on the test machine only (harness/.cache/refs); not available for V2, R1 and R4, whose accounts turned off TikTok's own downloads",
+  "core": ["V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10"],
+  "rotating": "R1–R10 captured the same day; published with the edition's results"
+}

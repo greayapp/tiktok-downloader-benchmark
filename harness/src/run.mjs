@@ -14,6 +14,7 @@ import { runItem } from "./flow.mjs";
 import { loadEngines } from "./lists.mjs";
 import { observe, siteOf, snapshot, thirdPartyCookies } from "./observe.mjs";
 import { loadAdapter, TOOLS } from "./tools.mjs";
+import { checkVantage } from "./vantage.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = join(HERE, "..", "..");
@@ -29,7 +30,8 @@ const toolFilter = arg("tools", null)?.split(",");
 const viewports = arg("viewports", "desktop,mobile").split(",");
 const itemSel = arg("items", "all");
 const retry = !flag("no-retry");
-const parallel = Math.max(1, Number(arg("parallel", "3"))); // tools tested at once (never two tests on one site)
+// Tools tested at once: 1 for editions (SPEC.md §5.1: no test shares the line); more only for development.
+const parallel = Math.max(1, Number(arg("parallel", "1")));
 const headless = flag("headless");
 
 // Seeded shuffle, so a run's order is random but reproducible from its id.
@@ -74,10 +76,14 @@ const rnd = seeded(`${edition}/${runId}`);
 const engines = await loadEngines();
 const outBase = join(REPO, "results", edition, "runs", runId);
 const localBase = join(HERE, "..", "runs-local", edition, runId);
+// Location and bandwidth first (SPEC.md §5.1); refuses to run off the residential line.
+const vantage = await checkVantage({ allowAny: flag("any-vantage") }).catch((e) => { console.error(e.message); process.exit(2); });
+const refFile = join(REPO, "samples", "reference", "capture.json");
 const browser = await launchBrowser({ headless });
 const meta = {
     edition, run: runId, started: new Date().toISOString(), chrome: browser.version(), node: process.version,
     lists: engines.versions, viewports, items: items.map((i) => i.id), retry, headless, parallel,
+    vantage, references: existsSync(refFile) ? JSON.parse(readFileSync(refFile, "utf8")) : null,
 };
 
 async function testTool(tool) {
@@ -109,7 +115,7 @@ async function testTool(tool) {
             if (measureMobile && rec.mobile) measured = true;
             rec.failedAt = rec.outcome === "failure" ? Date.now() : undefined;
             if (rec.outcome === "failure" && retry) failed.push({ item, rec });
-            writeFileSync(join(outDir, `${item.id}-${viewport}.json`), JSON.stringify(rec, null, 2));
+            writeFileSync(join(outDir, `${item.id}-${viewport}.json`), JSON.stringify({ ...rec, lineMbps: vantage.bandwidth?.mbps ?? null }, null, 2));
             console.log(`${tool.domain} ${viewport} ${item.id}: ${rec.outcome}${rec.failure ? ` (${rec.failure})` : ""}${rec.timings_ms?.to_file ? ` ${(rec.timings_ms.to_file / 1000).toFixed(1)}s` : ""}`);
             await sleep(2000 + trnd() * 3000);
         }
@@ -121,7 +127,7 @@ async function testTool(tool) {
             const rec = await runItem({ context, page, log, adapter: tool, item, ref, refMedia, dir: localDir, viewport }).catch((e) => ({ item: item.id, kind: item.kind, viewport, outcome: "failure", failure: `harness error: ${e.message.slice(0, 160)}` }));
             rec.retried = true;
             rec.firstFailure = first.failure;
-            writeFileSync(join(outDir, `${item.id}-${viewport}.json`), JSON.stringify(rec, null, 2));
+            writeFileSync(join(outDir, `${item.id}-${viewport}.json`), JSON.stringify({ ...rec, lineMbps: vantage.bandwidth?.mbps ?? null }, null, 2));
             console.log(`${tool.domain} ${viewport} ${item.id} (retry): ${rec.outcome}${rec.failure ? ` (${rec.failure})` : ""}`);
         }
         writeFileSync(join(outDir, `behaviour-${viewport}.json`), JSON.stringify({ ...snapshot(log), cookiesBeforeInteraction: cookiesBefore }, null, 2));

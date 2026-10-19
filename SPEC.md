@@ -1,6 +1,6 @@
 # TikTok Downloader Benchmark — Specification
 
-**Version:** 0.2 (draft) · **Date:** 2026-10-19 · **First edition planned:** Q4 2026 (December)
+**Version:** 1.0 (frozen, git tag `spec-v1.0`) · **Date:** 2026-10-19 · **First edition:** Q4 2026 (December)
 **Operated by:** GetTikVideo (gettikvideo.com), which is also one of the tools tested — see §2.
 **Contact:** greyapp@protonmail.com · **Live results:** https://greayapp.github.io/tiktok-downloader-benchmark/
 
@@ -64,23 +64,33 @@ pasted link, used in a desktop or mobile browser.
 
 | Group | Items | What it covers |
 |---|---|---|
-| **Videos — core (fixed)** | 10 | V1–V4 standard (15–60 s, four different accounts) · V5–V6 long (3–10 min) · V7–V8 1080p source · V9 original sound (for MP3) · V10 older than 12 months |
-| **Photo posts — core (fixed)** | 10 | P1–P3 single image · P4–P7 multi-image (3–10 images) · P8–P10 multi-image with music |
+| **Videos — core (fixed)** | 10 | V1–V4 standard (15–60 s, four different accounts) · V5–V6 long (3–10 min) · V7–V8 1080p source (15–120 s) · V9 original sound (for MP3) · V10 the oldest post found (well over 12 months old) |
+| **Photo posts — core (fixed)** | 10 | P1–P3 one or two images · P4–P7 multi-image (3–10 images, four different accounts) · P8–P10 high-resolution images (at least 2000 px wide), to check that images aren't downscaled |
 | **Audio tasks** | 2 | MP3 from V1 and V9 |
-| **Link variants** | 3 | V1 as a `vm.tiktok.com` short link · V2 with tracking parameters (`?is_from_webapp=1&sender_device=pc`) · P4 shared with the `/photo/` path |
-| **Should-fail cases** | 3 | N1 a post that doesn't exist (an official account's link with an unused post ID) · N2 a TikTok sound page · N3 a non-TikTok link. (No links to private people's accounts or deleted posts, for their privacy.) |
+| **Link variants** | 3 | V1 without `www.` (`https://tiktok.com/@…`) · V2 with tracking parameters (`?is_from_webapp=1&sender_device=pc`) · P4 shared with the `/photo/` path |
+| **Should-fail cases** | 3 | N1 a post that doesn't exist (an official account's link with an unused post ID) · N2 TikTok's Explore page (a TikTok link with nothing to download) · N3 a non-TikTok link. (No links to private people's accounts or deleted posts, for their privacy; no sound or profile pages, which some tools rightly download from.) |
 | **Videos and photos — rotating** | 5 + 5 | Fresh each edition; kept private until results are published |
 
-Totals: 38 items per tool per run, on each of the two viewports.
+Totals: 38 items per tool per run, on each of the two viewports. The core links are in
+[`samples/core.json`](samples/core.json); the rotating ones are published with the edition's results.
+
+Notes on the choices: brand accounts rarely post a single image, and every TikTok photo post carries
+a sound, so the photo groups are by image count and image size. A `vm.tiktok.com` short link can only
+be made in the TikTok app while signed in, which the benchmark does not do, so the first variant is
+the `www`-less link.
 
 ### 4.2 Sourcing rules
 
 - Public posts from official, brand or large verified creator accounts only; no posts by private
-  individuals, no minors, no sensitive content.
+  individuals (including brand reposts of their clips), no minors, no sensitive content. Captions are
+  read before a post is chosen.
+- Posts are spread across accounts: no account more than twice among the core videos, or among the
+  core photo posts. Rotating videos are recent posts (from the 60 days before selection); rotating
+  photo posts are the best remaining candidates, since brand accounts post few photo posts.
 - The core list is public (in the repository). Rotating items are published with the results, so
   no tool can tune itself to them in advance.
-- Before each run, every positive item is checked to be live and public; a dead core item is
-  replaced (and logged), never silently dropped.
+- Before each run, every positive item is checked to be live and public (`npm run reference --
+  --check`); a dead core item is replaced (and logged), never silently dropped.
 
 ### 4.3 Reference ("ground truth")
 
@@ -108,8 +118,9 @@ edition's `run.json`; the tool tests themselves always use the residential conne
 - **Vantage point:** one residential connection (location recorded; currently India). No paid
   proxies or cloud machines. Bandwidth is measured and recorded at the start of each run.
 - **Pacing:** human-like delays (2–5 s between items), tools and items in a random order seeded by the
-  run id (so it can be reproduced). Up to four tools are tested at once; never two tests on the same
-  site at once.
+  run id (so it can be reproduced). One test at a time, so no test shares the connection with
+  another (a large file on one tool would slow another tool's page and transfer); a run takes about
+  seven hours.
 
 ### 5.2 Per-item flow
 
@@ -121,7 +132,9 @@ For each item, a per-tool **adapter** (published) drives the site the way a typi
 4. Choose the control a typical user would choose for the task: the most prominent one matching it —
    "HD / No watermark" MP4 for videos, "MP3" for audio tasks, "Download all" (or each image in turn)
    for photo posts.
-5. Wait for the file to finish (limit **120 s**); keep the file for verification.
+5. Wait for the file to start downloading (limit **60 s** after the click, including clicks an ad
+   took) and to finish (a 15-minute safety limit: a large original-quality file on the test line
+   says nothing about the tool); keep the file for verification.
 
 Clicks and taps land at the element's position on screen, so whatever covers it (an ad layer, a
 modal) receives them — as it would for a visitor. If a click only opened an ad tab, the visitor
@@ -164,12 +177,17 @@ Bot-protection challenges are recorded as **blocked** and excluded, because real
   `A1 = successes / attempts` over all positive items and runs. Items that ended `blocked` or
   `ad-wall` are left out (a visitor gets past both; the ad wall is penalised under §6.D). A tool
   blocked in more than half of its items on both viewports is listed as **not measurable** for the
-  edition instead of being scored.
+  edition instead of being scored. A task the tool never offers — on every item of that task its
+  result shows options for other tasks but none for this one (e.g. no MP3 button) — is listed as a
+  missing feature (§6.G) and its items are left out of A1; if the tool offers the task at least
+  once, every failure counts.
 - **A2 Error handling** (should-fail cases): 100 = a clear, correct message; 50 = a generic error;
   0 = no message within 30 s, a fake "success" (a download control appears), or a redirect instead of
   an error. Only text or dialogs that appear after submitting count (not FAQ text already on the
   page).
-- **A3 Uptime** = successful monitor checks / (all checks − blocked).
+- **A3 Uptime** = successful monitor checks / counted checks. Not counted: days the test machine was
+  offline (no data), `blocked` and `ad-wall` checks, and checks of a task the tool never offered in
+  that quarter (as in A1).
 
 ### B. Output quality and honesty (successful items only)
 
@@ -185,8 +203,15 @@ Bot-protection challenges are recorded as **blocked** and excluded, because real
 ### C. Speed (successful video items)
 
 - **Time to result** = submit → download control visible.
-- **Time to file** = submit → file complete (includes any waits the site imposes).
-- Medians and 90th percentiles reported; the median time to file is scored.
+- **Time to download** = submit → the file starts arriving (includes any waits the site imposes and
+  every extra click).
+- **Transfer rate** = file size ÷ (finished − started), for files of 5 MB or more; the test line's
+  bandwidth, measured at the start of each run, is published next to it.
+- **Time to file** = submit → file complete: reported, not scored, because it depends mostly on the
+  file's size (tools differ: one 229-second video came as 24 MB from some tools and as TikTok's
+  716 MB original from others) and on the test line.
+- Medians and 90th percentiles reported. The page is checked every 250 ms, so timings carry no
+  fixed waits of the harness.
 
 ### D. Ads and intrusiveness
 
@@ -201,6 +226,7 @@ evidence:
 | Notification prompt | The site asks for permission to send notifications |
 | Deceptive ad | An ad that imitates the tool's own download button, a system / browser / phone message, or a video player — flagged automatically, confirmed by a person, screenshot published |
 | Ad wall | The site requires watching an ad (or similar) before it works |
+| Option behind an ad | The best option for the task (e.g. HD) is locked behind watching an ad; the harness uses the best unlocked option instead |
 | Forced wait | A countdown or delay before the file that isn't needed to produce it |
 | Extra clicks | Each click beyond the minimum (submit + one download click) needed to get the file |
 
@@ -232,7 +258,11 @@ Also reported, not scored: the number of ad requests (EasyList-matched) during t
   place of INP), labelled as lab data.
 - **iPhone check:** sample V1 in iOS Safari on an iOS Simulator, driven with real taps by Apple's
   XCUITest, including Safari's own download prompt; it passes if the file is saved on the device and
-  verifies (§6.A1).
+  verifies (§6.A1). Taps follow §5.2: the control is brought to the middle of the screen and the tap
+  lands there; an ad layer is closed with its own close control and an ad page is left with Back,
+  each an extra tap; ads are never tapped on purpose. A failed check counts only once a person has
+  confirmed it from its end-of-test screenshot (published as evidence); otherwise the tool's iPhone
+  check is "not measured".
 - **Friction:** login required; a captcha in the normal flow; a usage limit or paywall hit within the
   sample; and, when measured, a file that won't save on iPhone (§5.1).
 
@@ -251,8 +281,8 @@ measured on mobile.
 |---|---|---|
 | **A. Reliability** | **30** | `0.6·A1 + 0.1·A2 + 0.3·A3` (A1, A3 as percentages; A2 the average of the should-fail cases). If there is no uptime data yet, A1 and A2 are re-weighted proportionally. |
 | **B. Quality and honesty** | **15** | Per successful item: `100 × resolution ratio − 50 per label-honesty failure` (floor 0); photo items: `100 − 25` if HEIC-only, `0` if images are missing or downscaled. Average over items. |
-| **C. Speed** | **15** | Median time to file `T`: 100 if `T ≤ 4 s`, 0 if `T ≥ 30 s`, linear in between. |
-| **D. Ads and intrusiveness** | **20** | Start at 100 and subtract: pop-up / new tab −30 · redirect −40 · ad wall −20 · each Better Ads violation type −20 · notification prompt −15 · deceptive ad −20 · forced wait −10 · each extra click −5, using the typical (median) number per download (max −20). Floor 0. |
+| **C. Speed** | **15** | 70% median time to download `T`: 100 if `T ≤ 4 s`, 0 if `T ≥ 30 s`, linear in between · 30% median transfer rate `R`: 100 if `R ≥ 20 Mbit/s`, 0 if `R ≤ 2 Mbit/s`, linear (without files of 5 MB or more, `T` alone). |
+| **D. Ads and intrusiveness** | **20** | Start at 100 and subtract: pop-up / new tab −30 · redirect −40 · ad wall −20 (or, if there is no wall, an option behind an ad −10) · each Better Ads violation type −20 · notification prompt −15 · deceptive ad −20 · forced wait −10 · each extra click −5, using the typical (median) number per download (max −20). Floor 0. |
 | **E. Privacy and safety** | **10** | Start at 100 and subtract: install push −30 · 5 per tracker domain (max −40) · cookies before interaction −10 · HTTPS problem −50. Floor 0. *Unsafe flag → not ranked.* |
 | **F. Mobile experience, accessibility, friction** | **10** | Average of four parts: accessibility (Lighthouse score) · mobile usability (100 − horizontal scroll 25 − link-box font under 16 px 15 − any primary control under 24×24 px 20, or under 44×44 px 10 − ad between paste box and download control 25; floor 0) · performance (share of the three Core Web Vitals rated "good" × 100) · friction (100 − login 50 − captcha 30 − limit/paywall 30 − iPhone save fails 20, floor 0). |
 

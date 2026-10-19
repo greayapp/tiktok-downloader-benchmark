@@ -13,7 +13,7 @@
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { median, rank, scoreTool } from "./scoring.mjs";
+import { markNotOffered, median, rank, scoreTool } from "./scoring.mjs";
 import { TOOLS } from "./tools.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -73,6 +73,7 @@ export function adsInputs(v, review = {}) {
         offsiteRedirects: v.behaviour.reduce((s, b) => s + (b.offsiteNavigations?.length ?? 0), 0),
         notificationPrompt: v.behaviour.some((b) => (b.permissions ?? []).some((p) => /notification|push/.test(p.kind))),
         adWall: v.records.some((r) => r.outcome === "ad-wall"),
+        adGatedOption: v.records.some((r) => (r.adGatedOptions?.length ?? 0) > 0),
         extraClicks: success.length ? Math.max(0, Math.round(median(success.map((r) => r.clicks - 2)))) : 0,
         betterAdsViolations: review.betterAdsViolations ?? [],
         deceptiveAd: !!review.deceptiveAd,
@@ -119,6 +120,11 @@ function main() {
             if (data[v].behaviour.some((b) => b.newPages?.length)) todo.push({ tool: tool.domain, check: "review new tabs (pop-ups) evidence", viewport: v });
         }
         todo.push({ tool: tool.domain, check: "review ad screenshots: Better Ads violations, deceptive ads, forced waits" });
+        if (iphone[tool.domain] && !iphone[tool.domain].saved && r.iphoneConfirmed === undefined) {
+            todo.push({ tool: tool.domain, check: "iPhone check failed: confirm from the screenshot (review.json iphoneConfirmed: true) or reject (false)", reason: iphone[tool.domain].reason, evidence: iphone[tool.domain].evidence ?? iphone[tool.domain].screenshot });
+        }
+        const notOffered = {};
+        for (const v of ["desktop", "mobile"]) notOffered[v] = markNotOffered(data[v].records);
         const mobileRec = data.mobile.records.find((x) => x.mobile);
         const blockedShare = (v) => { const rs = data[v].records; return rs.length ? rs.filter((x) => x.outcome === "blocked").length / rs.length : 0; };
         const input = {
@@ -132,7 +138,8 @@ function main() {
                     accessibility: psi?.accessibility ?? null,
                     goodVitals: psi?.goodVitals ?? null,
                     loginRequired: !!r.loginRequired, captcha: !!r.captcha, limitOrPaywall: !!r.limitOrPaywall,
-                    iphoneSaveFails: iphone[tool.domain] ? iphone[tool.domain].saved === false : null,
+                    // A failed iPhone check counts only once a person confirmed it (SPEC.md §6.F).
+                    iphoneSaveFails: !iphone[tool.domain] ? null : iphone[tool.domain].saved ? false : (r.iphoneConfirmed ? true : null),
                 } : null,
             },
             uptime: uptime[tool.domain] ?? null,
@@ -142,8 +149,11 @@ function main() {
         tools.push({
             name: tool.name, domain: tool.domain, operator: !!tool.operator,
             unsafe: !!safety[tool.domain]?.unsafe,
-            result: notMeasurable ? { overall: null, categories: result.categories } : result,
+            // Not measurable: no scores shown; what little was measured is kept for reference.
+            result: notMeasurable ? { overall: null, categories: {} } : result,
+            ...(notMeasurable ? { partial: result.categories } : {}),
             note: notMeasurable ? "blocked by its bot protection in most tests — not measurable this edition" : null,
+            notOffered: [...new Set([...notOffered.desktop, ...notOffered.mobile])],
         });
     }
     const ranked = rank(tools);

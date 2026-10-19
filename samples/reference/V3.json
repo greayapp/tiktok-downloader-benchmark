@@ -1,0 +1,22 @@
+{
+  "sample": "V3",
+  "url": "https://www.tiktok.com/@espn/video/7698172900251127071",
+  "captured": "2026-10-19T09:12:42.023Z",
+  "id": "7698172900251127071",
+  "author": "espn",
+  "created": "2026-10-19T00:42:45.000Z",
+  "isPhoto": false,
+  "duration": 20,
+  "maxHeight": 1352,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7698172923663649566",
+  "musicDuration": 20,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 20,
+    "maxHeight": 1350
+  },
+  "watermarkReference": true
+}

@@ -1,0 +1,22 @@
+{
+  "sample": "V1",
+  "url": "https://www.tiktok.com/@chipotle/video/7693311227086359821",
+  "captured": "2026-10-19T09:02:03.730Z",
+  "id": "7693311227086359821",
+  "author": "chipotle",
+  "created": "2026-10-05T22:17:09.000Z",
+  "isPhoto": false,
+  "duration": 15,
+  "maxHeight": 1280,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7693311288776215310",
+  "musicDuration": 15,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 15,
+    "maxHeight": 1280
+  },
+  "watermarkReference": true
+}

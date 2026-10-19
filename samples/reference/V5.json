@@ -1,0 +1,22 @@
+{
+  "sample": "V5",
+  "url": "https://www.tiktok.com/@netflix/video/7697770463392435469",
+  "captured": "2026-10-19T09:03:37.299Z",
+  "id": "7697770463392435469",
+  "author": "netflix",
+  "created": "2026-10-18T15:00:00.000Z",
+  "isPhoto": false,
+  "duration": 229,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7697770607115111181",
+  "musicDuration": 229,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 229,
+    "maxHeight": 1920
+  },
+  "watermarkReference": true
+}

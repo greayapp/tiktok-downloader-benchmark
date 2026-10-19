@@ -2,7 +2,7 @@
 // hand-computed values, including missing data and floors.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { reliability, quality, speed, ads, privacy, mobile, scoreTool, rank, median, WEIGHTS } from "../src/scoring.mjs";
+import { reliability, quality, speed, ads, privacy, mobile, scoreTool, rank, median, markNotOffered, WEIGHTS } from "../src/scoring.mjs";
 
 const ok = (kind, extra = {}) => ({ kind, outcome: "success", ...extra });
 const fail = (kind) => ({ kind, outcome: "failure" });
@@ -33,6 +33,14 @@ test("reliability: no uptime data → A1 and A2 re-weighted proportionally", () 
     assert.ok(Math.abs(r.score - (0.6 * 50 + 0.1 * 50) / 0.7) < 1e-9);
 });
 
+test("not offered: a task never offered becomes a missing feature and leaves A1; a task offered once does not", () => {
+    const rs = [ok("video"), ok("video"),
+        { kind: "mp3", outcome: "failure", notOffered: true }, { kind: "mp3", outcome: "failure", notOffered: true },
+        { kind: "photos", outcome: "failure", notOffered: true }, ok("photos")];
+    assert.deepEqual(markNotOffered(rs), ["mp3"]);
+    assert.equal(reliability(rs).a1, 75); // video 2/2, photos 1/2; mp3 left out
+});
+
 test("quality: resolution ratio, label dishonesty −50, HEIC −25, downscaled photos 0", () => {
     const q = quality([
         ok("video", { file: { resolutionRatio: 1, labelDishonesty: [] } }),
@@ -48,7 +56,7 @@ test("quality: resolution ratio, label dishonesty −50, HEIC −25, downscaled 
     assert.equal(q.score, (100 + 50 + 50 + 50 + 50 + 75 + 0) / 7);
 });
 
-test("speed: median time to file, 4 s → 100, 30 s → 0, linear", () => {
+test("speed: records without a download-start time fall back to the time to file", () => {
     const rec = (s) => ok("video", { timings_ms: { to_file: s * 1000 } });
     assert.equal(speed([rec(2), rec(3), rec(4)]).score, 100);
     assert.equal(speed([rec(30), rec(40)]).score, 0);
@@ -63,6 +71,8 @@ test("ads: showing ads costs nothing; each harm type once; extra clicks capped a
     assert.equal(ads({ extraClicks: 9 }).score, 80);
     assert.equal(ads({ deceptiveAd: true, forcedWait: true }).score, 70);
     assert.equal(ads({ adWall: true }).score, 80);
+    assert.equal(ads({ adGatedOption: true }).score, 90);
+    assert.equal(ads({ adWall: true, adGatedOption: true }).score, 80); // the wall already covers it
     assert.equal(ads(null).score, null);
 });
 
@@ -98,4 +108,54 @@ test("rank: unsafe tools are listed, not ranked; ties broken by reliability", ()
     const mk = (name, overall, rel, unsafe = false) => ({ name, unsafe, result: { overall, categories: { reliability: { score: rel } } } });
     const r = rank([mk("a", 80, 70), mk("b", 80, 90), mk("c", 95, 50, true), mk("d", 60, 99)]);
     assert.deepEqual(r.map((t) => [t.name, t.rank]), [["b", 1], ["a", 2], ["d", 3], ["c", null]]);
+});
+
+test("variants are scored as the task they ask for (L1/L2 video, L3 photos)", async () => {
+    const { taskOf } = await import("../src/scoring.mjs");
+    assert.equal(taskOf({ kind: "variant", item: "L3", task: "photos" }), "photos");
+    assert.equal(taskOf({ kind: "variant", item: "L1" }), "video");
+    assert.equal(taskOf({ kind: "variant", item: "L3" }), "photos");
+    // A photos variant has no resolution ratio and no video timing: it must not count as a video.
+    const s = speed([{ kind: "variant", item: "L3", task: "photos", outcome: "success", timings_ms: { to_file: 30_000 } }, { kind: "video", outcome: "success", timings_ms: { to_file: 4_000 } }]);
+    assert.equal(s.medianS, 4);
+    // A tool without photo support: the photo variant leaves A1 along with the photo posts.
+    const rs = [{ kind: "photos", item: "P1", outcome: "failure", notOffered: true }, { kind: "variant", item: "L3", task: "photos", outcome: "failure", notOffered: true }, { kind: "variant", item: "L1", task: "video", outcome: "success" }];
+    assert.deepEqual(markNotOffered(rs), ["photos"]);
+    assert.equal(rs[1].outcome, "not-offered");
+});
+
+test("uptime: offline days are no data; blocked, ad walls and never-offered tasks leave the checks", async () => {
+    const { mkdtempSync, writeFileSync } = await import("node:fs");
+    const { tmpdir } = await import("node:os");
+    const { join } = await import("node:path");
+    const { rebuildUptime } = await import("../src/monitor.mjs");
+    const dir = mkdtempSync(join(tmpdir(), "tdb-uptime-"));
+    const l = (date, tool, item, outcome, extra = {}) => JSON.stringify({ date, tool, item, outcome, ...extra });
+    writeFileSync(join(dir, "2026-10.jsonl"), [
+        l("2026-10-20", "a", "V1", "success"), l("2026-10-20", "a", "P1", "failure", { notOffered: true }),
+        l("2026-10-21", "a", "V2", "failure"), l("2026-10-21", "a", "P2", "failure", { notOffered: true }),
+        l("2026-10-22", "a", "V3", "skipped"), l("2026-10-22", "a", "P3", "skipped"),
+        l("2026-10-20", "b", "V1", "blocked"), l("2026-10-20", "b", "P1", "ad-wall"),
+        l("2026-10-21", "b", "V2", "success"), l("2026-10-21", "b", "P2", "failure"),
+    ].join("\n") + "\n");
+    const u = rebuildUptime(dir)["2026q4"];
+    assert.deepEqual(u.a, { checks: 2, successes: 1, blocked: 0, adWall: 0, notOffered: ["photos"], days: 2 });
+    assert.deepEqual(u.b, { checks: 2, successes: 1, blocked: 1, adWall: 1, notOffered: [], days: 2 });
+});
+
+test("speed: 70% time to download start (4 s → 100, 30 s → 0), 30% transfer rate on files ≥ 5 MB (2 → 0, 20 Mbit/s → 100)", () => {
+    const v = (start, file, bytes) => ({ kind: "video", outcome: "success", bytes, timings_ms: { to_download: start * 1000, to_file: file * 1000 } });
+    // Starts at 4 s (100). 10 MB in 8 s = 10 Mbit/s → (10 − 2) / 18 = 44.4.
+    const s = speed([v(4, 12, 10e6), v(4, 12, 10e6), v(4, 4.1, 1e6)]);
+    assert.equal(s.medianS, 4);
+    assert.ok(Math.abs(s.medianMbps - 10) < 1e-9);
+    assert.ok(Math.abs(s.score - (0.7 * 100 + 0.3 * (100 * 8 / 18))) < 1e-9);
+    // A big original-quality file that takes long on the test line costs nothing in the start time.
+    const big = speed([v(5.3, 120, 716e6)]);
+    assert.equal(big.medianS, 5.3);
+    assert.ok(big.medianMbps > 49 && big.medianMbps < 51);
+    // Small files only: no rate, the start time alone.
+    const small = speed([v(17, 18, 2e6)]);
+    assert.equal(small.rateScore, null);
+    assert.equal(small.score, 50);
 });

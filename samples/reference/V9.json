@@ -1,0 +1,22 @@
+{
+  "sample": "V9",
+  "url": "https://www.tiktok.com/@nasa/video/7691727731800673549",
+  "captured": "2026-10-19T09:08:25.383Z",
+  "id": "7691727731800673549",
+  "author": "nasa",
+  "created": "2026-10-01T15:52:32.000Z",
+  "isPhoto": false,
+  "duration": 16,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7691727809881901838",
+  "musicDuration": 16,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 16,
+    "maxHeight": 1920
+  },
+  "watermarkReference": true
+}

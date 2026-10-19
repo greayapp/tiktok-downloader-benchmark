@@ -1,0 +1,22 @@
+{
+  "sample": "V7",
+  "url": "https://www.tiktok.com/@gymshark/video/7696616410914606358",
+  "captured": "2026-10-19T09:04:29.597Z",
+  "id": "7696616410914606358",
+  "author": "gymshark",
+  "created": "2026-10-14T20:02:41.000Z",
+  "isPhoto": false,
+  "duration": 53,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7696616432448097046",
+  "musicDuration": 53,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 53,
+    "maxHeight": 1920
+  },
+  "watermarkReference": true
+}

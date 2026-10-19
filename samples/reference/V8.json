@@ -1,0 +1,22 @@
+{
+  "sample": "V8",
+  "url": "https://www.tiktok.com/@mlb/video/7697106109504720158",
+  "captured": "2026-10-19T09:08:03.225Z",
+  "id": "7697106109504720158",
+  "author": "mlb",
+  "created": "2026-10-16T03:42:59.000Z",
+  "isPhoto": false,
+  "duration": 15,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7697106688335235871",
+  "musicDuration": 15,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 15,
+    "maxHeight": 1920
+  },
+  "watermarkReference": true
+}

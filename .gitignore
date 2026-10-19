@@ -48,3 +48,9 @@ harness/node_modules/
 
 # Development runs (never published)
 results/dev/
+
+# The edition's rotating samples stay private until results are published (SPEC.md §4.2)
+samples/local-rotating.json
+# Rotating samples' references name the rotating links: private until the edition is published
+# (then added with `git add -f`), like samples/local-rotating.json.
+samples/reference/R*.json

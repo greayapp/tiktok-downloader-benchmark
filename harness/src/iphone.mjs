@@ -2,11 +2,11 @@
 // booted iOS Simulator, driven with real taps by XCUITest (ios/), including
 // Safari's own download prompt. Then checks the file landed on the device.
 //
-//   node src/iphone.mjs --edition 2026q4 [--tools a,b] [--item V1] [--udid <simulator>]
+//   node src/iphone.mjs --edition 2026q4 [--tools a,b] [--item V1] [--udid <simulator>] [--link <url>]
 //
 // Needs Xcode (free) with an iOS simulator runtime, and xcodegen.
 import { execFile } from "node:child_process";
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
@@ -65,8 +65,9 @@ async function main() {
     const itemId = arg("item", "V1");
     const sim = arg("udid", null) ? { udid: arg("udid"), name: arg("udid") } : await bootedSimulator();
     const xctestrun = await ensureBuilt(sim.udid);
-    const samples = JSON.parse(readFileSync(join(REPO, "samples", "core.json"), "utf8")).items;
-    const item = samples.find((i) => i.id === itemId);
+    // --link <url> for development; editions use the core sample (V1).
+    const samples = existsSync(join(REPO, "samples", "core.json")) ? JSON.parse(readFileSync(join(REPO, "samples", "core.json"), "utf8")).items : [];
+    const item = arg("link", null) ? { id: "dev", url: arg("link") } : samples.find((i) => i.id === itemId);
     if (!item) throw new Error(`sample ${itemId} not found in samples/core.json`);
     const refFile = join(REPO, "samples", "reference", `${item.id}.json`);
     const ref = existsSync(refFile) ? JSON.parse(readFileSync(refFile, "utf8")) : null;
@@ -81,8 +82,9 @@ async function main() {
             ...process.env,
             TEST_RUNNER_TDB_TOOL_URL: tool.url,
             TEST_RUNNER_TDB_TIKTOK_URL: item.url,
-            TEST_RUNNER_TDB_LABELS: tool.iphoneLabels ?? "no watermark|without watermark|HD|Download",
+            TEST_RUNNER_TDB_LABELS: tool.iphoneLabels ?? "no watermark|without watermark|HD|MP4|Download video|Download",
             TEST_RUNNER_TDB_SUBMIT: tool.iphoneSubmit ?? "Download|Submit|Start|Search|Get video|Go",
+            TEST_RUNNER_TDB_DEBUG: process.env.TDB_DEBUG ?? "",
         };
         let out = "";
         try {
@@ -91,7 +93,13 @@ async function main() {
         } catch (e) {
             out = String(e.stdout ?? "") + String(e.stderr ?? "");
         }
+        if (process.env.TDB_DEBUG) for (const l of out.split("\n").filter((l) => /TDB_(CONTROL|RESULT)/.test(l))) console.log(l.trim().slice(0, 240));
         const kv = Object.fromEntries([...out.matchAll(/TDB_RESULT: (\w+)=(.*)/g)].map((m) => [m[1], m[2].trim()]));
+        // What the screen showed at the end (kept locally, like every screenshot: runs-local/).
+        const shotDir = join(ROOT, "runs-local", edition, "iphone");
+        mkdirSync(shotDir, { recursive: true });
+        const screenshot = join(shotDir, `${tool.domain}.png`);
+        await run("xcrun", ["simctl", "io", sim.udid, "screenshot", screenshot]).catch(() => {});
         const files = safariDownloads(sim.udid, since);
         let file = null, saved = false, reason = kv.reason ?? null;
         if (files.length) {
@@ -101,9 +109,23 @@ async function main() {
             if (!v.ok) reason = `file saved but: ${v.reasons.join("; ")}`;
             for (const f of files) rmSync(f.path, { force: true });
         } else if (!reason) {
-            reason = kv.prompt === "accepted" ? "accepted the download prompt but no file arrived" : "no download prompt and no file";
+            // The test stopped before the end (XCTest failure or error): say where.
+            const lines = out.split("\n").map((l) => l.trim()).filter(Boolean);
+            const err = lines.find((l) => /error:|failed|Assertion|Failed to|crash|timed out/i.test(l) && !/TDB_RESULT/.test(l)) ?? lines.filter((l) => !/TDB_/.test(l)).slice(-1)[0];
+            reason = kv.prompt === "accepted" ? "accepted the download prompt but no file arrived"
+                : !kv.outcome ? `the test stopped early${kv.control ? ` after choosing "${kv.control}"` : kv.submitted ? " after submitting" : ""}: ${(err ?? "no message").trim().slice(0, 160)}`
+                : "no download prompt and no file";
         }
-        results[tool.domain] = { saved, reason, control: kv.control ?? null, prompt: kv.prompt ?? null, file, item: item.id, device: `${sim.name} (iOS Simulator)`, at: new Date().toISOString() };
+        // A failed check's screenshot is evidence (published) for the person who confirms it (SPEC.md §6.F).
+        let evidence = null;
+        if (!saved && existsSync(screenshot)) {
+            const dest = join(REPO, "results", edition, "evidence", tool.domain);
+            mkdirSync(dest, { recursive: true });
+            copyFileSync(screenshot, join(dest, `iphone-${item.id}.png`));
+            evidence = `evidence/${tool.domain}/iphone-${item.id}.png`;
+        }
+        if (kv.outcome === "ad-wall") reason = kv.reason;
+        results[tool.domain] = { saved, adWall: kv.outcome === "ad-wall" || undefined, reason, control: kv.control ?? null, prompt: kv.prompt ?? null, taps: kv.taps ? Number(kv.taps) : null, closedOverlay: kv.closed_overlay ?? null, leftSite: kv.left_site ?? null, finalPage: kv.final_page ?? null, file, item: item.id, device: `${sim.name} (iOS Simulator)`, at: new Date().toISOString(), screenshot: existsSync(screenshot) ? screenshot.slice(ROOT.length + 1) : null, evidence };
         console.log(`${tool.domain.padEnd(18)} ${saved ? "saved" : "NOT saved"}${reason ? ` (${reason})` : ""}`);
         writeFileSync(outFile, JSON.stringify(results, null, 2) + "\n");
     }

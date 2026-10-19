@@ -20,12 +20,14 @@ function weighted(parts) {
 }
 
 const POSITIVE = new Set(["video", "mp3", "photos", "variant"]);
+/** What an item asks for: a variant (L1–L3) asks for what its original does. Records carry it as `task`. */
+export const taskOf = (r) => r.task ?? (r.kind === "variant" ? (/^(V|L1|L2)/.test(String(r.item)) ? "video" : "photos") : r.kind);
 
 /** A. Reliability = 0.6·A1 + 0.1·A2 + 0.3·A3. Blocked items are excluded from A1. */
 export function reliability(records, uptime = null) {
     // Blocked (bot protection) and ad-wall items are left out: a visitor gets
     // through those; the ad wall is penalised under Ads instead.
-    const positive = records.filter((r) => POSITIVE.has(r.kind) && !["blocked", "skipped", "ad-wall"].includes(r.outcome));
+    const positive = records.filter((r) => POSITIVE.has(r.kind) && !["blocked", "skipped", "ad-wall", "not-offered"].includes(r.outcome));
     const a1 = positive.length ? (100 * positive.filter((r) => r.outcome === "success").length) / positive.length : null;
     const grades = records.filter((r) => r.kind === "negative" && r.negative).map((r) => ({ clear: 100, generic: 50, bad: 0 })[r.negative.grade] ?? 0);
     const a2 = mean(grades);
@@ -33,17 +35,35 @@ export function reliability(records, uptime = null) {
     return { a1, a2, a3, score: weighted([[a1, 0.6], [a2, 0.1], [a3, 0.3]]) };
 }
 
+/**
+ * A task the tool never offers (every one of its items ended with a result
+ * that had no option for it) is a missing feature, not a failure: those items
+ * become "not-offered" and leave A1 (SPEC.md §6.A1). Returns the tasks.
+ */
+export function markNotOffered(records) {
+    const missing = [];
+    for (const t of ["video", "mp3", "photos"]) {
+        const rs = records.filter((r) => taskOf(r) === t && !["blocked", "skipped", "ad-wall"].includes(r.outcome));
+        if (rs.length && rs.every((r) => r.outcome === "failure" && r.notOffered)) {
+            for (const r of rs) r.outcome = "not-offered";
+            missing.push(t);
+        }
+    }
+    return missing;
+}
+
 /** B. Quality and honesty, over successful items. */
 export function quality(records) {
     const scores = [];
     for (const r of records.filter((x) => x.outcome === "success")) {
         const dishonest = (r.file?.labelDishonesty?.length ?? 0) + (r.file?.watermarkConfirmed ? 1 : 0);
-        if (r.kind === "video" || r.kind === "variant") {
+        const task = taskOf(r);
+        if (task === "video") {
             const ratio = r.file?.resolutionRatio ?? 1;
             scores.push(clamp(100 * ratio - 50 * dishonest));
-        } else if (r.kind === "mp3") {
+        } else if (task === "mp3") {
             scores.push(clamp(100 - 50 * dishonest));
-        } else if (r.kind === "photos") {
+        } else if (task === "photos") {
             if (r.file?.downscaled > 0) scores.push(0);
             else scores.push(clamp((r.file?.heicOnly ? 75 : 100) - 50 * dishonest));
         }
@@ -51,14 +71,29 @@ export function quality(records) {
     return { score: mean(scores), items: scores.length };
 }
 
-/** C. Speed: median time to file over successful video items; 4 s → 100, 30 s → 0. */
+/**
+ * C. Speed, over successful video items (SPEC.md §6.C):
+ * - time to download: median from submitting the link to the file starting to arrive;
+ *   4 s → 100, 30 s → 0, linear (70%);
+ * - transfer rate: median over files of 5 MB or more, bytes ÷ (finished − started);
+ *   ≥ 20 Mbit/s → 100, ≤ 2 Mbit/s → 0, linear (30%). The test line's bandwidth is recorded with
+ *   each record (`lineMbps`) for reference.
+ * Time to the finished file is reported, not scored: it depends on the file's size and the line.
+ */
 export function speed(records) {
-    const times = records.filter((r) => (r.kind === "video" || r.kind === "variant") && r.outcome === "success" && Number.isFinite(r.timings_ms?.to_file)).map((r) => r.timings_ms.to_file / 1000);
-    const m = median(times);
-    const sorted = [...times].sort((a, b) => a - b);
+    const ok = records.filter((r) => taskOf(r) === "video" && r.outcome === "success");
+    const starts = ok.map((r) => r.timings_ms?.to_download ?? r.timings_ms?.to_file).filter(Number.isFinite).map((ms) => ms / 1000);
+    const files = ok.filter((r) => Number.isFinite(r.timings_ms?.to_file) && Number.isFinite(r.timings_ms?.to_download)).map((r) => r.timings_ms.to_file / 1000);
+    const rates = ok.filter((r) => r.bytes >= 5e6 && r.timings_ms?.to_file > r.timings_ms?.to_download)
+        .map((r) => (r.bytes * 8) / 1e6 / ((r.timings_ms.to_file - r.timings_ms.to_download) / 1000));
+    const m = median(starts);
+    const sorted = [...starts].sort((a, b) => a - b);
     const p90 = sorted.length ? sorted[Math.min(sorted.length - 1, Math.ceil(0.9 * sorted.length) - 1)] : null;
-    const score = m === null ? null : clamp(100 * (30 - m) / (30 - 4));
-    return { medianS: m, p90S: p90, score };
+    const rate = median(rates);
+    const startScore = m === null ? null : clamp(100 * (30 - m) / (30 - 4));
+    const rateScore = rate === null ? null : clamp(100 * (rate - 2) / (20 - 2));
+    const score = startScore === null ? null : rateScore === null ? startScore : 0.7 * startScore + 0.3 * rateScore;
+    return { medianS: m, p90S: p90, medianFileS: median(files), medianMbps: rate, startScore, rateScore, score };
 }
 
 /**
@@ -73,6 +108,7 @@ export function ads(b) {
     if (b.popups > 0) penalties.push(["pop-up or new tab", 30]);
     if (b.offsiteRedirects > 0) penalties.push(["redirect", 40]);
     if (b.adWall) penalties.push(["ad wall (watch an ad to continue)", 20]);
+    else if (b.adGatedOption) penalties.push(["an option (e.g. HD) locked behind an ad", 10]);
     for (const v of new Set(b.betterAdsViolations ?? [])) penalties.push([`Better Ads: ${v}`, 20]);
     if (b.notificationPrompt) penalties.push(["notification prompt", 15]);
     if (b.deceptiveAd) penalties.push(["deceptive ad", 20]);

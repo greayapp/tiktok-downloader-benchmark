@@ -13,10 +13,11 @@ what the button says, how fast is it, and do the site's ads get in the way or mi
 
 | | |
 |---|---|
-| Specification | [v0.2 draft](SPEC.md) — frozen as v1.0 before the first run |
+| Specification | [v1.0](SPEC.md) — frozen (tag `spec-v1.0`) |
 | First edition | **Q4 2026** (December) |
 | Cadence | Quarterly (March, June, September, December); December is the annual edition |
 | Tools in the first edition | 14 — see [Appendix A of the spec](SPEC.md#appendix-a--candidate-tools-for-q4-2026) |
+| Daily uptime check | Two links per tool every day; [monthly logs](results/monitor/) |
 
 ## What is measured
 
@@ -28,7 +29,7 @@ links that should fail), on desktop and on a phone, twice per edition.
 | Reliability | 30 | The file downloads, plays and matches the post; clear errors for bad links; daily uptime |
 | Ads and intrusiveness | 20 | Pop-ups, redirects, Better Ads Standards violations, notification prompts, deceptive ads, forced waits, extra clicks. Showing ads is not penalised. |
 | Quality and honesty | 15 | Resolution against the best available; "HD", "No watermark" and "MP3" labels that are true |
-| Speed | 15 | Median time from submitting the link to a finished file |
+| Speed | 15 | Median time from submitting the link to the download starting, and how fast the file arrives |
 | Privacy and safety | 10 | Trackers, cookies before any click, app-install pushes; tools flagged unsafe are not ranked |
 | Mobile, accessibility, friction | 10 | Accessibility score, mobile usability, Core Web Vitals, logins, captchas, limits |
 
@@ -47,15 +48,17 @@ in [SPEC.md](SPEC.md).
 ## Repository layout
 
 ```
-SPEC.md        the method (versioned)
-CHANGELOG.md   spec changes, corrections, replaced samples
-samples/       the test links (core set; rotating set published with results)
-harness/       test code and per-tool adapters
-results/       per-edition scores, raw records, network summaries and evidence
-site/          the live site (GitHub Pages)
+SPEC.md               the method (versioned)
+CHANGELOG.md          spec changes, corrections, replaced samples
+samples/core.json     the fixed test links (the rotating set is published with each edition's results)
+samples/reference/    ground truth for each link, read from TikTok's own page data
+harness/              test code, per-tool adapters, the daily uptime check and the iPhone check
+results/<edition>/    scores, raw records, network summaries and evidence
+results/monitor/      daily uptime logs (one file per month) and the per-edition uptime summary
+site/                 the live site (GitHub Pages)
 ```
 
-`samples/`, `harness/` and `results/` arrive as the first edition is prepared.
+To run the tests yourself, see [harness/README.md](harness/README.md).
 
 ## Dispute a result or suggest a tool
 

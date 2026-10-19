@@ -77,7 +77,8 @@ export async function listControls(page) {
             .filter(({ el }) => vis(el))
             .map(({ el, index }) => ({
                 index,
-                text: (el.innerText || el.value || el.getAttribute("aria-label") || el.title || "").replace(/\s+/g, " ").trim().slice(0, 80),
+                // What a visitor (or a screen reader) is told the control does.
+                text: [...new Set([el.innerText, el.value, el.getAttribute("aria-label"), el.title].map((x) => (x || "").replace(/\s+/g, " ").trim()).filter(Boolean))].join(" · ").slice(0, 100),
                 href: el.href || null,
                 download: el.hasAttribute("download"),
             }))
@@ -85,9 +86,28 @@ export async function listControls(page) {
     });
 }
 
+/**
+ * The live element for a control from listControls(), found in one step inside the page by the
+ * same text and link — never by position: pages that insert or rotate elements (ad carousels)
+ * shift positions between listing and clicking, and a stale position can land on an ad.
+ * Returns null when no visible element matches.
+ */
+export async function controlHandle(page, c) {
+    const h = await page.evaluateHandle(({ text, href }) => {
+        const vis = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.visibility !== "hidden" && s.display !== "none" && s.opacity !== "0"; };
+        const label = (el) => [...new Set([el.innerText, el.value, el.getAttribute("aria-label"), el.title].map((x) => (x || "").replace(/\s+/g, " ").trim()).filter(Boolean))].join(" · ").slice(0, 100);
+        return [...document.querySelectorAll("a, button, [role=button], input[type=button], input[type=submit]")]
+            .find((el) => vis(el) && label(el) === text && (el.href || null) === href) ?? null;
+    }, { text: c.text, href: c.href ?? null }).catch(() => null);
+    const el = h?.asElement() ?? null;
+    if (!el) await h?.dispose().catch(() => {});
+    return el;
+}
+
 /** Task → label patterns, most specific first (SPEC.md §5.2 step 4). */
 export const TASK_LABELS = {
     video: [/hd.*(no|without)\s*water/i, /(no|without)\s*water.*hd/i, /\bhd\b/i, /(no|without)\s*watermark/i, /mp4/i, /download\s*(video|now)?$/i],
     mp3: [/mp3/i, /audio|music|sound/i],
-    photos: [/download\s*all|all\s*(photos|images)|zip/i, /photo|image|jpe?g|picture/i, /download/i],
+    // Not "slide": a "Slideshow video" is a video made from the photos, not the photos.
+    photos: [/download\s*all|all\s*(photos|images)|zip/i, /photo|image|jpe?g|picture/i],
 };

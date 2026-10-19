@@ -1,0 +1,21 @@
+{
+  "sample": "V2",
+  "url": "https://www.tiktok.com/@duolingo/video/7695132961343147278",
+  "captured": "2026-10-19T09:02:32.661Z",
+  "id": "7695132961343147278",
+  "author": "duolingo",
+  "created": "2026-10-10T20:06:28.000Z",
+  "isPhoto": false,
+  "duration": 45,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7695133045015251725",
+  "musicDuration": 45,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 45,
+    "maxHeight": 1920
+  }
+}

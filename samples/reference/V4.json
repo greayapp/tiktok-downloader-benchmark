@@ -1,0 +1,22 @@
+{
+  "sample": "V4",
+  "url": "https://www.tiktok.com/@googlepixel/video/7673278617379441950",
+  "captured": "2026-10-19T09:05:59.140Z",
+  "id": "7673278617379441950",
+  "author": "googlepixel",
+  "created": "2026-08-12T22:40:16.000Z",
+  "isPhoto": false,
+  "duration": 30,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7673278648723475231",
+  "musicDuration": 30,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 30,
+    "maxHeight": 1920
+  },
+  "watermarkReference": true
+}

@@ -1,6 +1,8 @@
 #!/bin/sh
-# Install the daily monitor as a macOS LaunchAgent (runs at 11:00 local time,
-# or at the next wake if the Mac was asleep). Remove with ./uninstall.sh.
+# Install the daily monitor as a macOS LaunchAgent. It is started every hour
+# from 11:00 to 23:00 local time (and at the next wake if the Mac was asleep);
+# the monitor runs once per day and does nothing on later starts, or when the
+# Mac is off the residential line (a VPN on). Remove with ./uninstall.sh.
 set -eu
 LABEL=com.greyapp.tiktok-downloader-benchmark.monitor
 HARNESS=$(cd "$(dirname "$0")/.." && pwd)
@@ -20,7 +22,7 @@ cat > "$PLIST" <<PLIST
   <key>EnvironmentVariables</key>
   <dict><key>PATH</key><string>$(dirname "$NODE"):/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string></dict>
   <key>StartCalendarInterval</key>
-  <dict><key>Hour</key><integer>11</integer><key>Minute</key><integer>0</integer></dict>
+  <array>$(for h in 11 12 13 14 15 16 17 18 19 20 21 22 23; do printf '<dict><key>Hour</key><integer>%s</integer><key>Minute</key><integer>0</integer></dict>' "$h"; done)</array>
   <key>StandardOutPath</key><string>$LOG</string>
   <key>StandardErrorPath</key><string>$LOG</string>
 </dict>

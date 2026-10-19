@@ -1,16 +1,19 @@
 // One test item, driven the way a visitor would (SPEC.md §5.2):
 // open the home page, paste the link, submit, wait for the result, choose the
 // control that matches the task, wait for the file, then verify it.
-import { mkdirSync } from "node:fs";
+import { mkdirSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { findLinkInput, findSubmit, listControls, TASK_LABELS } from "./generic.mjs";
+import { controlHandle, findLinkInput, findSubmit, listControls, TASK_LABELS } from "./generic.mjs";
 import { verifyAudio, verifyImages, verifyVideo, watermarkCheck } from "./verify.mjs";
 
-export const LIMITS = { resultMs: 60_000, fileMs: 120_000, negativeMs: 30_000 };
+// SPEC.md §5.2: the result within 60 s; the file must start downloading within 60 s of the click
+// and may then take its time (a 15-minute safety cap: a big original-quality file on the test line
+// says nothing about the tool); should-fail items get 30 s.
+export const LIMITS = { resultMs: 60_000, startMs: 60_000, fileMs: 900_000, negativeMs: 30_000 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const key = (c) => `${c.text}|${c.href ?? ""}`;
-const ERROR_TEXT = /invalid|not found|unavailable|error|private|deleted|removed|doesn'?t exist|does not exist|couldn'?t|could not|failed|unsupported|not supported|wrong|check (the|your) (link|url)|enter a valid|no (video|media)/i;
+const ERROR_TEXT = /invalid|not found|unavailable|error|private|deleted|removed|doesn'?t exist|does not exist|couldn'?t|could not|can ?not|can'?t|unable|failed|unsupported|not supported|not (a )?valid|incorrect|wrong|issue with|problem with|oops|sorry|try again|check (the|your) (link|url)|please (check|enter|paste|use)|enter a valid|no (video|media)/i;
 const SPECIFIC_ERROR = /private|deleted|removed|doesn'?t exist|does not exist|not found|unavailable|unsupported|not supported|invalid (link|url)|enter a valid|only tiktok|tiktok link/i;
 
 /**
@@ -21,7 +24,10 @@ const SPECIFIC_ERROR = /private|deleted|removed|doesn'?t exist|does not exist|no
  */
 export async function clickLikeUser(page, handle, mobile) {
     if (!handle) return false;
-    await handle.scrollIntoViewIfNeeded({ timeout: 5_000 }).catch(() => {});
+    // To the middle of the screen, as a person scrolls — not the edge, where
+    // sticky bars and anchor ads sit.
+    await handle.evaluate((el) => el.scrollIntoView({ block: "center", inline: "center" })).catch(() => {});
+    await new Promise((r) => setTimeout(r, 300));
     const box = await handle.boundingBox().catch(() => null);
     if (!box || box.width < 1 || box.height < 1) return false;
     const x = box.x + box.width / 2, y = box.y + box.height / 2;
@@ -54,9 +60,20 @@ export async function closeOverlays(page, mobile) {
     const close = await page.evaluateHandle(() => {
         const vis = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 4 && r.height > 4 && s.visibility !== "hidden" && s.display !== "none" && s.opacity !== "0"; };
         const label = (el) => (el.innerText || el.getAttribute("aria-label") || el.title || "").trim();
+        // Inside layered content (a fixed or positioned, stacked ancestor) — a
+        // modal or overlay, not the page's own layout.
+        const layered = (el) => {
+            for (let a = el; a && a !== document.body; a = a.parentElement) {
+                const cs = getComputedStyle(a);
+                if (cs.position === "fixed" || cs.position === "sticky") return true;
+                if (cs.position === "absolute" && Number(cs.zIndex) > 0) return true;
+                if (a.getAttribute("role") === "dialog" || /modal|popup|overlay|dialog/i.test(String(a.className))) return true;
+            }
+            return false;
+        };
         return [...document.querySelectorAll("button, [role=button], a, span, div")]
-            .filter((el) => vis(el) && /^(close|×|✕|x|skip|skip ad|dismiss|no,? thanks|not now)$/i.test(label(el)))
-            .find((el) => { const z = Number(getComputedStyle(el.closest("[style*='z-index'], [class*='modal'], [class*='popup'], [role=dialog]") ?? el).zIndex); return Number.isFinite(z) || el.closest("[role=dialog], [class*='modal'], [class*='popup'], [class*='overlay']"); }) ?? null;
+            .filter((el) => vis(el) && /^(close|×|✕|✖|x|skip|skip ad|dismiss|no,? thanks|not now)$/i.test(label(el)))
+            .find(layered) ?? null;
     }).catch(() => null);
     const el = close?.asElement();
     if (el) {
@@ -75,6 +92,16 @@ export async function adWall(page) {
     const text = await page.evaluate(() => document.body.innerText.slice(0, 20000)).catch(() => "");
     if (/unlock more content|view a short ad|watch (a|an) (short )?ad to (continue|unlock)|take action to continue accessing/i.test(text)) return true;
     return page.evaluate(() => !!document.querySelector(".fc-dialog-container, .fc-monetization-dialog, [class*='offerwall']")).catch(() => false);
+}
+
+/** Is the test machine itself online? (A failure while it isn't is not the tool's.) */
+export async function online() {
+    try {
+        const r = await fetch("https://www.google.com/generate_204", { signal: AbortSignal.timeout(6000) });
+        return r.status === 204 || r.ok;
+    } catch {
+        return false;
+    }
 }
 
 /** Is the tab showing a bot-protection challenge (never solved — SPEC.md §5.4)? */
@@ -100,12 +127,18 @@ async function stillChallenged(page, ms = 15_000) {
     return true;
 }
 
+/** Options that only work after watching an ad: skipped, never used (SPEC.md §6.D). */
+const AD_GATED = /watch\s*(an\s*)?ad|unlock|ad\s*required/i;
+
 function pickControl(adapter, task, fresh) {
     const patterns = adapter.controls?.[task] ?? TASK_LABELS[task];
-    const exclude = adapter.excludeControls ?? /share|copy|facebook|twitter|whatsapp|telegram|app store|google play|extension/i;
-    const usable = fresh.filter((c) => !exclude.test(c.text));
+    const exclude = adapter.excludeControls ?? /share|copy|facebook|twitter|whatsapp|telegram|app store|google play|extension|another|again|try again|new video/i;
+    const usable = fresh.filter((c) => !exclude.test(c.text) && !AD_GATED.test(c.text));
+    // A link's own path can tell its file type (…/video.mp4); never its query
+    // string, which often repeats the TikTok link (…?url=…/photo/…).
+    const path = (href) => { try { const u = new URL(href); return /^https?:$/.test(u.protocol) ? u.pathname : ""; } catch { return ""; } };
     for (const re of patterns) {
-        const hit = usable.find((c) => re.test(c.text) || (c.href && re.test(c.href) && !/^javascript:/i.test(c.href)));
+        const hit = usable.find((c) => re.test(c.text) || (c.href && re.test(path(c.href))));
         if (hit) return hit;
     }
     return null;
@@ -121,12 +154,12 @@ function waitForFile(context, page, ms) {
             p.on("download", onDownload);
             p.on("response", (res) => {
                 const ct = res.headers()["content-type"] ?? "";
-                if (res.request().isNavigationRequest() && /^(video|audio|image)\//.test(ct)) finish({ kind: "media-tab", url: res.url(), page: p });
+                if (res.request().isNavigationRequest() && /^(video|audio|image)\//.test(ct)) finish({ kind: "media-tab", url: res.url(), page: p, response: res });
             });
         };
         const onMainResponse = (res) => {
             const ct = res.headers()["content-type"] ?? "";
-            if (res.request().isNavigationRequest() && res.frame() === page.mainFrame() && /^(video|audio|image)\//.test(ct)) finish({ kind: "media-tab", url: res.url(), page });
+            if (res.request().isNavigationRequest() && res.frame() === page.mainFrame() && /^(video|audio|image)\//.test(ct)) finish({ kind: "media-tab", url: res.url(), page, response: res });
         };
         page.on("download", onDownload);
         page.on("response", onMainResponse);
@@ -143,15 +176,23 @@ function waitForFile(context, page, ms) {
 
 async function saveFile(got, context, file) {
     if (got.kind === "download") {
-        const failure = await got.download.failure();
+        const cap = new Promise((_, reject) => setTimeout(() => reject(new Error(`the file did not finish within ${LIMITS.fileMs / 60_000} minutes`)), LIMITS.fileMs).unref());
+        const failure = await Promise.race([got.download.failure(), cap]);
         if (failure) throw new Error(`download failed: ${failure}`);
         await got.download.saveAs(file);
         return { delivery: "download", name: got.download.suggestedFilename() };
     }
-    // A tab showing the media: fetch the same URL with the context's cookies.
-    const res = await context.request.get(got.url, { timeout: 120_000 });
-    if (!res.ok()) throw new Error(`media tab returned ${res.status()}`);
+    // A tab showing the media: take the body Chrome received (its own DNS and
+    // connection), else fetch the same URL with the context's cookies.
     const { writeFile } = await import("node:fs/promises");
+    const cap = new Promise((resolve) => setTimeout(() => resolve(null), LIMITS.fileMs).unref());
+    const body = await Promise.race([got.response?.body().catch(() => null), cap]);
+    if (body && body.length > 0) {
+        await writeFile(file, body);
+        return { delivery: "media-tab", name: null };
+    }
+    const res = await context.request.get(got.url, { timeout: LIMITS.fileMs });
+    if (!res.ok()) throw new Error(`media tab returned ${res.status()}`);
     await writeFile(file, await res.body());
     return { delivery: "media-tab", name: null };
 }
@@ -194,7 +235,7 @@ async function mobileChecks(page, inputSel, chosen) {
  */
 export async function runItem({ context, page, log, adapter, item, ref, refMedia, dir, viewport, measureMobile = false }) {
     const task = item.task ?? (item.kind === "mp3" ? "mp3" : item.kind === "photos" ? "photos" : item.kind === "variant" ? (item.variantOf?.startsWith("P") ? "photos" : "video") : "video");
-    const rec = { item: item.id, kind: item.kind, viewport, started: new Date().toISOString(), outcome: null, failure: null, retried: false, timings_ms: {}, clicks: 0, control_label: null, file: null, negative: null, evidence: [] };
+    const rec = { item: item.id, kind: item.kind, task, viewport, started: new Date().toISOString(), outcome: null, failure: null, retried: false, timings_ms: {}, clicks: 0, control_label: null, file: null, negative: null, evidence: [] };
     mkdirSync(dir, { recursive: true });
     const shot = async (name) => {
         const f = join(dir, `${item.id}-${viewport}-${name}.png`);
@@ -209,6 +250,7 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         await page.goto(adapter.url, { waitUntil: "domcontentloaded", timeout: 45_000 });
     } catch (e) {
         log.expectNavigation(false);
+        if (!(await online())) return { ...rec, outcome: "skipped", failure: "the test machine was offline" };
         return { ...rec, outcome: "failure", failure: `home page did not load: ${e.message.split("\n")[0]}` };
     }
     await sleep(2500);
@@ -246,11 +288,16 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
     };
     await submitOnce();
     rec.clicks = 1;
-    // If nothing happened but a tab opened (an ad took the click), submit again.
+    // If nothing happened but a tab opened (an ad took the click), submit again. Checked every
+    // 250 ms, so the wait costs nothing when the page responds (the timings start at t0).
     for (let extra = 0; extra < 2; extra++) {
-        await sleep(6000);
-        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)));
-        const progressed = fresh.length > 0 || page.url() !== adapter.url;
+        let progressed = false;
+        const end = Date.now() + 6000;
+        while (Date.now() < end && !progressed) {
+            await sleep(250);
+            const fresh = (await listControls(page)).filter((c) => !before.has(key(c)));
+            progressed = fresh.length > 0 || page.url() !== adapter.url;
+        }
         const adTook = log.newPages.some((p) => p.t >= t0 - 500);
         if (progressed || !adTook) break;
         await submitOnce();
@@ -282,7 +329,7 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
     let chosen = null;
     const resultEnd = t0 + LIMITS.resultMs;
     while (Date.now() < resultEnd) {
-        await sleep(1000);
+        await sleep(250);
         if (await adWall(page)) {
             await shot("ad-wall");
             return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
@@ -296,10 +343,26 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
     if (!chosen) {
         await shot("no-result");
         if (await challenged(page)) return { ...rec, outcome: "blocked", failure: "bot-protection challenge after submit" };
-        return { ...rec, outcome: "failure", failure: "no download control within 60 s" };
+        // A result with options for other tasks but none for this one: the tool
+        // doesn't offer it (SPEC.md §6.A1 "not offered").
+        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)));
+        const others = ["video", "mp3", "photos"].filter((t) => t !== task && pickControl(adapter, t, fresh));
+        if (others.length) return { ...rec, outcome: "failure", notOffered: true, failure: `the result offers ${others.join(" and ")} but no ${task} option` };
+        // Quote the site's own error, if it showed one after submitting (as for should-fail items).
+        const text = await page.evaluate(() => document.body.innerText).catch(() => "");
+        const said = log.dialogs.find((d) => d.t >= t0 && ERROR_TEXT.test(d.message))?.message
+            ?? text.split("\n").map((l) => l.trim()).find((l) => l && !textBefore.has(l) && l.length < 200 && !l.endsWith("?") && ERROR_TEXT.test(l));
+        return { ...rec, outcome: "failure", failure: said ? `the site said: "${said.slice(0, 120)}"` : "no download control within 60 s", siteMessage: said ?? undefined };
     }
     rec.timings_ms.to_result = Date.now() - t0;
     rec.control_label = chosen.text || chosen.href;
+    {
+        // Was a better option for this task locked behind an ad?
+        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)));
+        const patterns = adapter.controls?.[task] ?? TASK_LABELS[task];
+        const gated = fresh.filter((c) => AD_GATED.test(c.text) && patterns.some((re) => re.test(c.text)));
+        if (gated.length) rec.adGatedOptions = gated.map((c) => c.text);
+    }
     await shot("result");
     if (measureMobile) rec.mobile = await mobileChecks(page, null, chosen);
 
@@ -308,55 +371,83 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
     log.phase = "downloading";
     const ext = task === "mp3" ? "mp3" : task === "photos" ? "img" : "mp4";
     const files = [];
-    let got = null;
-    let target = chosen;
-    for (let attempt = 0; attempt < 4 && !got; attempt++) {
-        const handle = await page.$$("a, button, [role=button], input[type=button], input[type=submit]").then((all) => all[target.index]).catch(() => null);
-        const waiting = waitForFile(context, page, attempt === 0 ? 15_000 : 20_000);
-        await clickLikeUser(page, handle, mobile);
-        rec.clicks++;
-        got = await waiting;
-        if (got) break;
-        // No file yet: an ad may be covering the page (a vignette or a modal) —
-        // close it like a visitor; the download often continues by itself.
-        if (await adWall(page)) {
-            await shot("ad-wall");
-            return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
-        }
-        if (await closeOverlays(page, mobile)) {
+    // Clicks `first` (and what the page offers next) until a file starts, within LIMITS.startMs.
+    const attemptDownload = async (first) => {
+        let target = first;
+        const startEnd = Date.now() + LIMITS.startMs;
+        for (let attempt = 0; attempt < 4 && Date.now() < startEnd; attempt++) {
+            // Found again by label and link at click time, never by position (SPEC.md §5.2: ads are never clicked).
+            const handle = await controlHandle(page, target);
+            if (!handle) break;
+            const waiting = waitForFile(context, page, attempt === 0 ? 15_000 : 20_000);
+            await clickLikeUser(page, handle, mobile);
             rec.clicks++;
-            got = await waitForFile(context, page, 15_000);
-            if (got) break;
+            let g = await waiting;
+            if (g) return g;
+            // No file yet: an ad may be covering the page (a vignette or a modal) —
+            // close it like a visitor; the download often continues by itself.
+            if (await adWall(page)) return "ad-wall";
+            if (await closeOverlays(page, mobile)) {
+                rec.clicks++;
+                g = await waitForFile(context, page, 15_000);
+                if (g) return g;
+            }
+            // Otherwise the page may have moved to an intermediate step.
+            await sleep(1500);
+            const fresh = (await listControls(page)).filter((c) => !before.has(key(c)));
+            target = (adapter.pick ? await adapter.pick(page, task, fresh) : pickControl(adapter, task, fresh)) ?? target;
         }
-        // Otherwise the page may have moved to an intermediate step.
-        await sleep(1500);
-        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)));
-        target = (adapter.pick ? await adapter.pick(page, task, fresh) : pickControl(adapter, task, fresh)) ?? target;
+        return null;
+    };
+    let got = await attemptDownload(chosen);
+    // "Download all" gave no file: a visitor saves the photos one by one instead (SPEC.md §5.2).
+    if (!got && task === "photos" && /all|zip/i.test(chosen.text)) {
+        const photoRe = (adapter.controls?.photos ?? TASK_LABELS.photos).slice(-1)[0];
+        const pathOf = (href) => { try { const u = new URL(href); return /^https?:$/.test(u.protocol) ? u.pathname : ""; } catch { return ""; } };
+        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)) && !/all|zip/i.test(c.text));
+        const single = fresh.find((c) => photoRe.test(c.text) || (c.href && photoRe.test(pathOf(c.href))));
+        if (single) {
+            rec.fallback = `"${chosen.text}" gave no file; saved the photos one by one`;
+            chosen = single;
+            got = await attemptDownload(single);
+        }
     }
+    if (got === "ad-wall") {
+        await shot("ad-wall");
+        return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
+    }
+    if (got) rec.timings_ms.to_download = Date.now() - t0;
     if (!got) {
         await shot("no-file");
-        return { ...rec, outcome: "failure", failure: "no file after clicking the download control" };
+        return { ...rec, outcome: "failure", failure: "no file started within 60 s of clicking the download control" };
     }
     try {
         const file = join(dir, `${item.id}-${viewport}.${ext === "img" ? "bin" : ext}`);
         const saved = await saveFile(got, context, file);
         rec.timings_ms.to_file = Date.now() - t0;
+        rec.bytes = statSync(file).size;
         rec.delivery = saved.delivery;
         files.push(file);
     } catch (e) {
+        if (!(await online())) return { ...rec, outcome: "skipped", failure: "the test machine was offline" };
         return { ...rec, outcome: "failure", failure: e.message.slice(0, 160) };
     }
 
     // Photo posts: collect the remaining images when each has its own control.
     if (task === "photos" && ref?.imageCount > 1 && !/all|zip/i.test(chosen.text)) {
-        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)) && c.index !== chosen.index);
+        const fresh = (await listControls(page)).filter((c) => !before.has(key(c)) && key(c) !== key(chosen));
         const more = fresh.filter((c) => (adapter.controls?.photos ?? TASK_LABELS.photos).some((re) => re.test(c.text)));
+        let misses = 0;
+        rec.perImage = { offered: more.length + 1, labels: [chosen.text, ...more.map((c) => c.text)].slice(0, 12) };
         for (const c of more.slice(0, ref.imageCount - 1)) {
-            const handle = await page.$$("a, button, [role=button], input[type=button], input[type=submit]").then((all) => all[c.index]).catch(() => null);
+            // Found again by its label and link at click time, never by position.
+            const handle = await controlHandle(page, c);
+            if (!handle) { if (++misses >= 2) break; continue; }
             const waiting = waitForFile(context, page, 20_000);
             await clickLikeUser(page, handle, mobile);
             const g = await waiting;
-            if (!g) break;
+            if (!g) { if (++misses >= 2) break; continue; }
+            misses = 0;
             const f = join(dir, `${item.id}-${viewport}-${files.length + 1}.bin`);
             await saveFile(g, context, f).then(() => files.push(f)).catch(() => {});
         }

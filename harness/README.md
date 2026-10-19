@@ -17,6 +17,7 @@ visitor would and records what happens; the method it implements is [SPEC.md](..
 |---|---|
 | `npm test` | Unit tests for the scoring formulas (SPEC.md §7) |
 | `npm run reference` | Reference data for every sample from TikTok's own page data + yt-dlp (needs access to tiktok.com) |
+| `npm run reference -- --check` | Before each run: every sample still live and unchanged (needs access to tiktok.com) |
 | `npm run run -- --edition 2026q4 --run r1` | One full run: every tool × every sample × desktop and mobile |
 | `npm run pagespeed -- --edition 2026q4` | Accessibility and Core Web Vitals per tool (Lighthouse lab, or CrUX field data with `CRUX_API_KEY`) |
 | `npm run iphone -- --edition 2026q4` | One video per tool in iOS Safari on the simulator, real taps |
@@ -25,7 +26,13 @@ visitor would and records what happens; the method it implements is [SPEC.md](..
 | `npm run explore -- <domain> <tiktok link>` | Try one tool by hand when writing or fixing its adapter |
 
 Useful options for `run`: `--tools a,b`, `--items V1,P4`, `--viewports desktop`, `--parallel 3`
-(tools tested at once; never two tests on one site), `--no-retry`, `--samples file.json`.
+(tools tested at once — development only: editions run one test at a time, SPEC.md §5.1),
+`--no-retry`, `--samples file.json`.
+
+`run` and `monitor` first record the vantage point (country, nearest Cloudflare location and, for a
+run, download bandwidth; never the IP address) and refuse to start when the machine isn't in the
+expected country (`TDB_COUNTRY`, default `IN`): references are captured through a VPN where
+tiktok.com is blocked, but the tests use the residential connection. `--any-vantage` overrides this.
 
 ## How a test works
 
@@ -50,6 +57,8 @@ stay in `runs-local/` and `.cache/` (git-ignored); evidence screenshots for pena
 
 ## Daily monitor on macOS
 
-`schedule/install.sh` installs a LaunchAgent that runs `npm run monitor -- --push` every day at
-11:00 local time (and at the next wake if the Mac was asleep). `schedule/uninstall.sh` removes it.
+`schedule/install.sh` installs a LaunchAgent that starts `src/monitor.mjs --push` every hour from
+11:00 to 23:00 local time (and at the next wake if the Mac was asleep). The check runs once per day;
+it waits for a later hour when the Mac is off the residential connection (a VPN on). It pushes only
+when its own commit is the one thing not yet on GitHub. `schedule/uninstall.sh` removes it.
 Logs: `~/Library/Logs/tiktok-downloader-benchmark-monitor.log`.

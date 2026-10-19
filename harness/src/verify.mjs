@@ -128,12 +128,16 @@ export async function verifyImages(rawFiles, ref) {
             const s = imageSize(buf);
             images.push({ file: f, type: s.type, width: s.width, height: s.height });
         } catch {
-            images.push({ file: f, type: null });
+            // Not an image: say what it is when it is media (a photo post answered with its sound or a video).
+            const p = await probe(f).catch(() => null);
+            images.push({ file: f, type: null, media: p?.video ? "video" : p?.audio ? "audio" : null });
         }
     }
     const reasons = [];
     const readable = images.filter((i) => i.type);
-    if (readable.length !== images.length) reasons.push(`${images.length - readable.length} file(s) are not readable images`);
+    const media = images.filter((i) => i.media);
+    if (media.length) reasons.push(`delivered ${[...new Set(media.map((i) => i.media))].join(" and ")} instead of the photos`);
+    if (readable.length + media.length !== images.length) reasons.push(`${images.length - readable.length - media.length} file(s) are not readable images`);
     if (ref?.imageCount && readable.length !== ref.imageCount) reasons.push(`${readable.length} images vs ${ref.imageCount} in the post`);
     const heicOnly = readable.length > 0 && readable.every((i) => /hei[cf]/i.test(i.type));
     const downscaled = ref?.maxImageWidth ? readable.filter((i) => i.width < ref.maxImageWidth * 0.95).length : 0;
