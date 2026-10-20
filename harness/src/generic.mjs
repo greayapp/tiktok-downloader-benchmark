@@ -73,7 +73,11 @@ export async function findSubmit(page, input) {
 export async function evaluateStable(page, fn, arg) {
     for (let i = 0; ; i++) {
         try {
-            return await page.evaluate(fn, arg);
+            // A page that never answers (a frozen tab) is an error, not a wait forever.
+            let timer;
+            const r = await Promise.race([page.evaluate(fn, arg), new Promise((_, rej) => { timer = setTimeout(() => rej(new Error("the page didn't answer within 20 s")), 20_000); })]);
+            clearTimeout(timer);
+            return r;
         } catch (e) {
             if (i >= 3 || !/context was destroyed|Cannot find context|navigat/i.test(e.message)) throw e;
             await page.waitForLoadState("domcontentloaded").catch(() => {});
@@ -110,7 +114,12 @@ export async function listControls(page) {
  * Returns null when no visible element matches.
  */
 export async function controlHandle(page, c) {
-    const h = await page.evaluateHandle(`(${CONTROLS_IN_PAGE})().find((x) => x.text === ${JSON.stringify(c.text)} && x.href === ${JSON.stringify(c.href ?? null)})?.el ?? null`).catch(() => null);
+    let timer;
+    const h = await Promise.race([
+        page.evaluateHandle(`(${CONTROLS_IN_PAGE})().find((x) => x.text === ${JSON.stringify(c.text)} && x.href === ${JSON.stringify(c.href ?? null)})?.el ?? null`).catch(() => null),
+        new Promise((resolve) => { timer = setTimeout(() => resolve(null), 20_000); }),
+    ]);
+    clearTimeout(timer);
     const el = h?.asElement() ?? null;
     if (!el) await h?.dispose().catch(() => {});
     return el;

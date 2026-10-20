@@ -6,7 +6,7 @@
 //
 // Records → ../results/<edition>/runs/<run>/<tool>/ (published);
 // downloads and screenshots → runs-local/ (not published; SPEC.md §8).
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { launchBrowser, newContext } from "./browser.mjs";
@@ -34,6 +34,12 @@ const retry = !flag("no-retry");
 // Tools tested at once: 1 for editions (SPEC.md §5.1: no test shares the line); more only for development.
 const parallel = Math.max(1, Number(arg("parallel", "1")));
 const headless = flag("headless");
+// --resume: keep this run's finished tool × viewport blocks (those with a behaviour file) and redo
+// any block left unfinished, from its start, so its behaviour record stays complete.
+const resume = flag("resume");
+// A harness hang must not stall a run: an item still unfinished after 12 minutes is recorded as
+// skipped (not the tool's failure) and the tool continues in a fresh tab.
+const ITEM_WATCHDOG_MS = Number(process.env.TDB_WATCHDOG_MS) || 12 * 60_000; // env override for testing only
 
 // Seeded shuffle, so a run's order is random but reproducible from its id.
 function seeded(seed) {
@@ -84,11 +90,39 @@ take("edition-run", { edition, run: runId });
 const vantage = await checkVantage({ allowAny: flag("any-vantage") }).catch((e) => { console.error(e.message); process.exit(2); });
 const refFile = join(REPO, "samples", "reference", "capture.json");
 const browser = await launchBrowser({ headless });
+// On --resume, the run keeps its original start (the earliest record) and notes when it resumed.
+const earliest = () => {
+    let t = null;
+    if (!existsSync(outBase)) return t;
+    for (const d of readdirSync(outBase, { withFileTypes: true }).filter((e) => e.isDirectory())) {
+        for (const f of readdirSync(join(outBase, d.name)).filter((x) => /^[A-Z]\d+-(desktop|mobile)\.json$/.test(x))) {
+            const st = JSON.parse(readFileSync(join(outBase, d.name, f), "utf8")).started;
+            if (st && (!t || st < t)) t = st;
+        }
+    }
+    return t;
+};
+const now = new Date().toISOString();
 const meta = {
-    edition, run: runId, started: new Date().toISOString(), chrome: browser.version(), node: process.version,
+    edition, run: runId, started: (resume && earliest()) || now, ...(resume ? { resumed: [{ at: now, vantage: null }] } : {}), chrome: browser.version(), node: process.version,
     lists: engines.versions, viewports, items: items.map((i) => i.id), retry, headless, parallel,
     vantage, references: existsSync(refFile) ? JSON.parse(readFileSync(refFile, "utf8")) : null,
 };
+if (resume) meta.resumed[0].vantage = vantage;
+
+/** runItem with the watchdog: a hang becomes a "skipped" record and a fresh tab. */
+async function runItemGuarded(args, swapPage) {
+    let timer;
+    const watchdog = new Promise((resolve) => { timer = setTimeout(() => resolve(null), ITEM_WATCHDOG_MS); });
+    const rec = await Promise.race([
+        runItem(args).catch((e) => ({ item: args.item.id, kind: args.item.kind, viewport: args.viewport, outcome: "failure", failure: `harness error: ${e.message.slice(0, 160)}` })),
+        watchdog,
+    ]);
+    clearTimeout(timer);
+    if (rec) return rec;
+    await swapPage();
+    return { item: args.item.id, kind: args.item.kind, viewport: args.viewport, started: new Date(Date.now() - ITEM_WATCHDOG_MS).toISOString(), outcome: "skipped", failure: `harness watchdog: the item didn't finish in ${ITEM_WATCHDOG_MS / 60_000} minutes (a harness hang; not counted)`, harnessTimeout: true };
+}
 
 async function testTool(tool) {
     const toolSite = siteOf(tool.url);
@@ -98,8 +132,17 @@ async function testTool(tool) {
         const localDir = join(localBase, tool.domain);
         const outDir = join(outBase, tool.domain);
         mkdirSync(outDir, { recursive: true });
+        if (resume && existsSync(join(outDir, `behaviour-${viewport}.json`))) { await context.close(); console.log(`${tool.domain} ${viewport}: kept (finished before the resume)`); continue; }
+        if (resume) for (const f of readdirSync(outDir).filter((x) => x.endsWith(`-${viewport}.json`))) rmSync(join(outDir, f)); // an unfinished block is redone whole
         const log = await observe(context, { toolSite, engines, evidenceDir: join(localDir, "newtabs") });
-        const page = await context.newPage();
+        let page = await context.newPage();
+        // A fresh tab for this tool after a harness hang; the observer treats it as the main tab, not a pop-up.
+        const swapPage = async () => {
+            const old = page;
+            log.expectMainPage();
+            page = await context.newPage();
+            await old.close().catch(() => {});
+        };
 
         // First visit: third-party cookies set before any click (SPEC.md §6.E).
         log.expectNavigation(true);
@@ -115,7 +158,7 @@ async function testTool(tool) {
         for (const item of order) {
             const { ref, refMedia } = loadRef(item);
             const measureMobile = viewport === "mobile" && !measured && item.kind === "video";
-            let rec = await runItem({ context, page, log, adapter: tool, item, ref, refMedia, dir: localDir, viewport, measureMobile }).catch((e) => ({ item: item.id, kind: item.kind, viewport, outcome: "failure", failure: `harness error: ${e.message.slice(0, 160)}` }));
+            let rec = await runItemGuarded({ context, page, log, adapter: tool, item, ref, refMedia, dir: localDir, viewport, measureMobile }, swapPage);
             if (measureMobile && rec.mobile) measured = true;
             rec.failedAt = rec.outcome === "failure" ? Date.now() : undefined;
             if (rec.outcome === "failure" && retry) failed.push({ item, rec });
@@ -128,7 +171,7 @@ async function testTool(tool) {
             const wait = first.failedAt + 10 * 60_000 - Date.now();
             if (wait > 0) await sleep(wait);
             const { ref, refMedia } = loadRef(item);
-            const rec = await runItem({ context, page, log, adapter: tool, item, ref, refMedia, dir: localDir, viewport }).catch((e) => ({ item: item.id, kind: item.kind, viewport, outcome: "failure", failure: `harness error: ${e.message.slice(0, 160)}` }));
+            const rec = await runItemGuarded({ context, page, log, adapter: tool, item, ref, refMedia, dir: localDir, viewport }, swapPage);
             rec.retried = true;
             rec.firstFailure = first.failure;
             writeFileSync(join(outDir, `${item.id}-${viewport}.json`), JSON.stringify({ ...rec, lineMbps: vantage.bandwidth?.mbps ?? null }, null, 2));
@@ -139,6 +182,8 @@ async function testTool(tool) {
     }
 }
 
+mkdirSync(outBase, { recursive: true });
+writeFileSync(join(outBase, "run.json"), JSON.stringify(meta, null, 2)); // rewritten when the run finishes
 // A small pool: `parallel` tools at a time, in the run's random order.
 const queue = shuffle(tools, rnd);
 await Promise.all(Array.from({ length: Math.min(parallel, queue.length) }, async () => {

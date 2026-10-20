@@ -46,6 +46,9 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
         offsiteNavigations: [],
         permissions: [],
         dialogs: [],
+        nextIsMain: false,
+        /** The next tab is a fresh main tab the harness opens (after a hang), not one the site opened. */
+        expectMainPage() { this.nextIsMain = true; },
         requests: { total: 0, ad: 0, tracker: 0 },
         adDomains: new Set(),
         trackerDomains: new Set(),
@@ -81,7 +84,8 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
     });
 
     context.on("page", (p) => {
-        if (!log.mainPage) {
+        if (!log.mainPage || log.nextIsMain) {
+            log.nextIsMain = false;
             log.mainPage = p;
             attachMain(p);
             return;
