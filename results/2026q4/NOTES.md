@@ -23,6 +23,24 @@
   already finished were kept; TikCD's mobile block was redone from its start. Nothing about how tools
   are tested changed; run 2 uses the same runner.
 
+- **Run 1 ended** at 09:10 UTC on 20 October (all 14 tools, both viewports).
+- **Two blocks redone** after run 1 (10:20–12:27 UTC on 20 October), because of a harness bug in the
+  photo step, fixed in commit `558676b`: a site that opens each photo in a new tab (TikCD on phones)
+  had photos lost (a slow photo tab was taken for an ad and closed; a tab in the background can't
+  open the next one) or uncounted; the "Download all" control also took one photo's slot. Only two
+  blocks showed the pattern — TikCD mobile and TikTokio desktop — and both were redone whole with
+  the fixed harness; the records they replace are kept on the test machine. Since this fix the
+  harness also brings the tool's tab to the front before each tap (a person switches back after a
+  file opens in a new tab); run 2 uses the same harness.
+- **GetTikVideo timeouts:** five GetTikVideo items in run 1 (22:22–22:45 IST, 19 October) failed
+  because its site didn't answer (`net::ERR_TIMED_OUT`). A one-hour connection watch on the same
+  line showed the line itself fine (360/360 connections to Cloudflare over IPv4 and IPv6, and to
+  GetTikVideo's host) apart from one slow connection to GetTikVideo's host, so these count as
+  GetTikVideo failures, like any tool's.
+- **Outage re-run:** LoveTik failed every item of run 1 ("Error: Could not get Video ID."), which
+  meets the outage rule (§5.3: at least 80%); it is re-run once, at least 24 hours later, and the
+  re-run replaces its run 1 result.
+
 ## Operator disclosure
 
 GetTikVideo runs this benchmark and is one of the tools tested.
