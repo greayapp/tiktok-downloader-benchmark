@@ -102,7 +102,10 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
             } catch { /* ignore */ }
         });
         setTimeout(async () => {
-            if (!entry.media) entry.media = /^(video|audio|image)\//.test(await p.evaluate(() => document.contentType).catch(() => ""));
+            // A file tab may still be loading at 4 s (TikTok's media servers can be slow): its address
+            // says what it is. (Files saved from such a tab are still verified as real media.)
+            if (!entry.media) entry.media = isMediaUrl(p.url());
+            if (!entry.media) entry.media = /^(video|audio|image)\//.test(await Promise.race([p.evaluate(() => document.contentType).catch(() => ""), new Promise((r) => setTimeout(() => r(""), 3000))]));
             if (entry.media) { entry.finalUrl = p.url(); return; }
             try {
                 entry.finalUrl = p.url();
@@ -131,6 +134,14 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
         });
     }
     return log;
+}
+
+/** A URL that is a media file itself: a file extension, or TikTok's media servers. */
+export function isMediaUrl(url) {
+    try {
+        const u = new URL(url);
+        return /\.(jpe?g|png|webp|heic|gif|mp4|m4a|mp3|mov)$/i.test(u.pathname) || /(^|\.)(tiktokcdn(-[a-z]+)?\.com|tiktokcdn\.com|muscdn\.com|byteoversea\.com|tiktokv\.com|ibyteimg\.com)$/i.test(u.hostname);
+    } catch { return false; }
 }
 
 /** Third-party cookies set so far (SPEC.md §6.E "cookies before interaction"). */

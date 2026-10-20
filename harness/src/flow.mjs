@@ -6,6 +6,7 @@ import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { controlHandle, evaluateStable, findLinkInput, findSubmit, listControls, TASK_LABELS } from "./generic.mjs";
 import { verifyAudio, verifyImages, verifyVideo, watermarkCheck } from "./verify.mjs";
+import { isMediaUrl } from "./observe.mjs";
 
 // SPEC.md §5.2: the result within 60 s; the file must start downloading within 60 s of the click
 // and may then take its time (a 15-minute safety cap: a big original-quality file on the test line
@@ -13,6 +14,9 @@ import { verifyAudio, verifyImages, verifyVideo, watermarkCheck } from "./verify
 export const LIMITS = { resultMs: 60_000, startMs: 60_000, fileMs: 900_000, negativeMs: 30_000 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// TDB_TRACE=1: step-by-step lines for adapter work (what is under each tap, what arrived).
+const trace = process.env.TDB_TRACE ? (...a) => console.log("TRACE", ...a) : () => {};
+const underTap = (handle) => within(handle.evaluate((el) => { const r = el.getBoundingClientRect(); const h = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2); return h ? `${h.tagName}.${String(h.className).slice(0, 30)} "${(h.innerText || "").trim().slice(0, 20)}"${el.contains(h) ? " (the control)" : ""}` : "nothing"; }), "?");
 /** A page call that gives up after `ms` with `fallback` (a frozen page must not stall a run). */
 const within = (promise, fallback, ms = 20_000) => Promise.race([promise.catch(() => fallback), sleep(ms).then(() => fallback)]);
 const key = (c) => `${c.text}|${c.href ?? ""}`;
@@ -27,6 +31,9 @@ const SPECIFIC_ERROR = /private|deleted|removed|doesn'?t exist|does not exist|no
  */
 export async function clickLikeUser(page, handle, mobile) {
     if (!handle) return false;
+    // Back on the tool's tab first, as a person switches back after a file opened in a new tab
+    // (a page that isn't in front can't open tabs: the browser blocks them as pop-ups).
+    await within(page.bringToFront(), null, 5_000);
     // To the middle of the screen, as a person scrolls — not the edge, where
     // sticky bars and anchor ads sit.
     await within(handle.evaluate((el) => el.scrollIntoView({ block: "center", inline: "center" })), null);
@@ -178,12 +185,15 @@ function collectFiles(context, page) {
     // (named) tab, one after another.
     const shown = new Set();
     const checkTab = async (p) => {
-        const ct = await Promise.race([p.evaluate(() => document.contentType).catch(() => ""), sleep(5_000).then(() => "")]);
         const url = p.url();
-        if (/^(video|audio|image)\//.test(ct) && !shown.has(url)) { shown.add(url); got.push({ kind: "media-tab", url, page: p, response: null }); }
+        if (shown.has(url)) return;
+        const media = isMediaUrl(url) || /^(video|audio|image)\//.test(await Promise.race([p.evaluate(() => document.contentType).catch(() => ""), sleep(5_000).then(() => "")]));
+        if (media && !shown.has(url)) { shown.add(url); got.push({ kind: "media-tab", url, page: p, response: null }); }
     };
     const onPage = (p) => {
         p.on("download", onDownload);
+        checkTab(p); // a tab opened straight onto a file's address counts at once
+        p.on("framenavigated", (f) => { if (f === p.mainFrame()) checkTab(p); });
         p.on("load", () => checkTab(p));
         p.waitForLoadState("domcontentloaded").then(() => checkTab(p)).catch(() => {});
     };
@@ -212,8 +222,10 @@ function waitForFile(context, page, ms) {
                 if (res.request().isNavigationRequest() && /^(video|audio|image)\//.test(ct)) finish({ kind: "media-tab", url: res.url(), page: p, response: res });
             });
             // A tab opened already showing the file reports no response: ask the tab what it shows.
+            if (isMediaUrl(p.url())) finish({ kind: "media-tab", url: p.url(), page: p, response: null });
+            p.on("framenavigated", (f) => { if (f === p.mainFrame() && isMediaUrl(p.url())) finish({ kind: "media-tab", url: p.url(), page: p, response: null }); });
             p.waitForLoadState("domcontentloaded").then(async () => {
-                const ct = await p.evaluate(() => document.contentType).catch(() => "");
+                const ct = await within(p.evaluate(() => document.contentType), "", 5_000);
                 if (/^(video|audio|image)\//.test(ct)) finish({ kind: "media-tab", url: p.url(), page: p, response: null });
             }).catch(() => {});
         };
@@ -539,7 +551,8 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         // while a file downloads and show them again afterwards.
         const seen = new Map();
         for (const c of [...resultControls, ...(await listControls(page))]) if (!before.has(key(c)) && key(c) !== key(chosen)) seen.set(key(c), c);
-        const more = [...seen.values()].filter((c) => (adapter.controls?.photos ?? TASK_LABELS.photos).some((re) => re.test(c.text)));
+        // One control per photo: "Download all" / ZIP controls are not part of this step.
+        const more = [...seen.values()].filter((c) => !/download\s*all|all\s*(photos|images)|zip/i.test(c.text) && (adapter.controls?.photos ?? TASK_LABELS.photos).some((re) => re.test(c.text)));
         let misses = 0;
         rec.perImage = { offered: more.length + 1, labels: [chosen.text, ...more.map((c) => c.text)].slice(0, 12) };
         // Every file that arrives during this step is kept, whichever click it answers: a late file
@@ -553,23 +566,30 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
             for (const until = Date.now() + 20_000; !handle && Date.now() < until; ) { handle = await controlHandle(page, c); if (!handle) await sleep(500); }
             if (!handle) { if (++misses >= 2) break; continue; }
             const had = col.got.length;
+            await within(handle.evaluate((el) => el.scrollIntoView({ block: "center" })), null);
+            trace(`tap ${c.text} — under the tap: ${await underTap(handle)}`);
             await clickLikeUser(page, handle, mobile);
             let arrived = await col.waitFor(had + 1, 20_000);
-            // An ad layer may have taken the click: close it and click this image again, like a visitor.
-            if (!arrived && (await closeOverlays(page, mobile))) {
-                rec.clicks++;
+            trace(`  arrived ${col.got.length} (had ${had}); tabs ${context.pages().length}`);
+            // Nothing came: the tap may have closed the site's own photo viewer, or an ad layer took it.
+            // Like a visitor: close what covers the page (if anything) and tap this photo once more.
+            if (!arrived) {
+                if (await closeOverlays(page, mobile)) rec.clicks++;
                 const again = await controlHandle(page, c);
+                if (again) trace(`  again — under the tap: ${await underTap(again)}`);
                 if (again) { await clickLikeUser(page, again, mobile); rec.clicks++; }
                 arrived = await col.waitFor(had + 1, 20_000);
+                trace(`  arrived ${col.got.length}`);
             }
             if (!arrived) { if (++misses >= 2) break; continue; }
             misses = 0;
         }
         await col.waitFor(targets.length, 10_000); // stragglers
         col.stop();
+        rec.perImage.arrived = col.got.length;
         for (const g of col.got) {
             const f = join(dir, `${item.id}-${viewport}-${files.length + 1}.bin`);
-            await saveFile(g, context, f).then(() => files.push(f)).catch(() => {});
+            await saveFile(g, context, f).then(() => files.push(f)).catch((e) => { (rec.perImage.saveErrors ??= []).push(`${g.kind}: ${e.message.split("\n")[0].slice(0, 120)}`); });
         }
         rec.timings_ms.to_file = Date.now() - t0;
     }

@@ -108,7 +108,16 @@ const meta = {
     lists: engines.versions, viewports, items: items.map((i) => i.id), retry, headless, parallel,
     vantage, references: existsSync(refFile) ? JSON.parse(readFileSync(refFile, "utf8")) : null,
 };
-if (resume) meta.resumed[0].vantage = vantage;
+if (resume) {
+    meta.resumed[0].vantage = vantage;
+    // Earlier resumes of this run stay on record.
+    const prev = existsSync(join(outBase, "run.json")) ? JSON.parse(readFileSync(join(outBase, "run.json"), "utf8")) : null;
+    if (prev?.resumed) meta.resumed = [...prev.resumed, ...meta.resumed];
+    if (prev?.redone) meta.redone = prev.redone;
+}
+// --redo "<domain>:<viewport>,…" with --resume: blocks redone after a harness fix (recorded in run.json).
+const redo = arg("redo", null);
+if (resume && redo) meta.redone = [...(meta.redone ?? []), { blocks: redo.split(","), at: now, reason: arg("redo-reason", "") }];
 
 /** runItem with the watchdog: a hang becomes a "skipped" record and a fresh tab. */
 async function runItemGuarded(args, swapPage) {
