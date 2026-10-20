@@ -13,6 +13,8 @@ import { verifyAudio, verifyImages, verifyVideo, watermarkCheck } from "./verify
 export const LIMITS = { resultMs: 60_000, startMs: 60_000, fileMs: 900_000, negativeMs: 30_000 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+/** A page call that gives up after `ms` with `fallback` (a frozen page must not stall a run). */
+const within = (promise, fallback, ms = 20_000) => Promise.race([promise.catch(() => fallback), sleep(ms).then(() => fallback)]);
 const key = (c) => `${c.text}|${c.href ?? ""}`;
 const ERROR_TEXT = /invalid|not found|unavailable|error|private|deleted|removed|doesn'?t exist|does not exist|couldn'?t|could not|can ?not|can'?t|unable|failed|unsupported|not supported|not (a )?valid|incorrect|wrong|issue with|problem with|oops|sorry|try again|check (the|your) (link|url)|please (check|enter|paste|use)|enter a valid|no (video|media)/i;
 const SPECIFIC_ERROR = /private|deleted|removed|doesn'?t exist|does not exist|not found|unavailable|unsupported|not supported|invalid (link|url)|enter a valid|only tiktok|tiktok link/i;
@@ -27,7 +29,7 @@ export async function clickLikeUser(page, handle, mobile) {
     if (!handle) return false;
     // To the middle of the screen, as a person scrolls — not the edge, where
     // sticky bars and anchor ads sit.
-    await handle.evaluate((el) => el.scrollIntoView({ block: "center", inline: "center" })).catch(() => {});
+    await within(handle.evaluate((el) => el.scrollIntoView({ block: "center", inline: "center" })), null);
     await new Promise((r) => setTimeout(r, 300));
     const box = await handle.boundingBox().catch(() => null);
     if (!box || box.width < 1 || box.height < 1) return false;
@@ -57,8 +59,9 @@ export async function closeOverlays(page, mobile) {
             }
         }
     }
-    // A modal on the page with an explicit close control.
-    const close = await page.evaluateHandle(() => {
+    // A modal on the page with an explicit close control (looked for within 20 s: a frozen page
+    // must not stall the run).
+    const close = await Promise.race([sleep(20_000).then(() => null), page.evaluateHandle(() => {
         const vis = (el) => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 4 && r.height > 4 && s.visibility !== "hidden" && s.display !== "none" && s.opacity !== "0"; };
         const label = (el) => (el.innerText || el.getAttribute("aria-label") || el.title || "").trim();
         // Inside layered content (a fixed or positioned, stacked ancestor) — a
@@ -75,7 +78,7 @@ export async function closeOverlays(page, mobile) {
         return [...document.querySelectorAll("button, [role=button], a, span, div")]
             .filter((el) => vis(el) && /^(close|×|✕|✖|x|skip|skip ad|dismiss|no,? thanks|not now)$/i.test(label(el)))
             .find(layered) ?? null;
-    }).catch(() => null);
+    }).catch(() => null)]);
     const el = close?.asElement();
     if (el) {
         const box = await el.boundingBox().catch(() => null);
@@ -93,12 +96,12 @@ export async function closeOverlays(page, mobile) {
 // download), which show inside ad frames ("you will lose your reward", "reward in 15 s").
 const WALL_TEXT = /unlock more content|view a short ad|watch (a|an|the|this) (short )?(ad|video) to (continue|unlock|get|earn)|take action to continue accessing|lose your reward|reward granted|reward in \d+ ?s(ec(ond)?s?)?\b/i;
 export async function adWall(page) {
-    const text = await page.evaluate(() => document.body.innerText.slice(0, 20000)).catch(() => "");
+    const text = await within(page.evaluate(() => document.body.innerText.slice(0, 20000)), "");
     if (WALL_TEXT.test(text)) return true;
-    if (await page.evaluate(() => !!document.querySelector(".fc-dialog-container, .fc-monetization-dialog, [class*='offerwall']")).catch(() => false)) return true;
+    if (await within(page.evaluate(() => !!document.querySelector(".fc-dialog-container, .fc-monetization-dialog, [class*='offerwall']")), false)) return true;
     for (const f of page.frames()) {
         if (f === page.mainFrame()) continue;
-        const t = await f.evaluate(() => (document.body?.innerText ?? "").slice(0, 5000)).catch(() => "");
+        const t = await within(f.evaluate(() => (document.body?.innerText ?? "").slice(0, 5000)), "");
         if (WALL_TEXT.test(t)) { page._tdbWallText = (t.match(WALL_TEXT) ?? [""])[0]; return true; }
     }
     return false;
@@ -171,13 +174,18 @@ function pickControl(adapter, task, fresh) {
 function collectFiles(context, page) {
     const got = [];
     const onDownload = (d) => got.push({ kind: "download", download: d });
-    const pages = new Set();
+    // A tab showing a file counts once per file it shows: some sites open every photo in the same
+    // (named) tab, one after another.
+    const shown = new Set();
+    const checkTab = async (p) => {
+        const ct = await Promise.race([p.evaluate(() => document.contentType).catch(() => ""), sleep(5_000).then(() => "")]);
+        const url = p.url();
+        if (/^(video|audio|image)\//.test(ct) && !shown.has(url)) { shown.add(url); got.push({ kind: "media-tab", url, page: p, response: null }); }
+    };
     const onPage = (p) => {
         p.on("download", onDownload);
-        p.waitForLoadState("domcontentloaded").then(async () => {
-            const ct = await p.evaluate(() => document.contentType).catch(() => "");
-            if (/^(video|audio|image)\//.test(ct) && !pages.has(p)) { pages.add(p); got.push({ kind: "media-tab", url: p.url(), page: p, response: null }); }
-        }).catch(() => {});
+        p.on("load", () => checkTab(p));
+        p.waitForLoadState("domcontentloaded").then(() => checkTab(p)).catch(() => {});
     };
     page.on("download", onDownload);
     context.on("page", onPage);
@@ -254,7 +262,7 @@ async function saveFile(got, context, file) {
 
 /** Mobile usability checks at the result state (SPEC.md §6.F). */
 async function mobileChecks(page, inputSel, chosen) {
-    return page.evaluate(({ chosenText }) => {
+    return within(page.evaluate(({ chosenText }) => {
         const input = document.activeElement?.matches?.("input,textarea") ? document.activeElement : document.querySelector("input[type=url], input[type=text], input:not([type]), textarea");
         const box = (el) => (el ? el.getBoundingClientRect() : null);
         const inputBox = box(input);
@@ -280,7 +288,7 @@ async function mobileChecks(page, inputSel, chosen) {
             smallestTargetPx: sizes.length ? Math.round(Math.min(...sizes)) : null,
             adBetweenInputAndDownload: adBetween,
         };
-    }, { chosenText: chosen?.text ?? "" }).catch(() => null);
+    }, { chosenText: chosen?.text ?? "" }), null);
 }
 
 /**
@@ -327,7 +335,7 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
     }
     const mobile = viewport === "mobile";
     const before = new Set((await listControls(page)).map(key));
-    const textBefore = new Set((await page.evaluate(() => document.body.innerText).catch(() => "")).split("\n").map((l) => l.trim()));
+    const textBefore = new Set((await within(page.evaluate(() => document.body.innerText), "")).split("\n").map((l) => l.trim()));
     await clickLikeUser(page, input, mobile);
     await sleep(800);
     // An ad layer may have taken that click (and opened a tab): the visitor
@@ -377,7 +385,7 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
             if (pickControl(adapter, "video", fresh) || pickControl(adapter, "mp3", fresh)) { grade = "bad"; message = "offered a download"; break; }
             // Only text that appeared after submitting, and not questions (FAQ
             // entries like "Can I download private videos?" aren't errors).
-            const text = await page.evaluate(() => document.body.innerText).catch(() => "");
+            const text = await within(page.evaluate(() => document.body.innerText), "");
             const dialog = log.dialogs.find((d) => d.t >= t0 && ERROR_TEXT.test(d.message));
             const m = dialog?.message ?? text.split("\n").map((l) => l.trim()).find((l) => l && !textBefore.has(l) && l.length < 200 && !l.endsWith("?") && ERROR_TEXT.test(l));
             if (m) { message = m; grade = SPECIFIC_ERROR.test(m) ? "clear" : "generic"; break; }
@@ -414,7 +422,7 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         const others = ["video", "mp3", "photos"].filter((t) => t !== task && pickControl(adapter, t, fresh));
         if (others.length) return { ...rec, outcome: "failure", notOffered: true, failure: `the result offers ${others.join(" and ")} but no ${task} option` };
         // Quote the site's own error, if it showed one after submitting (as for should-fail items).
-        const text = await page.evaluate(() => document.body.innerText).catch(() => "");
+        const text = await within(page.evaluate(() => document.body.innerText), "");
         const said = log.dialogs.find((d) => d.t >= t0 && ERROR_TEXT.test(d.message))?.message
             ?? text.split("\n").map((l) => l.trim()).find((l) => l && !textBefore.has(l) && l.length < 200 && !l.endsWith("?") && ERROR_TEXT.test(l));
         return { ...rec, outcome: "failure", failure: said ? `the site said: "${said.slice(0, 120)}"` : "no download control within 60 s", siteMessage: said ?? undefined };
