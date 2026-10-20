@@ -7,6 +7,12 @@ results are recorded here.
 - §2 Governance: the operator doesn't deploy changes to its own tool during an edition's run
   windows. Already followed from the Q4 2026 edition on (see `results/2026q4/NOTES.md`).
 
+### 2026-10-20 — Runner fix during Q4 2026 run 1
+- Run 1 stalled on a page call with no time limit; the runner now times out page reads, records an
+  item unfinished after 12 minutes as "skipped" (a harness hang, not counted), and can resume a run
+  (`--resume`, redoing an unfinished tool × viewport block whole). Commit `b4f9f0f`; details in
+  `results/2026q4/NOTES.md`. No change to how tools are tested or scored.
+
 ### 2026-10-19 — Schedule: Q4 2026 edition tested in late October
 - The first edition (Q4 2026) is tested in late October instead of December. No method change: the
   spec stays v1.0 (tag `spec-v1.0`); only §10's first-edition date changed. Results carry their real

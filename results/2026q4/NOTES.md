@@ -14,6 +14,15 @@
 - Tests: one residential connection in India. References and the pre-run sample checks: through a
   VPN (Tokyo), because tiktok.com is blocked at the vantage point (§4.3).
 
+## Run log
+
+- **Run 1** started 16:35 UTC on 19 October. At 01:48 UTC on 20 October the runner stopped making
+  progress (it waited on a page that never answered, during TikCD's mobile block). It was stopped at
+  about 02:50 UTC and resumed at 02:53 UTC with a fix to the runner (commit `b4f9f0f`: page reads time
+  out, an item unfinished after 12 minutes is "skipped", not counted). The 17 tool × viewport blocks
+  already finished were kept; TikCD's mobile block was redone from its start. Nothing about how tools
+  are tested changed; run 2 uses the same runner.
+
 ## Operator disclosure
 
 GetTikVideo runs this benchmark and is one of the tools tested.
