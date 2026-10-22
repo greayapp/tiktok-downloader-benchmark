@@ -1,6 +1,7 @@
 {
   "note": "Before each run, every positive sample is checked to be live and unchanged against its reference (SPEC.md §4.2), through a VPN because tiktok.com is blocked at the residential vantage point (India).",
   "checks": [
-    { "beforeRun": "r1", "at": "2026-10-19T16:02:13Z", "via": "VPN (Tokyo, Japan)", "checked": 30, "live": 30, "replaced": [] }
+    { "beforeRun": "r1", "at": "2026-10-19T16:02:13Z", "via": "VPN (Tokyo, Japan)", "checked": 30, "live": 30, "replaced": [] },
+    { "beforeRun": "r1b (LoveTik outage re-run) and r2", "at": "2026-10-22T07:29:06Z", "via": "VPN (Tokyo, Japan)", "checked": 30, "live": 30, "replaced": [] }
   ]
 }
