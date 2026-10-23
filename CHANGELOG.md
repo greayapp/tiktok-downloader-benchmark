@@ -7,6 +7,13 @@ results are recorded here.
 - §2 Governance: the operator doesn't deploy changes to its own tool during an edition's run
   windows. Already followed from the Q4 2026 edition on (see `results/2026q4/NOTES.md`).
 
+### 2026-10-23 — Scoring fix: quality rates downloads only
+- Quality (§6.B, "successful items only") was also counting should-fail items, which the harness
+  records as "success" with their A2 grade, as perfect downloads (resolution ratio 1). That raised
+  every tool's quality a little, and gave a tool with no download at all a quality of 100. They are
+  now left out (and out of speed, where they had no timings). Test added. Fixed before any results
+  were published.
+
 ### 2026-10-23 — Ad-wall check fix after Q4 2026 run 2
 - In run 2, TikMate's desktop block recorded every item as "no download control" or an unanswered
   should-fail link, although its screenshots show Google's offerwall ("Unlock more content · View a

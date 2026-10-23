@@ -55,7 +55,8 @@ export function markNotOffered(records) {
 /** B. Quality and honesty, over successful items. */
 export function quality(records) {
     const scores = [];
-    for (const r of records.filter((x) => x.outcome === "success")) {
+    // Downloads only: a should-fail item that "succeeds" (graded under A2) delivered nothing to rate.
+    for (const r of records.filter((x) => x.outcome === "success" && POSITIVE.has(x.kind))) {
         const dishonest = (r.file?.labelDishonesty?.length ?? 0) + (r.file?.watermarkConfirmed ? 1 : 0);
         const task = taskOf(r);
         if (task === "video") {
@@ -81,7 +82,7 @@ export function quality(records) {
  * Time to the finished file is reported, not scored: it depends on the file's size and the line.
  */
 export function speed(records) {
-    const ok = records.filter((r) => taskOf(r) === "video" && r.outcome === "success");
+    const ok = records.filter((r) => POSITIVE.has(r.kind) && taskOf(r) === "video" && r.outcome === "success");
     const starts = ok.map((r) => r.timings_ms?.to_download ?? r.timings_ms?.to_file).filter(Number.isFinite).map((ms) => ms / 1000);
     const files = ok.filter((r) => Number.isFinite(r.timings_ms?.to_file) && Number.isFinite(r.timings_ms?.to_download)).map((r) => r.timings_ms.to_file / 1000);
     const rates = ok.filter((r) => r.bytes >= 5e6 && r.timings_ms?.to_file > r.timings_ms?.to_download)

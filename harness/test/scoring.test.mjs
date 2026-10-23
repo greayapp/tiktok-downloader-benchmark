@@ -56,6 +56,14 @@ test("quality: resolution ratio, label dishonesty −50, HEIC −25, downscaled 
     assert.equal(q.score, (100 + 50 + 50 + 50 + 50 + 75 + 0) / 7);
 });
 
+test("quality and speed rate downloads only, not should-fail items graded under A2", () => {
+    // The harness records a should-fail item as outcome "success" with its grade in `negative`.
+    const negative = { item: "N1", kind: "negative", task: "video", outcome: "success", negative: { grade: "clear" } };
+    assert.deepEqual(quality([negative, negative, negative]), { score: null, items: 0 });
+    assert.equal(quality([negative, ok("video", { file: { resolutionRatio: 0.5, labelDishonesty: [] } })]).score, 50);
+    assert.equal(speed([negative]).score, null);
+});
+
 test("speed: records without a download-start time fall back to the time to file", () => {
     const rec = (s) => ok("video", { timings_ms: { to_file: s * 1000 } });
     assert.equal(speed([rec(2), rec(3), rec(4)]).score, 100);

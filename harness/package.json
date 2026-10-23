@@ -14,7 +14,7 @@
     "monitor": "node src/monitor.mjs",
     "reference": "node src/reference.mjs",
     "score": "node src/report.mjs",
-    "test": "node --test test/*.test.mjs",
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
     "pagespeed": "node src/pagespeed.mjs",
     "iphone": "node src/iphone.mjs"
   },
