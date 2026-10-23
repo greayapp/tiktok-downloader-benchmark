@@ -126,7 +126,8 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
             const nav = { t: Date.now(), phase: log.phase, url, ours: log.expecting };
             log.navigations.push(nav);
             const site = siteOf(url);
-            if (!log.expecting && site && site !== toolSite && !url.startsWith("about:")) log.offsiteNavigations.push(nav);
+            // Only another web site counts: Chrome's own error page (a load that failed) is not a redirect.
+            if (!log.expecting && site && site !== toolSite && /^https?:/.test(url)) log.offsiteNavigations.push(nav);
         });
         p.on("dialog", (d) => {
             log.dialogs.push({ t: Date.now(), phase: log.phase, type: d.type(), message: d.message().slice(0, 200) });

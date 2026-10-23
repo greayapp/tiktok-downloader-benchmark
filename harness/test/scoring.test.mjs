@@ -167,3 +167,10 @@ test("speed: 70% time to download start (4 s → 100, 30 s → 0), 30% transfer 
     assert.equal(small.rateScore, null);
     assert.equal(small.score, 50);
 });
+
+test("ads: Chrome's error page after a failed load is not a redirect; another site is", async () => {
+    const { adsInputs } = await import("../src/report.mjs");
+    const v = (urls) => ({ records: [], behaviour: [{ newPages: [], offsiteNavigations: urls.map((url) => ({ url, phase: "home" })) }] });
+    assert.equal(adsInputs(v(["chrome-error://chromewebdata/"])).offsiteRedirects, 0);
+    assert.equal(adsInputs(v(["chrome-error://chromewebdata/", "https://ads.example/landing"])).offsiteRedirects, 1);
+});

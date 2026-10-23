@@ -71,7 +71,9 @@ export function adsInputs(v, review = {}) {
     return {
         // A tab showing the file itself is the delivery, not a pop-up (SPEC.md §6.D).
         popups: v.behaviour.reduce((s, b) => s + (b.newPages ?? []).filter((p) => !p.media).length, 0),
-        offsiteRedirects: v.behaviour.reduce((s, b) => s + (b.offsiteNavigations?.length ?? 0), 0),
+        // Navigations to another web site; records made before the observer ignored Chrome's error
+        // page (chrome-error://, a page that failed to load) still list it, so it is left out here too.
+        offsiteRedirects: v.behaviour.reduce((s, b) => s + (b.offsiteNavigations ?? []).filter((n) => /^https?:/.test(n.url)).length, 0),
         notificationPrompt: v.behaviour.some((b) => (b.permissions ?? []).some((p) => /notification|push/.test(p.kind))),
         adWall: v.records.some((r) => r.outcome === "ad-wall"),
         adGatedOption: v.records.some((r) => (r.adGatedOptions?.length ?? 0) > 0),

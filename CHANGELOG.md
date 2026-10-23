@@ -7,6 +7,15 @@ results are recorded here.
 - §2 Governance: the operator doesn't deploy changes to its own tool during an edition's run
   windows. Already followed from the Q4 2026 edition on (see `results/2026q4/NOTES.md`).
 
+### 2026-10-23 — Scoring fix: Chrome's error page is not a redirect
+- When a page failed to load (e.g. `net::ERR_TIMED_OUT`), Chrome shows its own error page
+  (`chrome-error://`), which the observer recorded as the tool's tab going to another site, and
+  scoring counted as a redirect (−40 under §6.D). Only navigations to another web site count now, in
+  the observer and in scoring (records already made keep the entry; scoring ignores it). In the
+  Q4 2026 runs this affected GetTikVideo (8 such pages, all from home-page timeouts already counted
+  as failures under reliability) and MusicalDown (1). Test added. Fixed before any results were
+  published.
+
 ### 2026-10-23 — Scoring fix: quality rates downloads only
 - Quality (§6.B, "successful items only") was also counting should-fail items, which the harness
   records as "success" with their A2 grade, as perfect downloads (resolution ratio 1). That raised
