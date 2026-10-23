@@ -44,7 +44,19 @@
   (07:29 UTC). LoveTik failed every item again (70 of 70, same message); the three should-fail
   links were refused, as in run 1. As the rule says, this result replaces its run 1 result (the
   run 1 records are kept on the test machine), and the outage counts in its uptime.
-- **Run 2** started 10:23 UTC on 22 October (run 1 started 16:35 UTC, a different time of day).
+- **Run 2** started 10:23 UTC on 22 October (run 1 started 16:35 UTC, a different time of day) and
+  ended 02:43 UTC on 23 October (all 14 tools, both viewports).
+- **One block redone** after run 2 (03:09–03:13 UTC on 23 October): TikMate on desktop. Every item's
+  screenshot shows Google's offerwall ("Unlock more content · View a short ad"), but the harness
+  didn't recognise it and recorded "no download control" (and silent should-fail answers) instead;
+  run 1 and run 2's phone block recognised the same wall. The wall check was fixed (commit
+  `e6db999`: it also reads shadow roots, Chrome's accessibility tree and every frame, on arrival
+  and before recording a failure) and the block redone whole: all 38 items are an ad wall, as in
+  run 1. The records it replaces, and their screenshots, are kept on the test machine. No other
+  "no download control" failure in either run shows a wall in its screenshot.
+- **Outage re-run after run 2:** LoveTik failed every item of run 2 as well (70 of 70, same message),
+  so it is re-run once more, at least 24 hours after its run 2 block (13:49–16:32 UTC, 22 October);
+  that re-run replaces its run 2 result.
 
 ## Operator disclosure
 
