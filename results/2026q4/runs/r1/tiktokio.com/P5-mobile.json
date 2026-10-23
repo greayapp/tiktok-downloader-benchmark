@@ -1,0 +1,103 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T00:42:53.277Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2743,
+    "to_download": 3667,
+    "to_file": 10049
+  },
+  "clicks": 2,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-5.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-6.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-7.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-8.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-result.png"
+  ],
+  "bytes": 62365,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 8,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Image 3",
+      "Download Image 4",
+      "Download Image 5",
+      "Download Image 6",
+      "Download Image 7",
+      "Download Image 8"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-2.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-3.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-4.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-5.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-6.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-7.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P5-mobile-8.bin"
+  ],
+  "lineMbps": 79.9
+}

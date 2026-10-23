@@ -1,0 +1,57 @@
+{
+  "item": "R10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T11:51:43.071Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2110,
+    "to_download": 79082,
+    "to_file": 100391
+  },
+  "clicks": 9,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/R10-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/R10-mobile.bin",
+        "type": "jpg",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/R10-mobile-result.png"
+  ],
+  "fallback": "\"Download All Photos (ZIP)\" gave no file; saved the photos one by one",
+  "bytes": 886962,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "1 / 2 Save Photo 1",
+      "2 / 2 Save Photo 2"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/R10-mobile.bin",
+    "harness/runs-local/2026q4/r1/tikcd.com/R10-mobile-2.bin"
+  ],
+  "lineMbps": 94.2
+}

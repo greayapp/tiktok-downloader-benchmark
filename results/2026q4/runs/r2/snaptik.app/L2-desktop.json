@@ -1,0 +1,55 @@
+{
+  "item": "L2",
+  "kind": "variant",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-23T01:30:11.209Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2654,
+    "to_download": 3543,
+    "to_file": 5833
+  },
+  "clicks": 2,
+  "control_label": "Download (No Watermark)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 45.601995,
+      "bytes": 12307177,
+      "video": {
+        "codec": "h264",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.6666666666666666,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/L2-desktop-result.png"
+  ],
+  "adGatedOptions": [
+    "Watch Ad Download HD (No Watermark) HD"
+  ],
+  "bytes": 12307177,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/L2-desktop.mp4"
+  ],
+  "lineMbps": 73.9
+}

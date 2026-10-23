@@ -1,0 +1,21 @@
+{
+  "newPages": [],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 417,
+    "ad": 0,
+    "tracker": 230
+  },
+  "adDomains": [],
+  "trackerDomains": [
+    "cloudflareinsights.com",
+    "tikdown.org"
+  ],
+  "thirdPartyDomains": [
+    "cloudflareinsights.com",
+    "tiktokcdn-us.com"
+  ],
+  "cookiesBeforeInteraction": []
+}

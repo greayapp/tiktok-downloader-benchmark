@@ -1,0 +1,19 @@
+{
+  "item": "V10",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T17:46:48.538Z",
+  "outcome": "blocked",
+  "failure": "bot-protection challenge (not solved, SPEC.md §5.4)",
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 0,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/savetik.co/V10-mobile-blocked.png"
+  ],
+  "lineMbps": 79.9
+}

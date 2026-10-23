@@ -1,0 +1,72 @@
+{
+  "item": "P4",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T20:10:02.271Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2959,
+    "to_download": 3906,
+    "to_file": 7692
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile-2.bin",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile-3.bin",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile-4.bin",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile-result.png"
+  ],
+  "bytes": 597335,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 4,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 3
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile-2.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile-3.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P4-mobile-4.bin"
+  ],
+  "lineMbps": 73.9
+}

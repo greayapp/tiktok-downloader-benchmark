@@ -1,0 +1,18 @@
+{
+  "item": "V4",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-19T16:52:12.795Z",
+  "outcome": "failure",
+  "failure": "home page did not load: page.goto: Navigation to \"https://gettikvideo.com/\" is interrupted by another navigation to \"https://gettikvideo.com/\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 0,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [],
+  "firstFailure": "no download control within 60 s",
+  "lineMbps": 79.9
+}

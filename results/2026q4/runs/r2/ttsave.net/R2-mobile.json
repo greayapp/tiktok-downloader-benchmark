@@ -1,0 +1,23 @@
+{
+  "item": "R2",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T18:15:22.129Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 4535
+  },
+  "clicks": 2,
+  "control_label": "Download Video",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/R2-mobile-result.png",
+    "harness/runs-local/2026q4/r2/ttsave.net/R2-mobile-no-file.png"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 73.9
+}

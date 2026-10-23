@@ -1,0 +1,23 @@
+{
+  "item": "P8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-23T01:42:40.569Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 848
+  },
+  "clicks": 4,
+  "control_label": "Download All (ZIP) (3)",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P8-desktop-result.png",
+    "harness/runs-local/2026q4/r2/snaptik.app/P8-desktop-no-file.png"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 73.9
+}

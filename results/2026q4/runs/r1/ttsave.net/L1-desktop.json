@@ -1,0 +1,58 @@
+{
+  "item": "L1",
+  "kind": "variant",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-19T22:53:43.666Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 4270,
+    "to_download": 34820,
+    "to_file": 34834
+  },
+  "clicks": 3,
+  "control_label": "Download Video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 15.045011,
+      "bytes": 6517961,
+      "video": {
+        "codec": "h264",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/L1-desktop-result.png"
+  ],
+  "bytes": 6517961,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ttsave.net/L1-desktop.mp4"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 79.9
+}

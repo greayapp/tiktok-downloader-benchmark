@@ -1,0 +1,22 @@
+{
+  "item": "N1",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T19:41:46.757Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "bad",
+    "message": "offered a download"
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/N1-desktop-negative.png"
+  ],
+  "lineMbps": 73.9
+}

@@ -1,0 +1,47 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-23T01:38:57.333Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2410,
+    "to_download": 3306,
+    "to_file": 3309
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (2)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/R8-desktop.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/R8-desktop.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1180,
+        "height": 1576
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/R8-desktop-result.png"
+  ],
+  "bytes": 1700483,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/R8-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

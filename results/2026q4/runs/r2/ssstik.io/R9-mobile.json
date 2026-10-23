@@ -1,0 +1,71 @@
+{
+  "item": "R9",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:18:21.664Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1374,
+    "to_download": 3361,
+    "to_file": 4524
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (6)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R9-mobile.bin.unzipped/7551867602448993549_0_1792477981.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R9-mobile.bin.unzipped/7551867602448993549_1_1792477981.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R9-mobile.bin.unzipped/7551867602448993549_2_1792477981.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R9-mobile.bin.unzipped/7551867602448993549_3_1792477981.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R9-mobile.bin.unzipped/7551867602448993549_4_1792477981.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R9-mobile.bin.unzipped/7551867602448993549_5_1792477981.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/R9-mobile-result.png"
+  ],
+  "bytes": 1175275,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ssstik.io/R9-mobile.bin"
+  ],
+  "lineMbps": 73.9
+}

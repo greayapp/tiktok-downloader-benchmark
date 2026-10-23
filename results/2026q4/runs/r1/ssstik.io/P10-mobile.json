@@ -1,0 +1,65 @@
+{
+  "item": "P10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T06:41:22.090Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1109,
+    "to_download": 3109,
+    "to_file": 9836
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (5)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P10-mobile.bin.unzipped/7551502249827126531_0_1792477290.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P10-mobile.bin.unzipped/7551502249827126531_1_1792477290.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P10-mobile.bin.unzipped/7551502249827126531_2_1792477290.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P10-mobile.bin.unzipped/7551502249827126531_3_1792477290.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P10-mobile.bin.unzipped/7551502249827126531_4_1792477290.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1600
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 5
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/P10-mobile-result.png"
+  ],
+  "bytes": 392453,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ssstik.io/P10-mobile.bin"
+  ],
+  "lineMbps": 84.3
+}

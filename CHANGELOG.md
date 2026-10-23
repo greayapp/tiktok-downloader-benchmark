@@ -10,6 +10,15 @@ results are recorded here.
   during testing", with no overall score or rank, like a "not measurable" tool. Already applied
   in the Q4 2026 edition (LoveTik).
 
+### 2026-10-23 — Q4 2026 published; one outage re-run not done
+- Results of the Q4 2026 edition published (`results/2026q4/`, `results/latest.json`), with the
+  rotating samples (`samples/2026q4-rotating.json`, `samples/reference/R*.json`). Evidence
+  screenshots are stored at 256 colours (phone shots 780 px wide) to keep the repository small.
+  Local folder paths in the records are repository-relative.
+- Departure from §5.3: LoveTik's run 2 was an outage (70 of 70 failed), and the rule calls for one
+  more re-run. The operator's owner decided not to run it: LoveTik had failed all 210 items of run 1,
+  its outage re-run and run 2. Its run 2 result stands; it is listed as "down during testing".
+
 ### 2026-10-23 — Results: a tool that never worked is shown as down, not scored
 - A tool whose every download failed in every run would otherwise get an overall score from its
   ads, privacy and phone checks alone, which would mislead. It is now listed as "down during

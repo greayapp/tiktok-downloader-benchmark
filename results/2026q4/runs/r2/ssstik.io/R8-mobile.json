@@ -1,0 +1,47 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:19:00.636Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 866,
+    "to_download": 3314,
+    "to_file": 3636
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (2)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R8-mobile.bin.unzipped/7552217758268656910_0_1792477997.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R8-mobile.bin.unzipped/7552217758268656910_1_1792477997.jpeg",
+        "type": "webp",
+        "width": 1180,
+        "height": 1576
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 2
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/R8-mobile-result.png"
+  ],
+  "bytes": 178459,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ssstik.io/R8-mobile.bin"
+  ],
+  "lineMbps": 73.9
+}

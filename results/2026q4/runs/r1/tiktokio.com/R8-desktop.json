@@ -1,0 +1,56 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T10:29:28.924Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1364,
+    "to_download": 2418,
+    "to_file": 7123
+  },
+  "clicks": 3,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/R8-desktop-2.bin",
+        "type": "jpg",
+        "width": 1180,
+        "height": 1576
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/R8-desktop.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/R8-desktop-result.png"
+  ],
+  "bytes": 1313856,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/R8-desktop.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/R8-desktop-2.bin"
+  ],
+  "lineMbps": 94.2
+}

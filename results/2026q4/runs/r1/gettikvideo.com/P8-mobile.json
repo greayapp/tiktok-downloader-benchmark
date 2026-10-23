@@ -1,0 +1,64 @@
+{
+  "item": "P8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T17:13:18.230Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 834,
+    "to_download": 2251,
+    "to_file": 6942
+  },
+  "clicks": 2,
+  "control_label": "1 · Download photo 1 of 3",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P8-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1468
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P8-mobile-3.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2958
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P8-mobile.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2696
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P8-mobile-result.png"
+  ],
+  "bytes": 1393437,
+  "delivery": "download",
+  "perImage": {
+    "offered": 4,
+    "labels": [
+      "1 · Download photo 1 of 3",
+      "2 · Download photo 2 of 3",
+      "3 · Download photo 3 of 3",
+      "1 · Download photo 1 of 3 (saved)"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P8-mobile.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P8-mobile-2.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P8-mobile-3.bin"
+  ],
+  "lineMbps": 79.9
+}

@@ -1,0 +1,41 @@
+{
+  "item": "P1",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T10:43:01.960Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1085,
+    "to_download": 2057,
+    "to_file": 2350
+  },
+  "clicks": 3,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P1-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/P1-desktop-result.png"
+  ],
+  "bytes": 106244,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/P1-desktop.bin"
+  ],
+  "lineMbps": 94.2
+}

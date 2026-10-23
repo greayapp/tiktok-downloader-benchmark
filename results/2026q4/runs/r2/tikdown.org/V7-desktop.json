@@ -1,0 +1,58 @@
+{
+  "item": "V7",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T20:24:20.706Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3484,
+    "to_download": 5871,
+    "to_file": 10238
+  },
+  "clicks": 2,
+  "control_label": "Download (no watermark)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 53.056009,
+      "bytes": 6642511,
+      "video": {
+        "codec": "h264",
+        "width": 576,
+        "height": 1024
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.5333333333333333,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikdown.org/V7-desktop-result.png"
+  ],
+  "bytes": 6642511,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/tikdown.org/V7-desktop.mp4"
+  ],
+  "lineMbps": 73.9
+}

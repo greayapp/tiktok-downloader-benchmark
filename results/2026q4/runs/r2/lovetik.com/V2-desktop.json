@@ -1,0 +1,21 @@
+{
+  "item": "V2",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T14:51:14.700Z",
+  "outcome": "failure",
+  "failure": "the site said: \"Error: Could not get Video ID.\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/lovetik.com/V2-desktop-no-result.png"
+  ],
+  "siteMessage": "Error: Could not get Video ID.",
+  "firstFailure": "the site said: \"Error: Could not get Video ID.\"",
+  "lineMbps": 73.9
+}

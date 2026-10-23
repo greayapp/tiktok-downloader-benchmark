@@ -1,0 +1,58 @@
+{
+  "item": "V8",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-20T10:34:28.369Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1350,
+    "to_download": 20356,
+    "to_file": 83184
+  },
+  "clicks": 4,
+  "control_label": "Download without watermark (HD)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 15.582233,
+      "bytes": 13734119,
+      "video": {
+        "codec": "hevc",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/V8-desktop-result.png"
+  ],
+  "bytes": 13734119,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/V8-desktop.mp4"
+  ],
+  "lineMbps": 94.2
+}

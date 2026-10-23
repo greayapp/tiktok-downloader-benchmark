@@ -1,0 +1,58 @@
+{
+  "item": "R1",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-20T07:56:19.512Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2869,
+    "to_download": 4781,
+    "to_file": 23407
+  },
+  "clicks": 2,
+  "control_label": "Download video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 72.614208,
+      "bytes": 144704447,
+      "video": {
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttdownloader.com/R1-mobile-result.png"
+  ],
+  "mobile": {
+    "horizontalScroll": false,
+    "inputFontPx": 14,
+    "smallestTargetPx": 20,
+    "adBetweenInputAndDownload": false
+  },
+  "bytes": 144704447,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ttdownloader.com/R1-mobile.mp4"
+  ],
+  "lineMbps": 84.3
+}

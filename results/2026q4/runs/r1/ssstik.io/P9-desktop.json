@@ -1,0 +1,59 @@
+{
+  "item": "P9",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T06:26:33.570Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2154,
+    "to_download": 5535,
+    "to_file": 6787
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (4)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P9-desktop.bin.unzipped/7696221629566749966_0_1792477607.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 2133
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P9-desktop.bin.unzipped/7696221629566749966_1_1792477607.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 2133
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P9-desktop.bin.unzipped/7696221629566749966_2_1792477607.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 2132
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P9-desktop.bin.unzipped/7696221629566749966_3_1792477607.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 2132
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 4
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/P9-desktop-result.png"
+  ],
+  "bytes": 1124727,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ssstik.io/P9-desktop.bin"
+  ],
+  "lineMbps": 84.3
+}

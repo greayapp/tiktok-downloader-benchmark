@@ -1,0 +1,47 @@
+{
+  "item": "R7",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T06:24:27.398Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1880,
+    "to_download": 23198,
+    "to_file": 23200
+  },
+  "clicks": 3,
+  "control_label": "Download all (ZIP) (2)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/R7-desktop.bin.unzipped/7552977619310988558_0_1792477491.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/R7-desktop.bin.unzipped/7552977619310988558_1_1792477491.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/R7-desktop-result.png"
+  ],
+  "bytes": 219933,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ssstik.io/R7-desktop.bin"
+  ],
+  "lineMbps": 84.3
+}

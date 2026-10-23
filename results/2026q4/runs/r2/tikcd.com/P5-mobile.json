@@ -1,0 +1,66 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T23:22:52.311Z",
+  "outcome": "failure",
+  "failure": "2 images vs 8 in the post",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2626,
+    "to_download": 79567,
+    "to_file": 192931
+  },
+  "clicks": 13,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": false,
+    "reasons": [
+      "2 images vs 8 in the post"
+    ],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/P5-mobile-result.png"
+  ],
+  "fallback": "\"Download All Photos (ZIP)\" gave no file; saved the photos one by one",
+  "bytes": 62365,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 8,
+    "labels": [
+      "1 / 8 Save Photo 1",
+      "2 / 8 Save Photo 2",
+      "3 / 8 Save Photo 3",
+      "4 / 8 Save Photo 4",
+      "5 / 8 Save Photo 5",
+      "6 / 8 Save Photo 6",
+      "7 / 8 Save Photo 7",
+      "8 / 8 Save Photo 8"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/tikcd.com/P5-mobile.bin",
+    "harness/runs-local/2026q4/r2/tikcd.com/P5-mobile-2.bin"
+  ],
+  "firstFailure": "3 images vs 8 in the post",
+  "lineMbps": 73.9
+}

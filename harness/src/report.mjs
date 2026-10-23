@@ -11,7 +11,7 @@
 // Writes results/<edition>/scores.json, scores.csv, review-todo.json and, with
 // --publish, results/latest.json for the live site.
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { basename, dirname, join, relative } from "node:path";
+import { basename, dirname, isAbsolute, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { markNotOffered, median, rank, scoreTool } from "./scoring.mjs";
 import { TOOLS } from "./tools.mjs";
@@ -50,7 +50,9 @@ export function publishEvidence(byTool, editionDir) {
     let n = 0;
     for (const [tool, t] of Object.entries(byTool)) {
         const dest = join(editionDir, "evidence", tool);
-        const copy = (src) => {
+        const copy = (rel) => {
+            // Records name their screenshots relative to the repository (older ones by absolute path).
+            const src = rel && (isAbsolute(rel) ? rel : join(REPO, rel));
             if (!src || !existsSync(src)) return null;
             mkdirSync(dest, { recursive: true });
             const to = join(dest, basename(src));

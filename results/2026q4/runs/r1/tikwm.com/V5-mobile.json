@@ -1,0 +1,19 @@
+{
+  "item": "V5",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-20T09:00:44.915Z",
+  "outcome": "blocked",
+  "failure": "bot-protection challenge (not solved, SPEC.md §5.4)",
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 0,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikwm.com/V5-mobile-blocked.png"
+  ],
+  "lineMbps": 84.3
+}

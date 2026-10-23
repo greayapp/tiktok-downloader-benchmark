@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "note": "Rotating samples of the Q4 2026 edition, published with its results (SPEC.md §4.2).",
+  "items": [
+    {
+      "id": "R1",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@natgeo/video/7683891628230315295",
+      "author": "natgeo",
+      "rotating": true
+    },
+    {
+      "id": "R2",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@samsung/video/7687880614908890376",
+      "author": "samsung",
+      "rotating": true
+    },
+    {
+      "id": "R3",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@sephora/video/7694332521827306765",
+      "author": "sephora",
+      "rotating": true
+    },
+    {
+      "id": "R4",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@spotify/video/7698082420410682638",
+      "author": "spotify",
+      "rotating": true
+    },
+    {
+      "id": "R5",
+      "kind": "video",
+      "url": "https://www.tiktok.com/@tiktok/video/7693184538704416031",
+      "author": "tiktok",
+      "rotating": true
+    },
+    {
+      "id": "R6",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@nfl/video/7505124432730557742",
+      "author": "nfl",
+      "rotating": true
+    },
+    {
+      "id": "R7",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@chipotle/video/7552977619310988558",
+      "author": "chipotle",
+      "rotating": true
+    },
+    {
+      "id": "R8",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@chipotle/video/7552217758268656910",
+      "author": "chipotle",
+      "rotating": true
+    },
+    {
+      "id": "R9",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@chipotle/video/7551867602448993549",
+      "author": "chipotle",
+      "rotating": true
+    },
+    {
+      "id": "R10",
+      "kind": "photos",
+      "url": "https://www.tiktok.com/@espn/video/7497049913449106718",
+      "author": "espn",
+      "rotating": true
+    }
+  ]
+}

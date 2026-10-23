@@ -1,0 +1,17 @@
+{
+  "tool": "tikcd.com",
+  "measured": "2026-10-23T03:43:40.779Z",
+  "accessibility": 96,
+  "vitals": {
+    "lcp": 1783.90165,
+    "inp": 71,
+    "cls": 0.02416550893288195
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 3,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://tikcd.com/"
+  }
+}

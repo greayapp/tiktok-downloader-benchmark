@@ -1,0 +1,80 @@
+{
+  "note": "What a person confirmed from the evidence (SPEC.md §6.B, §6.D, §6.F), on 23 October 2026. Proposals were prepared from the screenshots; the operator's owner reviewed and approved them. Tools with no entry: no Better Ads violation, deceptive ad or forced wait was found in their screenshots.",
+  "ssstik.io": {
+    "popupsConfirmed": true,
+    "popupsNote": "ad tabs (e.g. Bajaj Finserv, Télérama, GoDaddy)",
+    "adDensityNote": "heavy ads on the phone result, but a mobile ad density over 30% isn't provable from the screenshots: not flagged",
+    "adsReviewed": true
+  },
+  "musicaldown.com": {
+    "popupsConfirmed": true,
+    "popupsNote": "ad tabs (GoDaddy, Canon)",
+    "adsReviewed": true
+  },
+  "ttdownloader.com": {
+    "popupsConfirmed": true,
+    "popupsNote": "an ad tab (grotaich.net) on the first click; its other new tabs are its own download tabs (the delivery)",
+    "deceptiveAdNote": "\"Buy Cheap TikTok Followers — Learn More\" is a row inside its table of download options, styled like them (desktop; on phones the row is empty)",
+    "deceptiveAdEvidence": [
+      "evidence/ttdownloader.com/deceptive-ad-r2-V1-desktop.png"
+    ],
+    "desktop": {
+      "deceptiveAd": true
+    },
+    "mobile": {},
+    "adsReviewed": true
+  },
+  "tiktokio.com": {
+    "popupsConfirmed": true,
+    "popupsNote": "pop-under tabs (ytohimselfashel.com) that end on Google's home page",
+    "adsReviewed": true
+  },
+  "ttsave.net": {
+    "popupsConfirmed": true,
+    "popupsNote": "pop-under tabs (hai8g.com) that end on Google's home page",
+    "iphoneConfirmed": false,
+    "iphoneNote": "a full-screen ad with a Close button covered the page; a person would close it, so not counted as TTSave's failure",
+    "adsReviewed": true
+  },
+  "tikcd.com": {
+    "deceptiveAd": true,
+    "deceptiveAdNote": "\"iPhone app for free\" is first in its list of download buttons, styled exactly like them",
+    "deceptiveAdEvidence": [
+      "evidence/tikcd.com/deceptive-ad-r2-V1-desktop.png",
+      "evidence/tikcd.com/deceptive-ad-r2-V1-mobile.png"
+    ],
+    "adsReviewed": true
+  },
+  "tikmate.app": {
+    "iphoneConfirmed": true,
+    "iphoneNote": "ad wall (watch an ad to continue)",
+    "adsReviewed": true
+  },
+  "lovetik.com": {
+    "iphoneConfirmed": true,
+    "iphoneNote": "no download control (its outage)",
+    "adsReviewed": true
+  },
+  "tikwm.com": {
+    "iphoneConfirmed": true,
+    "iphoneNote": "the video opened in Safari's player and wasn't saved",
+    "adsReviewed": true
+  },
+  "savetik.co": {
+    "iphoneConfirmed": false,
+    "iphoneNote": "not judged: SaveTik isn't scored this edition (blocked by its bot protection)",
+    "adsReviewed": true
+  },
+  "gettikvideo.com": {
+    "adsReviewed": true
+  },
+  "snaptik.app": {
+    "adsReviewed": true
+  },
+  "tikdown.org": {
+    "adsReviewed": true
+  },
+  "indown.io": {
+    "adsReviewed": true
+  }
+}

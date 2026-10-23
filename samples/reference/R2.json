@@ -1,0 +1,22 @@
+{
+  "sample": "R2",
+  "url": "https://www.tiktok.com/@samsung/video/7687880614908890376",
+  "captured": "2026-10-19T09:10:28.897Z",
+  "id": "7687880614908890376",
+  "author": "samsung",
+  "created": "2026-09-21T11:05:00.000Z",
+  "isPhoto": false,
+  "duration": 15,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7687880687907212040",
+  "musicDuration": 15,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 15,
+    "maxHeight": 1920
+  },
+  "watermarkReference": true
+}

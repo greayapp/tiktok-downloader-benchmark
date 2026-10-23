@@ -1,0 +1,64 @@
+{
+  "item": "P7",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T10:41:59.700Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1591,
+    "to_download": 2477,
+    "to_file": 5970
+  },
+  "clicks": 2,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P7-desktop-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P7-desktop-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P7-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/P7-desktop-result.png"
+  ],
+  "bytes": 661686,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Image 3"
+    ],
+    "arrived": 2
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/P7-desktop.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P7-desktop-2.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P7-desktop-3.bin"
+  ],
+  "lineMbps": 94.2
+}

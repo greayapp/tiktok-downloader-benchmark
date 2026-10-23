@@ -1,0 +1,22 @@
+{
+  "item": "N3",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T11:12:44.013Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "generic",
+    "message": "Paste correct link and try again 0x02"
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tiktokio.com/N3-mobile-negative.png"
+  ],
+  "lineMbps": 73.9
+}

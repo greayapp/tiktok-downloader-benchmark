@@ -1,0 +1,52 @@
+{
+  "item": "R1",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-20T11:11:29.593Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2122,
+    "to_download": 4039,
+    "to_file": 4047
+  },
+  "clicks": 2,
+  "control_label": "Without watermark HD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 72.618005,
+      "bytes": 6497246,
+      "video": {
+        "codec": "hevc",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/R1-mobile-result.png"
+  ],
+  "bytes": 6497246,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/R1-mobile.mp4"
+  ],
+  "lineMbps": 94.2
+}

@@ -1,0 +1,57 @@
+{
+  "item": "P2",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T17:38:13.628Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3774,
+    "to_download": 10281,
+    "to_file": 17165
+  },
+  "clicks": 2,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P2-desktop-2.bin",
+        "type": "jpg",
+        "width": 1100,
+        "height": 1376
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P2-desktop.bin",
+        "type": "jpg",
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/P2-desktop-result.png"
+  ],
+  "bytes": 365665,
+  "delivery": "download",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Profile Picture"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/ttsave.net/P2-desktop.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/P2-desktop-2.bin"
+  ],
+  "lineMbps": 73.9
+}

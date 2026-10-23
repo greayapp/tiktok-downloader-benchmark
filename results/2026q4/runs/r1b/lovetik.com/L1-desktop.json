@@ -1,0 +1,21 @@
+{
+  "item": "L1",
+  "kind": "variant",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T08:34:54.241Z",
+  "outcome": "failure",
+  "failure": "the site said: \"Invalid TikTok video url. Please try again.\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1b/lovetik.com/L1-desktop-no-result.png"
+  ],
+  "siteMessage": "Invalid TikTok video url. Please try again.",
+  "firstFailure": "the site said: \"Invalid TikTok video url. Please try again.\"",
+  "lineMbps": 85.3
+}

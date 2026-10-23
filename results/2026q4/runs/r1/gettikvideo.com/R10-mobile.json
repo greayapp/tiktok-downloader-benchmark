@@ -1,0 +1,56 @@
+{
+  "item": "R10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T17:02:22.843Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 820,
+    "to_download": 2306,
+    "to_file": 4943
+  },
+  "clicks": 2,
+  "control_label": "1 · Download photo 1 of 2",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/R10-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/R10-mobile.bin",
+        "type": "jpg",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/R10-mobile-result.png"
+  ],
+  "bytes": 886962,
+  "delivery": "download",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "1 · Download photo 1 of 2",
+      "2 · Download photo 2 of 2",
+      "1 · Download photo 1 of 2 (saved)"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/R10-mobile.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/R10-mobile-2.bin"
+  ],
+  "lineMbps": 79.9
+}

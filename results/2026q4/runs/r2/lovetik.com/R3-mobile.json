@@ -1,0 +1,21 @@
+{
+  "item": "R3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T16:01:58.353Z",
+  "outcome": "failure",
+  "failure": "the site said: \"Error: Could not get Video ID.\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/lovetik.com/R3-mobile-no-result.png"
+  ],
+  "siteMessage": "Error: Could not get Video ID.",
+  "firstFailure": "no download control within 60 s",
+  "lineMbps": 73.9
+}

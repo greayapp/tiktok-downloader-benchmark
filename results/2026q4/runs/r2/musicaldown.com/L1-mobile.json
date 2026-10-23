@@ -1,0 +1,57 @@
+{
+  "item": "L1",
+  "kind": "variant",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T19:54:36.810Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2586,
+    "to_download": 5099,
+    "to_file": 7327
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD MP4 [HD]",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 15.045011,
+      "bytes": 10686719,
+      "video": {
+        "codec": "hevc",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/L1-mobile-result.png"
+  ],
+  "bytes": 10686719,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/L1-mobile.mp4"
+  ],
+  "lineMbps": 73.9
+}

@@ -1,0 +1,72 @@
+{
+  "item": "P9",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T17:05:27.826Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1088,
+    "to_download": 2500,
+    "to_file": 7824
+  },
+  "clicks": 2,
+  "control_label": "1 · Download photo 1 of 4",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile-2.bin",
+        "type": "jpg",
+        "width": 1242,
+        "height": 2208
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile-3.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 3838
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile-4.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 3838
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile.bin",
+        "type": "jpg",
+        "width": 1242,
+        "height": 2208
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 2
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile-result.png"
+  ],
+  "bytes": 605904,
+  "delivery": "download",
+  "perImage": {
+    "offered": 5,
+    "labels": [
+      "1 · Download photo 1 of 4",
+      "2 · Download photo 2 of 4",
+      "3 · Download photo 3 of 4",
+      "4 · Download photo 4 of 4",
+      "1 · Download photo 1 of 4 (saved)"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile-2.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile-3.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P9-mobile-4.bin"
+  ],
+  "lineMbps": 79.9
+}

@@ -1,0 +1,201 @@
+{
+  "newPages": [
+    {
+      "t": 1792482829808,
+      "phase": "home",
+      "url": "chrome-error://chromewebdata/",
+      "finalUrl": "chrome-error://chromewebdata/",
+      "evidence": "harness/runs-local/2026q4/r1/ttdownloader.com/newtabs/newtab-1-1792482833812.png",
+      "media": false
+    },
+    {
+      "t": 1792482974220,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792482988977,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483033262,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483121979,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483155517,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483202096,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483246140,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483260431,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483276551,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483786493,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483804043,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792483867144,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792484049011,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792484134409,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792484248891,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792484495948,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792484516447,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792484604474,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792484680438,
+      "phase": "home",
+      "url": "chrome-error://chromewebdata/",
+      "finalUrl": "chrome-error://chromewebdata/",
+      "evidence": "harness/runs-local/2026q4/r1/ttdownloader.com/newtabs/newtab-20-1792484684443.png",
+      "media": false
+    },
+    {
+      "t": 1792485147195,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    }
+  ],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 1414,
+    "ad": 0,
+    "tracker": 276
+  },
+  "adDomains": [],
+  "trackerDomains": [
+    "cloudflareinsights.com",
+    "google-analytics.com",
+    "googletagmanager.com",
+    "ttdownloader.com"
+  ],
+  "thirdPartyDomains": [
+    "bootstrapcdn.com",
+    "cloudflare.com",
+    "cloudflareinsights.com",
+    "fontawesome.com",
+    "google-analytics.com",
+    "googleapis.com",
+    "googletagmanager.com",
+    "grotaich.net",
+    "gstatic.com",
+    "jyrxhmexpg.com",
+    "smlsdvskc.com"
+  ],
+  "cookiesBeforeInteraction": []
+}

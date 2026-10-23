@@ -1,0 +1,53 @@
+{
+  "item": "R4",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T11:32:35.322Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 1381,
+    "to_download": 2320,
+    "to_file": 112967
+  },
+  "clicks": 2,
+  "control_label": "Download without watermark (HD)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 59.86,
+      "bytes": 47740794,
+      "video": {
+        "codec": "hevc",
+        "width": 1076,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tiktokio.com/R4-mobile-result.png"
+  ],
+  "bytes": 47740794,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/tiktokio.com/R4-mobile.mp4"
+  ],
+  "firstFailure": "apiRequestContext.get: aborted\nCall log:\n  - → GET https://dl.tiktokio.com/download?token=atHsRx0cccHM6Ly92MTYudG9rY2RuLmNvbS8wMDdiOWI0NmQwYmE2ZTZkNGZiZTg1YmIwM",
+  "lineMbps": 73.9
+}

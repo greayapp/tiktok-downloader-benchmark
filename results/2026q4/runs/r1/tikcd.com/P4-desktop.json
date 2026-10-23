@@ -1,0 +1,59 @@
+{
+  "item": "P4",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T01:07:10.218Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2366,
+    "to_download": 3258,
+    "to_file": 3264
+  },
+  "clicks": 2,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P4-desktop.bin.unzipped/photo_1.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P4-desktop.bin.unzipped/photo_2.jpg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P4-desktop.bin.unzipped/photo_3.jpg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P4-desktop.bin.unzipped/photo_4.jpg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P4-desktop-result.png"
+  ],
+  "bytes": 2672088,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P4-desktop.bin"
+  ],
+  "lineMbps": 79.9
+}

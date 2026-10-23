@@ -1,0 +1,19 @@
+{
+  "item": "M1",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "mobile",
+  "started": "2026-10-20T06:03:23.534Z",
+  "outcome": "ad-wall",
+  "failure": "the site requires watching an ad to continue (not done: SPEC.md §6.D)",
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikmate.app/M1-mobile-ad-wall.png"
+  ],
+  "lineMbps": 84.3
+}

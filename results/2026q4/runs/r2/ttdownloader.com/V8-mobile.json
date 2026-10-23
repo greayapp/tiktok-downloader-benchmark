@@ -1,0 +1,58 @@
+{
+  "item": "V8",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-23T00:46:02.520Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3110,
+    "to_download": 6532,
+    "to_file": 8567
+  },
+  "clicks": 2,
+  "control_label": "Download video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 15.582233,
+      "bytes": 13734119,
+      "video": {
+        "codec": "hevc",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/V8-mobile-result.png"
+  ],
+  "bytes": 13734119,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/V8-mobile.mp4"
+  ],
+  "lineMbps": 73.9
+}

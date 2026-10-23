@@ -1,0 +1,18 @@
+{
+  "item": "P4",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T16:52:01.124Z",
+  "outcome": "failure",
+  "failure": "home page did not load: page.goto: net::ERR_TIMED_OUT at https://gettikvideo.com/",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 0,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [],
+  "firstFailure": "home page did not load: page.goto: Timeout 45000ms exceeded.",
+  "lineMbps": 79.9
+}

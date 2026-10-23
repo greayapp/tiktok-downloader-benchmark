@@ -1,0 +1,83 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T06:33:27.650Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1104,
+    "to_download": 3059,
+    "to_file": 3119
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (8)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin.unzipped/7693215955647778070_0_1792404323.jpeg",
+        "type": "heic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin.unzipped/7693215955647778070_1_1792404323.jpeg",
+        "type": "heic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin.unzipped/7693215955647778070_2_1792404323.jpeg",
+        "type": "heic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin.unzipped/7693215955647778070_3_1792404323.jpeg",
+        "type": "heic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin.unzipped/7693215955647778070_4_1792404323.jpeg",
+        "type": "heic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin.unzipped/7693215955647778070_5_1792404323.jpeg",
+        "type": "heic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin.unzipped/7693215955647778070_6_1792404323.jpeg",
+        "type": "heic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin.unzipped/7693215955647778070_7_1792404323.jpeg",
+        "type": "heic",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "heicOnly": true,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop-result.png"
+  ],
+  "bytes": 172455,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ssstik.io/P5-desktop.bin"
+  ],
+  "lineMbps": 84.3
+}

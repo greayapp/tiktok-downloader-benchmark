@@ -1,0 +1,55 @@
+{
+  "item": "P2",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T21:58:49.319Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2796,
+    "to_download": 4267,
+    "to_file": 5561
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/P2-mobile-2.bin",
+        "type": "jpg",
+        "width": 1100,
+        "height": 1376
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/P2-mobile.bin",
+        "type": "jpg",
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/P2-mobile-result.png"
+  ],
+  "bytes": 365665,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/P2-mobile.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/P2-mobile-2.bin"
+  ],
+  "lineMbps": 79.9
+}

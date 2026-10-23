@@ -1,0 +1,83 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-23T02:05:21.223Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 861,
+    "to_download": 1832,
+    "to_file": 1835
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (8)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin.unzipped/image-003.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin.unzipped/image-004.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin.unzipped/image-005.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin.unzipped/image-006.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin.unzipped/image-007.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin.unzipped/image-008.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile-result.png"
+  ],
+  "bytes": 533436,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P5-mobile.bin"
+  ],
+  "lineMbps": 73.9
+}

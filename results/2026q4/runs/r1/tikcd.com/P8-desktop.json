@@ -1,0 +1,53 @@
+{
+  "item": "P8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T01:06:57.820Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2359,
+    "to_download": 3236,
+    "to_file": 3240
+  },
+  "clicks": 2,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P8-desktop.bin.unzipped/photo_1.jpg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2696
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P8-desktop.bin.unzipped/photo_2.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1468
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P8-desktop.bin.unzipped/photo_3.jpg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2958
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P8-desktop-result.png"
+  ],
+  "bytes": 2745454,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P8-desktop.bin"
+  ],
+  "lineMbps": 79.9
+}

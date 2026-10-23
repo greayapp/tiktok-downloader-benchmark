@@ -1,0 +1,17 @@
+{
+  "tool": "indown.io",
+  "measured": "2026-10-23T03:45:05.226Z",
+  "accessibility": 94,
+  "vitals": {
+    "lcp": 1916.5302,
+    "inp": 75.11674999999968,
+    "cls": 0.2245094564458336
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 2,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://indown.io/en5"
+  }
+}

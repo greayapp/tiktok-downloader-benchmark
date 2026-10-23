@@ -1,0 +1,22 @@
+{
+  "item": "N3",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T21:13:37.673Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "generic",
+    "message": "Please paste a valid tiktok.com video link."
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikdown.org/N3-mobile-negative.png"
+  ],
+  "lineMbps": 73.9
+}

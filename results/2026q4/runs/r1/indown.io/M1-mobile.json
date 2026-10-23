@@ -1,0 +1,19 @@
+{
+  "item": "M1",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "mobile",
+  "started": "2026-10-19T22:16:59.298Z",
+  "outcome": "blocked",
+  "failure": "bot-protection challenge (not solved, SPEC.md §5.4)",
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 0,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/indown.io/M1-mobile-blocked.png"
+  ],
+  "lineMbps": 79.9
+}

@@ -1,0 +1,54 @@
+{
+  "item": "V10",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T19:56:36.978Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2026,
+    "to_download": 3512,
+    "to_file": 94928
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD MP4 [HD]",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 147.515,
+      "bytes": 229541175,
+      "video": {
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/V10-mobile-result.png"
+  ],
+  "bytes": 229541175,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/V10-mobile.mp4"
+  ],
+  "lineMbps": 73.9
+}

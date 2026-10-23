@@ -1,0 +1,57 @@
+{
+  "item": "V4",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-19T22:47:22.758Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 4528,
+    "to_download": 16580,
+    "to_file": 16586
+  },
+  "clicks": 2,
+  "control_label": "Download Video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 30.046009,
+      "bytes": 1623304,
+      "video": {
+        "codec": "h264",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.6666666666666666,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/V4-desktop-result.png"
+  ],
+  "bytes": 1623304,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ttsave.net/V4-desktop.mp4"
+  ],
+  "lineMbps": 79.9
+}

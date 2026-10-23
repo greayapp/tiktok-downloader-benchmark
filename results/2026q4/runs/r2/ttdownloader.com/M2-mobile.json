@@ -1,0 +1,43 @@
+{
+  "item": "M2",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "mobile",
+  "started": "2026-10-23T01:04:42.704Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3113,
+    "to_download": 4021,
+    "to_file": 4543
+  },
+  "clicks": 2,
+  "control_label": "Download audio",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 16.144739,
+      "bytes": 389373,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/M2-mobile-result.png"
+  ],
+  "bytes": 389373,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/M2-mobile.mp3"
+  ],
+  "lineMbps": 73.9
+}

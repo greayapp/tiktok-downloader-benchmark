@@ -1,0 +1,88 @@
+{
+  "item": "R9",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T22:38:44.860Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 4034,
+    "to_download": 27005,
+    "to_file": 60445
+  },
+  "clicks": 3,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-5.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-6.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-result.png"
+  ],
+  "bytes": 404448,
+  "delivery": "download",
+  "perImage": {
+    "offered": 7,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Image 3",
+      "Download Image 4",
+      "Download Image 5",
+      "Download Image 6",
+      "Download Profile Picture"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop.bin",
+    "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-2.bin",
+    "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-3.bin",
+    "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-4.bin",
+    "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-5.bin",
+    "harness/runs-local/2026q4/r1/ttsave.net/R9-desktop-6.bin"
+  ],
+  "lineMbps": 79.9
+}

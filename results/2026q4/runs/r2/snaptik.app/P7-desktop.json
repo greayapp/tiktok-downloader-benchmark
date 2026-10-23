@@ -1,0 +1,53 @@
+{
+  "item": "P7",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-23T01:34:53.007Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2652,
+    "to_download": 3537,
+    "to_file": 3540
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (3)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P7-desktop.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P7-desktop.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P7-desktop.bin.unzipped/image-003.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P7-desktop-result.png"
+  ],
+  "bytes": 1695270,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P7-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

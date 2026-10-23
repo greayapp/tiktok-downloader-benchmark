@@ -1,0 +1,47 @@
+{
+  "item": "P2",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-23T01:36:37.877Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2648,
+    "to_download": 3537,
+    "to_file": 3540
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (2)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P2-desktop.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P2-desktop.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1100,
+        "height": 1376
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P2-desktop-result.png"
+  ],
+  "bytes": 649461,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P2-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

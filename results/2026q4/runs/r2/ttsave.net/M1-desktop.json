@@ -1,0 +1,43 @@
+{
+  "item": "M1",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "desktop",
+  "started": "2026-10-22T17:18:29.333Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 4820,
+    "to_download": 12838,
+    "to_file": 12839
+  },
+  "clicks": 2,
+  "control_label": "Download Audio",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 15.072653,
+      "bytes": 242042,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/M1-desktop-result.png"
+  ],
+  "bytes": 242042,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ttsave.net/M1-desktop.mp3"
+  ],
+  "lineMbps": 73.9
+}

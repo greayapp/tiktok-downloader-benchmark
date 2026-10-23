@@ -1,0 +1,22 @@
+{
+  "item": "N1",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T20:47:40.760Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "generic",
+    "message": "Could not find that video. Double-check the link and that the video is public."
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikdown.org/N1-desktop-negative.png"
+  ],
+  "lineMbps": 73.9
+}

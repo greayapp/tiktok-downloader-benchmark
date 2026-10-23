@@ -1,0 +1,15 @@
+rank,tool,domain,overall,reliability,ads,quality,speed,privacy,mobile
+1,GetTikVideo,gettikvideo.com,91,92,100,70,98,85,97
+2,TikDown,tikdown.org,90,88,100,73,98,90,88
+3,SnapTik,snaptik.app,83,88,90,68,100,50,85
+4,MusicalDown,musicaldown.com,82,93,65,77,99,50,95
+5,TikCD,tikcd.com,81,81,80,84,97,50,88
+6,TTDownloader,ttdownloader.com,79,72,60,98,97,80,80
+7,TikTokio,tiktokio.com,75,86,70,75,80,50,72
+8,TikMate,tikmate.app,74,80,78,79,59,50,88
+9,SSSTik,ssstik.io,65,98,50,59,30,50,79
+10,TTSave,ttsave.net,64,57,70,67,64,50,81
+,SaveTik,savetik.co,,,,,,,
+,TikWM,tikwm.com,,,,,,,
+,LoveTik,lovetik.com,,,,,,,
+,inDown,indown.io,,,,,,,

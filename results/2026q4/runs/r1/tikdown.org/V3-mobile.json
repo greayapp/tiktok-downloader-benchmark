@@ -1,0 +1,56 @@
+{
+  "item": "V3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-20T05:22:40.262Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2383,
+    "to_download": 4374,
+    "to_file": 6438
+  },
+  "clicks": 2,
+  "control_label": "Download (no watermark)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 20.6,
+      "bytes": 3105066,
+      "video": {
+        "codec": "h264",
+        "width": 708,
+        "height": 886
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.6553254437869822,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikdown.org/V3-mobile-result.png"
+  ],
+  "bytes": 3105066,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikdown.org/V3-mobile.mp4"
+  ],
+  "lineMbps": 84.3
+}

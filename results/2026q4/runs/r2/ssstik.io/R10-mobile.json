@@ -1,0 +1,47 @@
+{
+  "item": "R10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:16:29.545Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1114,
+    "to_download": 3612,
+    "to_file": 3904
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (2)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R10-mobile.bin.unzipped/7497049913449106718_0_1792477899.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/R10-mobile.bin.unzipped/7497049913449106718_1_1792477899.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 2
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/R10-mobile-result.png"
+  ],
+  "bytes": 539295,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ssstik.io/R10-mobile.bin"
+  ],
+  "lineMbps": 73.9
+}

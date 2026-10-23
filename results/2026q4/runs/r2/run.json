@@ -1,0 +1,125 @@
+{
+  "edition": "2026q4",
+  "run": "r2",
+  "started": "2026-10-22T10:23:07.178Z",
+  "resumed": [
+    {
+      "at": "2026-10-23T03:09:02.100Z",
+      "vantage": {
+        "country": "IN",
+        "cloudflareColo": "NAG",
+        "expectedCountry": "IN",
+        "bandwidth": {
+          "mbps": 81.8,
+          "bytes": 25000000,
+          "seconds": 2.4
+        },
+        "at": "2026-10-23T03:09:01.701Z"
+      }
+    }
+  ],
+  "chrome": "155.0.8059.85",
+  "node": "v24.21.0",
+  "lists": {
+    "easylist": "202610190725",
+    "easyprivacy": "202610190725"
+  },
+  "viewports": [
+    "desktop",
+    "mobile"
+  ],
+  "items": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P9",
+    "P10",
+    "M1",
+    "M2",
+    "L1",
+    "L2",
+    "L3",
+    "N1",
+    "N2",
+    "N3",
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9",
+    "R10"
+  ],
+  "retry": true,
+  "headless": false,
+  "parallel": 1,
+  "vantage": {
+    "country": "IN",
+    "cloudflareColo": "HYD",
+    "expectedCountry": "IN",
+    "bandwidth": {
+      "mbps": 73.9,
+      "bytes": 25000000,
+      "seconds": 2.7
+    },
+    "at": "2026-10-22T10:23:06.139Z"
+  },
+  "references": {
+    "captured": "2026-10-19",
+    "via": "VPN (exit: Tokyo, Japan; datacentre network) \u2014 tiktok.com is blocked at the residential vantage point in India (SPEC.md \u00a74.3)",
+    "method": "TikTok's page data (#__UNIVERSAL_DATA_FOR_REHYDRATION__) read in Google Chrome 155.0.8059.82, cross-checked with yt-dlp 2026.08.19",
+    "watermarkReferences": "TikTok's own unwatermarked and watermarked files, kept on the test machine only (harness/.cache/refs); not available for V2, R1 and R4, whose accounts turned off TikTok's own downloads",
+    "core": [
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10"
+    ],
+    "rotating": "R1\u2013R10 captured the same day; published with the edition's results"
+  },
+  "redone": [
+    {
+      "blocks": [
+        "tikmate.app:desktop"
+      ],
+      "at": "2026-10-23T03:09:02.100Z",
+      "reason": "ad-wall check missed TikMate's offerwall on desktop (screenshots show it on every item); fixed in e6db999",
+      "finished": "2026-10-23T03:13:27.066Z"
+    }
+  ],
+  "finished": "2026-10-23T02:43:25.205Z"
+}

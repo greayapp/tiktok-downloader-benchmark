@@ -1,0 +1,23 @@
+{
+  "item": "V5",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T23:53:14.161Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 4372
+  },
+  "clicks": 3,
+  "control_label": "Download Video",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/V5-mobile-result.png",
+    "harness/runs-local/2026q4/r1/ttsave.net/V5-mobile-no-file.png"
+  ],
+  "firstFailure": "the result offers photos but no video option",
+  "lineMbps": 79.9
+}

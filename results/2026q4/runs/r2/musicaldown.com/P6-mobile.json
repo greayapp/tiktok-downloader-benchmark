@@ -1,0 +1,72 @@
+{
+  "item": "P6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T20:00:26.433Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2815,
+    "to_download": 4281,
+    "to_file": 8334
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile-result.png"
+  ],
+  "bytes": 245763,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 4,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 3
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile-2.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile-3.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P6-mobile-4.bin"
+  ],
+  "lineMbps": 73.9
+}

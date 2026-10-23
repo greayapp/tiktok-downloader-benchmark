@@ -1,0 +1,52 @@
+{
+  "item": "R1",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-20T10:25:49.606Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1318,
+    "to_download": 2285,
+    "to_file": 67952
+  },
+  "clicks": 2,
+  "control_label": "Download without watermark (HD)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 72.614208,
+      "bytes": 144704447,
+      "video": {
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/R1-desktop-result.png"
+  ],
+  "bytes": 144704447,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/R1-desktop.mp4"
+  ],
+  "lineMbps": 94.2
+}

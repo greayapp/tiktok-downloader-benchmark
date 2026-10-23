@@ -1,0 +1,22 @@
+{
+  "item": "N3",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T23:04:01.970Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "clear",
+    "message": "Please enter a valid TikTok URL."
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/N3-mobile-negative.png"
+  ],
+  "lineMbps": 79.9
+}

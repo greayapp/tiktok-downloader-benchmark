@@ -1,0 +1,57 @@
+{
+  "item": "P3",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:51:00.886Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2119,
+    "to_download": 79027,
+    "to_file": 100221
+  },
+  "clicks": 9,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P3-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P3-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/P3-mobile-result.png"
+  ],
+  "fallback": "\"Download All Photos (ZIP)\" gave no file; saved the photos one by one",
+  "bytes": 140543,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "1 / 2 Save Photo 1",
+      "2 / 2 Save Photo 2"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/tikcd.com/P3-mobile.bin",
+    "harness/runs-local/2026q4/r2/tikcd.com/P3-mobile-2.bin"
+  ],
+  "lineMbps": 73.9
+}

@@ -1,0 +1,64 @@
+{
+  "item": "P7",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T20:08:01.001Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3117,
+    "to_download": 4435,
+    "to_file": 28132
+  },
+  "clicks": 4,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P7-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P7-mobile-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P7-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P7-mobile-result.png"
+  ],
+  "bytes": 661686,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 2
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P7-mobile.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P7-mobile-2.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P7-mobile-3.bin"
+  ],
+  "lineMbps": 73.9
+}

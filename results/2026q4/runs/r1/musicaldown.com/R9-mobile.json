@@ -1,0 +1,87 @@
+{
+  "item": "R9",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T21:46:18.408Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3136,
+    "to_download": 21262,
+    "to_file": 26936
+  },
+  "clicks": 3,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-5.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-6.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-result.png"
+  ],
+  "bytes": 404448,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 6,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-2.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-3.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-4.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-5.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/R9-mobile-6.bin"
+  ],
+  "lineMbps": 79.9
+}

@@ -1,0 +1,40 @@
+{
+  "newPages": [],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 504,
+    "ad": 37,
+    "tracker": 7
+  },
+  "adDomains": [
+    "adtrafficquality.google",
+    "doubleclick.net",
+    "google.com",
+    "googlesyndication.com"
+  ],
+  "trackerDomains": [
+    "adtrafficquality.google",
+    "cloudflareinsights.com",
+    "google-analytics.com",
+    "googletagmanager.com",
+    "savetik.co"
+  ],
+  "thirdPartyDomains": [
+    "adtrafficquality.google",
+    "cloudflare.com",
+    "cloudflareinsights.com",
+    "doubleclick.net",
+    "google-analytics.com",
+    "google.com",
+    "googleapis.com",
+    "googlesyndication.com",
+    "googletagmanager.com",
+    "gstatic.com"
+  ],
+  "cookiesBeforeInteraction": [
+    ".doubleclick.net:IDE",
+    ".doubleclick.net:DSID"
+  ]
+}

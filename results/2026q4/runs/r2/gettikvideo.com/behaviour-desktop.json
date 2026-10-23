@@ -1,0 +1,30 @@
+{
+  "newPages": [],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 2377,
+    "ad": 212,
+    "tracker": 116
+  },
+  "adDomains": [
+    "bauval.org",
+    "storageimagedisplay.com"
+  ],
+  "trackerDomains": [
+    "google-analytics.com",
+    "googletagmanager.com",
+    "nresystems.com"
+  ],
+  "thirdPartyDomains": [
+    "bauval.org",
+    "google-analytics.com",
+    "googletagmanager.com",
+    "nresystems.com",
+    "storageimagedisplay.com",
+    "tiktokcdn-us.com",
+    "workers.dev"
+  ],
+  "cookiesBeforeInteraction": []
+}

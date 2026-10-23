@@ -1,0 +1,23 @@
+{
+  "item": "R1",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T11:37:04.882Z",
+  "outcome": "failure",
+  "failure": "apiRequestContext.get: aborted\nCall log:\n  - → GET https://dl.tiktokio.com/download?token=atHsRx0cccHM6Ly92MTYudG9rY2RuLmNvbS85MDBmN2QyYmJlN2I1NWQ5MTYzNzY4OTMwO",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 1737,
+    "to_download": 3023
+  },
+  "clicks": 2,
+  "control_label": "Download without watermark (HD)",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tiktokio.com/R1-mobile-result.png"
+  ],
+  "firstFailure": "apiRequestContext.get: aborted\nCall log:\n  - → GET https://dl.tiktokio.com/download?token=atHsRx0cccHM6Ly92MTYudG9rY2RuLmNvbS85MDBmN2QyYmJlN2I1NWQ5MTYzNzY4OTMwO",
+  "lineMbps": 73.9
+}

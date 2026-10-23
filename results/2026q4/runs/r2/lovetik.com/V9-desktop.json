@@ -1,0 +1,23 @@
+{
+  "item": "V9",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T14:36:55.059Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 43787
+  },
+  "clicks": 4,
+  "control_label": "MP4 Player Software",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/lovetik.com/V9-desktop-result.png",
+    "harness/runs-local/2026q4/r2/lovetik.com/V9-desktop-no-file.png"
+  ],
+  "firstFailure": "the site said: \"Error: Could not get Video ID.\"",
+  "lineMbps": 73.9
+}

@@ -1,0 +1,12 @@
+{
+  "item": "P9",
+  "kind": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T17:00:24.004Z",
+  "outcome": "skipped",
+  "failure": "harness watchdog: the item didn't finish in 12 minutes (a harness hang; not counted)",
+  "harnessTimeout": true,
+  "retried": true,
+  "firstFailure": "home page did not load: page.goto: net::ERR_TIMED_OUT at https://gettikvideo.com/",
+  "lineMbps": 73.9
+}

@@ -1,0 +1,81 @@
+{
+  "item": "P10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T20:21:40.272Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 3553,
+    "to_download": 5026,
+    "to_file": 11481
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-2.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-3.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-4.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-5.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-result.png"
+  ],
+  "bytes": 505152,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 5,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 4
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-2.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-3.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-4.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P10-mobile-5.bin"
+  ],
+  "firstFailure": "1 images vs 5 in the post",
+  "lineMbps": 73.9
+}

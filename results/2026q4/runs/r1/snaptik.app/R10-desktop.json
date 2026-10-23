@@ -1,0 +1,21 @@
+{
+  "item": "R10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T20:46:57.283Z",
+  "outcome": "failure",
+  "failure": "the site said: \"Video not found or unavailable\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/snaptik.app/R10-desktop-no-result.png"
+  ],
+  "siteMessage": "Video not found or unavailable",
+  "firstFailure": "the site said: \"Video not found or unavailable\"",
+  "lineMbps": 79.9
+}

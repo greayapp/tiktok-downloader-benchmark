@@ -1,0 +1,22 @@
+{
+  "item": "N1",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T22:03:56.005Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "clear",
+    "message": "This video is currently unavailable!"
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/N1-desktop-negative.png"
+  ],
+  "lineMbps": 73.9
+}

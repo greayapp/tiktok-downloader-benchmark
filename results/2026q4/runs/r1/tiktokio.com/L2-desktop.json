@@ -1,0 +1,23 @@
+{
+  "item": "L2",
+  "kind": "variant",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-20T11:00:35.842Z",
+  "outcome": "failure",
+  "failure": "apiRequestContext.get: aborted\nCall log:\n  - → GET https://dl.tiktokio.com/download?token=atHsRx0cccHM6Ly92MTYudG9rY2RuLmNvbS8yOWMxOTUzNzg0MmU4ZDlhZjNmMDZjMzAxN",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 818,
+    "to_download": 2883
+  },
+  "clicks": 3,
+  "control_label": "Download without watermark (HD)",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/L2-desktop-result.png"
+  ],
+  "firstFailure": "apiRequestContext.get: aborted\nCall log:\n  - → GET https://dl.tiktokio.com/download?token=atHsRx0cccHM6Ly92MTYudG9rY2RuLmNvbS8yOWMxOTUzNzg0MmU4ZDlhZjNmMDZjMzAxN",
+  "lineMbps": 94.2
+}

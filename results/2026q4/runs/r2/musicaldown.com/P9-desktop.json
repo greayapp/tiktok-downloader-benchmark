@@ -1,0 +1,72 @@
+{
+  "item": "P9",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T19:00:54.956Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2887,
+    "to_download": 4281,
+    "to_file": 8363
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop-2.bin",
+        "type": "jpg",
+        "width": 1242,
+        "height": 2208
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop-3.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 3838
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop-4.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 3838
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop.bin",
+        "type": "jpg",
+        "width": 1242,
+        "height": 2208
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 2
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop-result.png"
+  ],
+  "bytes": 605904,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 4,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 3
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop-2.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop-3.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P9-desktop-4.bin"
+  ],
+  "lineMbps": 73.9
+}

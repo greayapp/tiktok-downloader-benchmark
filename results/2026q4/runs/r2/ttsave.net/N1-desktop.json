@@ -1,0 +1,22 @@
+{
+  "item": "N1",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T17:16:04.296Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "generic",
+    "message": "Could not extract video data. Please try again."
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/N1-desktop-negative.png"
+  ],
+  "lineMbps": 73.9
+}

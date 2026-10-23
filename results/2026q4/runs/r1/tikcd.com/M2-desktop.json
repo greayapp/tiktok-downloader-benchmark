@@ -1,0 +1,43 @@
+{
+  "item": "M2",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "desktop",
+  "started": "2026-10-20T01:01:42.795Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2371,
+    "to_download": 5756,
+    "to_file": 5757
+  },
+  "clicks": 2,
+  "control_label": "Download MP3",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 16.143673,
+      "bytes": 259178,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/M2-desktop-result.png"
+  ],
+  "bytes": 259178,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/M2-desktop.mp3"
+  ],
+  "lineMbps": 79.9
+}

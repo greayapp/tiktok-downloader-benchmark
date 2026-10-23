@@ -1,0 +1,58 @@
+{
+  "item": "V9",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-23T01:25:49.868Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2605,
+    "to_download": 4510,
+    "to_file": 5811
+  },
+  "clicks": 2,
+  "control_label": "Download video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 16.113991,
+      "bytes": 4206821,
+      "video": {
+        "codec": "hevc",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/V9-mobile-result.png"
+  ],
+  "bytes": 4206821,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/V9-mobile.mp4"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 73.9
+}

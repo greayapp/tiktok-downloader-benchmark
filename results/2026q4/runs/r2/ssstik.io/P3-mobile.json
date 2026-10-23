@@ -1,0 +1,47 @@
+{
+  "item": "P3",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:19:25.832Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 850,
+    "to_download": 3562,
+    "to_file": 3739
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (2)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P3-mobile.bin.unzipped/7696586104627023126_0_1792477648.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P3-mobile.bin.unzipped/7696586104627023126_1_1792477648.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/P3-mobile-result.png"
+  ],
+  "bytes": 88811,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ssstik.io/P3-mobile.bin"
+  ],
+  "lineMbps": 73.9
+}

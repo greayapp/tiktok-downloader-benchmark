@@ -1,0 +1,53 @@
+{
+  "item": "V2",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-20T10:50:40.222Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 804,
+    "to_download": 19173,
+    "to_file": 99704
+  },
+  "clicks": 3,
+  "control_label": "Download without watermark (HD)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 45.651,
+      "bytes": 194726780,
+      "video": {
+        "codec": "hevc",
+        "width": 2160,
+        "height": 3840
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/V2-desktop-result.png"
+  ],
+  "bytes": 194726780,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/V2-desktop.mp4"
+  ],
+  "firstFailure": "apiRequestContext.get: aborted\nCall log:\n  - → GET https://dl.tiktokio.com/download?token=atHsRx0cccHM6Ly92MTYudG9rY2RuLmNvbS8yOWMxOTUzNzg0MmU4ZDlhZjNmMDZjMzAxN",
+  "lineMbps": 94.2
+}

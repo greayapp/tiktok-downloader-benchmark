@@ -1,0 +1,56 @@
+{
+  "item": "R3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T16:58:21.352Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 851,
+    "to_download": 3270,
+    "to_file": 5804
+  },
+  "clicks": 2,
+  "control_label": "Best Quality (No Watermark) 3.7 MB",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 27.533333,
+      "bytes": 3862899,
+      "video": {
+        "codec": "h264",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/R3-mobile-result.png"
+  ],
+  "bytes": 3862899,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/R3-mobile.mp4"
+  ],
+  "lineMbps": 73.9
+}

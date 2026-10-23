@@ -1,0 +1,56 @@
+{
+  "item": "V3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-19T16:37:11.935Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 48754,
+    "to_download": 51650,
+    "to_file": 51656
+  },
+  "clicks": 2,
+  "control_label": "Best Quality (No Watermark) 3.4 MB",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 20.596009,
+      "bytes": 3533158,
+      "video": {
+        "codec": "hevc",
+        "width": 1080,
+        "height": 1352
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/V3-desktop-result.png"
+  ],
+  "bytes": 3533158,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/V3-desktop.mp4"
+  ],
+  "lineMbps": 79.9
+}

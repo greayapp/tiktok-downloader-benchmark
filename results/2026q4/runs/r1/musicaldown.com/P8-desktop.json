@@ -1,0 +1,63 @@
+{
+  "item": "P8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T21:25:08.290Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2952,
+    "to_download": 4660,
+    "to_file": 9869
+  },
+  "clicks": 3,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/P8-desktop-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1468
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/P8-desktop-3.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2958
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/P8-desktop.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2696
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/P8-desktop-result.png"
+  ],
+  "bytes": 1393437,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/P8-desktop.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/P8-desktop-2.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/P8-desktop-3.bin"
+  ],
+  "lineMbps": 79.9
+}

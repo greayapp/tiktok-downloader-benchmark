@@ -1,0 +1,53 @@
+{
+  "item": "P8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:12:32.203Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 851,
+    "to_download": 3612,
+    "to_file": 4464
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (3)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P8-mobile.bin.unzipped/7553294415301840158_0_1792404796.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1498
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P8-mobile.bin.unzipped/7553294415301840158_1_1792404796.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1468
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P8-mobile.bin.unzipped/7553294415301840158_2_1792404796.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1643
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 3
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/P8-mobile-result.png"
+  ],
+  "bytes": 346711,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ssstik.io/P8-mobile.bin"
+  ],
+  "lineMbps": 73.9
+}

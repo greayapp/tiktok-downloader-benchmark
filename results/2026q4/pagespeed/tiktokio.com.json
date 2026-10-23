@@ -1,0 +1,17 @@
+{
+  "tool": "tiktokio.com",
+  "measured": "2026-10-23T03:42:44.041Z",
+  "accessibility": 89,
+  "vitals": {
+    "lcp": 2582.1297999999997,
+    "inp": 511.00000000000045,
+    "cls": 0.25368415061809674
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 0,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://tiktokio.com/"
+  }
+}

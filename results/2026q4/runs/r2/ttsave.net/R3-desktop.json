@@ -1,0 +1,23 @@
+{
+  "item": "R3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T17:38:54.908Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 3782
+  },
+  "clicks": 2,
+  "control_label": "Download Video",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/R3-desktop-result.png",
+    "harness/runs-local/2026q4/r2/ttsave.net/R3-desktop-no-file.png"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 73.9
+}

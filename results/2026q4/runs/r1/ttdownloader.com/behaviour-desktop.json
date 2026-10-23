@@ -1,0 +1,225 @@
+{
+  "newPages": [
+    {
+      "t": 1792479501018,
+      "phase": "home",
+      "url": "chrome-error://chromewebdata/",
+      "finalUrl": "chrome-error://chromewebdata/",
+      "evidence": "harness/runs-local/2026q4/r1/ttdownloader.com/newtabs/newtab-1-1792479505023.png",
+      "media": false
+    },
+    {
+      "t": 1792479511465,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792479636336,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792479855214,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792479856689,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792479979694,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480046793,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480068473,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480332479,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480566232,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480581963,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480706789,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480723541,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480835743,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480849184,
+      "phase": "submitted",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480853564,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480944998,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792480988885,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792481004314,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792481034067,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792481133457,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792481314513,
+      "phase": "home",
+      "url": "chrome-error://chromewebdata/",
+      "finalUrl": "chrome-error://chromewebdata/",
+      "evidence": "harness/runs-local/2026q4/r1/ttdownloader.com/newtabs/newtab-22-1792481318518.png",
+      "media": false
+    },
+    {
+      "t": 1792481318810,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792481862084,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    }
+  ],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 1442,
+    "ad": 0,
+    "tracker": 266
+  },
+  "adDomains": [],
+  "trackerDomains": [
+    "cloudflareinsights.com",
+    "google-analytics.com",
+    "googletagmanager.com",
+    "ttdownloader.com"
+  ],
+  "thirdPartyDomains": [
+    "bootstrapcdn.com",
+    "cloudflare.com",
+    "cloudflareinsights.com",
+    "fontawesome.com",
+    "google-analytics.com",
+    "googleapis.com",
+    "googletagmanager.com",
+    "grotaich.net",
+    "gstatic.com",
+    "hhixldncwehrbow.com",
+    "jyrxhmexpg.com"
+  ],
+  "cookiesBeforeInteraction": []
+}

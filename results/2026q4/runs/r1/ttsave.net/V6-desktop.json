@@ -1,0 +1,23 @@
+{
+  "item": "V6",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-19T22:54:56.184Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 4020
+  },
+  "clicks": 2,
+  "control_label": "Download Video",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/V6-desktop-result.png",
+    "harness/runs-local/2026q4/r1/ttsave.net/V6-desktop-no-file.png"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 79.9
+}

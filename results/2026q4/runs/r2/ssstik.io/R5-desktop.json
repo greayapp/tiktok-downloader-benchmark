@@ -1,0 +1,28 @@
+{
+  "item": "R5",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T22:00:18.455Z",
+  "outcome": "ad-wall",
+  "failure": "the site requires watching an ad to continue (not done: SPEC.md §6.D)",
+  "retried": false,
+  "timings_ms": {
+    "to_result": 837
+  },
+  "clicks": 3,
+  "control_label": "Without watermark",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/R5-desktop-result.png",
+    "harness/runs-local/2026q4/r2/ssstik.io/R5-desktop-ad-wall.png",
+    "harness/runs-local/2026q4/r2/ssstik.io/R5-desktop-ad-wall.png"
+  ],
+  "adGatedOptions": [
+    "Without watermark HD",
+    "Without watermark"
+  ],
+  "adWallText": "lose your reward",
+  "lineMbps": 73.9
+}

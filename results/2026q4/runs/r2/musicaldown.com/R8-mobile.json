@@ -1,0 +1,56 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T20:09:15.189Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2702,
+    "to_download": 4131,
+    "to_file": 5961
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/R8-mobile-2.bin",
+        "type": "jpg",
+        "width": 1180,
+        "height": 1576
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/R8-mobile.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/R8-mobile-result.png"
+  ],
+  "bytes": 1313856,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/R8-mobile.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/R8-mobile-2.bin"
+  ],
+  "lineMbps": 73.9
+}

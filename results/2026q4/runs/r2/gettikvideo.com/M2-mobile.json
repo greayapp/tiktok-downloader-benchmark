@@ -1,0 +1,43 @@
+{
+  "item": "M2",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "mobile",
+  "started": "2026-10-22T16:36:24.230Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 829,
+    "to_download": 4799,
+    "to_file": 6685
+  },
+  "clicks": 2,
+  "control_label": "Audio (MP3)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 16.143625,
+      "bytes": 258862,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/M2-mobile-result.png"
+  ],
+  "bytes": 258862,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/M2-mobile.mp3"
+  ],
+  "lineMbps": 73.9
+}

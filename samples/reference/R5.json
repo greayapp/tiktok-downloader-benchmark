@@ -1,0 +1,22 @@
+{
+  "sample": "R5",
+  "url": "https://www.tiktok.com/@tiktok/video/7693184538704416031",
+  "captured": "2026-10-19T09:11:34.182Z",
+  "id": "7693184538704416031",
+  "author": "tiktok",
+  "created": "2026-10-05T14:05:49.000Z",
+  "isPhoto": false,
+  "duration": 68,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7693184700604599071",
+  "musicDuration": 68,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 68,
+    "maxHeight": 1920
+  },
+  "watermarkReference": true
+}

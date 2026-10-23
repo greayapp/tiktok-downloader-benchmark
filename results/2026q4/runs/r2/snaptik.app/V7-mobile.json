@@ -1,0 +1,61 @@
+{
+  "item": "V7",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-23T02:00:01.965Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1119,
+    "to_download": 2069,
+    "to_file": 2079
+  },
+  "clicks": 2,
+  "control_label": "Download (No Watermark)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 53.056009,
+      "bytes": 6642511,
+      "video": {
+        "codec": "h264",
+        "width": 576,
+        "height": 1024
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.5333333333333333,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/V7-mobile-result.png"
+  ],
+  "adGatedOptions": [
+    "Watch Ad Download HD (No Watermark) HD"
+  ],
+  "bytes": 6642511,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/V7-mobile.mp4"
+  ],
+  "lineMbps": 73.9
+}

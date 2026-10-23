@@ -1,0 +1,37 @@
+{
+  "newPages": [],
+  "offsiteNavigations": [
+    {
+      "t": 1792430134384,
+      "phase": "home",
+      "url": "chrome-error://chromewebdata/",
+      "ours": false
+    }
+  ],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 2035,
+    "ad": 217,
+    "tracker": 121
+  },
+  "adDomains": [
+    "bauval.org",
+    "storageimagedisplay.com"
+  ],
+  "trackerDomains": [
+    "google-analytics.com",
+    "googletagmanager.com",
+    "nresystems.com"
+  ],
+  "thirdPartyDomains": [
+    "bauval.org",
+    "google-analytics.com",
+    "googletagmanager.com",
+    "nresystems.com",
+    "storageimagedisplay.com",
+    "tiktokcdn-us.com",
+    "workers.dev"
+  ],
+  "cookiesBeforeInteraction": []
+}

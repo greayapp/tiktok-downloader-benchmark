@@ -1,0 +1,43 @@
+{
+  "item": "M1",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:18:35.199Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 851,
+    "to_download": 2964,
+    "to_file": 3830
+  },
+  "clicks": 2,
+  "control_label": "Download MP3",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 15.072653,
+      "bytes": 242042,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/M1-mobile-result.png"
+  ],
+  "bytes": 242042,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ssstik.io/M1-mobile.mp3"
+  ],
+  "lineMbps": 73.9
+}

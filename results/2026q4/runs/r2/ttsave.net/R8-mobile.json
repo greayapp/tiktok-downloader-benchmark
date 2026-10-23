@@ -1,0 +1,57 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T17:56:16.595Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 5153,
+    "to_download": 16201,
+    "to_file": 24110
+  },
+  "clicks": 2,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R8-mobile-2.bin",
+        "type": "jpg",
+        "width": 1180,
+        "height": 1576
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R8-mobile.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/R8-mobile-result.png"
+  ],
+  "bytes": 1313856,
+  "delivery": "download",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Profile Picture"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/ttsave.net/R8-mobile.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/R8-mobile-2.bin"
+  ],
+  "lineMbps": 73.9
+}

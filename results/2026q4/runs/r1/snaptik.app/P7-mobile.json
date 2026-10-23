@@ -1,0 +1,53 @@
+{
+  "item": "P7",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T20:59:48.666Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 860,
+    "to_download": 1850,
+    "to_file": 1855
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (3)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/P7-mobile.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/P7-mobile.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/P7-mobile.bin.unzipped/image-003.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/snaptik.app/P7-mobile-result.png"
+  ],
+  "bytes": 1695270,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/snaptik.app/P7-mobile.bin"
+  ],
+  "lineMbps": 79.9
+}

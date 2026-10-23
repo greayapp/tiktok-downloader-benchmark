@@ -1,0 +1,44 @@
+{
+  "item": "R9",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-23T02:08:08.895Z",
+  "outcome": "failure",
+  "failure": "delivered video instead of the photos; 0 images vs 6 in the post",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 860,
+    "to_download": 11455,
+    "to_file": 21453
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (6)",
+  "file": {
+    "ok": false,
+    "reasons": [
+      "delivered video instead of the photos",
+      "0 images vs 6 in the post"
+    ],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/R9-mobile.bin",
+        "type": null,
+        "media": "video"
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/R9-mobile-result.png"
+  ],
+  "bytes": 5167774,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/R9-mobile.bin"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 73.9
+}

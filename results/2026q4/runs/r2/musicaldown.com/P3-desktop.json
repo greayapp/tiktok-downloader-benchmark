@@ -1,0 +1,57 @@
+{
+  "item": "P3",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T19:44:36.759Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2838,
+    "to_download": 5223,
+    "to_file": 9285
+  },
+  "clicks": 3,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P3-desktop-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P3-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P3-desktop-result.png"
+  ],
+  "bytes": 140543,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P3-desktop.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P3-desktop-2.bin"
+  ],
+  "firstFailure": "1 images vs 2 in the post",
+  "lineMbps": 73.9
+}

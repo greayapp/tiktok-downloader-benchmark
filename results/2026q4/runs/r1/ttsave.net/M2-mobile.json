@@ -1,0 +1,43 @@
+{
+  "item": "M2",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "mobile",
+  "started": "2026-10-19T23:31:10.395Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 4284,
+    "to_download": 10318,
+    "to_file": 10319
+  },
+  "clicks": 2,
+  "control_label": "Download Audio",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 16.143673,
+      "bytes": 259178,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/M2-mobile-result.png"
+  ],
+  "bytes": 259178,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ttsave.net/M2-mobile.mp3"
+  ],
+  "lineMbps": 79.9
+}

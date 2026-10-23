@@ -1,0 +1,57 @@
+{
+  "item": "L1",
+  "kind": "variant",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-19T16:35:25.157Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 861,
+    "to_download": 6269,
+    "to_file": 6276
+  },
+  "clicks": 2,
+  "control_label": "Best Quality (No Watermark) 6.2 MB",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 15.045011,
+      "bytes": 6517961,
+      "video": {
+        "codec": "h264",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/L1-desktop-result.png"
+  ],
+  "bytes": 6517961,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/L1-desktop.mp4"
+  ],
+  "lineMbps": 79.9
+}

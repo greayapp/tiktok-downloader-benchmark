@@ -1,0 +1,64 @@
+{
+  "item": "R6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T23:41:42.125Z",
+  "outcome": "failure",
+  "failure": "2 images vs 6 in the post",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2626,
+    "to_download": 79563,
+    "to_file": 193386
+  },
+  "clicks": 13,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": false,
+    "reasons": [
+      "2 images vs 6 in the post"
+    ],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/R6-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/R6-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/R6-mobile-result.png"
+  ],
+  "fallback": "\"Download All Photos (ZIP)\" gave no file; saved the photos one by one",
+  "bytes": 300987,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 6,
+    "labels": [
+      "1 / 6 Save Photo 1",
+      "2 / 6 Save Photo 2",
+      "3 / 6 Save Photo 3",
+      "4 / 6 Save Photo 4",
+      "5 / 6 Save Photo 5",
+      "6 / 6 Save Photo 6"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/tikcd.com/R6-mobile.bin",
+    "harness/runs-local/2026q4/r2/tikcd.com/R6-mobile-2.bin"
+  ],
+  "firstFailure": "2 images vs 6 in the post",
+  "lineMbps": 73.9
+}

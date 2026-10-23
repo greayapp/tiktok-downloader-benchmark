@@ -1,0 +1,47 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T06:33:09.364Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1882,
+    "to_download": 9715,
+    "to_file": 10277
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (2)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/R8-desktop.bin.unzipped/7552217758268656910_0_1792477997.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/R8-desktop.bin.unzipped/7552217758268656910_1_1792477997.jpeg",
+        "type": "webp",
+        "width": 1180,
+        "height": 1576
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 2
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/R8-desktop-result.png"
+  ],
+  "bytes": 178459,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ssstik.io/R8-desktop.bin"
+  ],
+  "lineMbps": 84.3
+}

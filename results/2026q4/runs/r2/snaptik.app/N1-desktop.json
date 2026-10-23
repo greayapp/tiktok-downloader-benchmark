@@ -1,0 +1,22 @@
+{
+  "item": "N1",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-23T01:36:13.308Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "clear",
+    "message": "Video not found or unavailable"
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/N1-desktop-negative.png"
+  ],
+  "lineMbps": 73.9
+}

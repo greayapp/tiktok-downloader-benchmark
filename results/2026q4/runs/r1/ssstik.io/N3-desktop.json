@@ -1,0 +1,22 @@
+{
+  "item": "N3",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-20T06:25:38.014Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "generic",
+    "message": "Sorry, we do not support Youtube links!"
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/N3-desktop-negative.png"
+  ],
+  "lineMbps": 84.3
+}

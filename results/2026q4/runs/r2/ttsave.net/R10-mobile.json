@@ -1,0 +1,57 @@
+{
+  "item": "R10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T17:52:41.837Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 12862,
+    "to_download": 17407,
+    "to_file": 25112
+  },
+  "clicks": 3,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R10-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R10-mobile.bin",
+        "type": "jpg",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/R10-mobile-result.png"
+  ],
+  "bytes": 886962,
+  "delivery": "download",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Profile Picture"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/ttsave.net/R10-mobile.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/R10-mobile-2.bin"
+  ],
+  "lineMbps": 73.9
+}

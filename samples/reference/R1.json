@@ -1,0 +1,21 @@
+{
+  "sample": "R1",
+  "url": "https://www.tiktok.com/@natgeo/video/7683891628230315295",
+  "captured": "2026-10-19T09:10:15.989Z",
+  "id": "7683891628230315295",
+  "author": "natgeo",
+  "created": "2026-09-10T13:04:07.000Z",
+  "isPhoto": false,
+  "duration": 72,
+  "maxHeight": 1280,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7683891712992774942",
+  "musicDuration": 72,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 72,
+    "maxHeight": 1280
+  }
+}

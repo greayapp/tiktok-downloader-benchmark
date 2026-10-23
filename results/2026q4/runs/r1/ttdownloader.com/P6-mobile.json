@@ -1,0 +1,21 @@
+{
+  "item": "P6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T08:28:59.083Z",
+  "outcome": "failure",
+  "failure": "the result offers video and mp3 but no photos option",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttdownloader.com/P6-mobile-no-result.png"
+  ],
+  "notOffered": true,
+  "firstFailure": "the result offers video and mp3 but no photos option",
+  "lineMbps": 84.3
+}

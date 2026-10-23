@@ -1,0 +1,57 @@
+{
+  "item": "R5",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T23:51:24.774Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 4326,
+    "to_download": 33914,
+    "to_file": 33941
+  },
+  "clicks": 3,
+  "control_label": "Download Video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 68.683991,
+      "bytes": 6019431,
+      "video": {
+        "codec": "h264",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.6666666666666666,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R5-mobile-result.png"
+  ],
+  "bytes": 6019431,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R5-mobile.mp4"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 79.9
+}

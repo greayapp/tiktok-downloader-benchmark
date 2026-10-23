@@ -1,0 +1,64 @@
+{
+  "item": "V7",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T16:36:07.920Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 866,
+    "to_download": 4234,
+    "to_file": 6491
+  },
+  "clicks": 2,
+  "control_label": "Best Quality (No Watermark) 6.3 MB",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 53.056009,
+      "bytes": 6642511,
+      "video": {
+        "codec": "h264",
+        "width": 576,
+        "height": 1024
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.5333333333333333,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/V7-mobile-result.png"
+  ],
+  "mobile": {
+    "horizontalScroll": false,
+    "inputFontPx": 16,
+    "smallestTargetPx": 24,
+    "adBetweenInputAndDownload": false
+  },
+  "bytes": 6642511,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/V7-mobile.mp4"
+  ],
+  "lineMbps": 73.9
+}

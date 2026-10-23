@@ -1,0 +1,19 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-23T02:22:48.094Z",
+  "outcome": "blocked",
+  "failure": "bot-protection challenge (not solved, SPEC.md §5.4)",
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 0,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/indown.io/P5-desktop-blocked.png"
+  ],
+  "lineMbps": 73.9
+}

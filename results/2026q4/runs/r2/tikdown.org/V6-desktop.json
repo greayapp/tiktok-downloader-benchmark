@@ -1,0 +1,56 @@
+{
+  "item": "V6",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T20:39:18.215Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2289,
+    "to_download": 7778,
+    "to_file": 32116
+  },
+  "clicks": 2,
+  "control_label": "Download (no watermark)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 246.08,
+      "bytes": 124430486,
+      "video": {
+        "codec": "h264",
+        "width": 576,
+        "height": 1024
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.5333333333333333,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikdown.org/V6-desktop-result.png"
+  ],
+  "bytes": 124430486,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/tikdown.org/V6-desktop.mp4"
+  ],
+  "lineMbps": 73.9
+}

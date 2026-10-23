@@ -1,0 +1,10 @@
+{
+  "item": "V5",
+  "kind": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T19:23:36.192Z",
+  "outcome": "skipped",
+  "failure": "harness watchdog: the item didn't finish in 12 minutes (a harness hang; not counted)",
+  "harnessTimeout": true,
+  "lineMbps": 73.9
+}

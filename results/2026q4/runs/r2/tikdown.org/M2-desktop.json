@@ -1,0 +1,21 @@
+{
+  "item": "M2",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "desktop",
+  "started": "2026-10-22T20:53:25.021Z",
+  "outcome": "failure",
+  "failure": "the result offers video but no mp3 option",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikdown.org/M2-desktop-no-result.png"
+  ],
+  "notOffered": true,
+  "firstFailure": "the result offers video but no mp3 option",
+  "lineMbps": 73.9
+}

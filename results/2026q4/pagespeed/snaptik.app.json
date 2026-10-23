@@ -1,0 +1,17 @@
+{
+  "tool": "snaptik.app",
+  "measured": "2026-10-23T03:35:47.639Z",
+  "accessibility": 95,
+  "vitals": {
+    "lcp": 1852.5135999999998,
+    "inp": 428.5,
+    "cls": 0.04573047731061687
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 2,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://snaptik.app/en3"
+  }
+}

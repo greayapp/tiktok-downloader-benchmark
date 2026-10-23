@@ -1,0 +1,22 @@
+{
+  "sample": "R3",
+  "url": "https://www.tiktok.com/@sephora/video/7694332521827306765",
+  "captured": "2026-10-19T09:10:56.670Z",
+  "id": "7694332521827306765",
+  "author": "sephora",
+  "created": "2026-10-08T16:20:28.000Z",
+  "isPhoto": false,
+  "duration": 27,
+  "maxHeight": 1280,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7265332033224607746",
+  "musicDuration": 60,
+  "musicOriginal": false,
+  "ytdlp": {
+    "duration": 27,
+    "maxHeight": 1280
+  },
+  "watermarkReference": true
+}

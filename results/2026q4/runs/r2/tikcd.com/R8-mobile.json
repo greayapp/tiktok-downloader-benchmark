@@ -1,0 +1,57 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:44:47.109Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2113,
+    "to_download": 79040,
+    "to_file": 100473
+  },
+  "clicks": 9,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/R8-mobile-2.bin",
+        "type": "jpg",
+        "width": 1180,
+        "height": 1576
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/R8-mobile.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/R8-mobile-result.png"
+  ],
+  "fallback": "\"Download All Photos (ZIP)\" gave no file; saved the photos one by one",
+  "bytes": 1313856,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "1 / 2 Save Photo 1",
+      "2 / 2 Save Photo 2"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/tikcd.com/R8-mobile.bin",
+    "harness/runs-local/2026q4/r2/tikcd.com/R8-mobile-2.bin"
+  ],
+  "lineMbps": 73.9
+}

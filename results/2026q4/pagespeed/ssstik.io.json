@@ -1,0 +1,17 @@
+{
+  "tool": "ssstik.io",
+  "measured": "2026-10-23T03:36:35.164Z",
+  "accessibility": 94,
+  "vitals": {
+    "lcp": 8495.659325,
+    "inp": 172,
+    "cls": 0.03166949872648686
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 2,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://ssstik.io/"
+  }
+}

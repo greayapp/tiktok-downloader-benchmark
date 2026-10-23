@@ -1,0 +1,47 @@
+{
+  "item": "P2",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T06:33:39.279Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2686,
+    "to_download": 5320,
+    "to_file": 5904
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (2)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P2-desktop.bin.unzipped/7503709776313011502_0_1792478028.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/P2-desktop.bin.unzipped/7503709776313011502_1_1792478028.jpeg",
+        "type": "webp",
+        "width": 1100,
+        "height": 1376
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/P2-desktop-result.png"
+  ],
+  "bytes": 243395,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ssstik.io/P2-desktop.bin"
+  ],
+  "lineMbps": 84.3
+}

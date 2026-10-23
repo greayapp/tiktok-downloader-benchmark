@@ -1,0 +1,58 @@
+{
+  "item": "V7",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-23T00:12:42.001Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2095,
+    "to_download": 6491,
+    "to_file": 8291
+  },
+  "clicks": 2,
+  "control_label": "Download video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 53.056009,
+      "bytes": 11247764,
+      "video": {
+        "codec": "hevc",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/V7-desktop-result.png"
+  ],
+  "bytes": 11247764,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/V7-desktop.mp4"
+  ],
+  "lineMbps": 73.9
+}

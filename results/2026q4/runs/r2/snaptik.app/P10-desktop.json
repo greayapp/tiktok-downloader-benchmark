@@ -1,0 +1,65 @@
+{
+  "item": "P10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-23T01:36:48.435Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2387,
+    "to_download": 3362,
+    "to_file": 3366
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (5)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P10-desktop.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P10-desktop.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P10-desktop.bin.unzipped/image-003.jpeg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P10-desktop.bin.unzipped/image-004.jpeg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P10-desktop.bin.unzipped/image-005.jpeg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P10-desktop-result.png"
+  ],
+  "bytes": 2186382,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P10-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

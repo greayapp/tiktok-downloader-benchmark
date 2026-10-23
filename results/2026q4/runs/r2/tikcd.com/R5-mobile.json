@@ -1,0 +1,56 @@
+{
+  "item": "R5",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:40:31.287Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2113,
+    "to_download": 4049,
+    "to_file": 4055
+  },
+  "clicks": 2,
+  "control_label": "Without watermark HD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 68.684626,
+      "bytes": 5854922,
+      "video": {
+        "codec": "hevc",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/R5-mobile-result.png"
+  ],
+  "bytes": 5854922,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/tikcd.com/R5-mobile.mp4"
+  ],
+  "lineMbps": 73.9
+}

@@ -1,0 +1,57 @@
+{
+  "item": "P2",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T17:25:24.328Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 824,
+    "to_download": 2289,
+    "to_file": 4138
+  },
+  "clicks": 2,
+  "control_label": "1 · Download photo 1 of 2",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P2-mobile-2.bin",
+        "type": "jpg",
+        "width": 1100,
+        "height": 1376
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P2-mobile.bin",
+        "type": "jpg",
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P2-mobile-result.png"
+  ],
+  "bytes": 365665,
+  "delivery": "download",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "1 · Download photo 1 of 2",
+      "2 · Download photo 2 of 2",
+      "1 · Download photo 1 of 2 (saved)"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P2-mobile.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P2-mobile-2.bin"
+  ],
+  "firstFailure": "home page did not load: page.goto: Timeout 45000ms exceeded.",
+  "lineMbps": 79.9
+}

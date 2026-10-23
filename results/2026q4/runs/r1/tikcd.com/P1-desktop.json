@@ -1,0 +1,41 @@
+{
+  "item": "P1",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T01:07:19.870Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2103,
+    "to_download": 2969,
+    "to_file": 2970
+  },
+  "clicks": 2,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P1-desktop.bin.unzipped/photo_1.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P1-desktop-result.png"
+  ],
+  "bytes": 106364,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P1-desktop.bin"
+  ],
+  "lineMbps": 79.9
+}

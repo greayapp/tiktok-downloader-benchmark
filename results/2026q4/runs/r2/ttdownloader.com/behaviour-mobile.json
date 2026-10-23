@@ -1,0 +1,225 @@
+{
+  "newPages": [
+    {
+      "t": 1792715896113,
+      "phase": "home",
+      "url": "chrome-error://chromewebdata/",
+      "finalUrl": "chrome-error://chromewebdata/",
+      "evidence": "harness/runs-local/2026q4/r2/ttdownloader.com/newtabs/newtab-1-1792715900118.png",
+      "media": false
+    },
+    {
+      "t": 1792715901641,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792716104497,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792716168724,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792716189091,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792716374025,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792716599034,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792716852855,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792716870276,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792716984756,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717000646,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717015486,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717038138,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717128776,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717149398,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717198018,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717491587,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717574631,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717590421,
+      "phase": "downloading",
+      "url": "https://ttdownloader.com/dl.php?v=YTo0OntzOjk6IndhdGVybWFyayI7aTowO3M6NzoidmlkZW9JZCI7czozMjoiZDFjNDZmOTMyMThjZTEwMzA3Mjg2ZGRkZmU2ODU4ZjQiO3M6MzoidWlkIjtzOjMyOiI4NmMyMGEwNjI1N2U5ZjEyNGIyNDFmOWRkZjY3NjZlYiI7czo0OiJ0aW1lIjtpOjE3OTI3MTc1ODk7fQ==",
+      "finalUrl": "https://ttdownloader.com/dl.php?v=YTo0OntzOjk6IndhdGVybWFyayI7aTowO3M6NzoidmlkZW9JZCI7czozMjoiZDFjNDZmOTMyMThjZTEwMzA3Mjg2ZGRkZmU2ODU4ZjQiO3M6MzoidWlkIjtzOjMyOiI4NmMyMGEwNjI1N2U5ZjEyNGIyNDFmOWRkZjY3NjZlYiI7czo0OiJ0aW1lIjtpOjE3OTI3MTc1ODk7fQ==",
+      "evidence": "harness/runs-local/2026q4/r2/ttdownloader.com/newtabs/newtab-19-1792717594424.png",
+      "media": false
+    },
+    {
+      "t": 1792717607399,
+      "phase": "downloading",
+      "url": "https://ttdownloader.com/dl.php?v=YTo0OntzOjk6IndhdGVybWFyayI7aTowO3M6NzoidmlkZW9JZCI7czozMjoiZDFjNDZmOTMyMThjZTEwMzA3Mjg2ZGRkZmU2ODU4ZjQiO3M6MzoidWlkIjtzOjMyOiI4NmMyMGEwNjI1N2U5ZjEyNGIyNDFmOWRkZjY3NjZlYiI7czo0OiJ0aW1lIjtpOjE3OTI3MTc1ODk7fQ==",
+      "finalUrl": "https://ttdownloader.com/dl.php?v=YTo0OntzOjk6IndhdGVybWFyayI7aTowO3M6NzoidmlkZW9JZCI7czozMjoiZDFjNDZmOTMyMThjZTEwMzA3Mjg2ZGRkZmU2ODU4ZjQiO3M6MzoidWlkIjtzOjMyOiI4NmMyMGEwNjI1N2U5ZjEyNGIyNDFmOWRkZjY3NjZlYiI7czo0OiJ0aW1lIjtpOjE3OTI3MTc1ODk7fQ==",
+      "evidence": "harness/runs-local/2026q4/r2/ttdownloader.com/newtabs/newtab-20-1792717611402.png",
+      "media": false
+    },
+    {
+      "t": 1792717629274,
+      "phase": "downloading",
+      "url": "https://ttdownloader.com/dl.php?v=YTo0OntzOjk6IndhdGVybWFyayI7aTowO3M6NzoidmlkZW9JZCI7czozMjoiZDFjNDZmOTMyMThjZTEwMzA3Mjg2ZGRkZmU2ODU4ZjQiO3M6MzoidWlkIjtzOjMyOiI4NmMyMGEwNjI1N2U5ZjEyNGIyNDFmOWRkZjY3NjZlYiI7czo0OiJ0aW1lIjtpOjE3OTI3MTc1ODk7fQ==",
+      "finalUrl": "https://ttdownloader.com/dl.php?v=YTo0OntzOjk6IndhdGVybWFyayI7aTowO3M6NzoidmlkZW9JZCI7czozMjoiZDFjNDZmOTMyMThjZTEwMzA3Mjg2ZGRkZmU2ODU4ZjQiO3M6MzoidWlkIjtzOjMyOiI4NmMyMGEwNjI1N2U5ZjEyNGIyNDFmOWRkZjY3NjZlYiI7czo0OiJ0aW1lIjtpOjE3OTI3MTc1ODk7fQ==",
+      "evidence": "harness/runs-local/2026q4/r2/ttdownloader.com/newtabs/newtab-21-1792717633277.png",
+      "media": false
+    },
+    {
+      "t": 1792717681491,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    },
+    {
+      "t": 1792717769852,
+      "phase": "home",
+      "url": "chrome-error://chromewebdata/",
+      "finalUrl": "chrome-error://chromewebdata/",
+      "evidence": "harness/runs-local/2026q4/r2/ttdownloader.com/newtabs/newtab-23-1792717773857.png",
+      "media": false
+    },
+    {
+      "t": 1792718759507,
+      "phase": "downloading",
+      "url": "",
+      "finalUrl": "",
+      "evidence": null,
+      "media": false
+    }
+  ],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 1449,
+    "ad": 0,
+    "tracker": 289
+  },
+  "adDomains": [],
+  "trackerDomains": [
+    "cloudflareinsights.com",
+    "google-analytics.com",
+    "googletagmanager.com",
+    "ttdownloader.com"
+  ],
+  "thirdPartyDomains": [
+    "bootstrapcdn.com",
+    "bosuebwwfqmup.com",
+    "cloudflare.com",
+    "cloudflareinsights.com",
+    "dtrurccrvmljpn.com",
+    "fontawesome.com",
+    "google-analytics.com",
+    "googleapis.com",
+    "googletagmanager.com",
+    "grotaich.net",
+    "gstatic.com"
+  ],
+  "cookiesBeforeInteraction": []
+}

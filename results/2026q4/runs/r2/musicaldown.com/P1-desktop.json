@@ -1,0 +1,41 @@
+{
+  "item": "P1",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T19:00:29.205Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2740,
+    "to_download": 3729,
+    "to_file": 4146
+  },
+  "clicks": 3,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P1-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P1-desktop-result.png"
+  ],
+  "bytes": 106244,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P1-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

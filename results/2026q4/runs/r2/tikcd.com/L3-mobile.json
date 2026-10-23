@@ -1,0 +1,62 @@
+{
+  "item": "L3",
+  "kind": "variant",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T23:35:46.651Z",
+  "outcome": "failure",
+  "failure": "2 images vs 4 in the post",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2377,
+    "to_download": 79325,
+    "to_file": 193216
+  },
+  "clicks": 13,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": false,
+    "reasons": [
+      "2 images vs 4 in the post"
+    ],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/L3-mobile-2.bin",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/L3-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/L3-mobile-result.png"
+  ],
+  "fallback": "\"Download All Photos (ZIP)\" gave no file; saved the photos one by one",
+  "bytes": 597335,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 4,
+    "labels": [
+      "1 / 4 Save Photo 1",
+      "2 / 4 Save Photo 2",
+      "3 / 4 Save Photo 3",
+      "4 / 4 Save Photo 4"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/tikcd.com/L3-mobile.bin",
+    "harness/runs-local/2026q4/r2/tikcd.com/L3-mobile-2.bin"
+  ],
+  "firstFailure": "2 images vs 4 in the post",
+  "lineMbps": 73.9
+}

@@ -1,0 +1,22 @@
+{
+  "item": "N2",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T20:57:11.393Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "clear",
+    "message": "Video not found or unavailable"
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r1/snaptik.app/N2-mobile-negative.png"
+  ],
+  "lineMbps": 79.9
+}

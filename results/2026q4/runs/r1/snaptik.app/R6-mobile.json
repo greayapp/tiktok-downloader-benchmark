@@ -1,0 +1,71 @@
+{
+  "item": "R6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T21:08:11.038Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 864,
+    "to_download": 1784,
+    "to_file": 1786
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (6)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/R6-mobile.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/R6-mobile.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/R6-mobile.bin.unzipped/image-003.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/R6-mobile.bin.unzipped/image-004.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/R6-mobile.bin.unzipped/image-005.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/R6-mobile.bin.unzipped/image-006.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/snaptik.app/R6-mobile-result.png"
+  ],
+  "bytes": 1644936,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/snaptik.app/R6-mobile.bin"
+  ],
+  "lineMbps": 79.9
+}

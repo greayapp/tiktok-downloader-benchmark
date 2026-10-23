@@ -1,0 +1,56 @@
+{
+  "item": "P2",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T19:14:27.692Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2880,
+    "to_download": 4284,
+    "to_file": 6006
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P2-desktop-2.bin",
+        "type": "jpg",
+        "width": 1100,
+        "height": 1376
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P2-desktop.bin",
+        "type": "jpg",
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P2-desktop-result.png"
+  ],
+  "bytes": 365665,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P2-desktop.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P2-desktop-2.bin"
+  ],
+  "lineMbps": 73.9
+}

@@ -1,0 +1,19 @@
+{
+  "item": "V7",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T13:06:05.478Z",
+  "outcome": "ad-wall",
+  "failure": "the site requires watching an ad to continue (not done: SPEC.md §6.D)",
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikmate.app/V7-mobile-ad-wall.png"
+  ],
+  "lineMbps": 73.9
+}

@@ -1,0 +1,65 @@
+{
+  "item": "P10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T01:10:02.070Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2105,
+    "to_download": 2990,
+    "to_file": 2995
+  },
+  "clicks": 2,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P10-desktop.bin.unzipped/photo_1.jpg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P10-desktop.bin.unzipped/photo_2.jpg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P10-desktop.bin.unzipped/photo_3.jpg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P10-desktop.bin.unzipped/photo_4.jpg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P10-desktop.bin.unzipped/photo_5.jpg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P10-desktop-result.png"
+  ],
+  "bytes": 2186352,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P10-desktop.bin"
+  ],
+  "lineMbps": 79.9
+}

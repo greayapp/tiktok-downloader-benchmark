@@ -1,0 +1,910 @@
+{
+  "newPages": [
+    {
+      "t": 1792450854158,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-1-1792450858161.png",
+      "media": false
+    },
+    {
+      "t": 1792450859460,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-2-1792450863462.png",
+      "media": false
+    },
+    {
+      "t": 1792450875459,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-3-1792450879464.png",
+      "media": false
+    },
+    {
+      "t": 1792450879474,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-4-1792450883478.png",
+      "media": false
+    },
+    {
+      "t": 1792450902502,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-5-1792450906506.png",
+      "media": false
+    },
+    {
+      "t": 1792450975621,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-6-1792450979624.png",
+      "media": false
+    },
+    {
+      "t": 1792451050482,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-7-1792451054486.png",
+      "media": false
+    },
+    {
+      "t": 1792451064764,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-9-1792451068766.png",
+      "media": false
+    },
+    {
+      "t": 1792451068409,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-9-1792451072413.png",
+      "media": false
+    },
+    {
+      "t": 1792451092889,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-10-1792451096893.png",
+      "media": false
+    },
+    {
+      "t": 1792451164563,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-11-1792451168567.png",
+      "media": false
+    },
+    {
+      "t": 1792451235368,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-12-1792451239373.png",
+      "media": false
+    },
+    {
+      "t": 1792451308559,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-13-1792451312564.png",
+      "media": false
+    },
+    {
+      "t": 1792451323259,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-14-1792451327264.png",
+      "media": false
+    },
+    {
+      "t": 1792451327435,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-15-1792451331439.png",
+      "media": false
+    },
+    {
+      "t": 1792451354056,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-17-1792451358059.png",
+      "media": false
+    },
+    {
+      "t": 1792451357735,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-17-1792451361738.png",
+      "media": false
+    },
+    {
+      "t": 1792451377557,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-18-1792451381562.png",
+      "media": false
+    },
+    {
+      "t": 1792451451734,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-20-1792451455738.png",
+      "media": false
+    },
+    {
+      "t": 1792451455374,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-20-1792451459377.png",
+      "media": false
+    },
+    {
+      "t": 1792451481242,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-22-1792451485248.png",
+      "media": false
+    },
+    {
+      "t": 1792451484947,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-22-1792451488950.png",
+      "media": false
+    },
+    {
+      "t": 1792451507120,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-23-1792451511126.png",
+      "media": false
+    },
+    {
+      "t": 1792451649842,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-24-1792451653847.png",
+      "media": false
+    },
+    {
+      "t": 1792451654734,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-25-1792451658736.png",
+      "media": false
+    },
+    {
+      "t": 1792451670811,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-26-1792451674814.png",
+      "media": false
+    },
+    {
+      "t": 1792451742507,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-27-1792451746510.png",
+      "media": false
+    },
+    {
+      "t": 1792451814342,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-28-1792451818346.png",
+      "media": false
+    },
+    {
+      "t": 1792451887558,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-30-1792451891562.png",
+      "media": false
+    },
+    {
+      "t": 1792451891205,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-30-1792451895208.png",
+      "media": false
+    },
+    {
+      "t": 1792451906565,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-31-1792451910566.png",
+      "media": false
+    },
+    {
+      "t": 1792451977745,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-32-1792451981750.png",
+      "media": false
+    },
+    {
+      "t": 1792452050799,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-33-1792452054803.png",
+      "media": false
+    },
+    {
+      "t": 1792452191296,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-35-1792452195301.png",
+      "media": false
+    },
+    {
+      "t": 1792452194634,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-35-1792452198637.png",
+      "media": false
+    },
+    {
+      "t": 1792452217469,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-37-1792452221472.png",
+      "media": false
+    },
+    {
+      "t": 1792452221016,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-37-1792452225018.png",
+      "media": false
+    },
+    {
+      "t": 1792452228494,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-38-1792452232497.png",
+      "media": false
+    },
+    {
+      "t": 1792452235579,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-39-1792452239583.png",
+      "media": false
+    },
+    {
+      "t": 1792452279036,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-40-1792452283041.png",
+      "media": false
+    },
+    {
+      "t": 1792452284794,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-41-1792452288797.png",
+      "media": false
+    },
+    {
+      "t": 1792452310140,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-42-1792452314143.png",
+      "media": false
+    },
+    {
+      "t": 1792452324401,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-43-1792452328404.png",
+      "media": false
+    },
+    {
+      "t": 1792452352728,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-44-1792452356734.png",
+      "media": false
+    },
+    {
+      "t": 1792452362806,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-45-1792452366809.png",
+      "media": false
+    },
+    {
+      "t": 1792452389546,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-46-1792452393551.png",
+      "media": false
+    },
+    {
+      "t": 1792452408860,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-48-1792452412872.png",
+      "media": false
+    },
+    {
+      "t": 1792452412527,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-48-1792452416536.png",
+      "media": false
+    },
+    {
+      "t": 1792452439857,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-50-1792452443863.png",
+      "media": false
+    },
+    {
+      "t": 1792452443366,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-50-1792452447370.png",
+      "media": false
+    },
+    {
+      "t": 1792452465027,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-51-1792452469033.png",
+      "media": false
+    },
+    {
+      "t": 1792452605446,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-52-1792452609450.png",
+      "media": false
+    },
+    {
+      "t": 1792452677922,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-53-1792452681926.png",
+      "media": false
+    },
+    {
+      "t": 1792452682332,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-54-1792452686334.png",
+      "media": false
+    },
+    {
+      "t": 1792452697149,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-55-1792452701150.png",
+      "media": false
+    },
+    {
+      "t": 1792452702904,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-56-1792452706907.png",
+      "media": false
+    },
+    {
+      "t": 1792452723807,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-57-1792452727812.png",
+      "media": false
+    },
+    {
+      "t": 1792452792628,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-58-1792452796633.png",
+      "media": false
+    },
+    {
+      "t": 1792452863025,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-59-1792452867029.png",
+      "media": false
+    },
+    {
+      "t": 1792452931770,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-60-1792452935774.png",
+      "media": false
+    },
+    {
+      "t": 1792453014713,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-61-1792453018716.png",
+      "media": false
+    },
+    {
+      "t": 1792453082028,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-62-1792453086032.png",
+      "media": false
+    },
+    {
+      "t": 1792453091632,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-63-1792453095635.png",
+      "media": false
+    },
+    {
+      "t": 1792453114164,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-65-1792453118169.png",
+      "media": false
+    },
+    {
+      "t": 1792453117668,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-65-1792453121670.png",
+      "media": false
+    },
+    {
+      "t": 1792453123527,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-66-1792453127530.png",
+      "media": false
+    },
+    {
+      "t": 1792453134564,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-68-1792453138567.png",
+      "media": false
+    },
+    {
+      "t": 1792453138110,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-68-1792453142113.png",
+      "media": false
+    },
+    {
+      "t": 1792453155076,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-69-1792453159080.png",
+      "media": false
+    },
+    {
+      "t": 1792453174111,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-70-1792453178115.png",
+      "media": false
+    },
+    {
+      "t": 1792453309462,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-71-1792453313476.png",
+      "media": false
+    },
+    {
+      "t": 1792453313658,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-72-1792453317662.png",
+      "media": false
+    },
+    {
+      "t": 1792453336272,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-73-1792453340276.png",
+      "media": false
+    },
+    {
+      "t": 1792453405371,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-74-1792453409376.png",
+      "media": false
+    },
+    {
+      "t": 1792453474236,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-75-1792453478241.png",
+      "media": false
+    },
+    {
+      "t": 1792453543071,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-76-1792453547076.png",
+      "media": false
+    },
+    {
+      "t": 1792453611965,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-77-1792453615969.png",
+      "media": false
+    },
+    {
+      "t": 1792453679801,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-78-1792453683805.png",
+      "media": false
+    },
+    {
+      "t": 1792453750103,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-80-1792453754108.png",
+      "media": false
+    },
+    {
+      "t": 1792453754049,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-80-1792453758053.png",
+      "media": false
+    },
+    {
+      "t": 1792453774832,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-81-1792453778836.png",
+      "media": false
+    },
+    {
+      "t": 1792453843184,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-82-1792453847186.png",
+      "media": false
+    },
+    {
+      "t": 1792453849897,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-83-1792453853900.png",
+      "media": false
+    },
+    {
+      "t": 1792453866972,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-84-1792453870976.png",
+      "media": false
+    },
+    {
+      "t": 1792453890469,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-85-1792453894474.png",
+      "media": false
+    },
+    {
+      "t": 1792453894878,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-86-1792453898880.png",
+      "media": false
+    },
+    {
+      "t": 1792453911952,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-87-1792453915955.png",
+      "media": false
+    },
+    {
+      "t": 1792453932364,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-88-1792453936369.png",
+      "media": false
+    },
+    {
+      "t": 1792454001311,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-89-1792454005393.png",
+      "media": false
+    },
+    {
+      "t": 1792454006535,
+      "phase": "downloading",
+      "url": "https://hai8g.com/4/11490039",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-90-1792454010538.png",
+      "media": false
+    },
+    {
+      "t": 1792454019668,
+      "phase": "submitted",
+      "url": "https://hai8g.com/4/11881573",
+      "finalUrl": "https://www.google.com/",
+      "evidence": "harness/runs-local/2026q4/r1/ttsave.net/newtabs/newtab-91-1792454023672.png",
+      "media": false
+    }
+  ],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 13908,
+    "ad": 4772,
+    "tracker": 3842
+  },
+  "adDomains": [
+    "2mdn.net",
+    "360yield.com",
+    "ad-m.asia",
+    "adform.net",
+    "adkernel.com",
+    "adnxs.com",
+    "adsafeprotected.com",
+    "adsrvr.org",
+    "adtdp.com",
+    "adtrafficquality.google",
+    "akamaihd.net",
+    "bidswitch.net",
+    "blismedia.com",
+    "casalemedia.com",
+    "creativecdn.com",
+    "ctnsnet.com",
+    "dotomi.com",
+    "doubleclick.net",
+    "google.com",
+    "googlesyndication.com",
+    "googletagservices.com",
+    "hai8g.com",
+    "ipredictive.com",
+    "linkedin.com",
+    "media.net",
+    "microad.jp",
+    "microsoft.com",
+    "onetag-sys.com",
+    "openx.net",
+    "rtmark.net",
+    "smartadserver.com",
+    "spotxchange.com",
+    "stackadapt.com",
+    "stickyadstv.com",
+    "teads.tv",
+    "travelaudience.com",
+    "tremorhub.com",
+    "tribalfusion.com"
+  ],
+  "trackerDomains": [
+    "admaster.cc",
+    "adnxs.com",
+    "adtrafficquality.google",
+    "akamaihd.net",
+    "appier.net",
+    "bidr.io",
+    "bidswitch.net",
+    "clarity.ms",
+    "cloudflareinsights.com",
+    "criteo.com",
+    "doubleclick.net",
+    "everesttech.net",
+    "fout.jp",
+    "google-analytics.com",
+    "google.com",
+    "googlesyndication.com",
+    "googletagmanager.com",
+    "gsspat.jp",
+    "gstatic.com",
+    "ipredictive.com",
+    "ladsp.com",
+    "media.net",
+    "mediago.io",
+    "outbrain.com",
+    "pangle-ads.com",
+    "rtmark.net",
+    "simpli.fi",
+    "sojern.com",
+    "taboola.com",
+    "temu.com",
+    "tribalfusion.com",
+    "trustarc.com",
+    "ttsave.net",
+    "uncn.jp",
+    "yahoo.com"
+  ],
+  "thirdPartyDomains": [
+    "2mdn.net",
+    "360yield.com",
+    "ad-m.asia",
+    "adform.net",
+    "adkernel.com",
+    "admaster.cc",
+    "adnxs.com",
+    "adsafeprotected.com",
+    "adsrvr.org",
+    "adster.tech",
+    "adtdp.com",
+    "adtrafficquality.google",
+    "advolve.io",
+    "akamaihd.net",
+    "appier.net",
+    "applovin.com",
+    "bidr.io",
+    "bidswitch.net",
+    "blismedia.com",
+    "bluevoox.com",
+    "buymeacoffee.com",
+    "casalemedia.com",
+    "clarity.ms",
+    "cloudflareinsights.com",
+    "creativecdn.com",
+    "criteo.com",
+    "ctnsnet.com",
+    "docomo.ne.jp",
+    "dotomi.com",
+    "doubleclick.net",
+    "everesttech.net",
+    "fout.jp",
+    "google-analytics.com",
+    "google.com",
+    "googleapis.com",
+    "googlesyndication.com",
+    "googletagmanager.com",
+    "googletagservices.com",
+    "googleusercontent.com",
+    "gsspat.jp",
+    "gstatic.com",
+    "hai8g.com",
+    "inmobi.com",
+    "ipredictive.com",
+    "ko-fi.com",
+    "ladsp.com",
+    "linkedin.com",
+    "media.net",
+    "mediago.io",
+    "mfilterit.org",
+    "microad.jp",
+    "microsoft.com",
+    "moloco.com",
+    "onetag-sys.com",
+    "openx.net",
+    "outbrain.com",
+    "pangle-ads.com",
+    "quantserve.com",
+    "rtmark.net",
+    "simpli.fi",
+    "smartadserver.com",
+    "sojern.com",
+    "spotxchange.com",
+    "stackadapt.com",
+    "stickyadstv.com",
+    "taboola.com",
+    "teads.tv",
+    "temu.com",
+    "tiktokcdn-eu.com",
+    "tiktokcdn-us.com",
+    "travelaudience.com",
+    "tremorhub.com",
+    "tribalfusion.com",
+    "trustarc.com",
+    "truste.com",
+    "uncn.jp",
+    "unpkg.com",
+    "voisetech.com",
+    "yahoo.com",
+    "yimg.com"
+  ],
+  "cookiesBeforeInteraction": [
+    ".doubleclick.net:IDE",
+    ".casalemedia.com:CMID",
+    ".casalemedia.com:CMPS",
+    ".casalemedia.com:CMPRO",
+    ".media.net:visitor-id",
+    ".doubleclick.net:APC",
+    ".adnxs.com:XANDR_PANID",
+    ".adnxs.com:uuid2",
+    ".adnxs.com:anj"
+  ]
+}

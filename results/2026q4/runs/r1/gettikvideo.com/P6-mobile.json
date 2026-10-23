@@ -1,0 +1,18 @@
+{
+  "item": "P6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T17:15:26.473Z",
+  "outcome": "failure",
+  "failure": "home page did not load: page.goto: net::ERR_TIMED_OUT at https://gettikvideo.com/",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 0,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [],
+  "firstFailure": "3 images vs 4 in the post",
+  "lineMbps": 79.9
+}

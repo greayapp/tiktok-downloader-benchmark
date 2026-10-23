@@ -1,0 +1,21 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-23T01:20:23.281Z",
+  "outcome": "failure",
+  "failure": "the result offers video and mp3 but no photos option",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttdownloader.com/R8-mobile-no-result.png"
+  ],
+  "notOffered": true,
+  "firstFailure": "the result offers video and mp3 but no photos option",
+  "lineMbps": 73.9
+}

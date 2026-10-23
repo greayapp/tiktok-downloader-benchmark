@@ -1,0 +1,17 @@
+{
+  "tool": "savetik.co",
+  "measured": "2026-10-23T03:38:59.371Z",
+  "accessibility": 91,
+  "vitals": {
+    "lcp": 1876.6378999999997,
+    "inp": 127.5,
+    "cls": 0.3126516065309473
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 2,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://savetik.co/en2"
+  }
+}

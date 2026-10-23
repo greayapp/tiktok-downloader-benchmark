@@ -1,0 +1,21 @@
+{
+  "item": "P1",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-23T02:05:58.301Z",
+  "outcome": "failure",
+  "failure": "the site said: \"Video not found or unavailable\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P1-mobile-no-result.png"
+  ],
+  "siteMessage": "Video not found or unavailable",
+  "firstFailure": "the site said: \"Video not found or unavailable\"",
+  "lineMbps": 73.9
+}

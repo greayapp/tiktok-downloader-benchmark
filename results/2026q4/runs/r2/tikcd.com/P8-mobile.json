@@ -1,0 +1,24 @@
+{
+  "item": "P8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T23:33:07.888Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2370
+  },
+  "clicks": 13,
+  "control_label": "Download All Photos (ZIP)",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/P8-mobile-result.png",
+    "harness/runs-local/2026q4/r2/tikcd.com/P8-mobile-no-file.png"
+  ],
+  "fallback": "\"Download All Photos (ZIP)\" gave no file; saved the photos one by one",
+  "firstFailure": "2 images vs 3 in the post",
+  "lineMbps": 73.9
+}

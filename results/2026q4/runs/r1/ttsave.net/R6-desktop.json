@@ -1,0 +1,20 @@
+{
+  "item": "R6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T22:59:33.255Z",
+  "outcome": "failure",
+  "failure": "no download control within 60 s",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R6-desktop-no-result.png"
+  ],
+  "firstFailure": "5 images vs 6 in the post",
+  "lineMbps": 79.9
+}

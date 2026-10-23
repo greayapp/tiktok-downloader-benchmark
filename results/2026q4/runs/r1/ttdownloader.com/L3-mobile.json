@@ -1,0 +1,21 @@
+{
+  "item": "L3",
+  "kind": "variant",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T08:41:43.101Z",
+  "outcome": "failure",
+  "failure": "the site said: \"There was an issue with the TikTok link you submitted. Please try again.\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttdownloader.com/L3-mobile-no-result.png"
+  ],
+  "siteMessage": "There was an issue with the TikTok link you submitted. Please try again.",
+  "firstFailure": "the site said: \"There was an issue with the TikTok link you submitted. Please try again.\"",
+  "lineMbps": 84.3
+}

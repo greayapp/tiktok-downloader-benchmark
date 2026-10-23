@@ -1,0 +1,55 @@
+{
+  "item": "R1",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T21:01:58.800Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 863,
+    "to_download": 1820,
+    "to_file": 2424
+  },
+  "clicks": 2,
+  "control_label": "Download (No Watermark)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 72.618005,
+      "bytes": 13301315,
+      "video": {
+        "codec": "h264",
+        "width": 576,
+        "height": 1024
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.8,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/snaptik.app/R1-mobile-result.png"
+  ],
+  "adGatedOptions": [
+    "Watch Ad Download HD (No Watermark) HD"
+  ],
+  "bytes": 13301315,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/snaptik.app/R1-mobile.mp4"
+  ],
+  "lineMbps": 79.9
+}

@@ -1,0 +1,43 @@
+{
+  "item": "M2",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "desktop",
+  "started": "2026-10-20T06:26:17.487Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 834,
+    "to_download": 2779,
+    "to_file": 3558
+  },
+  "clicks": 3,
+  "control_label": "Download MP3",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 16.143625,
+      "bytes": 258862,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/M2-desktop-result.png"
+  ],
+  "bytes": 258862,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ssstik.io/M2-desktop.mp3"
+  ],
+  "lineMbps": 84.3
+}

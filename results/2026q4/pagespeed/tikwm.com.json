@@ -1,0 +1,17 @@
+{
+  "tool": "tikwm.com",
+  "measured": "2026-10-23T03:39:46.410Z",
+  "accessibility": 93,
+  "vitals": {
+    "lcp": 1643.083,
+    "inp": 881,
+    "cls": 0
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 2,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 1,
+    "finalUrl": "https://tikwm.com/"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "item": "R10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T22:30:45.543Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3541,
+    "to_download": 10004,
+    "to_file": 18909
+  },
+  "clicks": 2,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ttsave.net/R10-desktop-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ttsave.net/R10-desktop.bin",
+        "type": "jpg",
+        "width": 1600,
+        "height": 2000
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R10-desktop-result.png"
+  ],
+  "bytes": 886962,
+  "delivery": "download",
+  "perImage": {
+    "offered": 3,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Profile Picture"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R10-desktop.bin",
+    "harness/runs-local/2026q4/r1/ttsave.net/R10-desktop-2.bin"
+  ],
+  "lineMbps": 79.9
+}

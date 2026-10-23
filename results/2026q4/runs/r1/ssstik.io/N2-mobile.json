@@ -1,0 +1,22 @@
+{
+  "item": "N2",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-20T06:53:37.456Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "clear",
+    "message": "It seems that your link is not a valid TikTok link... Please, make sure that your link leads to a TikTok website and has a video on a page."
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/N2-mobile-negative.png"
+  ],
+  "lineMbps": 84.3
+}

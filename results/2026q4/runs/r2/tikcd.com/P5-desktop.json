@@ -1,0 +1,83 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T22:24:33.344Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2630,
+    "to_download": 3522,
+    "to_file": 3523
+  },
+  "clicks": 2,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin.unzipped/photo_1.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin.unzipped/photo_2.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin.unzipped/photo_3.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin.unzipped/photo_4.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin.unzipped/photo_5.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin.unzipped/photo_6.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin.unzipped/photo_7.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin.unzipped/photo_8.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop-result.png"
+  ],
+  "bytes": 533388,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/tikcd.com/P5-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

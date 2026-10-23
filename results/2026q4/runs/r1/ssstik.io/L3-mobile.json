@@ -1,0 +1,59 @@
+{
+  "item": "L3",
+  "kind": "variant",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T06:51:13.696Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1117,
+    "to_download": 4794,
+    "to_file": 5656
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (4)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/L3-mobile.bin.unzipped/7498412815087095071_0_1792404844.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/L3-mobile.bin.unzipped/7498412815087095071_1_1792404844.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/L3-mobile.bin.unzipped/7498412815087095071_2_1792404844.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/ssstik.io/L3-mobile.bin.unzipped/7498412815087095071_3_1792404844.jpeg",
+        "type": "webp",
+        "width": 1200,
+        "height": 1500
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 4
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ssstik.io/L3-mobile-result.png"
+  ],
+  "bytes": 620955,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ssstik.io/L3-mobile.bin"
+  ],
+  "lineMbps": 84.3
+}

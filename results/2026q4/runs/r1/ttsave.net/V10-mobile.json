@@ -1,0 +1,21 @@
+{
+  "item": "V10",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T23:40:35.749Z",
+  "outcome": "failure",
+  "failure": "the result offers photos but no video option",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/V10-mobile-no-result.png"
+  ],
+  "notOffered": true,
+  "firstFailure": "the result offers photos but no video option",
+  "lineMbps": 79.9
+}

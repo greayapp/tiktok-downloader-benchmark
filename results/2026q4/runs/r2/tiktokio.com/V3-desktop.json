@@ -1,0 +1,62 @@
+{
+  "item": "V3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T10:24:18.447Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1859,
+    "to_download": 20294,
+    "to_file": 53611
+  },
+  "clicks": 3,
+  "control_label": "Download without watermark (HD)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 20.595011,
+      "bytes": 8126387,
+      "video": {
+        "codec": "hevc",
+        "width": 708,
+        "height": 886
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [
+      "[null @ 0x155e161d0] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 45 >= 45",
+      "[null @ 0x155e161d0] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 48 >= 48",
+      "[null @ 0x155e161d0] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 51 >= 51"
+    ],
+    "resolutionRatio": 0.6553254437869822,
+    "labelDishonesty": [
+      "\"HD\" label but 708x886"
+    ],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tiktokio.com/V3-desktop-result.png"
+  ],
+  "bytes": 8126387,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/tiktokio.com/V3-desktop.mp4"
+  ],
+  "lineMbps": 73.9
+}

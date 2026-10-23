@@ -1,0 +1,57 @@
+{
+  "item": "V3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T17:41:37.101Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 6203,
+    "to_download": 20749,
+    "to_file": 20752
+  },
+  "clicks": 2,
+  "control_label": "Download Video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 20.6,
+      "bytes": 3105066,
+      "video": {
+        "codec": "h264",
+        "width": 708,
+        "height": 886
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.6553254437869822,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/V3-desktop-result.png"
+  ],
+  "bytes": 3105066,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ttsave.net/V3-desktop.mp4"
+  ],
+  "firstFailure": "the site said: \"Could not extract video data. Please try again.\"",
+  "lineMbps": 73.9
+}

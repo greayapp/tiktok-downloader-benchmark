@@ -1,0 +1,105 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T19:53:18.739Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2668,
+    "to_download": 4365,
+    "to_file": 32508
+  },
+  "clicks": 4,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-5.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-6.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-7.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-8.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-result.png"
+  ],
+  "bytes": 62365,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 8,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ],
+    "arrived": 7
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-2.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-3.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-4.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-5.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-6.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-7.bin",
+    "harness/runs-local/2026q4/r2/musicaldown.com/P5-desktop-8.bin"
+  ],
+  "firstFailure": "1 images vs 8 in the post",
+  "lineMbps": 73.9
+}

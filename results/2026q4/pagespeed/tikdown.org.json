@@ -1,0 +1,17 @@
+{
+  "tool": "tikdown.org",
+  "measured": "2026-10-23T03:43:04.989Z",
+  "accessibility": 77,
+  "vitals": {
+    "lcp": 1034.7687999999998,
+    "inp": 0,
+    "cls": 0
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 3,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://tikdown.org/"
+  }
+}

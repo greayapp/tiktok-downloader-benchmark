@@ -1,0 +1,17 @@
+{
+  "tool": "lovetik.com",
+  "measured": "2026-10-23T03:41:22.555Z",
+  "accessibility": 95,
+  "vitals": {
+    "lcp": 1836.3834000000002,
+    "inp": 132.00000000000182,
+    "cls": 0.01896461629042702
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 3,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://lovetik.com/"
+  }
+}

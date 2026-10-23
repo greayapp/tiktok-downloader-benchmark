@@ -1,0 +1,55 @@
+{
+  "item": "R8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T21:27:40.125Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2613,
+    "to_download": 4472,
+    "to_file": 8615
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/R8-desktop-2.bin",
+        "type": "jpg",
+        "width": 1180,
+        "height": 1576
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/musicaldown.com/R8-desktop.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/R8-desktop-result.png"
+  ],
+  "bytes": 1313856,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 2,
+    "labels": [
+      "DOWNLOAD",
+      "DOWNLOAD"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/R8-desktop.bin",
+    "harness/runs-local/2026q4/r1/musicaldown.com/R8-desktop-2.bin"
+  ],
+  "lineMbps": 79.9
+}

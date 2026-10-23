@@ -1,0 +1,26 @@
+{
+  "item": "P1",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T06:06:39.711Z",
+  "outcome": "ad-wall",
+  "failure": "the site requires watching an ad to continue (not done: SPEC.md §6.D)",
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3683
+  },
+  "clicks": 2,
+  "control_label": "Download HD",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikmate.app/P1-mobile-result.png",
+    "harness/runs-local/2026q4/r1/tikmate.app/P1-mobile-ad-wall.png"
+  ],
+  "adGatedOptions": [
+    "Download HD"
+  ],
+  "adWallText": "Reward granted",
+  "lineMbps": 84.3
+}

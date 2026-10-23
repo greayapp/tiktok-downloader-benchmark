@@ -1,0 +1,22 @@
+{
+  "item": "N3",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T22:27:18.753Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "bad",
+    "message": null
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/N3-desktop-negative.png"
+  ],
+  "lineMbps": 73.9
+}

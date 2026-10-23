@@ -94,7 +94,9 @@ What the test passes showed to be the sites' own behaviour, not the harness's (k
   limit; on the iPhone, Safari is redirected away repeatedly (e.g. to a betting site and a fake
   "lucky draw") before a result appears.
 - **TikTokio:** its server drops the 716 MB original of a 229-second video part-way; smaller files
-  arrive.
+  arrive. In the Q4 2026 runs it cut off every file that needed more than about 2 minutes (the
+  200–270 MB originals); TikMate's server cut off a 230 MB file after about 4 minutes. Counted as
+  failures: the file didn't arrive (Chrome would offer Resume; the harness doesn't use it).
 - **TikWM (iPhone):** the download control opens the video in Safari's player, which offers no way
   to save it.
 - **SSSTik:** its video options are behind a rewarded video ad (an ad wall, never waited out); MP3

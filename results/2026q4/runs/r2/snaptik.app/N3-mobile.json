@@ -1,0 +1,22 @@
+{
+  "item": "N3",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-23T02:01:52.765Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "clear",
+    "message": "Please enter a valid TikTok or Douyin link."
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/N3-mobile-negative.png"
+  ],
+  "lineMbps": 73.9
+}

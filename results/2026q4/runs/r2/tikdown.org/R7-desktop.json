@@ -1,0 +1,21 @@
+{
+  "item": "R7",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T21:02:07.762Z",
+  "outcome": "failure",
+  "failure": "the result offers video but no photos option",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikdown.org/R7-desktop-no-result.png"
+  ],
+  "notOffered": true,
+  "firstFailure": "the result offers video but no photos option",
+  "lineMbps": 73.9
+}

@@ -1,0 +1,17 @@
+{
+  "tool": "ttsave.net",
+  "measured": "2026-10-23T03:46:08.259Z",
+  "accessibility": 90,
+  "vitals": {
+    "lcp": 8264.9702,
+    "inp": 105,
+    "cls": 0.45061485765754916
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 1,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://ttsave.net/"
+  }
+}

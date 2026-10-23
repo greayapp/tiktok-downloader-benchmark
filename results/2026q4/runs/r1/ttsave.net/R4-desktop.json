@@ -1,0 +1,52 @@
+{
+  "item": "R4",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-19T22:31:33.140Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3767,
+    "to_download": 33305,
+    "to_file": 33330
+  },
+  "clicks": 3,
+  "control_label": "Download Video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 59.859002,
+      "bytes": 9385250,
+      "video": {
+        "codec": "h264",
+        "width": 720,
+        "height": 1284
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.66875,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R4-desktop-result.png"
+  ],
+  "bytes": 9385250,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ttsave.net/R4-desktop.mp4"
+  ],
+  "lineMbps": 79.9
+}

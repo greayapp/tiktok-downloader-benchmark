@@ -1,0 +1,54 @@
+{
+  "item": "V10",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-20T08:09:54.222Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3115,
+    "to_download": 5021,
+    "to_file": 29159
+  },
+  "clicks": 2,
+  "control_label": "Download video",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 147.515,
+      "bytes": 229541175,
+      "video": {
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttdownloader.com/V10-mobile-result.png"
+  ],
+  "bytes": 229541175,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ttdownloader.com/V10-mobile.mp4"
+  ],
+  "lineMbps": 84.3
+}

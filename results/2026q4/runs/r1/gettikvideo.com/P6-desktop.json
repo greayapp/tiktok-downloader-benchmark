@@ -1,0 +1,72 @@
+{
+  "item": "P6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T16:42:00.084Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1111,
+    "to_download": 2983,
+    "to_file": 9184
+  },
+  "clicks": 2,
+  "control_label": "1 · Download photo 1 of 4",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop-result.png"
+  ],
+  "bytes": 245763,
+  "delivery": "download",
+  "perImage": {
+    "offered": 5,
+    "labels": [
+      "1 · Download photo 1 of 4",
+      "2 · Download photo 2 of 4",
+      "3 · Download photo 3 of 4",
+      "4 · Download photo 4 of 4",
+      "1 · Download photo 1 of 4 (saved)"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop-2.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop-3.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P6-desktop-4.bin"
+  ],
+  "lineMbps": 79.9
+}

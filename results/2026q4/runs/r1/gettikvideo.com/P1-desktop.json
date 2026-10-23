@@ -1,0 +1,41 @@
+{
+  "item": "P1",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T16:47:35.425Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 37172,
+    "to_download": 39064,
+    "to_file": 39065
+  },
+  "clicks": 2,
+  "control_label": "Photo 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P1-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P1-desktop-result.png"
+  ],
+  "bytes": 106244,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P1-desktop.bin"
+  ],
+  "lineMbps": 79.9
+}

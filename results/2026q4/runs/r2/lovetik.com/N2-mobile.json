@@ -1,0 +1,22 @@
+{
+  "item": "N2",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T15:11:45.840Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "generic",
+    "message": "Error: Could not get Video ID."
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/lovetik.com/N2-mobile-negative.png"
+  ],
+  "lineMbps": 73.9
+}

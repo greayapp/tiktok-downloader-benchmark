@@ -1,0 +1,59 @@
+{
+  "item": "P4",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-23T01:39:36.071Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2398,
+    "to_download": 3318,
+    "to_file": 3322
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (4)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P4-desktop.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P4-desktop.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P4-desktop.bin.unzipped/image-003.jpeg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/P4-desktop.bin.unzipped/image-004.jpeg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P4-desktop-result.png"
+  ],
+  "bytes": 2672112,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/P4-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

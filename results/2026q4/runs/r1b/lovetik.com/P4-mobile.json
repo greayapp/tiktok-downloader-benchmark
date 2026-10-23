@@ -1,0 +1,21 @@
+{
+  "item": "P4",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T10:15:27.962Z",
+  "outcome": "failure",
+  "failure": "the site said: \"Error: Could not get Video ID.\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1b/lovetik.com/P4-mobile-no-result.png"
+  ],
+  "siteMessage": "Error: Could not get Video ID.",
+  "firstFailure": "the site said: \"Error: Could not get Video ID.\"",
+  "lineMbps": 85.3
+}

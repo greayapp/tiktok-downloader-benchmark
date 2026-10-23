@@ -1,0 +1,74 @@
+{
+  "item": "P6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T17:50:36.799Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2470,
+    "to_download": 5957,
+    "to_file": 20185
+  },
+  "clicks": 2,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop-result.png"
+  ],
+  "bytes": 245763,
+  "delivery": "download",
+  "perImage": {
+    "offered": 5,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Image 3",
+      "Download Image 4",
+      "Download Profile Picture"
+    ],
+    "arrived": 3
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop-2.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop-3.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-desktop-4.bin"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 73.9
+}

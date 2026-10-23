@@ -1,0 +1,43 @@
+{
+  "item": "M2",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "desktop",
+  "started": "2026-10-19T22:37:31.287Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 3582,
+    "to_download": 10067,
+    "to_file": 10068
+  },
+  "clicks": 2,
+  "control_label": "Download Audio",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 16.143673,
+      "bytes": 259178,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/M2-desktop-result.png"
+  ],
+  "bytes": 259178,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/ttsave.net/M2-desktop.mp3"
+  ],
+  "lineMbps": 79.9
+}

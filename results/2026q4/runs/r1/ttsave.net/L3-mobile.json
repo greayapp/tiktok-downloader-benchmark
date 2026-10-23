@@ -1,0 +1,23 @@
+{
+  "item": "L3",
+  "kind": "variant",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-19T23:33:05.435Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 853
+  },
+  "clicks": 4,
+  "control_label": "Find Stock Photos",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttsave.net/L3-mobile-result.png",
+    "harness/runs-local/2026q4/r1/ttsave.net/L3-mobile-no-file.png"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 79.9
+}

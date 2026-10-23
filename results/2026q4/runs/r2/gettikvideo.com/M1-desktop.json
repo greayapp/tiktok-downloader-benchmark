@@ -1,0 +1,43 @@
+{
+  "item": "M1",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "desktop",
+  "started": "2026-10-22T16:24:44.853Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1233,
+    "to_download": 5145,
+    "to_file": 5148
+  },
+  "clicks": 2,
+  "control_label": "Audio (MP3)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 15.072625,
+      "bytes": 241675,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/M1-desktop-result.png"
+  ],
+  "bytes": 241675,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/M1-desktop.mp3"
+  ],
+  "lineMbps": 73.9
+}

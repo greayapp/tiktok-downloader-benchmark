@@ -1,0 +1,80 @@
+{
+  "item": "P10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T10:24:54.940Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1331,
+    "to_download": 2328,
+    "to_file": 9730
+  },
+  "clicks": 3,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-2.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-3.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-4.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-5.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-result.png"
+  ],
+  "bytes": 505152,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 5,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Image 3",
+      "Download Image 4",
+      "Download Image 5"
+    ],
+    "arrived": 4
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-2.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-3.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-4.bin",
+    "harness/runs-local/2026q4/r1/tiktokio.com/P10-desktop-5.bin"
+  ],
+  "lineMbps": 94.2
+}

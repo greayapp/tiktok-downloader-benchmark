@@ -1,0 +1,52 @@
+{
+  "item": "R1",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-19T21:29:04.783Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2399,
+    "to_download": 4835,
+    "to_file": 19389
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD MP4 [HD]",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 72.614208,
+      "bytes": 144704447,
+      "video": {
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/R1-desktop-result.png"
+  ],
+  "bytes": 144704447,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/R1-desktop.mp4"
+  ],
+  "lineMbps": 79.9
+}

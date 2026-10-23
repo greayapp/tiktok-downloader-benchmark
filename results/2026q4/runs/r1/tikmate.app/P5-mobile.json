@@ -1,0 +1,50 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T06:21:01.572Z",
+  "outcome": "failure",
+  "failure": "delivered audio instead of the photos; 0 images vs 8 in the post",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 1651,
+    "to_download": 2559,
+    "to_file": 2563
+  },
+  "clicks": 2,
+  "control_label": "Download SD",
+  "file": {
+    "ok": false,
+    "reasons": [
+      "delivered audio instead of the photos",
+      "0 images vs 8 in the post"
+    ],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tikmate.app/P5-mobile.bin",
+        "type": null,
+        "media": "audio"
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikmate.app/P5-mobile-result.png"
+  ],
+  "bytes": 916967,
+  "delivery": "download",
+  "perImage": {
+    "offered": 1,
+    "labels": [
+      "Download SD"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/tikmate.app/P5-mobile.bin"
+  ],
+  "firstFailure": "delivered audio instead of the photos; 0 images vs 8 in the post",
+  "lineMbps": 84.3
+}

@@ -1,0 +1,80 @@
+{
+  "item": "P10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T16:42:15.914Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1073,
+    "to_download": 6452,
+    "to_file": 15473
+  },
+  "clicks": 2,
+  "control_label": "1 · Download photo 1 of 5",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-2.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-3.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-4.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-5.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-result.png"
+  ],
+  "bytes": 505152,
+  "delivery": "download",
+  "perImage": {
+    "offered": 6,
+    "labels": [
+      "1 · Download photo 1 of 5",
+      "2 · Download photo 2 of 5",
+      "3 · Download photo 3 of 5",
+      "4 · Download photo 4 of 5",
+      "5 · Download photo 5 of 5",
+      "1 · Download photo 1 of 5 (saved)"
+    ]
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-2.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-3.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-4.bin",
+    "harness/runs-local/2026q4/r1/gettikvideo.com/P10-desktop-5.bin"
+  ],
+  "lineMbps": 79.9
+}

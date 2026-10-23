@@ -1,0 +1,59 @@
+{
+  "item": "L3",
+  "kind": "variant",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-23T01:53:37.382Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 866,
+    "to_download": 1814,
+    "to_file": 1818
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (4)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/L3-mobile.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/L3-mobile.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/L3-mobile.bin.unzipped/image-003.jpeg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/snaptik.app/L3-mobile.bin.unzipped/image-004.jpeg",
+        "type": "jpg",
+        "width": 1440,
+        "height": 1800
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/snaptik.app/L3-mobile-result.png"
+  ],
+  "bytes": 2672112,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/snaptik.app/L3-mobile.bin"
+  ],
+  "lineMbps": 73.9
+}

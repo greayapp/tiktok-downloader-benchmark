@@ -1,0 +1,23 @@
+{
+  "item": "V6",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-20T10:55:31.039Z",
+  "outcome": "failure",
+  "failure": "apiRequestContext.get: aborted\nCall log:\n  - → GET https://dl.tiktokio.com/download?token=atHsRx0cccHM6Ly92MTYudG9rY2RuLmNvbS9lODBkODgzOTM4ZTA5ZTZmMTk0NjM2YzY0N",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 820,
+    "to_download": 1759
+  },
+  "clicks": 2,
+  "control_label": "Download without watermark (HD)",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tiktokio.com/V6-desktop-result.png"
+  ],
+  "firstFailure": "apiRequestContext.get: aborted\nCall log:\n  - → GET https://dl.tiktokio.com/download?token=atHsRx0cccHM6Ly92MTYudG9rY2RuLmNvbS9lODBkODgzOTM4ZTA5ZTZmMTk0NjM2YzY0N",
+  "lineMbps": 94.2
+}

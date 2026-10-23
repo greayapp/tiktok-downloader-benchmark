@@ -1,0 +1,22 @@
+{
+  "item": "N2",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T16:59:54.708Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "generic",
+    "message": "Something went wrong"
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/gettikvideo.com/N2-mobile-negative.png"
+  ],
+  "lineMbps": 73.9
+}

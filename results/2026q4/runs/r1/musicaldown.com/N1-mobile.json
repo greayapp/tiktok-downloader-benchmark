@@ -1,0 +1,22 @@
+{
+  "item": "N1",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T21:50:39.918Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "bad",
+    "message": null
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/N1-mobile-negative.png"
+  ],
+  "lineMbps": 79.9
+}

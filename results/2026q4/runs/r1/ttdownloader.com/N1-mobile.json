@@ -1,0 +1,22 @@
+{
+  "item": "N1",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-20T08:10:40.823Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "clear",
+    "message": "There was an issue with the TikTok link you submitted. Please try again."
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttdownloader.com/N1-mobile-negative.png"
+  ],
+  "lineMbps": 84.3
+}

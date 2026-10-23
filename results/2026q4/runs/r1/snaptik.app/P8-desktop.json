@@ -1,0 +1,53 @@
+{
+  "item": "P8",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T20:33:29.541Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 855,
+    "to_download": 3285,
+    "to_file": 3290
+  },
+  "clicks": 2,
+  "control_label": "Download All (ZIP) (3)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/P8-desktop.bin.unzipped/image-001.jpeg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2696
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/P8-desktop.bin.unzipped/image-002.jpeg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1468
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/snaptik.app/P8-desktop.bin.unzipped/image-003.jpeg",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2958
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/snaptik.app/P8-desktop-result.png"
+  ],
+  "bytes": 2745472,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/snaptik.app/P8-desktop.bin"
+  ],
+  "lineMbps": 79.9
+}

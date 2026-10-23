@@ -1,0 +1,89 @@
+{
+  "item": "R9",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T17:58:32.948Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 4826,
+    "to_download": 9383,
+    "to_file": 46666
+  },
+  "clicks": 2,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-5.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-6.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-result.png"
+  ],
+  "bytes": 404448,
+  "delivery": "download",
+  "perImage": {
+    "offered": 7,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Image 3",
+      "Download Image 4",
+      "Download Image 5",
+      "Download Image 6",
+      "Download Profile Picture"
+    ],
+    "arrived": 5
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-2.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-3.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-4.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-5.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/R9-mobile-6.bin"
+  ],
+  "lineMbps": 73.9
+}

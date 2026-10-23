@@ -1,0 +1,52 @@
+{
+  "item": "R4",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T20:47:23.955Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2436,
+    "to_download": 4813,
+    "to_file": 8990
+  },
+  "clicks": 2,
+  "control_label": "Download (no watermark)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 59.859002,
+      "bytes": 9385250,
+      "video": {
+        "codec": "h264",
+        "width": 720,
+        "height": 1284
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.66875,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikdown.org/R4-desktop-result.png"
+  ],
+  "bytes": 9385250,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/tikdown.org/R4-desktop.mp4"
+  ],
+  "lineMbps": 73.9
+}

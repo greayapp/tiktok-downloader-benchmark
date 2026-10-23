@@ -1,0 +1,17 @@
+{
+  "newPages": [],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 391,
+    "ad": 0,
+    "tracker": 0
+  },
+  "adDomains": [],
+  "trackerDomains": [],
+  "thirdPartyDomains": [
+    "cloudflare.com"
+  ],
+  "cookiesBeforeInteraction": []
+}

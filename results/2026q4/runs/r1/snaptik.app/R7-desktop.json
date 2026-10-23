@@ -1,0 +1,23 @@
+{
+  "item": "R7",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-19T20:49:32.051Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 836
+  },
+  "clicks": 4,
+  "control_label": "Download All (ZIP) (2)",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/snaptik.app/R7-desktop-result.png",
+    "harness/runs-local/2026q4/r1/snaptik.app/R7-desktop-no-file.png"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 79.9
+}

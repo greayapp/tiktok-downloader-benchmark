@@ -1,0 +1,17 @@
+{
+  "tool": "tikmate.app",
+  "measured": "2026-10-23T03:38:14.386Z",
+  "accessibility": 97,
+  "vitals": {
+    "lcp": 1873.3449999999998,
+    "inp": 76.5,
+    "cls": 0.022252669885353644
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 3,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://tikmate.app/"
+  }
+}

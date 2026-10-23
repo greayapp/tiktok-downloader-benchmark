@@ -1,0 +1,28 @@
+{
+  "newPages": [],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 442,
+    "ad": 1,
+    "tracker": 6
+  },
+  "adDomains": [
+    "googlesyndication.com"
+  ],
+  "trackerDomains": [
+    "cloudflareinsights.com",
+    "google-analytics.com",
+    "googletagmanager.com",
+    "savetik.co"
+  ],
+  "thirdPartyDomains": [
+    "cloudflare.com",
+    "cloudflareinsights.com",
+    "google-analytics.com",
+    "googlesyndication.com",
+    "googletagmanager.com"
+  ],
+  "cookiesBeforeInteraction": []
+}

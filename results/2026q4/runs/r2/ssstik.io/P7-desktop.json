@@ -1,0 +1,53 @@
+{
+  "item": "P7",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T21:58:01.007Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 846,
+    "to_download": 2758,
+    "to_file": 4370
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (3)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P7-desktop.bin.unzipped/7501435433528708382_0_1792478057.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P7-desktop.bin.unzipped/7501435433528708382_1_1792478057.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P7-desktop.bin.unzipped/7501435433528708382_2_1792478057.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/P7-desktop-result.png"
+  ],
+  "bytes": 635027,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ssstik.io/P7-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

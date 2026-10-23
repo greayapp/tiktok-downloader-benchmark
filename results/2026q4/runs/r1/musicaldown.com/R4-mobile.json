@@ -1,0 +1,52 @@
+{
+  "item": "R4",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-19T22:00:29.411Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2475,
+    "to_download": 3958,
+    "to_file": 10864
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD MP4 [HD]",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 59.86,
+      "bytes": 47740794,
+      "video": {
+        "codec": "hevc",
+        "width": 1076,
+        "height": 1920
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/R4-mobile-result.png"
+  ],
+  "bytes": 47740794,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r1/musicaldown.com/R4-mobile.mp4"
+  ],
+  "lineMbps": 79.9
+}

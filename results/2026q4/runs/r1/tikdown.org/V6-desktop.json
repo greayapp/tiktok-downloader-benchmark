@@ -1,0 +1,57 @@
+{
+  "item": "V6",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-20T05:00:53.752Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": true,
+  "timings_ms": {
+    "to_result": 3091,
+    "to_download": 6979,
+    "to_file": 36243
+  },
+  "clicks": 2,
+  "control_label": "Download (no watermark)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 246.08,
+      "bytes": 124430486,
+      "video": {
+        "codec": "h264",
+        "width": 576,
+        "height": 1024
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 0.5333333333333333,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikdown.org/V6-desktop-result.png"
+  ],
+  "bytes": 124430486,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikdown.org/V6-desktop.mp4"
+  ],
+  "firstFailure": "no file started within 60 s of clicking the download control",
+  "lineMbps": 84.3
+}

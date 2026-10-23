@@ -1,0 +1,23 @@
+{
+  "item": "V3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T15:46:55.864Z",
+  "outcome": "failure",
+  "failure": "no file started within 60 s of clicking the download control",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 5153
+  },
+  "clicks": 3,
+  "control_label": "HD",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/lovetik.com/V3-mobile-result.png",
+    "harness/runs-local/2026q4/r2/lovetik.com/V3-mobile-no-file.png"
+  ],
+  "firstFailure": "the site said: \"Error: Could not get Video ID.\"",
+  "lineMbps": 73.9
+}

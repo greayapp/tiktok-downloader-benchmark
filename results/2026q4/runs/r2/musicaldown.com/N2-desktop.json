@@ -1,0 +1,22 @@
+{
+  "item": "N2",
+  "kind": "negative",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T18:51:57.527Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": {
+    "grade": "clear",
+    "message": "NOTE: This video is currently not available or is private!Binge Hit Series"
+  },
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/N2-desktop-negative.png"
+  ],
+  "lineMbps": 73.9
+}

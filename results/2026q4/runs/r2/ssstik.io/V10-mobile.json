@@ -1,0 +1,28 @@
+{
+  "item": "V10",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:08:41.369Z",
+  "outcome": "ad-wall",
+  "failure": "the site requires watching an ad to continue (not done: SPEC.md §6.D)",
+  "retried": false,
+  "timings_ms": {
+    "to_result": 874
+  },
+  "clicks": 5,
+  "control_label": "Without watermark",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/V10-mobile-result.png",
+    "harness/runs-local/2026q4/r2/ssstik.io/V10-mobile-ad-wall.png",
+    "harness/runs-local/2026q4/r2/ssstik.io/V10-mobile-ad-wall.png"
+  ],
+  "adGatedOptions": [
+    "Without watermark HD",
+    "Without watermark"
+  ],
+  "adWallText": "lose your reward",
+  "lineMbps": 73.9
+}

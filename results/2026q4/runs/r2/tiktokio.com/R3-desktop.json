@@ -1,0 +1,56 @@
+{
+  "item": "R3",
+  "kind": "video",
+  "task": "video",
+  "viewport": "desktop",
+  "started": "2026-10-22T10:52:30.220Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1860,
+    "to_download": 20872,
+    "to_file": 53502
+  },
+  "clicks": 4,
+  "control_label": "Download without watermark (HD)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 27.496834,
+      "bytes": 14108739,
+      "video": {
+        "codec": "hevc",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": false,
+      "votes": [
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tiktokio.com/R3-desktop-result.png"
+  ],
+  "bytes": 14108739,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/tiktokio.com/R3-desktop.mp4"
+  ],
+  "lineMbps": 73.9
+}

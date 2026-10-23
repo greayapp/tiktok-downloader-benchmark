@@ -1,0 +1,38 @@
+{
+  "newPages": [],
+  "offsiteNavigations": [],
+  "permissions": [],
+  "dialogs": [],
+  "requests": {
+    "total": 712,
+    "ad": 16,
+    "tracker": 7
+  },
+  "adDomains": [
+    "adtrafficquality.google",
+    "doubleclick.net",
+    "googlesyndication.com"
+  ],
+  "trackerDomains": [
+    "adtrafficquality.google",
+    "cloudflareinsights.com",
+    "google-analytics.com",
+    "googletagmanager.com",
+    "indown.io"
+  ],
+  "thirdPartyDomains": [
+    "adtrafficquality.google",
+    "cloudflare.com",
+    "cloudflareinsights.com",
+    "doubleclick.net",
+    "google-analytics.com",
+    "google.com",
+    "googleapis.com",
+    "googlesyndication.com",
+    "googletagmanager.com",
+    "gstatic.com"
+  ],
+  "cookiesBeforeInteraction": [
+    ".doubleclick.net:test_cookie"
+  ]
+}

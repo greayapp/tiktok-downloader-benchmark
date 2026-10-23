@@ -1,0 +1,28 @@
+{
+  "item": "L1",
+  "kind": "variant",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:17:08.852Z",
+  "outcome": "ad-wall",
+  "failure": "the site requires watching an ad to continue (not done: SPEC.md §6.D)",
+  "retried": false,
+  "timings_ms": {
+    "to_result": 871
+  },
+  "clicks": 5,
+  "control_label": "Without watermark",
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/L1-mobile-result.png",
+    "harness/runs-local/2026q4/r2/ssstik.io/L1-mobile-ad-wall.png",
+    "harness/runs-local/2026q4/r2/ssstik.io/L1-mobile-ad-wall.png"
+  ],
+  "adGatedOptions": [
+    "Without watermark HD",
+    "Without watermark"
+  ],
+  "adWallText": "lose your reward",
+  "lineMbps": 73.9
+}

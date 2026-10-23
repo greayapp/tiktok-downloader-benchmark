@@ -1,0 +1,17 @@
+{
+  "tool": "ttdownloader.com",
+  "measured": "2026-10-23T03:39:25.044Z",
+  "accessibility": 87,
+  "vitals": {
+    "lcp": 2938.7144000000003,
+    "inp": 18.5,
+    "cls": 0.00009029737176382152
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 2,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://ttdownloader.com/"
+  }
+}

@@ -1,0 +1,1613 @@
+{
+  "edition": "2026q4",
+  "generated": "2026-10-23T04:24:47.327Z",
+  "tools": [
+    {
+      "name": "GetTikVideo",
+      "domain": "gettikvideo.com",
+      "operator": true,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 95.71428571428571,
+              "a2": 41.666666666666664,
+              "a3": 100,
+              "score": 91.59523809523809
+            },
+            "mobile": {
+              "a1": 98.55072463768116,
+              "a2": 41.666666666666664,
+              "a3": 100,
+              "score": 93.29710144927535
+            },
+            "score": 92.44616977225672
+          },
+          "quality": {
+            "desktop": {
+              "score": 71.34328358208955,
+              "items": 67
+            },
+            "mobile": {
+              "score": 69.31372549019609,
+              "items": 68
+            },
+            "score": 70.32850453614282
+          },
+          "speed": {
+            "desktop": {
+              "medianS": 5.267,
+              "p90S": 41.818,
+              "medianFileS": 5.292,
+              "medianMbps": 3646.5709629629628,
+              "startScore": 95.12692307692308,
+              "rateScore": 100,
+              "score": 96.58884615384615
+            },
+            "mobile": {
+              "medianS": 3.261,
+              "p90S": 3.947,
+              "medianFileS": 4.7805,
+              "medianMbps": 42.41923007029207,
+              "startScore": 100,
+              "rateScore": 100,
+              "score": 100
+            },
+            "score": 98.29442307692307
+          },
+          "ads": {
+            "desktop": {
+              "score": 100,
+              "penalties": []
+            },
+            "mobile": {
+              "score": 100,
+              "penalties": []
+            },
+            "score": 100
+          },
+          "privacy": {
+            "desktop": {
+              "score": 85,
+              "penalties": [
+                [
+                  "3 tracker domain(s)",
+                  15
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 85,
+              "penalties": [
+                [
+                  "3 tracker domain(s)",
+                  15
+                ]
+              ]
+            },
+            "score": 85
+          },
+          "mobile": {
+            "score": 96.5,
+            "parts": {
+              "accessibility": 96,
+              "usability": 90,
+              "performance": 100,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 91
+      },
+      "note": null,
+      "notOffered": [],
+      "rank": 1
+    },
+    {
+      "name": "TikDown",
+      "domain": "tikdown.org",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 100,
+              "a2": 50,
+              "a3": 75,
+              "score": 87.5
+            },
+            "mobile": {
+              "a1": 100,
+              "a2": 50,
+              "a3": 75,
+              "score": 87.5
+            },
+            "score": 87.5
+          },
+          "quality": {
+            "desktop": {
+              "score": 72.88671829678617,
+              "items": 34
+            },
+            "mobile": {
+              "score": 72.88671829678617,
+              "items": 34
+            },
+            "score": 72.88671829678617
+          },
+          "speed": {
+            "desktop": {
+              "medianS": 4.899,
+              "p90S": 6.675,
+              "medianFileS": 9.015,
+              "medianMbps": 23.916657555143267,
+              "startScore": 96.54230769230769,
+              "rateScore": 100,
+              "score": 97.57961538461538
+            },
+            "mobile": {
+              "medianS": 4.731,
+              "p90S": 5.771,
+              "medianFileS": 8.58,
+              "medianMbps": 20.4797648758882,
+              "startScore": 97.18846153846152,
+              "rateScore": 100,
+              "score": 98.03192307692306
+            },
+            "score": 97.80576923076922
+          },
+          "ads": {
+            "desktop": {
+              "score": 100,
+              "penalties": []
+            },
+            "mobile": {
+              "score": 100,
+              "penalties": []
+            },
+            "score": 100
+          },
+          "privacy": {
+            "desktop": {
+              "score": 90,
+              "penalties": [
+                [
+                  "2 tracker domain(s)",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 90,
+              "penalties": [
+                [
+                  "2 tracker domain(s)",
+                  10
+                ]
+              ]
+            },
+            "score": 90
+          },
+          "mobile": {
+            "score": 88,
+            "parts": {
+              "accessibility": 77,
+              "usability": 75,
+              "performance": 100,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 90
+      },
+      "note": null,
+      "notOffered": [
+        "mp3",
+        "photos"
+      ],
+      "rank": 2
+    },
+    {
+      "name": "SnapTik",
+      "domain": "snaptik.app",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 86.36363636363636,
+              "a2": 100,
+              "a3": 87.5,
+              "score": 88.06818181818181
+            },
+            "mobile": {
+              "a1": 84.84848484848484,
+              "a2": 100,
+              "a3": 87.5,
+              "score": 87.1590909090909
+            },
+            "score": 87.61363636363636
+          },
+          "quality": {
+            "desktop": {
+              "score": 68.65497076023391,
+              "items": 57
+            },
+            "mobile": {
+              "score": 68.09523809523809,
+              "items": 56
+            },
+            "score": 68.375104427736
+          },
+          "speed": {
+            "desktop": {
+              "medianS": 3.5335,
+              "p90S": 4.792,
+              "medianFileS": 4.5365,
+              "medianMbps": 69.62297326972681,
+              "startScore": 100,
+              "rateScore": 100,
+              "score": 100
+            },
+            "mobile": {
+              "medianS": 1.819,
+              "p90S": 2.036,
+              "medianFileS": 2.1085000000000003,
+              "medianMbps": 147.9766266316219,
+              "startScore": 100,
+              "rateScore": 100,
+              "score": 100
+            },
+            "score": 100
+          },
+          "ads": {
+            "desktop": {
+              "score": 90,
+              "penalties": [
+                [
+                  "an option (e.g. HD) locked behind an ad",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 90,
+              "penalties": [
+                [
+                  "an option (e.g. HD) locked behind an ad",
+                  10
+                ]
+              ]
+            },
+            "score": 90
+          },
+          "privacy": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "13 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 50,
+              "penalties": [
+                [
+                  "35 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "score": 50
+          },
+          "mobile": {
+            "score": 85.41666666666667,
+            "parts": {
+              "accessibility": 95,
+              "usability": 80,
+              "performance": 66.66666666666667,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 83
+      },
+      "note": null,
+      "notOffered": [
+        "mp3"
+      ],
+      "rank": 3
+    },
+    {
+      "name": "MusicalDown",
+      "domain": "musicaldown.com",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 100,
+              "a2": 16.666666666666668,
+              "a3": 100,
+              "score": 91.66666666666666
+            },
+            "mobile": {
+              "a1": 100,
+              "a2": 50,
+              "a3": 100,
+              "score": 95
+            },
+            "score": 93.33333333333333
+          },
+          "quality": {
+            "desktop": {
+              "score": 77.26181288054198,
+              "items": 69
+            },
+            "mobile": {
+              "score": 77.58664412510566,
+              "items": 70
+            },
+            "score": 77.42422850282382
+          },
+          "speed": {
+            "desktop": {
+              "medianS": 4.535,
+              "p90S": 5.715,
+              "medianFileS": 10.734,
+              "medianMbps": 33.28971957084721,
+              "startScore": 97.9423076923077,
+              "rateScore": 100,
+              "score": 98.55961538461538
+            },
+            "mobile": {
+              "medianS": 3.6885000000000003,
+              "p90S": 4.637,
+              "medianFileS": 8.2495,
+              "medianMbps": 55.3035551694179,
+              "startScore": 100,
+              "rateScore": 100,
+              "score": 100
+            },
+            "score": 99.27980769230768
+          },
+          "ads": {
+            "desktop": {
+              "score": 30,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ],
+                [
+                  "redirect",
+                  40
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 100,
+              "penalties": []
+            },
+            "score": 65
+          },
+          "privacy": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "68 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 50,
+              "penalties": [
+                [
+                  "32 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "score": 50
+          },
+          "mobile": {
+            "score": 95,
+            "parts": {
+              "accessibility": 90,
+              "usability": 90,
+              "performance": 100,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 82
+      },
+      "note": null,
+      "notOffered": [],
+      "rank": 4
+    },
+    {
+      "name": "TikCD",
+      "domain": "tikcd.com",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 100,
+              "a2": 0,
+              "a3": 100,
+              "score": 90
+            },
+            "mobile": {
+              "a1": 71.42857142857143,
+              "a2": 0,
+              "a3": 100,
+              "score": 72.85714285714286
+            },
+            "score": 81.42857142857143
+          },
+          "quality": {
+            "desktop": {
+              "score": 80,
+              "items": 70
+            },
+            "mobile": {
+              "score": 88,
+              "items": 50
+            },
+            "score": 84
+          },
+          "speed": {
+            "desktop": {
+              "medianS": 6.1185,
+              "p90S": 11.516,
+              "medianFileS": 6.166,
+              "medianMbps": 6678.853808411215,
+              "startScore": 91.85192307692309,
+              "rateScore": 100,
+              "score": 94.29634615384616
+            },
+            "mobile": {
+              "medianS": 4.0329999999999995,
+              "p90S": 6.795,
+              "medianFileS": 4.0405,
+              "medianMbps": 5672.8865544267055,
+              "startScore": 99.87307692307692,
+              "rateScore": 100,
+              "score": 99.91115384615384
+            },
+            "score": 97.10374999999999
+          },
+          "ads": {
+            "desktop": {
+              "score": 80,
+              "penalties": [
+                [
+                  "deceptive ad",
+                  20
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 80,
+              "penalties": [
+                [
+                  "deceptive ad",
+                  20
+                ]
+              ]
+            },
+            "score": 80
+          },
+          "privacy": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "29 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 50,
+              "penalties": [
+                [
+                  "8 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "score": 50
+          },
+          "mobile": {
+            "score": 87.75,
+            "parts": {
+              "accessibility": 96,
+              "usability": 55,
+              "performance": 100,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 81
+      },
+      "note": null,
+      "notOffered": [],
+      "rank": 5
+    },
+    {
+      "name": "TTDownloader",
+      "domain": "ttdownloader.com",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 54.285714285714285,
+              "a2": 83.33333333333333,
+              "a3": 100,
+              "score": 70.9047619047619
+            },
+            "mobile": {
+              "a1": 54.285714285714285,
+              "a2": 100,
+              "a3": 100,
+              "score": 72.57142857142857
+            },
+            "score": 71.73809523809524
+          },
+          "quality": {
+            "desktop": {
+              "score": 98.18592338835253,
+              "items": 38
+            },
+            "mobile": {
+              "score": 98.18592338835253,
+              "items": 38
+            },
+            "score": 98.18592338835253
+          },
+          "speed": {
+            "desktop": {
+              "medianS": 4.8665,
+              "p90S": 27.427,
+              "medianFileS": 10.358,
+              "medianMbps": 64.42940010667267,
+              "startScore": 96.66730769230769,
+              "rateScore": 100,
+              "score": 97.66711538461537
+            },
+            "mobile": {
+              "medianS": 5.0184999999999995,
+              "p90S": 8.291,
+              "medianFileS": 10.8295,
+              "medianMbps": 58.07160793058024,
+              "startScore": 96.08269230769231,
+              "rateScore": 100,
+              "score": 97.25788461538461
+            },
+            "score": 97.46249999999999
+          },
+          "ads": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ],
+                [
+                  "deceptive ad",
+                  20
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 70,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ]
+              ]
+            },
+            "score": 60
+          },
+          "privacy": {
+            "desktop": {
+              "score": 80,
+              "penalties": [
+                [
+                  "4 tracker domain(s)",
+                  20
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 80,
+              "penalties": [
+                [
+                  "4 tracker domain(s)",
+                  20
+                ]
+              ]
+            },
+            "score": 80
+          },
+          "mobile": {
+            "score": 79.66666666666667,
+            "parts": {
+              "accessibility": 87,
+              "usability": 65,
+              "performance": 66.66666666666667,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 79
+      },
+      "note": null,
+      "notOffered": [],
+      "rank": 6
+    },
+    {
+      "name": "TikTokio",
+      "domain": "tiktokio.com",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 92.85714285714286,
+              "a2": 50,
+              "a3": 87.5,
+              "score": 86.96428571428572
+            },
+            "mobile": {
+              "a1": 90,
+              "a2": 50,
+              "a3": 87.5,
+              "score": 85.25
+            },
+            "score": 86.10714285714286
+          },
+          "quality": {
+            "desktop": {
+              "score": 75.86253982703687,
+              "items": 65
+            },
+            "mobile": {
+              "score": 75.09627125011741,
+              "items": 63
+            },
+            "score": 75.47940553857714
+          },
+          "speed": {
+            "desktop": {
+              "medianS": 3.204,
+              "p90S": 20.356,
+              "medianFileS": 40.24,
+              "medianMbps": 5.801693268186753,
+              "startScore": 100,
+              "rateScore": 21.12051815659307,
+              "score": 76.33615544697793
+            },
+            "mobile": {
+              "medianS": 3.248,
+              "p90S": 19.993,
+              "medianFileS": 27.934,
+              "medianMbps": 9.8047377042238,
+              "startScore": 100,
+              "rateScore": 43.359653912354446,
+              "score": 83.00789617370633
+            },
+            "score": 79.67202581034212
+          },
+          "ads": {
+            "desktop": {
+              "score": 70,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 70,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ]
+              ]
+            },
+            "score": 70
+          },
+          "privacy": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "65 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 50,
+              "penalties": [
+                [
+                  "47 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "score": 50
+          },
+          "mobile": {
+            "score": 72.25,
+            "parts": {
+              "accessibility": 89,
+              "usability": 100,
+              "performance": 0,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 75
+      },
+      "note": null,
+      "notOffered": [],
+      "rank": 7
+    },
+    {
+      "name": "TikMate",
+      "domain": "tikmate.app",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": null,
+              "a2": null,
+              "a3": null,
+              "score": null
+            },
+            "mobile": {
+              "a1": 80,
+              "a2": null,
+              "a3": null,
+              "score": 80
+            },
+            "score": 80
+          },
+          "quality": {
+            "desktop": {
+              "score": null,
+              "items": 0
+            },
+            "mobile": {
+              "score": 78.88313609467455,
+              "items": 4
+            },
+            "score": 78.88313609467455
+          },
+          "speed": {
+            "desktop": {
+              "medianS": null,
+              "p90S": null,
+              "medianFileS": null,
+              "medianMbps": null,
+              "startScore": null,
+              "rateScore": null,
+              "score": null
+            },
+            "mobile": {
+              "medianS": 16.057,
+              "p90S": 27.669,
+              "medianFileS": 31.393500000000003,
+              "medianMbps": 14.88710330977402,
+              "startScore": 53.626923076923084,
+              "rateScore": 71.59501838763344,
+              "score": 59.01735167013619
+            },
+            "score": 59.01735167013619
+          },
+          "ads": {
+            "desktop": {
+              "score": 80,
+              "penalties": [
+                [
+                  "ad wall (watch an ad to continue)",
+                  20
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 75,
+              "penalties": [
+                [
+                  "ad wall (watch an ad to continue)",
+                  20
+                ],
+                [
+                  "1 extra click(s)",
+                  5
+                ]
+              ]
+            },
+            "score": 77.5
+          },
+          "privacy": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "35 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 50,
+              "penalties": [
+                [
+                  "35 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "score": 50
+          },
+          "mobile": {
+            "score": 88,
+            "parts": {
+              "accessibility": 97,
+              "usability": 75,
+              "performance": 100,
+              "friction": 80
+            }
+          }
+        },
+        "overall": 74
+      },
+      "note": null,
+      "notOffered": [],
+      "rank": 8
+    },
+    {
+      "name": "SSSTik",
+      "domain": "ssstik.io",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 100,
+              "a2": 83.33333333333333,
+              "a3": 100,
+              "score": 98.33333333333333
+            },
+            "mobile": {
+              "a1": 100,
+              "a2": 66.66666666666667,
+              "a3": 100,
+              "score": 96.66666666666667
+            },
+            "score": 97.5
+          },
+          "quality": {
+            "desktop": {
+              "score": 54.166666666666664,
+              "items": 36
+            },
+            "mobile": {
+              "score": 63.09643711444039,
+              "items": 47
+            },
+            "score": 58.631551890553524
+          },
+          "speed": {
+            "desktop": {
+              "medianS": null,
+              "p90S": null,
+              "medianFileS": null,
+              "medianMbps": null,
+              "startScore": null,
+              "rateScore": null,
+              "score": null
+            },
+            "mobile": {
+              "medianS": 37.128,
+              "p90S": 43.146,
+              "medianFileS": 44.751,
+              "medianMbps": 37.7911661711058,
+              "startScore": 0,
+              "rateScore": 100,
+              "score": 30
+            },
+            "score": 30
+          },
+          "ads": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ],
+                [
+                  "ad wall (watch an ad to continue)",
+                  20
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 50,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ],
+                [
+                  "ad wall (watch an ad to continue)",
+                  20
+                ]
+              ]
+            },
+            "score": 50
+          },
+          "privacy": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "39 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 50,
+              "penalties": [
+                [
+                  "47 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "score": 50
+          },
+          "mobile": {
+            "score": 78.91666666666667,
+            "parts": {
+              "accessibility": 94,
+              "usability": 55,
+              "performance": 66.66666666666667,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 65
+      },
+      "note": null,
+      "notOffered": [],
+      "rank": 9
+    },
+    {
+      "name": "TTSave",
+      "domain": "ttsave.net",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "categories": {
+          "reliability": {
+            "desktop": {
+              "a1": 68.57142857142857,
+              "a2": 50,
+              "a3": 37.5,
+              "score": 57.39285714285714
+            },
+            "mobile": {
+              "a1": 65.71428571428571,
+              "a2": 58.333333333333336,
+              "a3": 37.5,
+              "score": 56.51190476190476
+            },
+            "score": 56.95238095238095
+          },
+          "quality": {
+            "desktop": {
+              "score": 63.56819629355687,
+              "items": 48
+            },
+            "mobile": {
+              "score": 69.54962052997168,
+              "items": 46
+            },
+            "score": 66.55890841176428
+          },
+          "speed": {
+            "desktop": {
+              "medianS": 18.413,
+              "p90S": 34.138,
+              "medianFileS": 18.45,
+              "medianMbps": 3439.674857142857,
+              "startScore": 44.565384615384616,
+              "rateScore": 100,
+              "score": 61.19576923076923
+            },
+            "mobile": {
+              "medianS": 16.025,
+              "p90S": 33.914,
+              "medianFileS": 16.028,
+              "medianMbps": 3321.2554999999998,
+              "startScore": 53.75000000000001,
+              "rateScore": 100,
+              "score": 67.625
+            },
+            "score": 64.41038461538461
+          },
+          "ads": {
+            "desktop": {
+              "score": 70,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 70,
+              "penalties": [
+                [
+                  "pop-up or new tab",
+                  30
+                ]
+              ]
+            },
+            "score": 70
+          },
+          "privacy": {
+            "desktop": {
+              "score": 50,
+              "penalties": [
+                [
+                  "42 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "mobile": {
+              "score": 50,
+              "penalties": [
+                [
+                  "37 tracker domain(s)",
+                  40
+                ],
+                [
+                  "third-party cookies before any click",
+                  10
+                ]
+              ]
+            },
+            "score": 50
+          },
+          "mobile": {
+            "score": 80.83333333333334,
+            "parts": {
+              "accessibility": 90,
+              "usability": 100,
+              "performance": 33.333333333333336,
+              "friction": 100
+            }
+          }
+        },
+        "overall": 64
+      },
+      "note": null,
+      "notOffered": [],
+      "rank": 10
+    },
+    {
+      "name": "SaveTik",
+      "domain": "savetik.co",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "overall": null,
+        "categories": {}
+      },
+      "partial": {
+        "reliability": {
+          "desktop": {
+            "a1": null,
+            "a2": null,
+            "a3": 0,
+            "score": 0
+          },
+          "mobile": {
+            "a1": null,
+            "a2": null,
+            "a3": 0,
+            "score": 0
+          },
+          "score": 0
+        },
+        "quality": {
+          "desktop": {
+            "score": null,
+            "items": 0
+          },
+          "mobile": {
+            "score": null,
+            "items": 0
+          },
+          "score": null
+        },
+        "speed": {
+          "desktop": {
+            "medianS": null,
+            "p90S": null,
+            "medianFileS": null,
+            "medianMbps": null,
+            "startScore": null,
+            "rateScore": null,
+            "score": null
+          },
+          "mobile": {
+            "medianS": null,
+            "p90S": null,
+            "medianFileS": null,
+            "medianMbps": null,
+            "startScore": null,
+            "rateScore": null,
+            "score": null
+          },
+          "score": null
+        },
+        "ads": {
+          "desktop": {
+            "score": 100,
+            "penalties": []
+          },
+          "mobile": {
+            "score": 100,
+            "penalties": []
+          },
+          "score": 100
+        },
+        "privacy": {
+          "desktop": {
+            "score": 65,
+            "penalties": [
+              [
+                "5 tracker domain(s)",
+                25
+              ],
+              [
+                "third-party cookies before any click",
+                10
+              ]
+            ]
+          },
+          "mobile": {
+            "score": 65,
+            "penalties": [
+              [
+                "5 tracker domain(s)",
+                25
+              ],
+              [
+                "third-party cookies before any click",
+                10
+              ]
+            ]
+          },
+          "score": 65
+        },
+        "mobile": {
+          "score": 89.41666666666667,
+          "parts": {
+            "accessibility": 91,
+            "usability": 100,
+            "performance": 66.66666666666667,
+            "friction": 100
+          }
+        }
+      },
+      "note": "blocked by its bot protection in most tests — not measurable this edition",
+      "notOffered": [],
+      "rank": null
+    },
+    {
+      "name": "TikWM",
+      "domain": "tikwm.com",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "overall": null,
+        "categories": {}
+      },
+      "partial": {
+        "reliability": {
+          "desktop": {
+            "a1": null,
+            "a2": null,
+            "a3": null,
+            "score": null
+          },
+          "mobile": {
+            "a1": null,
+            "a2": null,
+            "a3": null,
+            "score": null
+          },
+          "score": null
+        },
+        "quality": {
+          "desktop": {
+            "score": null,
+            "items": 0
+          },
+          "mobile": {
+            "score": null,
+            "items": 0
+          },
+          "score": null
+        },
+        "speed": {
+          "desktop": {
+            "medianS": null,
+            "p90S": null,
+            "medianFileS": null,
+            "medianMbps": null,
+            "startScore": null,
+            "rateScore": null,
+            "score": null
+          },
+          "mobile": {
+            "medianS": null,
+            "p90S": null,
+            "medianFileS": null,
+            "medianMbps": null,
+            "startScore": null,
+            "rateScore": null,
+            "score": null
+          },
+          "score": null
+        },
+        "ads": {
+          "desktop": {
+            "score": 100,
+            "penalties": []
+          },
+          "mobile": {
+            "score": 100,
+            "penalties": []
+          },
+          "score": 100
+        },
+        "privacy": {
+          "desktop": {
+            "score": 100,
+            "penalties": []
+          },
+          "mobile": {
+            "score": 100,
+            "penalties": []
+          },
+          "score": 100
+        },
+        "mobile": {
+          "score": 84.91666666666667,
+          "parts": {
+            "accessibility": 93,
+            "usability": 100,
+            "performance": 66.66666666666667,
+            "friction": 80
+          }
+        }
+      },
+      "note": "blocked by its bot protection in most tests — not measurable this edition",
+      "notOffered": [],
+      "rank": null
+    },
+    {
+      "name": "LoveTik",
+      "domain": "lovetik.com",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "overall": null,
+        "categories": {}
+      },
+      "partial": {
+        "reliability": {
+          "desktop": {
+            "a1": 0,
+            "a2": 33.333333333333336,
+            "a3": 0,
+            "score": 3.333333333333334
+          },
+          "mobile": {
+            "a1": 0,
+            "a2": 33.333333333333336,
+            "a3": 0,
+            "score": 3.333333333333334
+          },
+          "score": 3.333333333333334
+        },
+        "quality": {
+          "desktop": {
+            "score": null,
+            "items": 0
+          },
+          "mobile": {
+            "score": null,
+            "items": 0
+          },
+          "score": null
+        },
+        "speed": {
+          "desktop": {
+            "medianS": null,
+            "p90S": null,
+            "medianFileS": null,
+            "medianMbps": null,
+            "startScore": null,
+            "rateScore": null,
+            "score": null
+          },
+          "mobile": {
+            "medianS": null,
+            "p90S": null,
+            "medianFileS": null,
+            "medianMbps": null,
+            "startScore": null,
+            "rateScore": null,
+            "score": null
+          },
+          "score": null
+        },
+        "ads": {
+          "desktop": {
+            "score": 100,
+            "penalties": []
+          },
+          "mobile": {
+            "score": 60,
+            "penalties": [
+              [
+                "redirect",
+                40
+              ]
+            ]
+          },
+          "score": 80
+        },
+        "privacy": {
+          "desktop": {
+            "score": 50,
+            "penalties": [
+              [
+                "34 tracker domain(s)",
+                40
+              ],
+              [
+                "third-party cookies before any click",
+                10
+              ]
+            ]
+          },
+          "mobile": {
+            "score": 50,
+            "penalties": [
+              [
+                "36 tracker domain(s)",
+                40
+              ],
+              [
+                "third-party cookies before any click",
+                10
+              ]
+            ]
+          },
+          "score": 50
+        },
+        "mobile": {
+          "score": 93.75,
+          "parts": {
+            "accessibility": 95,
+            "usability": 100,
+            "performance": 100,
+            "friction": 80
+          }
+        }
+      },
+      "note": "down during testing: no download worked in any run (an outage in every run)",
+      "notOffered": [],
+      "rank": null
+    },
+    {
+      "name": "inDown",
+      "domain": "indown.io",
+      "operator": false,
+      "unsafe": false,
+      "result": {
+        "overall": null,
+        "categories": {}
+      },
+      "partial": {
+        "reliability": {
+          "desktop": {
+            "a1": null,
+            "a2": null,
+            "a3": null,
+            "score": null
+          },
+          "mobile": {
+            "a1": null,
+            "a2": null,
+            "a3": null,
+            "score": null
+          },
+          "score": null
+        },
+        "quality": {
+          "desktop": {
+            "score": null,
+            "items": 0
+          },
+          "mobile": {
+            "score": null,
+            "items": 0
+          },
+          "score": null
+        },
+        "speed": {
+          "desktop": {
+            "medianS": null,
+            "p90S": null,
+            "medianFileS": null,
+            "medianMbps": null,
+            "startScore": null,
+            "rateScore": null,
+            "score": null
+          },
+          "mobile": {
+            "medianS": null,
+            "p90S": null,
+            "medianFileS": null,
+            "medianMbps": null,
+            "startScore": null,
+            "rateScore": null,
+            "score": null
+          },
+          "score": null
+        },
+        "ads": {
+          "desktop": {
+            "score": 100,
+            "penalties": []
+          },
+          "mobile": {
+            "score": 100,
+            "penalties": []
+          },
+          "score": 100
+        },
+        "privacy": {
+          "desktop": {
+            "score": 65,
+            "penalties": [
+              [
+                "5 tracker domain(s)",
+                25
+              ],
+              [
+                "third-party cookies before any click",
+                10
+              ]
+            ]
+          },
+          "mobile": {
+            "score": 65,
+            "penalties": [
+              [
+                "5 tracker domain(s)",
+                25
+              ],
+              [
+                "third-party cookies before any click",
+                10
+              ]
+            ]
+          },
+          "score": 65
+        },
+        "mobile": {
+          "score": 90.16666666666667,
+          "parts": {
+            "accessibility": 94,
+            "usability": 100,
+            "performance": 66.66666666666667,
+            "friction": 100
+          }
+        }
+      },
+      "note": "blocked by its bot protection in most tests — not measurable this edition",
+      "notOffered": [],
+      "rank": null
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "item": "P5",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T16:13:22.352Z",
+  "outcome": "failure",
+  "failure": "the site said: \"Error: Could not get Video ID.\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/lovetik.com/P5-mobile-no-result.png"
+  ],
+  "siteMessage": "Error: Could not get Video ID.",
+  "firstFailure": "home page did not load: page.goto: Navigation to \"https://lovetik.com/\" is interrupted by another navigation to \"https://lovetik.com/\"",
+  "lineMbps": 73.9
+}

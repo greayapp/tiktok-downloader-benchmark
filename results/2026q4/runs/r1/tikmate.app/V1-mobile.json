@@ -1,0 +1,57 @@
+{
+  "item": "V1",
+  "kind": "video",
+  "task": "video",
+  "viewport": "mobile",
+  "started": "2026-10-20T06:06:54.573Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 1098,
+    "to_download": 2515,
+    "to_file": 8186
+  },
+  "clicks": 2,
+  "control_label": "Download HD",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duration": 15.045011,
+      "bytes": 10686719,
+      "video": {
+        "codec": "hevc",
+        "width": 720,
+        "height": 1280
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "decodeWarnings": [],
+    "resolutionRatio": 1,
+    "labelDishonesty": [],
+    "watermark": {
+      "checked": true,
+      "votes": [
+        "clean",
+        "clean"
+      ],
+      "flagged": false
+    }
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikmate.app/V1-mobile-result.png"
+  ],
+  "bytes": 10686719,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikmate.app/V1-mobile.mp4"
+  ],
+  "lineMbps": 84.3
+}

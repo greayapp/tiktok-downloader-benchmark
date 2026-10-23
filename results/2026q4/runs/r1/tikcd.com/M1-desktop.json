@@ -1,0 +1,43 @@
+{
+  "item": "M1",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "desktop",
+  "started": "2026-10-20T01:09:28.028Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2105,
+    "to_download": 2969,
+    "to_file": 2971
+  },
+  "clicks": 2,
+  "control_label": "Download MP3",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 15.072653,
+      "bytes": 242042,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/M1-desktop-result.png"
+  ],
+  "bytes": 242042,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/M1-desktop.mp3"
+  ],
+  "lineMbps": 79.9
+}

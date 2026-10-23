@@ -1,0 +1,21 @@
+{
+  "item": "L3",
+  "kind": "variant",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-20T07:42:09.195Z",
+  "outcome": "failure",
+  "failure": "the site said: \"There was an issue with the TikTok link you submitted. Please try again.\"",
+  "retried": true,
+  "timings_ms": {},
+  "clicks": 1,
+  "control_label": null,
+  "file": null,
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/ttdownloader.com/L3-desktop-no-result.png"
+  ],
+  "siteMessage": "There was an issue with the TikTok link you submitted. Please try again.",
+  "firstFailure": "home page did not load: page.goto: Timeout 45000ms exceeded.",
+  "lineMbps": 84.3
+}

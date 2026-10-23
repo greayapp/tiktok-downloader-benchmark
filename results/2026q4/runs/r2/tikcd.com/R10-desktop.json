@@ -1,0 +1,47 @@
+{
+  "item": "R10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "desktop",
+  "started": "2026-10-22T22:21:07.625Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2366,
+    "to_download": 3257,
+    "to_file": 3260
+  },
+  "clicks": 2,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/R10-desktop.bin.unzipped/photo_1.jpg",
+        "type": "jpg",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/tikcd.com/R10-desktop.bin.unzipped/photo_2.jpg",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 1
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/tikcd.com/R10-desktop-result.png"
+  ],
+  "bytes": 1696647,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/tikcd.com/R10-desktop.bin"
+  ],
+  "lineMbps": 73.9
+}

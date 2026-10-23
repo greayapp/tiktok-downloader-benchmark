@@ -1,0 +1,63 @@
+{
+  "item": "P10",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-20T12:12:31.280Z",
+  "outcome": "failure",
+  "failure": "2 images vs 5 in the post",
+  "retried": true,
+  "timings_ms": {
+    "to_result": 2458,
+    "to_download": 79597,
+    "to_file": 192938
+  },
+  "clicks": 13,
+  "control_label": "Download All Photos (ZIP)",
+  "file": {
+    "ok": false,
+    "reasons": [
+      "2 images vs 5 in the post"
+    ],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P10-mobile-2.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      },
+      {
+        "file": "harness/runs-local/2026q4/r1/tikcd.com/P10-mobile.bin",
+        "type": "jpg",
+        "width": 2160,
+        "height": 2880
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P10-mobile-result.png"
+  ],
+  "fallback": "\"Download All Photos (ZIP)\" gave no file; saved the photos one by one",
+  "bytes": 505152,
+  "delivery": "media-tab",
+  "perImage": {
+    "offered": 5,
+    "labels": [
+      "1 / 5 Save Photo 1",
+      "2 / 5 Save Photo 2",
+      "3 / 5 Save Photo 3",
+      "4 / 5 Save Photo 4",
+      "5 / 5 Save Photo 5"
+    ],
+    "arrived": 1
+  },
+  "files": [
+    "harness/runs-local/2026q4/r1/tikcd.com/P10-mobile.bin",
+    "harness/runs-local/2026q4/r1/tikcd.com/P10-mobile-2.bin"
+  ],
+  "firstFailure": "2 images vs 5 in the post",
+  "lineMbps": 94.2
+}

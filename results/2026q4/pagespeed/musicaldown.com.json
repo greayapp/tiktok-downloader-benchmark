@@ -1,0 +1,17 @@
+{
+  "tool": "musicaldown.com",
+  "measured": "2026-10-23T03:37:22.067Z",
+  "accessibility": 90,
+  "vitals": {
+    "lcp": 1970.7447000000002,
+    "inp": 122.5,
+    "cls": 0.07184914077908561
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 3,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://musicaldown.com/en"
+  }
+}

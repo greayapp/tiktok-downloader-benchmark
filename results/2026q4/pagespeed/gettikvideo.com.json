@@ -1,0 +1,17 @@
+{
+  "tool": "gettikvideo.com",
+  "measured": "2026-10-23T03:46:30.168Z",
+  "accessibility": 96,
+  "vitals": {
+    "lcp": 1966.7151999999999,
+    "inp": 40,
+    "cls": 0
+  },
+  "vitalsSource": "lighthouse-lab (TBT stands in for INP)",
+  "goodVitals": 3,
+  "lighthouse": {
+    "version": "13.5.0",
+    "runs": 3,
+    "finalUrl": "https://gettikvideo.com/"
+  }
+}

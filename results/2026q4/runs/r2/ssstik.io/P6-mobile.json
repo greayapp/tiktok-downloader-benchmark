@@ -1,0 +1,59 @@
+{
+  "item": "P6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T22:18:47.541Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 869,
+    "to_download": 2879,
+    "to_file": 3466
+  },
+  "clicks": 2,
+  "control_label": "Download all (ZIP) (4)",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P6-mobile.bin.unzipped/7697329376928550175_0_1792415311.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P6-mobile.bin.unzipped/7697329376928550175_1_1792415311.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P6-mobile.bin.unzipped/7697329376928550175_2_1792415311.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ssstik.io/P6-mobile.bin.unzipped/7697329376928550175_3_1792415311.jpeg",
+        "type": "webp",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ssstik.io/P6-mobile-result.png"
+  ],
+  "bytes": 325629,
+  "delivery": "download",
+  "files": [
+    "harness/runs-local/2026q4/r2/ssstik.io/P6-mobile.bin"
+  ],
+  "lineMbps": 73.9
+}

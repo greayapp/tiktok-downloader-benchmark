@@ -1,0 +1,43 @@
+{
+  "item": "M2",
+  "kind": "mp3",
+  "task": "mp3",
+  "viewport": "desktop",
+  "started": "2026-10-22T19:41:34.554Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 2031,
+    "to_download": 3446,
+    "to_file": 3744
+  },
+  "clicks": 2,
+  "control_label": "DOWNLOAD MP3",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "probe": {
+      "format": "mp3",
+      "duration": 16.143673,
+      "bytes": 259178,
+      "video": null,
+      "audio": {
+        "codec": "mp3",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    "labelDishonesty": []
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/M2-desktop-result.png"
+  ],
+  "bytes": 259178,
+  "delivery": "media-tab",
+  "files": [
+    "harness/runs-local/2026q4/r2/musicaldown.com/M2-desktop.mp3"
+  ],
+  "lineMbps": 73.9
+}

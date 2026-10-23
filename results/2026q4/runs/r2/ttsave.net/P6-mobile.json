@@ -1,0 +1,73 @@
+{
+  "item": "P6",
+  "kind": "photos",
+  "task": "photos",
+  "viewport": "mobile",
+  "started": "2026-10-22T17:54:42.111Z",
+  "outcome": "success",
+  "failure": null,
+  "retried": false,
+  "timings_ms": {
+    "to_result": 4885,
+    "to_download": 11917,
+    "to_file": 31886
+  },
+  "clicks": 2,
+  "control_label": "Download Image 1",
+  "file": {
+    "ok": true,
+    "reasons": [],
+    "images": [
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile-2.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile-3.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile-4.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "file": "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile.bin",
+        "type": "jpg",
+        "width": 1080,
+        "height": 1350
+      }
+    ],
+    "heicOnly": false,
+    "downscaled": 0
+  },
+  "negative": null,
+  "evidence": [
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile-result.png"
+  ],
+  "bytes": 245763,
+  "delivery": "download",
+  "perImage": {
+    "offered": 5,
+    "labels": [
+      "Download Image 1",
+      "Download Image 2",
+      "Download Image 3",
+      "Download Image 4",
+      "Download Profile Picture"
+    ],
+    "arrived": 3
+  },
+  "files": [
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile-2.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile-3.bin",
+    "harness/runs-local/2026q4/r2/ttsave.net/P6-mobile-4.bin"
+  ],
+  "lineMbps": 73.9
+}

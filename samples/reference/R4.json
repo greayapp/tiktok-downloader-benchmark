@@ -1,0 +1,21 @@
+{
+  "sample": "R4",
+  "url": "https://www.tiktok.com/@spotify/video/7698082420410682638",
+  "captured": "2026-10-19T09:11:22.504Z",
+  "id": "7698082420410682638",
+  "author": "spotify",
+  "created": "2026-10-18T18:51:51.000Z",
+  "isPhoto": false,
+  "duration": 59,
+  "maxHeight": 1920,
+  "imageCount": null,
+  "maxImageWidth": null,
+  "hasMusic": true,
+  "musicId": "7698082457022778125",
+  "musicDuration": 59,
+  "musicOriginal": true,
+  "ytdlp": {
+    "duration": 59,
+    "maxHeight": 1926
+  }
+}

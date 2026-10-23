@@ -54,9 +54,52 @@
   and before recording a failure) and the block redone whole: all 38 items are an ad wall, as in
   run 1. The records it replaces, and their screenshots, are kept on the test machine. No other
   "no download control" failure in either run shows a wall in its screenshot.
-- **Outage re-run after run 2:** LoveTik failed every item of run 2 as well (70 of 70, same message),
-  so it is re-run once more, at least 24 hours after its run 2 block (13:49–16:32 UTC, 22 October);
-  that re-run replaces its run 2 result.
+- **No second outage re-run:** LoveTik failed every item of run 2 as well (70 of 70, same message).
+  The outage rule (§5.3) calls for one more re-run; the operator's owner decided not to run it,
+  since LoveTik had then failed all 210 items across run 1, its re-run and run 2. Its run 2 result
+  stands, and LoveTik is listed as "down during testing", without a score. This departs from §5.3
+  and is logged in CHANGELOG.md.
+
+## Review (what a person confirmed, 23 October)
+
+- Pop-ups: the new tabs of SSSTik, MusicalDown, TTDownloader, TikTokio and TTSave were checked and
+  confirmed as tabs the visitor didn't ask for (ad tabs; TikTokio's and TTSave's pop-unders end on
+  Google's home page). TTDownloader's other new tabs are its own download tabs (how it delivers the
+  file) and don't count; its ad tab (grotaich.net, on the first click) does.
+- Deceptive ads (§6.D): TikCD's "iPhone app for free" is first in its list of download buttons,
+  styled like them (desktop and phone); TTDownloader's "Buy Cheap TikTok Followers — Learn More" is
+  a row in its table of download options (desktop; the row is empty on phones). Screenshots in
+  `evidence/tikcd.com/` and `evidence/ttdownloader.com/`.
+- No Better Ads violation or forced wait was found in any tool's screenshots. SSSTik's phone result
+  carries heavy ads, but a mobile ad density over 30% can't be shown from the screenshots, so it
+  isn't flagged.
+- iPhone check (§6.F): failures confirmed for TikMate (ad wall), LoveTik (outage) and TikWM (the
+  video opened in Safari's player, not saved). TTSave's was rejected: a full-screen ad with a Close
+  button covered the page, which a person would close. SaveTik's wasn't judged (not scored).
+- All decisions are in `review.json`.
+
+## Corrections before publishing
+
+Three harness and scoring bugs were found while checking the results, fixed, tested and logged
+in CHANGELOG.md before anything was published:
+1. TikMate's ad wall wasn't recognised in run 2's desktop block (`e6db999`); the block was redone.
+2. Quality counted should-fail links as perfect downloads (`102148f`); every tool's quality was a
+   little too high.
+3. Chrome's own error page after a page that failed to load was counted as a redirect, −40 under
+   Ads (`7fd25be`). **This raised GetTikVideo's overall score from 83 to 91**: its 8 such pages all
+   came from home-page timeouts on the test line, which still count as failures under
+   reliability. MusicalDown had 1.
+
+## Also note
+
+- Large files: TikTokio's and TikMate's download servers cut off the largest original files
+  (about 200–270 MB) 2–4 minutes into the transfer; files that finish sooner arrive. These count
+  as failures (the file didn't arrive). Chrome offers a Resume button on an interrupted download,
+  which the harness doesn't use.
+- TikMate: most items are behind its ad wall, so its reliability comes from the few that weren't
+  (5 items).
+- LoveTik: no download worked in any run (its outage re-run included), so it is listed as "down
+  during testing", without a score.
 
 ## Operator disclosure
 
