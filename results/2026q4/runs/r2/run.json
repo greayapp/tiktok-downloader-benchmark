@@ -117,7 +117,7 @@
         "tikmate.app:desktop"
       ],
       "at": "2026-10-23T03:09:02.100Z",
-      "reason": "ad-wall check missed TikMate's offerwall on desktop (screenshots show it on every item); fixed in e6db999",
+      "reason": "ad-wall check missed TikMate's offerwall on desktop (screenshots show it on every item); fixed in f16587a",
       "finished": "2026-10-23T03:13:27.066Z"
     }
   ],

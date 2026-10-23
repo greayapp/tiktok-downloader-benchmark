@@ -132,7 +132,7 @@
         "tiktokio.com:desktop"
       ],
       "at": "2026-10-20T10:20:42.920Z",
-      "reason": "photo-step harness bug (photos opened one per tab were lost or uncounted); fixed in 558676b"
+      "reason": "photo-step harness bug (photos opened one per tab were lost or uncounted); fixed in 85d4012"
     }
   ],
   "finished": "2026-10-20T12:27:29.924Z",

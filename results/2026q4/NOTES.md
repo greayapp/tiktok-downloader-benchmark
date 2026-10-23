@@ -18,14 +18,14 @@
 
 - **Run 1** started 16:35 UTC on 19 October. At 01:48 UTC on 20 October the runner stopped making
   progress (it waited on a page that never answered, during TikCD's mobile block). It was stopped at
-  about 02:50 UTC and resumed at 02:53 UTC with a fix to the runner (commit `b4f9f0f`: page reads time
+  about 02:50 UTC and resumed at 02:53 UTC with a fix to the runner (commit `344fbbc`: page reads time
   out, an item unfinished after 12 minutes is "skipped", not counted). The 17 tool × viewport blocks
   already finished were kept; TikCD's mobile block was redone from its start. Nothing about how tools
   are tested changed; run 2 uses the same runner.
 
 - **Run 1 ended** at 09:10 UTC on 20 October (all 14 tools, both viewports).
 - **Two blocks redone** after run 1 (10:20–12:27 UTC on 20 October), because of a harness bug in the
-  photo step, fixed in commit `558676b`: a site that opens each photo in a new tab (TikCD on phones)
+  photo step, fixed in commit `85d4012`: a site that opens each photo in a new tab (TikCD on phones)
   had photos lost (a slow photo tab was taken for an ad and closed; a tab in the background can't
   open the next one) or uncounted; the "Download all" control also took one photo's slot. Only two
   blocks showed the pattern — TikCD mobile and TikTokio desktop — and both were redone whole with
@@ -50,7 +50,7 @@
   screenshot shows Google's offerwall ("Unlock more content · View a short ad"), but the harness
   didn't recognise it and recorded "no download control" (and silent should-fail answers) instead;
   run 1 and run 2's phone block recognised the same wall. The wall check was fixed (commit
-  `e6db999`: it also reads shadow roots, Chrome's accessibility tree and every frame, on arrival
+  `f16587a`: it also reads shadow roots, Chrome's accessibility tree and every frame, on arrival
   and before recording a failure) and the block redone whole: all 38 items are an ad wall, as in
   run 1. The records it replaces, and their screenshots, are kept on the test machine. No other
   "no download control" failure in either run shows a wall in its screenshot.
@@ -82,11 +82,11 @@
 
 Three harness and scoring bugs were found while checking the results, fixed, tested and logged
 in CHANGELOG.md before anything was published:
-1. TikMate's ad wall wasn't recognised in run 2's desktop block (`e6db999`); the block was redone.
-2. Quality counted should-fail links as perfect downloads (`102148f`); every tool's quality was a
+1. TikMate's ad wall wasn't recognised in run 2's desktop block (`f16587a`); the block was redone.
+2. Quality counted should-fail links as perfect downloads (`d6da8ae`); every tool's quality was a
    little too high.
 3. Chrome's own error page after a page that failed to load was counted as a redirect, −40 under
-   Ads (`7fd25be`). **This raised GetTikVideo's overall score from 83 to 91**: its 8 such pages all
+   Ads (`de9c3db`). **This raised GetTikVideo's overall score from 83 to 91**: its 8 such pages all
    came from home-page timeouts on the test line, which still count as failures under
    reliability. MusicalDown had 1.
 

@@ -10,6 +10,12 @@ results are recorded here.
   during testing", with no overall score or rank, like a "not measurable" tool. Already applied
   in the Q4 2026 edition (LoveTik).
 
+### 2026-10-23 — Repository moved
+- The benchmark now lives at https://github.com/greayapp/tiktok-downloader-benchmark, with the live
+  results at https://greayapp.github.io/tiktok-downloader-benchmark/. Contact:
+  greyapp@protonmail.com. The commit IDs changed in the move; the notes and records cite the new
+  ones. No method, sample or result changed.
+
 ### 2026-10-23 — Harness: a tab opened only to download the file is the delivery (from Q1 2027)
 - A link with `target=_blank` to an attachment opens a blank tab that downloads the file and closes
   itself. The observer recorded such tabs as pop-ups (§6.D); it now records them as the delivery,
@@ -66,7 +72,7 @@ results are recorded here.
 ### 2026-10-20 — Runner fix during Q4 2026 run 1
 - Run 1 stalled on a page call with no time limit; the runner now times out page reads, records an
   item unfinished after 12 minutes as "skipped" (a harness hang, not counted), and can resume a run
-  (`--resume`, redoing an unfinished tool × viewport block whole). Commit `b4f9f0f`; details in
+  (`--resume`, redoing an unfinished tool × viewport block whole). Commit `344fbbc`; details in
   `results/2026q4/NOTES.md`. No change to how tools are tested or scored.
 
 ### 2026-10-19 — Schedule: Q4 2026 edition tested in late October
