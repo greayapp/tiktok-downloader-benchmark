@@ -104,6 +104,7 @@
       <tbody id="results-body"></tbody>
     </table></div>
     <p class="note">Scores out of 100. Evidence and raw data for every number are in the repository.</p>
+    <p class="note" id="results-notes" hidden></p>
   </section>
 
   <section id="uptime" aria-labelledby="uptime-h" hidden>
@@ -193,12 +194,22 @@
       tr.append(td(t.rank ?? "–"));
       const name = td(t.name);
       if (t.operator) { const s = document.createElement("span"); s.className = "tag"; s.textContent = "operator"; name.append(s); }
-      if (t.unsafe || t.note) { const s = document.createElement("span"); s.className = "tag"; s.textContent = t.unsafe ? "unsafe — not ranked" : "not ranked"; s.title = t.note || ""; name.append(s); }
+      if (t.unsafe || t.note) {
+        const s = document.createElement("span"); s.className = "tag";
+        s.textContent = t.unsafe ? "unsafe — not ranked" : /^down/.test(t.note) ? "down during testing" : /blocked/.test(t.note) ? "not measurable" : "not ranked";
+        s.title = t.note || ""; name.append(s);
+      }
       tr.append(name, td(fmt(t.result?.overall), "n overall"));
       for (const c of ["reliability", "ads", "quality", "speed", "privacy", "mobile"]) tr.append(td(fmt(t.result?.categories?.[c]?.score), "n"));
       body.append(tr);
     }
     document.getElementById("results-meta").textContent = `Edition ${latest.edition} · generated ${String(latest.generated).slice(0, 10)}`;
+    // The edition's notes and disclosures (run log, corrections, the operator's own score).
+    const notesLink = `https://github.com/greayapp/tiktok-downloader-benchmark/blob/main/results/${latest.edition}/NOTES.md`;
+    const notes = document.getElementById("results-notes");
+    notes.append("GetTikVideo, which runs this benchmark, is tested like every other tool. How each run went, every correction made before publishing (including two scoring fixes, one of which raised GetTikVideo's score) and what a person reviewed are in the ");
+    const a = document.createElement("a"); a.href = notesLink; a.textContent = "edition notes"; notes.append(a, ".");
+    notes.hidden = false;
     document.getElementById("results").hidden = false;
   }
   if (up) {
