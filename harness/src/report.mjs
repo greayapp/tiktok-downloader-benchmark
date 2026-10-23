@@ -120,9 +120,9 @@ function main() {
                     if (!confirmed && !(r.watermarkRejected ?? []).includes(`${rec.run}/${rec.item}/${v}`)) todo.push({ tool: tool.domain, check: "watermark", key: `${rec.run}/${rec.item}/${v}` });
                 }
             }
-            if (data[v].behaviour.some((b) => b.newPages?.some((p) => !p.media))) todo.push({ tool: tool.domain, check: "review new tabs (pop-ups) evidence", viewport: v });
+            if (r.popupsConfirmed === undefined && data[v].behaviour.some((b) => b.newPages?.some((p) => !p.media))) todo.push({ tool: tool.domain, check: "review new tabs (pop-ups) evidence (review.json popupsConfirmed)", viewport: v });
         }
-        todo.push({ tool: tool.domain, check: "review ad screenshots: Better Ads violations, deceptive ads, forced waits" });
+        if (!r.adsReviewed) todo.push({ tool: tool.domain, check: "review ad screenshots: Better Ads violations, deceptive ads, forced waits (review.json adsReviewed)" });
         if (iphone[tool.domain] && !iphone[tool.domain].saved && r.iphoneConfirmed === undefined) {
             todo.push({ tool: tool.domain, check: "iPhone check failed: confirm from the screenshot (review.json iphoneConfirmed: true) or reject (false)", reason: iphone[tool.domain].reason, evidence: iphone[tool.domain].evidence ?? iphone[tool.domain].screenshot });
         }
@@ -149,13 +149,19 @@ function main() {
         };
         const result = scoreTool(input);
         const notMeasurable = blockedShare("desktop") > 0.5 && blockedShare("mobile") > 0.5;
+        // Down during testing: not one download worked in any run (every run an outage, SPEC.md §5.3).
+        // A score made only of its ads, privacy and phone checks would mislead, so none is shown.
+        const positives = [...data.desktop.records, ...data.mobile.records].filter((x) => x.kind !== "negative" && !["blocked", "skipped", "ad-wall"].includes(x.outcome));
+        const down = !notMeasurable && positives.length > 0 && !positives.some((x) => x.outcome === "success");
+        const unscored = notMeasurable || down;
         tools.push({
             name: tool.name, domain: tool.domain, operator: !!tool.operator,
             unsafe: !!safety[tool.domain]?.unsafe,
-            // Not measurable: no scores shown; what little was measured is kept for reference.
-            result: notMeasurable ? { overall: null, categories: {} } : result,
-            ...(notMeasurable ? { partial: result.categories } : {}),
-            note: notMeasurable ? "blocked by its bot protection in most tests — not measurable this edition" : null,
+            // Not measurable or down: no scores shown; what little was measured is kept for reference.
+            result: unscored ? { overall: null, categories: {} } : result,
+            ...(unscored ? { partial: result.categories } : {}),
+            note: notMeasurable ? "blocked by its bot protection in most tests — not measurable this edition"
+                : down ? "down during testing: no download worked in any run (an outage in every run)" : null,
             notOffered: [...new Set([...notOffered.desktop, ...notOffered.mobile])],
         });
     }

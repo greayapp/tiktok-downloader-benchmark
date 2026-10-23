@@ -6,6 +6,17 @@ results are recorded here.
 ### Planned for spec v1.1 (next edition)
 - §2 Governance: the operator doesn't deploy changes to its own tool during an edition's run
   windows. Already followed from the Q4 2026 edition on (see `results/2026q4/NOTES.md`).
+- §7: a tool with no working download in any run (an outage in every run, §5.3) is listed as "down
+  during testing", with no overall score or rank, like a "not measurable" tool. Already applied
+  in the Q4 2026 edition (LoveTik).
+
+### 2026-10-23 — Results: a tool that never worked is shown as down, not scored
+- A tool whose every download failed in every run would otherwise get an overall score from its
+  ads, privacy and phone checks alone, which would mislead. It is now listed as "down during
+  testing" with no score or rank (its partial measurements are kept in `scores.json`). Decided by
+  the operator's owner during the Q4 2026 review, before publication; to be written into §7 in v1.1.
+- Review records: `review.json` now marks which tools' ad screenshots and new tabs a person
+  reviewed (`adsReviewed`, `popupsConfirmed`), so the review list only shows what is left.
 
 ### 2026-10-23 — Scoring fix: Chrome's error page is not a redirect
 - When a page failed to load (e.g. `net::ERR_TIMED_OUT`), Chrome shows its own error page
