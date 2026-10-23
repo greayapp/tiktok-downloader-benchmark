@@ -29,6 +29,16 @@ jobs:
           cp SPEC.md CHANGELOG.md _site/
           if [ -d results ]; then cp -R results _site/results; fi
           if [ -d samples ]; then cp -R samples _site/samples; fi
+      - name: Write the sitemap
+        # One page: the results. Its date is the latest edition's, from
+        # results/latest.json (the daily uptime rows don't move it).
+        run: |
+          lastmod=$(python3 -c "import json; print(json.load(open('results/latest.json'))['generated'][:10])" 2>/dev/null || date -u +%F)
+          printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>' \
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' \
+            "  <url><loc>https://greayapp.github.io/tiktok-downloader-benchmark/</loc><lastmod>${lastmod}</lastmod></url>" \
+            '</urlset>' > _site/sitemap.xml
+          cat _site/sitemap.xml
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
