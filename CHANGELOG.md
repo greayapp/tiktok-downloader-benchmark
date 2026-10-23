@@ -7,6 +7,15 @@ results are recorded here.
 - §2 Governance: the operator doesn't deploy changes to its own tool during an edition's run
   windows. Already followed from the Q4 2026 edition on (see `results/2026q4/NOTES.md`).
 
+### 2026-10-23 — Ad-wall check fix after Q4 2026 run 2
+- In run 2, TikMate's desktop block recorded every item as "no download control" or an unanswered
+  should-fail link, although its screenshots show Google's offerwall ("Unlock more content · View a
+  short ad") on each one; run 1 and run 2's phone block recognised the same wall. The wall check
+  now also looks inside open shadow roots, reads Chrome's accessibility tree and every frame at
+  once, and runs on arrival (a wall already up before the link is pasted) and once more before an
+  item is recorded as failed. Browser tests added. TikMate's run 2 desktop block is redone with the
+  fix; details in `results/2026q4/NOTES.md`. No change to scoring.
+
 ### 2026-10-20 — Runner fix during Q4 2026 run 1
 - Run 1 stalled on a page call with no time limit; the runner now times out page reads, records an
   item unfinished after 12 minutes as "skipped" (a harness hang, not counted), and can resume a run

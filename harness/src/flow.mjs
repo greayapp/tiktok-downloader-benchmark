@@ -102,10 +102,39 @@ export async function closeOverlays(page, mobile) {
 // Walls: Google's offerwall ("view a short ad"), and rewarded ads (watch a video ad to earn the
 // download), which show inside ad frames ("you will lose your reward", "reward in 15 s").
 const WALL_TEXT = /unlock more content|view a short ad|watch (a|an|the|this) (short )?(ad|video) to (continue|unlock|get|earn)|take action to continue accessing|lose your reward|reward granted|reward in \d+ ?s(ec(ond)?s?)?\b/i;
-export async function adWall(page) {
-    const text = await within(page.evaluate(() => document.body.innerText.slice(0, 20000)), "");
+// The page's text, including open shadow roots (a wall may render inside one).
+const PAGE_TEXT = `(() => {
+    const out = [document.body ? document.body.innerText : ""];
+    const walk = (root) => { for (const el of root.querySelectorAll("*")) if (el.shadowRoot) { out.push(el.shadowRoot.textContent || ""); walk(el.shadowRoot); } };
+    walk(document);
+    return out.join("\\n").slice(0, 40000);
+})()`;
+// The names in Chrome's accessibility tree: what a screen reader would read, closed shadow roots included.
+async function accessibleText(page) {
+    const s = await page.context().newCDPSession(page);
+    try {
+        const { nodes } = await s.send("Accessibility.getFullAXTree");
+        return nodes.map((n) => n.name?.value ?? "").join("\n");
+    } finally { await s.detach().catch(() => {}); }
+}
+/**
+ * `thorough` (at the home page, and before an item is recorded as failed): also reads the
+ * accessibility tree and every frame at once, so a wall isn't missed when the page is slow to answer
+ * or builds the wall where page scripts can't read it (Q4 2026 run 2: TikMate on desktop).
+ */
+export async function adWall(page, { thorough = false } = {}) {
+    const text = await within(page.evaluate(PAGE_TEXT), "");
     if (WALL_TEXT.test(text)) return true;
     if (await within(page.evaluate(() => !!document.querySelector(".fc-dialog-container, .fc-monetization-dialog, [class*='offerwall']")), false)) return true;
+    if (thorough) {
+        const ax = await within(accessibleText(page), "");
+        if (WALL_TEXT.test(ax)) return true;
+        const frames = page.frames().filter((f) => f !== page.mainFrame());
+        const texts = await Promise.all(frames.map((f) => within(f.evaluate(() => (document.body?.innerText ?? "").slice(0, 5000)), "")));
+        const t = texts.find((x) => WALL_TEXT.test(x));
+        if (t) { page._tdbWallText = (t.match(WALL_TEXT) ?? [""])[0]; return true; }
+        return false;
+    }
     for (const f of page.frames()) {
         if (f === page.mainFrame()) continue;
         const t = await within(f.evaluate(() => (document.body?.innerText ?? "").slice(0, 5000)), "");
@@ -339,6 +368,12 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         }
     }
 
+    // A wall already up on arrival: the visitor can't paste the link.
+    if (await adWall(page, { thorough: true })) {
+        await shot("ad-wall");
+        return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
+    }
+
     // 2. Paste the link.
     const input = adapter.input ? await adapter.input(page) : await findLinkInput(page);
     if (!input) {
@@ -402,6 +437,11 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
             const m = dialog?.message ?? text.split("\n").map((l) => l.trim()).find((l) => l && !textBefore.has(l) && l.length < 200 && !l.endsWith("?") && ERROR_TEXT.test(l));
             if (m) { message = m; grade = SPECIFIC_ERROR.test(m) ? "clear" : "generic"; break; }
         }
+        // No answer at all: a wall the quick checks missed is not the tool's answer either.
+        if (!message && (await adWall(page, { thorough: true }))) {
+            await shot("ad-wall");
+            return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
+        }
         if (log.offsiteNavigations.some((n) => n.t >= t0)) { grade = "bad"; message = (message ? message + "; " : "") + "redirected away"; }
         await shot("negative");
         return { ...rec, outcome: "success", negative: { grade, message } };
@@ -425,6 +465,10 @@ export async function runItem({ context, page, log, adapter, item, ref, refMedia
         if (chosen) break;
     }
     if (!chosen) {
+        if (await adWall(page, { thorough: true })) {
+            await shot("ad-wall");
+            return { ...rec, outcome: "ad-wall", failure: "the site requires watching an ad to continue (not done: SPEC.md §6.D)" };
+        }
         await shot("no-result");
         if (process.env.TDB_DUMP) await page.content().then((html) => writeFile(join(dir, `${item.id}-${viewport}-no-result.html`), html)).catch(() => {});
         if (await challenged(page)) return { ...rec, outcome: "blocked", failure: "bot-protection challenge after submit" };
