@@ -57,6 +57,9 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
         expectNavigation(on) { this.expecting = on; },
     };
     if (evidenceDir) mkdirSync(evidenceDir, { recursive: true });
+    // Addresses opened in a new tab, and deliveries downloaded through one before the tab was reported.
+    const tabOpens = [];
+    const tabDownloads = [];
 
     await context.exposeBinding("__tdbReport", ({ frame }, kind) => {
         log.permissions.push({ t: Date.now(), phase: log.phase, kind: String(kind), frame: frame?.url?.() ?? null });
@@ -74,6 +77,7 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
             // A navigation that opens a new tab has no frame yet: Playwright throws.
             let frame = null;
             try { frame = req.frame(); } catch { /* popup navigation */ }
+            if (!frame && req.isNavigationRequest()) tabOpens.push({ url, t: Date.now() });
             let sourceUrl = "";
             try { sourceUrl = frame?.url() || ""; } catch { /* detached */ }
             const isMainFrame = req.isNavigationRequest() && !!frame && frame === log.mainPage?.mainFrame();
@@ -91,8 +95,13 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
             return;
         }
         // A tab or window the site opened.
-        const entry = { t: Date.now(), phase: log.phase, url: p.url(), finalUrl: null, evidence: null, media: false };
+        const entry = { t: Date.now(), phase: log.phase, url: p.url(), finalUrl: null, evidence: null, media: false, download: false, opened: [] };
         log.newPages.push(entry);
+        // The addresses the tab opened, to match a download it started (see onDownload).
+        if (/^https?:/.test(p.url())) entry.opened.push(p.url());
+        const early = !/^https?:/.test(p.url()) && tabDownloads.find((x) => !x.used && Date.now() - x.t < 3_000);
+        if (early) { early.used = true; entry.media = true; entry.download = true; }
+        p.on("request", (req) => { try { if (req.isNavigationRequest()) entry.opened.push(req.url()); } catch { /* ignore */ } });
         p.on("dialog", (d) => d.dismiss().catch(() => {}));
         // A tab showing the file itself (a video, audio or image) is how the site delivers it: not a
         // pop-up, and left open while the flow saves it.
@@ -101,11 +110,21 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
                 if (res.request().isNavigationRequest() && /^(video|audio|image)\//.test(res.headers()["content-type"] ?? "")) entry.media = true;
             } catch { /* ignore */ }
         });
+        // So is a tab opened only to download the file (a link with target=_blank to an attachment:
+        // the tab stays blank, Chrome downloads the file, and the tab closes). A download of anything
+        // else (an ad tab pushing an installer) leaves it a pop-up.
+        const gotDownload = new Promise((resolve) => { entry.downloaded = resolve; });
+        p.on("download", onDownload);
         setTimeout(async () => {
             // A file tab may still be loading at 4 s (TikTok's media servers can be slow): its address
             // says what it is. (Files saved from such a tab are still verified as real media.)
             if (!entry.media) entry.media = isMediaUrl(p.url());
             if (!entry.media) entry.media = /^(video|audio|image)\//.test(await Promise.race([p.evaluate(() => document.contentType).catch(() => ""), new Promise((r) => setTimeout(() => r(""), 3000))]));
+            // A blank tab or one on the tool's own site may be waiting for its server to send the file:
+            // give the download time to start before judging the tab (closing it would stop the file).
+            if (!entry.media && !p.isClosed() && (!/^https?:/.test(p.url()) || siteOf(p.url()) === toolSite)) {
+                await Promise.race([gotDownload, new Promise((r) => p.once("close", r)), new Promise((r) => setTimeout(r, DOWNLOAD_TAB_WAIT_MS))]);
+            }
             if (entry.media) { entry.finalUrl = p.url(); return; }
             try {
                 entry.finalUrl = p.url();
@@ -119,7 +138,27 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
         }, 4_000);
     });
 
+    // Chrome reports a download on the tab that started it, or on its opener when that tab closed
+    // itself (the usual case for a target=_blank link to an attachment): it is matched to the new
+    // tab by the address the tab opened.
+    // Chrome reports the download before it reports the tab, which then has no address yet: such a
+    // download is kept for a moment and given to the blank tab that appears.
+    function onDownload(d) {
+        try {
+            const url = d.url();
+            const delivery = isDeliveryDownload(d, toolSite);
+            const viaTab = tabOpens.some((x) => x.url === url && Date.now() - x.t < 60_000);
+            const entry = [...log.newPages].reverse().find((e) => e.opened.includes(url))
+                ?? (viaTab ? [...log.newPages].reverse().find((e) => !e.media && !e.opened.length && Date.now() - e.t < 3_000) : null);
+            if (entry) {
+                if (delivery) { entry.media = true; entry.download = true; }
+                entry.downloaded();
+            } else if (viaTab && delivery) tabDownloads.push({ url, t: Date.now(), used: false });
+        } catch { /* ignore */ }
+    }
+
     function attachMain(p) {
+        p.on("download", onDownload);
         p.on("framenavigated", (f) => {
             if (f !== p.mainFrame()) return;
             const url = f.url();
@@ -135,6 +174,15 @@ export async function observe(context, { toolSite, engines, evidenceDir }) {
         });
     }
     return log;
+}
+
+/** How long a blank or own-site tab may wait for its download to start before it is judged. */
+const DOWNLOAD_TAB_WAIT_MS = 20_000;
+
+/** A download that delivers what was asked for: a media or ZIP file, or a file from the tool's own site. */
+export function isDeliveryDownload(download, toolSite) {
+    const url = download.url();
+    return isMediaUrl(url) || siteOf(url) === toolSite || /\.(mp4|m4a|mp3|mov|webm|jpe?g|png|webp|heic|gif|zip)$/i.test(download.suggestedFilename() ?? "");
 }
 
 /** A URL that is a media file itself: a file extension, or TikTok's media servers. */
@@ -154,7 +202,7 @@ export async function thirdPartyCookies(context, toolSite) {
 /** The log as plain JSON for a result record. */
 export function snapshot(log) {
     return {
-        newPages: log.newPages.map(({ t, phase, url, finalUrl, evidence, media }) => ({ t, phase, url, finalUrl, evidence, media })),
+        newPages: log.newPages.map(({ t, phase, url, finalUrl, evidence, media, download }) => ({ t, phase, url, finalUrl, evidence, media, download })),
         offsiteNavigations: log.offsiteNavigations,
         permissions: log.permissions,
         dialogs: log.dialogs,

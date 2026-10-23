@@ -10,6 +10,17 @@ results are recorded here.
   during testing", with no overall score or rank, like a "not measurable" tool. Already applied
   in the Q4 2026 edition (LoveTik).
 
+### 2026-10-23 — Harness: a tab opened only to download the file is the delivery (from Q1 2027)
+- A link with `target=_blank` to an attachment opens a blank tab that downloads the file and closes
+  itself. The observer recorded such tabs as pop-ups (§6.D); it now records them as the delivery,
+  matching the download to the tab by its address, and gives a blank or own-site tab up to 20 s for
+  its download to start before judging it. A tab that downloads anything other than the requested
+  file (e.g. an installer from an ad) is still a pop-up. Browser tests added; checked live on
+  TTDownloader (its download tabs) and TikTokio (its pop-under tabs, still pop-ups).
+- Applies from the next edition. Q4 2026 results are unchanged: TTDownloader's pop-up penalty
+  stands on its separate ad tab (grotaich.net, on the first click); only its recorded count of new
+  tabs included its download tabs.
+
 ### 2026-10-23 — Q4 2026 published; one outage re-run not done
 - Results of the Q4 2026 edition published (`results/2026q4/`, `results/latest.json`), with the
   rotating samples (`samples/2026q4-rotating.json`, `samples/reference/R*.json`). Evidence
