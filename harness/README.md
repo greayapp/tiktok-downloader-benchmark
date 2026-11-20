@@ -57,10 +57,12 @@ stay in `runs-local/` and `.cache/` (git-ignored); evidence screenshots for pena
 
 ## Daily monitor on macOS
 
-`schedule/install.sh` installs a LaunchAgent that starts `src/monitor.mjs --push` every hour from
-11:00 to 23:00 local time (and at the next wake if the Mac was asleep). The check runs once per day;
-it waits for a later hour when the Mac is off the residential connection (a VPN on). It pushes only
-when its own commit is the one thing not yet on GitHub. `schedule/uninstall.sh` removes it.
+`schedule/install.sh` installs a LaunchAgent that starts `src/monitor.mjs --push --between 2-6`
+every hour from 02:00 to 05:00 local time (IST). The check runs once per day; it waits for a later
+hour when the Mac is off the residential connection (a VPN on). A start outside 02:00–06:00 does
+nothing: macOS makes up a missed start at the next wake, so a night asleep means no check that day.
+It pushes only when its own commit is the one thing not yet on GitHub. `schedule/uninstall.sh`
+removes it.
 Logs: `~/Library/Logs/tiktok-downloader-benchmark-monitor.log`.
 
 ## Running an edition (checklist)

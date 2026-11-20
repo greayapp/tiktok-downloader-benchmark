@@ -10,6 +10,11 @@ results are recorded here.
   during testing", with no overall score or rank, like a "not measurable" tool. Already applied
   in the Q4 2026 edition (LoveTik).
 
+### 2026-11-20 — Daily uptime check runs at night
+- The daily uptime check (§6.A3) now runs between 02:00 and 06:00 IST (20:30–00:30 UTC), tried
+  each hour from 02:00 to 05:00; it ran between 11:00 and 23:00 IST before. Same items, same
+  method, one check per day; days the test machine is asleep or offline all night have no data.
+
 ### 2026-10-23 — Repository moved
 - The benchmark now lives at https://github.com/greayapp/tiktok-downloader-benchmark, with the live
   results at https://greayapp.github.io/tiktok-downloader-benchmark/. Contact:

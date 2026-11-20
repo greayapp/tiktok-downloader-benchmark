@@ -66,7 +66,19 @@ export function rebuildUptime(dir = MON) {
     return uptime;
 }
 
+/** `--between 2-6`: run only when the local hour is in [2, 6). The LaunchAgent passes it, so
+ *  the start macOS makes up after a night asleep (at the next wake) does nothing. */
+function outsideWindow() {
+    const range = arg("between", null);
+    if (!range) return null;
+    const [from, to] = range.split("-").map(Number);
+    const hour = new Date().getHours();
+    return hour >= from && hour < to ? null : `outside the ${String(from).padStart(2, "0")}:00–${String(to).padStart(2, "0")}:00 window`;
+}
+
 async function main() {
+    const outside = outsideWindow();
+    if (outside) { console.log(`${new Date().toISOString()} not run: ${outside}`); return; }
     mkdirSync(MON, { recursive: true });
     const logFile = join(MON, `${today.slice(0, 7)}.jsonl`);
     if (!process.argv.includes("--force") && existsSync(logFile) && readFileSync(logFile, "utf8").includes(`"date":"${today}"`)) {
@@ -80,7 +92,8 @@ async function main() {
     const picks = [videos[day % videos.length], photos[day % photos.length]].filter(Boolean);
     const only = arg("tools", null)?.split(",");
     const engines = await loadEngines();
-    // An edition run is using the line: not today's check yet; the LaunchAgent tries again next hour.
+    // An edition run is using the line: not today's check yet; the LaunchAgent tries again next hour
+    // (within its window).
     const run = heldBy("edition-run");
     if (run) { console.log(`${new Date().toISOString()} not run: edition ${run.edition} run ${run.run} in progress`); return; }
     take("monitor");
