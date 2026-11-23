@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T20:48:41.145Z",
+  "updated": "2026-11-23T20:43:55.364Z",
   "tools": {
     "snaptik.app": {
       "name": "SnapTik",
@@ -60,120 +60,120 @@
   },
   "2026q4": {
     "snaptik.app": {
-      "checks": 70,
-      "successes": 49,
+      "checks": 72,
+      "successes": 50,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "ssstik.io": {
-      "checks": 31,
-      "successes": 31,
+      "checks": 32,
+      "successes": 32,
       "blocked": 0,
-      "adWall": 39,
+      "adWall": 40,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "musicaldown.com": {
-      "checks": 70,
-      "successes": 66,
+      "checks": 72,
+      "successes": 68,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "tikmate.app": {
       "checks": 5,
       "successes": 5,
       "blocked": 0,
-      "adWall": 62,
+      "adWall": 64,
       "notOffered": [
         "photos"
       ],
-      "days": 35
+      "days": 36
     },
     "savetik.co": {
-      "checks": 35,
+      "checks": 36,
       "successes": 0,
-      "blocked": 35,
+      "blocked": 36,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "ttdownloader.com": {
-      "checks": 35,
-      "successes": 35,
+      "checks": 36,
+      "successes": 36,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [
         "photos"
       ],
-      "days": 35
+      "days": 36
     },
     "tikwm.com": {
       "checks": 0,
       "successes": 0,
-      "blocked": 70,
+      "blocked": 72,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "lovetik.com": {
-      "checks": 70,
+      "checks": 72,
       "successes": 0,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "tiktokio.com": {
-      "checks": 70,
-      "successes": 58,
+      "checks": 72,
+      "successes": 60,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "tikdown.org": {
-      "checks": 70,
-      "successes": 29,
+      "checks": 72,
+      "successes": 30,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "tikcd.com": {
-      "checks": 70,
-      "successes": 63,
+      "checks": 72,
+      "successes": 65,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "indown.io": {
       "checks": 0,
       "successes": 0,
-      "blocked": 70,
+      "blocked": 72,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "ttsave.net": {
-      "checks": 70,
-      "successes": 43,
+      "checks": 72,
+      "successes": 45,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     },
     "gettikvideo.com": {
-      "checks": 70,
-      "successes": 62,
+      "checks": 72,
+      "successes": 63,
       "blocked": 0,
       "adWall": 0,
       "notOffered": [],
-      "days": 35
+      "days": 36
     }
   }
 }
