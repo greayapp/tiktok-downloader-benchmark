@@ -698,3 +698,31 @@
 {"date":"2026-11-25","tool":"ttsave.net","item":"P3","outcome":"success","to_file_ms":7651}
 {"date":"2026-11-25","tool":"gettikvideo.com","item":"V3","outcome":"success","to_file_ms":6895}
 {"date":"2026-11-25","tool":"gettikvideo.com","item":"P3","outcome":"success","to_file_ms":6701}
+{"date":"2026-11-26","tool":"snaptik.app","item":"V4","outcome":"success","to_file_ms":6236}
+{"date":"2026-11-26","tool":"snaptik.app","item":"P4","outcome":"success","to_file_ms":27830}
+{"date":"2026-11-26","tool":"ssstik.io","item":"V4","outcome":"ad-wall","failure":"the site requires watching an ad to continue (not done: SPEC.md §6.D)"}
+{"date":"2026-11-26","tool":"ssstik.io","item":"P4","outcome":"success","to_file_ms":9683}
+{"date":"2026-11-26","tool":"musicaldown.com","item":"V4","outcome":"success","to_file_ms":7097}
+{"date":"2026-11-26","tool":"musicaldown.com","item":"P4","outcome":"success","to_file_ms":8739}
+{"date":"2026-11-26","tool":"tikmate.app","item":"V4","outcome":"ad-wall","failure":"the site requires watching an ad to continue (not done: SPEC.md §6.D)"}
+{"date":"2026-11-26","tool":"tikmate.app","item":"P4","outcome":"ad-wall","failure":"the site requires watching an ad to continue (not done: SPEC.md §6.D)"}
+{"date":"2026-11-26","tool":"savetik.co","item":"V4","outcome":"failure","failure":"the site said: \"An error occurred, please try again.\""}
+{"date":"2026-11-26","tool":"savetik.co","item":"P4","outcome":"blocked","failure":"bot-protection challenge (not solved, SPEC.md §5.4)"}
+{"date":"2026-11-26","tool":"ttdownloader.com","item":"V4","outcome":"success","to_file_ms":41688}
+{"date":"2026-11-26","tool":"ttdownloader.com","item":"P4","outcome":"failure","failure":"the result offers video and mp3 but no photos option","notOffered":true}
+{"date":"2026-11-26","tool":"tikwm.com","item":"V4","outcome":"blocked","failure":"bot-protection challenge (not solved, SPEC.md §5.4)"}
+{"date":"2026-11-26","tool":"tikwm.com","item":"P4","outcome":"blocked","failure":"bot-protection challenge (not solved, SPEC.md §5.4)"}
+{"date":"2026-11-26","tool":"lovetik.com","item":"V4","outcome":"failure","failure":"the site said: \"Error: Could not get Video ID.\""}
+{"date":"2026-11-26","tool":"lovetik.com","item":"P4","outcome":"failure","failure":"the site said: \"Error: Could not get Video ID.\""}
+{"date":"2026-11-26","tool":"tiktokio.com","item":"V4","outcome":"success","to_file_ms":22958}
+{"date":"2026-11-26","tool":"tiktokio.com","item":"P4","outcome":"success","to_file_ms":9129}
+{"date":"2026-11-26","tool":"tikdown.org","item":"V4","outcome":"success","to_file_ms":8728}
+{"date":"2026-11-26","tool":"tikdown.org","item":"P4","outcome":"failure","failure":"the result offers video but no photos option","notOffered":true}
+{"date":"2026-11-26","tool":"tikcd.com","item":"V4","outcome":"success","to_file_ms":6854}
+{"date":"2026-11-26","tool":"tikcd.com","item":"P4","outcome":"success","to_file_ms":4541}
+{"date":"2026-11-26","tool":"indown.io","item":"V4","outcome":"blocked","failure":"bot-protection challenge after submit"}
+{"date":"2026-11-26","tool":"indown.io","item":"P4","outcome":"blocked","failure":"bot-protection challenge (not solved, SPEC.md §5.4)"}
+{"date":"2026-11-26","tool":"ttsave.net","item":"V4","outcome":"success","to_file_ms":12299}
+{"date":"2026-11-26","tool":"ttsave.net","item":"P4","outcome":"success","to_file_ms":16776}
+{"date":"2026-11-26","tool":"gettikvideo.com","item":"V4","outcome":"success","to_file_ms":5939}
+{"date":"2026-11-26","tool":"gettikvideo.com","item":"P4","outcome":"success","to_file_ms":12385}
